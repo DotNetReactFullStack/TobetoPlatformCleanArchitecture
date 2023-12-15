@@ -1,0 +1,11 @@
+using Core.Application.Dtos;
+
+namespace Application.Features.ForeignLanguageLevels.Queries.GetList;
+
+public class GetListForeignLanguageLevelListItemDto : IDto
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public int Priority { get; set; }
+    public bool Visibility { get; set; }
+}
