@@ -50,6 +50,8 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IExamQuestionRepository, ExamQuestionRepository>();
         services.AddScoped<IClassroomExamRepository, ClassroomExamRepository>();
         services.AddScoped<IAccountExamResultRepository, AccountExamResultRepository>();
+        services.AddScoped<IClassroomRepository, ClassroomRepository>();
+        services.AddScoped<IAccountClassroomRepository, AccountClassroomRepository>();
         return services;
     }
 }

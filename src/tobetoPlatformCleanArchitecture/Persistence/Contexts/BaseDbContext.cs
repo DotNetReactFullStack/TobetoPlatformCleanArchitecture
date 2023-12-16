@@ -46,6 +46,8 @@ public class BaseDbContext : DbContext
     public DbSet<ExamQuestion> ExamQuestions { get; set; }
     public DbSet<ClassroomExam> ClassroomExams { get; set; }
     public DbSet<AccountExamResult> AccountExamResults { get; set; }
+    public DbSet<Classroom> Classrooms { get; set; }
+    public DbSet<AccountClassroom> AccountClassrooms { get; set; }
 
     public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration)
         : base(dbContextOptions)
