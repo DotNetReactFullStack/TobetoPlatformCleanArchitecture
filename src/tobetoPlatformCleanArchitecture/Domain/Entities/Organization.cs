@@ -20,8 +20,9 @@ public class Organization : Entity<int>
         
     }
 
-    public Organization(int organizationTypeId, int addressId, bool visibility, string name, string contactNumber) : this()
+    public Organization(int id, int organizationTypeId, int addressId, bool visibility, string name, string contactNumber) : this()
     {
+        Id = id;
         OrganizationTypeId = organizationTypeId;
         AddressId = addressId;
         Visibility = visibility;
