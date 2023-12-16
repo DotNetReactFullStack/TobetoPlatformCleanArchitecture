@@ -39,6 +39,8 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IAccountCollageMetadataRepository, AccountCollageMetadataRepository>();
         services.AddScoped<ISurveyTypeRepository, SurveyTypeRepository>();
         services.AddScoped<ISurveyRepository, SurveyRepository>();
+        services.AddScoped<IOrganizationTypeRepository, OrganizationTypeRepository>();
+        services.AddScoped<IOrganizationRepository, OrganizationRepository>();
         return services;
     }
 }
