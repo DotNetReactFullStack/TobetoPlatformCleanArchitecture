@@ -211,6 +211,22 @@ public class OperationClaimConfiguration : IEntityTypeConfiguration<OperationCla
         seeds.Add(new OperationClaim { Id = ++id, Name = "Organizations.Update" });
         seeds.Add(new OperationClaim { Id = ++id, Name = "Organizations.Delete" });
         #endregion
+        #region AnnouncementTypes
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AnnouncementTypes.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AnnouncementTypes.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AnnouncementTypes.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AnnouncementTypes.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AnnouncementTypes.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AnnouncementTypes.Delete" });
+        #endregion
+        #region Announcements
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Announcements.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Announcements.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Announcements.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Announcements.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Announcements.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Announcements.Delete" });
+        #endregion
         return seeds;        
     }
 }
