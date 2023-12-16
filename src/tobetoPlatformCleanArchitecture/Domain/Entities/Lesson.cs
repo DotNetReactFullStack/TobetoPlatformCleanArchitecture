@@ -10,8 +10,10 @@ public class Lesson : Entity<int>
 {
     public int CourseId { get; set; }
     public string Name { get; set; }
+    public bool Visibility { get; set; }
     public string Language { get; set; }
     public string Content { get; set; }
+    public int Duration { get; set; }
 
 
     public Lesson()
@@ -19,10 +21,12 @@ public class Lesson : Entity<int>
         
     }
 
-    public Lesson(int courseId, string name, string language, string content) : this()
+    public Lesson(int id, int courseId, string name, bool visibility, string language, string content) : this()
     {
+        Id = id;
         CourseId = courseId;
         Name = name;
+        Visibility = visibility;
         Language = language;
         Content = content;
     }

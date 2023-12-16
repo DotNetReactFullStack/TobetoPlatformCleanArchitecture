@@ -55,6 +55,11 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IAccountLearningPathRepository, AccountLearningPathRepository>();
         services.AddScoped<ICourseLearningPathRepository, CourseLearningPathRepository>();
         services.AddScoped<ILearningPathRepository, LearningPathRepository>();
+        services.AddScoped<ICourseCategoryRepository, CourseCategoryRepository>();
+        services.AddScoped<ICourseRepository, CourseRepository>();
+        services.AddScoped<IAccountCourseRepository, AccountCourseRepository>();
+        services.AddScoped<ILessonRepository, LessonRepository>();
+        services.AddScoped<IAccountLessonRepository, AccountLessonRepository>();
         return services;
     }
 }

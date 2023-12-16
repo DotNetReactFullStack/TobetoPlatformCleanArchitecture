@@ -51,6 +51,11 @@ public class BaseDbContext : DbContext
     public DbSet<AccountLearningPath> AccountLearningPaths { get; set; }
     public DbSet<CourseLearningPath> CourseLearningPaths { get; set; }
     public DbSet<LearningPath> LearningPaths { get; set; }
+    public DbSet<CourseCategory> CourseCategories { get; set; }
+    public DbSet<Course> Courses { get; set; }
+    public DbSet<AccountCourse> AccountCourses { get; set; }
+    public DbSet<Lesson> Lessons { get; set; }
+    public DbSet<AccountLesson> AccountLessons { get; set; }
 
     public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration)
         : base(dbContextOptions)

@@ -51,6 +51,11 @@ using Application.Services.AccountClassrooms;
 using Application.Services.AccountLearningPaths;
 using Application.Services.CourseLearningPaths;
 using Application.Services.LearningPaths;
+using Application.Services.CourseCategories;
+using Application.Services.Courses;
+using Application.Services.AccountCourses;
+using Application.Services.Lessons;
+using Application.Services.AccountLessons;
 
 namespace Application;
 
@@ -117,6 +122,11 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IAccountLearningPathsService, AccountLearningPathsManager>();
         services.AddScoped<ICourseLearningPathsService, CourseLearningPathsManager>();
         services.AddScoped<ILearningPathsService, LearningPathsManager>();
+        services.AddScoped<ICourseCategoriesService, CourseCategoriesManager>();
+        services.AddScoped<ICoursesService, CoursesManager>();
+        services.AddScoped<IAccountCoursesService, AccountCoursesManager>();
+        services.AddScoped<ILessonsService, LessonsManager>();
+        services.AddScoped<IAccountLessonsService, AccountLessonsManager>();
         return services;
     }
 

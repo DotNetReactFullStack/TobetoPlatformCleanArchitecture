@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 namespace Domain.Entities;
 public class CourseCategory : Entity<int>
 {
-    public int Name { get; set; }
+    public string Name { get; set; }
+    public int Priority { get; set; }
     public bool Visibility { get; set; }
 
     public CourseCategory()
@@ -16,9 +17,11 @@ public class CourseCategory : Entity<int>
         
     }
 
-    public CourseCategory(int name, bool visibility) : this()
+    public CourseCategory(int id, string name, int priority, bool visibility) : this()
     {
+        Id = id;
         Name = name;
         Visibility = visibility;
+        Priority = priority;
     }
 }
