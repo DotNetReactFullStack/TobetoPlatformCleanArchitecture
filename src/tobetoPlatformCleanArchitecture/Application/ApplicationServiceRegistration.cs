@@ -46,6 +46,8 @@ using Application.Services.Exams;
 using Application.Services.ExamQuestions;
 using Application.Services.ClassroomExams;
 using Application.Services.AccountExamResults;
+using Application.Services.Classrooms;
+using Application.Services.AccountClassrooms;
 
 namespace Application;
 
@@ -107,6 +109,8 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IExamQuestionsService, ExamQuestionsManager>();
         services.AddScoped<IClassroomExamsService, ClassroomExamsManager>();
         services.AddScoped<IAccountExamResultsService, AccountExamResultsManager>();
+        services.AddScoped<IClassroomsService, ClassroomsManager>();
+        services.AddScoped<IAccountClassroomsService, AccountClassroomsManager>();
         return services;
     }
 
