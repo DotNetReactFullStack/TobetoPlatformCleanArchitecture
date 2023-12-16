@@ -9,6 +9,7 @@ namespace Domain.Entities;
 public class SurveyType : Entity<int>
 {
     public string Name { get; set; }
+    public int Priority { get; set; }
     public bool Visibility { get; set; }
 
     public SurveyType()
@@ -16,9 +17,11 @@ public class SurveyType : Entity<int>
         
     }
 
-    public SurveyType(string name, bool visibility):this()
+    public SurveyType(int id, string name, int priority, bool visibility) : this()
     {
+        Id = id;
         Name = name;
+        Priority = priority;
         Visibility = visibility;
     }
 }

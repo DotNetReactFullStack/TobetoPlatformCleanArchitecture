@@ -10,6 +10,7 @@ public class Survey : Entity<int>
 {
     public int SurveyTypeId { get; set; }
     public int OrganizationId { get; set; }
+    public int Priority { get; set; }
     public bool Visibility { get; set; }
     public string Title { get; set; }
     public string Content { get; set; }
@@ -21,10 +22,12 @@ public class Survey : Entity<int>
         
     }
 
-    public Survey(int surveyTypeId, int organizationId, bool visibility, string title, string content, string connectionLink, DateTime publishedDate):this()
+    public Survey(int id, int surveyTypeId, int organizationId, int priority, bool visibility, string title, string content, string connectionLink, DateTime publishedDate) : this()
     {
+        Id = id;
         SurveyTypeId = surveyTypeId;
         OrganizationId = organizationId;
+        Priority = priority;
         Visibility = visibility;
         Title = title;
         Content = content;
