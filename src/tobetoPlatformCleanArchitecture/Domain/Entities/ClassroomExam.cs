@@ -16,10 +16,11 @@ public class ClassroomExam : Entity<int>
     {
     }
 
-    public ClassroomExam(int classId, int examId, bool ısActive):this()
+    public ClassroomExam(int id, int classroomId, int examId, bool isActive):this()
     {
-        ClassroomId = classId;
+        Id = id;
+        ClassroomId = classroomId;
         ExamId = examId;
-        IsActive = ısActive;
+        IsActive = isActive;
     }
 }

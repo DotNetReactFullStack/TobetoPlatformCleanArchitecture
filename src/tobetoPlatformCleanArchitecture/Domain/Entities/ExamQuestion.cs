@@ -10,6 +10,7 @@ public class ExamQuestion : Entity<int>
 {
     public int ExamId { get; set; }
     public int QuestionId { get; set; }
+   
 
 
     public ExamQuestion()
@@ -17,8 +18,9 @@ public class ExamQuestion : Entity<int>
         
     }
 
-    public ExamQuestion(int examId, int questionId) : this()
+    public ExamQuestion(int id, int examId, int questionId) : this()
     {
+        Id = id;
         ExamId = examId;
         QuestionId = questionId;
     }
