@@ -39,6 +39,13 @@ public class BaseDbContext : DbContext
     public DbSet<Organization> Organizations { get; set; }
     public DbSet<AnnouncementType> AnnouncementTypes { get; set; }
     public DbSet<Announcement> Announcements { get; set; }
+    public DbSet<QuestionCategory> QuestionCategories { get; set; }
+    public DbSet<Question> Questions { get; set; }
+    public DbSet<Answer> Answers { get; set; }
+    public DbSet<Exam> Exams { get; set; }
+    public DbSet<ExamQuestion> ExamQuestions { get; set; }
+    public DbSet<ClassroomExam> ClassroomExams { get; set; }
+    public DbSet<AccountExamResult> AccountExamResults { get; set; }
 
     public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration)
         : base(dbContextOptions)

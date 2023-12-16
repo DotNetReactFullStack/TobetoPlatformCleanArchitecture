@@ -227,6 +227,62 @@ public class OperationClaimConfiguration : IEntityTypeConfiguration<OperationCla
         seeds.Add(new OperationClaim { Id = ++id, Name = "Announcements.Update" });
         seeds.Add(new OperationClaim { Id = ++id, Name = "Announcements.Delete" });
         #endregion
+        #region QuestionCategories
+        seeds.Add(new OperationClaim { Id = ++id, Name = "QuestionCategories.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "QuestionCategories.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "QuestionCategories.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "QuestionCategories.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "QuestionCategories.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "QuestionCategories.Delete" });
+        #endregion
+        #region Questions
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Questions.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Questions.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Questions.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Questions.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Questions.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Questions.Delete" });
+        #endregion
+        #region Answers
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Answers.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Answers.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Answers.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Answers.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Answers.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Answers.Delete" });
+        #endregion
+        #region Exams
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Exams.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Exams.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Exams.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Exams.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Exams.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Exams.Delete" });
+        #endregion
+        #region ExamQuestions
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ExamQuestions.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ExamQuestions.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ExamQuestions.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ExamQuestions.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ExamQuestions.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ExamQuestions.Delete" });
+        #endregion
+        #region ClassroomExams
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ClassroomExams.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ClassroomExams.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ClassroomExams.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ClassroomExams.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ClassroomExams.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "ClassroomExams.Delete" });
+        #endregion
+        #region AccountExamResults
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountExamResults.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountExamResults.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountExamResults.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountExamResults.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountExamResults.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountExamResults.Delete" });
+        #endregion
         return seeds;        
     }
 }
