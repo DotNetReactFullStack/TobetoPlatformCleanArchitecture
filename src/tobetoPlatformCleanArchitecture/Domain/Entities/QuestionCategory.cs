@@ -9,14 +9,17 @@ namespace Domain.Entities;
 public class QuestionCategory : Entity<int>
 {
     public string Name { get; set; }
+    public int Priority { get; set; }
 
     public QuestionCategory()
     {
         
     }
 
-    public QuestionCategory(string name):this()
+    public QuestionCategory(int id, string name, int priority) : this()
     {
+        Id= id;
         Name = name;
+        Priority = priority;
     }
 }

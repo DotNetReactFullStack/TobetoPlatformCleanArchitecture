@@ -23,8 +23,9 @@ public class AccountExamResult : Entity<int>
         
     }
 
-    public AccountExamResult(int accountId, int examId, bool visibility, int numberOfRightAnswers, int numberOfWrongAnswers, int numberOfNullAnswers, int points):this()
+    public AccountExamResult(int id, int accountId, int examId, bool visibility, int numberOfRightAnswers, int numberOfWrongAnswers, int numberOfNullAnswers, int points):this()
     {
+        Id = id;
         AccountId = accountId;
         ExamId = examId;
         Visibility = visibility;

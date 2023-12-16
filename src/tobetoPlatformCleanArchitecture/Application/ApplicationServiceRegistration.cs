@@ -39,6 +39,13 @@ using Application.Services.OrganizationTypes;
 using Application.Services.Organizations;
 using Application.Services.AnnouncementTypes;
 using Application.Services.Announcements;
+using Application.Services.QuestionCategories;
+using Application.Services.Questions;
+using Application.Services.Answers;
+using Application.Services.Exams;
+using Application.Services.ExamQuestions;
+using Application.Services.ClassroomExams;
+using Application.Services.AccountExamResults;
 
 namespace Application;
 
@@ -93,6 +100,13 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IOrganizationsService, OrganizationsManager>();
         services.AddScoped<IAnnouncementTypesService, AnnouncementTypesManager>();
         services.AddScoped<IAnnouncementsService, AnnouncementsManager>();
+        services.AddScoped<IQuestionCategoriesService, QuestionCategoriesManager>();
+        services.AddScoped<IQuestionsService, QuestionsManager>();
+        services.AddScoped<IAnswersService, AnswersManager>();
+        services.AddScoped<IExamsService, ExamsManager>();
+        services.AddScoped<IExamQuestionsService, ExamQuestionsManager>();
+        services.AddScoped<IClassroomExamsService, ClassroomExamsManager>();
+        services.AddScoped<IAccountExamResultsService, AccountExamResultsManager>();
         return services;
     }
 

@@ -43,6 +43,13 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IOrganizationRepository, OrganizationRepository>();
         services.AddScoped<IAnnouncementTypeRepository, AnnouncementTypeRepository>();
         services.AddScoped<IAnnouncementRepository, AnnouncementRepository>();
+        services.AddScoped<IQuestionCategoryRepository, QuestionCategoryRepository>();
+        services.AddScoped<IQuestionRepository, QuestionRepository>();
+        services.AddScoped<IAnswerRepository, AnswerRepository>();
+        services.AddScoped<IExamRepository, ExamRepository>();
+        services.AddScoped<IExamQuestionRepository, ExamQuestionRepository>();
+        services.AddScoped<IClassroomExamRepository, ClassroomExamRepository>();
+        services.AddScoped<IAccountExamResultRepository, AccountExamResultRepository>();
         return services;
     }
 }

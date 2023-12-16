@@ -18,10 +18,11 @@ public class Question : Entity<int>
         
     }
 
-    public Question(int questionCategoryId, string questionDetail, bool ısActive) : this()
+    public Question(int id, int questionCategoryId, string questionDetail, bool isActive) : this()
     {
+        Id = id;
         QuestionCategoryId = questionCategoryId;
         QuestionDetail = questionDetail;
-        IsActive = ısActive;
+        IsActive = isActive;
     }
 }

@@ -18,8 +18,9 @@ public class Answer : Entity<int>
         
     }
 
-    public Answer(int questionId, string answerDetail, bool rightAnswerBool) : this()
+    public Answer(int id, int questionId, string answerDetail, bool rightAnswerBool) : this()
     {
+        Id = id;
         QuestionId = questionId;
         AnswerDetail = answerDetail;
         RightAnswerBool = rightAnswerBool;
