@@ -6,19 +6,22 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Domain.Entities;
-public class CoursePath : Entity<int>
+public class CourseLearningPath : Entity<int>
 {
     public int CourseId { get; set; }
     public int PathId { get; set; }
+    public bool Visibility { get; set; }
 
-    public CoursePath()
+    public CourseLearningPath()
     {
-        
+
     }
 
-    public CoursePath(int courseId, int pathId) : this()
+    public CourseLearningPath(int id, int courseId, int pathId, bool visibility) : this()
     {
+        Id = id;
         CourseId = courseId;
         PathId = pathId;
+        Visibility = visibility;
     }
 }
