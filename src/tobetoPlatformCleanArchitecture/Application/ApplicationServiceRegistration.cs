@@ -33,6 +33,8 @@ using Application.Services.GraduationStatuses;
 using Application.Services.Colleges;
 using Application.Services.EducationPrograms;
 using Application.Services.AccountCollageMetadatas;
+using Application.Services.SurveyTypes;
+using Application.Services.Surveys;
 
 namespace Application;
 
@@ -81,6 +83,8 @@ public static class ApplicationServiceRegistration
         services.AddScoped<ICollegesService, CollegesManager>();
         services.AddScoped<IEducationProgramsService, EducationProgramsManager>();
         services.AddScoped<IAccountCollageMetadatasService, AccountCollageMetadatasManager>();
+        services.AddScoped<ISurveyTypesService, SurveyTypesManager>();
+        services.AddScoped<ISurveysService, SurveysManager>();
         return services;
     }
 
