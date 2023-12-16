@@ -10,6 +10,7 @@ public class Announcement : Entity<int>
 {
     public int AnnouncementTypeId { get; set; }
     public int OrganizationId { get; set; }
+    public int Priority { get; set; }
     public bool Visibility { get; set; }
     public string Name { get; set; }
     public string Content { get; set; }
@@ -21,10 +22,12 @@ public class Announcement : Entity<int>
         
     }
 
-    public Announcement(int announcementTypeId, int organizationId, bool visibility, string name, string content, DateTime publishedDate) : this()
+    public Announcement(int id, int announcementTypeId, int organizationId, int priority, bool visibility, string name, string content, DateTime publishedDate):this()
     {
+        Id = id;
         AnnouncementTypeId = announcementTypeId;
         OrganizationId = organizationId;
+        Priority = priority;
         Visibility = visibility;
         Name = name;
         Content = content;

@@ -37,6 +37,8 @@ public class BaseDbContext : DbContext
     public DbSet<Survey> Surveys { get; set; }
     public DbSet<OrganizationType> OrganizationTypes { get; set; }
     public DbSet<Organization> Organizations { get; set; }
+    public DbSet<AnnouncementType> AnnouncementTypes { get; set; }
+    public DbSet<Announcement> Announcements { get; set; }
 
     public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration)
         : base(dbContextOptions)

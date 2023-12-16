@@ -37,6 +37,8 @@ using Application.Services.SurveyTypes;
 using Application.Services.Surveys;
 using Application.Services.OrganizationTypes;
 using Application.Services.Organizations;
+using Application.Services.AnnouncementTypes;
+using Application.Services.Announcements;
 
 namespace Application;
 
@@ -89,6 +91,8 @@ public static class ApplicationServiceRegistration
         services.AddScoped<ISurveysService, SurveysManager>();
         services.AddScoped<IOrganizationTypesService, OrganizationTypesManager>();
         services.AddScoped<IOrganizationsService, OrganizationsManager>();
+        services.AddScoped<IAnnouncementTypesService, AnnouncementTypesManager>();
+        services.AddScoped<IAnnouncementsService, AnnouncementsManager>();
         return services;
     }
 

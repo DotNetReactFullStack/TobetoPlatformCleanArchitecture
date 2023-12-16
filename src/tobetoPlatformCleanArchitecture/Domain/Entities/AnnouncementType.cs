@@ -9,6 +9,7 @@ namespace Domain.Entities;
 public class AnnouncementType : Entity<int>
 {
     public string Name { get; set; }
+    public int Priority { get; set; }
     public bool Visibility { get; set; }
 
     public AnnouncementType()
@@ -16,9 +17,11 @@ public class AnnouncementType : Entity<int>
         
     }
 
-    public AnnouncementType(string name, bool visibility):this()
+    public AnnouncementType(int id, string name, int priority, bool visibility):this()
     {
+        Id = id;
         Name = name;
+        Priority = priority;
         Visibility = visibility;
     }
 }
