@@ -299,6 +299,30 @@ public class OperationClaimConfiguration : IEntityTypeConfiguration<OperationCla
         seeds.Add(new OperationClaim { Id = ++id, Name = "AccountClassrooms.Update" });
         seeds.Add(new OperationClaim { Id = ++id, Name = "AccountClassrooms.Delete" });
         #endregion
-        return seeds;        
+        #region AccountLearningPaths
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountLearningPaths.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountLearningPaths.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountLearningPaths.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountLearningPaths.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountLearningPaths.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountLearningPaths.Delete" });
+        #endregion
+        #region CourseLearningPaths
+        seeds.Add(new OperationClaim { Id = ++id, Name = "CourseLearningPaths.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "CourseLearningPaths.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "CourseLearningPaths.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "CourseLearningPaths.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "CourseLearningPaths.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "CourseLearningPaths.Delete" });
+        #endregion
+        #region LearningPaths
+        seeds.Add(new OperationClaim { Id = ++id, Name = "LearningPaths.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "LearningPaths.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "LearningPaths.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "LearningPaths.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "LearningPaths.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "LearningPaths.Delete" });
+        #endregion
+        return seeds;
     }
 }

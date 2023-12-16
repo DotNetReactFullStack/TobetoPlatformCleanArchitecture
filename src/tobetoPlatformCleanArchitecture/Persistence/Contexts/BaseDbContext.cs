@@ -48,6 +48,9 @@ public class BaseDbContext : DbContext
     public DbSet<AccountExamResult> AccountExamResults { get; set; }
     public DbSet<Classroom> Classrooms { get; set; }
     public DbSet<AccountClassroom> AccountClassrooms { get; set; }
+    public DbSet<AccountLearningPath> AccountLearningPaths { get; set; }
+    public DbSet<CourseLearningPath> CourseLearningPaths { get; set; }
+    public DbSet<LearningPath> LearningPaths { get; set; }
 
     public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration)
         : base(dbContextOptions)
