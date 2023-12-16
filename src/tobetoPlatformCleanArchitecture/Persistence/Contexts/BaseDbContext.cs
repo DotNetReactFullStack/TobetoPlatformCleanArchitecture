@@ -33,6 +33,8 @@ public class BaseDbContext : DbContext
     public DbSet<College> Colleges { get; set; }
     public DbSet<EducationProgram> EducationPrograms { get; set; }
     public DbSet<AccountCollageMetadata> AccountCollageMetadatas { get; set; }
+    public DbSet<SurveyType> SurveyTypes { get; set; }
+    public DbSet<Survey> Surveys { get; set; }
 
     public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration)
         : base(dbContextOptions)

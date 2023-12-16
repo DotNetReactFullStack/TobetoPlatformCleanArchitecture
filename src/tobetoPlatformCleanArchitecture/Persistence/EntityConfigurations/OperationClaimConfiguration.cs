@@ -179,6 +179,22 @@ public class OperationClaimConfiguration : IEntityTypeConfiguration<OperationCla
         seeds.Add(new OperationClaim { Id = ++id, Name = "AccountCollageMetadatas.Update" });
         seeds.Add(new OperationClaim { Id = ++id, Name = "AccountCollageMetadatas.Delete" });
         #endregion
+        #region SurveyTypes
+        seeds.Add(new OperationClaim { Id = ++id, Name = "SurveyTypes.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "SurveyTypes.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "SurveyTypes.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "SurveyTypes.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "SurveyTypes.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "SurveyTypes.Delete" });
+        #endregion
+        #region Surveys
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Surveys.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Surveys.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Surveys.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Surveys.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Surveys.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Surveys.Delete" });
+        #endregion
         return seeds;        
     }
 }
