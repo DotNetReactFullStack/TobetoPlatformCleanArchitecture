@@ -35,6 +35,8 @@ public class BaseDbContext : DbContext
     public DbSet<AccountCollageMetadata> AccountCollageMetadatas { get; set; }
     public DbSet<SurveyType> SurveyTypes { get; set; }
     public DbSet<Survey> Surveys { get; set; }
+    public DbSet<OrganizationType> OrganizationTypes { get; set; }
+    public DbSet<Organization> Organizations { get; set; }
 
     public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration)
         : base(dbContextOptions)
