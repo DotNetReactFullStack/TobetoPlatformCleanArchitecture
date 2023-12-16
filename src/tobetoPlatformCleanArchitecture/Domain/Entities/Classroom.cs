@@ -16,8 +16,9 @@ public class Classroom : Entity<int>
         
     }
 
-    public Classroom(string name, byte maximumCapacity):this()
+    public Classroom(int id, string name, byte maximumCapacity):this()
     {
+        Id = id;
         Name = name;
         MaximumCapacity = maximumCapacity;
     }

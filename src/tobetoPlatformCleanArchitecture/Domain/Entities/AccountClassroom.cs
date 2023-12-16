@@ -16,8 +16,9 @@ public class AccountClassroom : Entity<int>
         
     }
 
-    public AccountClassroom(int accountId, int classroomId) : this()
+    public AccountClassroom(int id, int accountId, int classroomId) : this()
     {
+        Id = id;
         AccountId = accountId;
         ClassroomId = classroomId;
     }
