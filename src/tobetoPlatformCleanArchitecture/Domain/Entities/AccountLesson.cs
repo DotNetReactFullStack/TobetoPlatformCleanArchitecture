@@ -19,11 +19,12 @@ public class AccountLesson : Entity<int>
         
     }
 
-    public AccountLesson(int lessonId, int accountId, int points, bool ısCompleted) : this()
+    public AccountLesson(int id, int lessonId, int accountId, int points, bool isCompleted) : this()
     {
+        Id = id;
         LessonId = lessonId;
         AccountId = accountId;
         Points = points;
-        IsCompleted = ısCompleted;
+        IsCompleted = isCompleted;
     }
 }

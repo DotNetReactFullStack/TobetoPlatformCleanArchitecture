@@ -17,8 +17,9 @@ public class AccountCourse : Entity<int>
         
     }
 
-    public AccountCourse(int courseId, int accountId) : this()
+    public AccountCourse(int id, int courseId, int accountId) : this()
     {
+        Id = id;
         CourseId = courseId;
         AccountId = accountId;
     }
