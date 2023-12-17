@@ -56,6 +56,9 @@ using Application.Services.Courses;
 using Application.Services.AccountCourses;
 using Application.Services.Lessons;
 using Application.Services.AccountLessons;
+using Application.Services.RecourseSteps;
+using Application.Services.Recourses;
+using Application.Services.AccountRecourses;
 
 namespace Application;
 
@@ -127,6 +130,9 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IAccountCoursesService, AccountCoursesManager>();
         services.AddScoped<ILessonsService, LessonsManager>();
         services.AddScoped<IAccountLessonsService, AccountLessonsManager>();
+        services.AddScoped<IRecourseStepsService, RecourseStepsManager>();
+        services.AddScoped<IRecoursesService, RecoursesManager>();
+        services.AddScoped<IAccountRecoursesService, AccountRecoursesManager>();
         return services;
     }
 

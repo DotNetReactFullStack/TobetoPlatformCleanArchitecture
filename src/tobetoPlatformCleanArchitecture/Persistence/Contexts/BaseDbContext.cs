@@ -56,6 +56,9 @@ public class BaseDbContext : DbContext
     public DbSet<AccountCourse> AccountCourses { get; set; }
     public DbSet<Lesson> Lessons { get; set; }
     public DbSet<AccountLesson> AccountLessons { get; set; }
+    public DbSet<RecourseStep> RecourseSteps { get; set; }
+    public DbSet<Recourse> Recourses { get; set; }
+    public DbSet<AccountRecourse> AccountRecourses { get; set; }
 
     public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration)
         : base(dbContextOptions)
