@@ -15,6 +15,8 @@ public class Recourse : Entity<int>
     public string Content { get; set; }
     public DateTime PublishedDate { get; set; }
 
+    public virtual Organization Organization { get; set; }
+    public virtual ICollection<AccountRecourse> AccountRecourses { get; set; }
 
     public Recourse()
     {

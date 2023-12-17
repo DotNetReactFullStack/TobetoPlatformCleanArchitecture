@@ -13,6 +13,11 @@ public class City : Entity<int>
     public int Priority { get; set; }
     public bool Visibility { get; set; }
 
+    public virtual Country? Country { get; set; }
+
+    public virtual ICollection<Address> Addresses { get; set; }
+    public virtual ICollection<District> Districts { get; set; }
+
     public City()
     {
         

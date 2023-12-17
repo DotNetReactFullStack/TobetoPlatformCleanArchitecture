@@ -11,6 +11,9 @@ public class AccountClassroom : Entity<int>
     public int AccountId { get; set; }
     public int ClassroomId { get; set; }
 
+    public virtual Account? Account { get; set; }
+    public virtual Classroom? Classroom { get; set; }
+
     public AccountClassroom()
     {
         

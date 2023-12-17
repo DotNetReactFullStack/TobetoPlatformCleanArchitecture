@@ -9,19 +9,22 @@ namespace Domain.Entities;
 public class CourseLearningPath : Entity<int>
 {
     public int CourseId { get; set; }
-    public int PathId { get; set; }
+    public int LearningPathId { get; set; }
     public bool Visibility { get; set; }
+
+    public virtual Course? Course { get; set; }
+    public virtual LearningPath? LearningPath { get; set; }
 
     public CourseLearningPath()
     {
 
     }
 
-    public CourseLearningPath(int id, int courseId, int pathId, bool visibility) : this()
+    public CourseLearningPath(int id, int courseId, int learningPathId, bool visibility) : this()
     {
         Id = id;
         CourseId = courseId;
-        PathId = pathId;
+        LearningPathId = learningPathId;
         Visibility = visibility;
     }
 }

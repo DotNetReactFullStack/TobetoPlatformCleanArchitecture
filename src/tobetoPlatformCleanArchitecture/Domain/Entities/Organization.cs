@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Domain.Entities;
 public class Organization : Entity<int>
@@ -14,6 +15,12 @@ public class Organization : Entity<int>
     public string Name { get; set; }
     public string ContactNumber { get; set; }
 
+    public virtual OrganizationType? OrganizationType { get; set; }
+    public virtual Address? Address { get; set; }
+
+    public virtual ICollection<Survey> Surveys { get; set; }
+    public virtual ICollection<Recourse> Recourses { get; set; }
+    public virtual ICollection<Announcement> Announcements { get; set; }
 
     public Organization()
     {

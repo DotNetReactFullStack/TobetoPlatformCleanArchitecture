@@ -17,7 +17,9 @@ public class Exam : Entity<int>
     public DateTime EndTime { get; set; }
     public short Duration { get; set; }
 
-    
+    public virtual ICollection<ExamQuestion> ExamQuestions { get; set; }
+    public virtual ICollection<ClassroomExam> ClassroomExams { get; set; }
+    public virtual ICollection<AccountExamResult> AccountExamResults { get; set; }
 
     public Exam()
     {

@@ -13,6 +13,12 @@ public class Course : Entity<int>
     public string Name { get; set; }
     public int Priority { get; set; }
 
+    public virtual CourseCategory? CourseCategory { get; set; }
+    public virtual ICollection<Lesson> Lessons { get; set; }
+    public virtual ICollection<AccountCourse> AccountCourses { get; set; }
+    public virtual ICollection<CourseLearningPath> CourseLearningPaths { get; set; }
+    
+
     public Course()
     {
         

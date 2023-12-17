@@ -13,6 +13,11 @@ public class Address : Entity<int>
     public int DistrictId { get; set; }
     public string AddressDetail { get; set; }
 
+    public virtual Country? Country { get; set; }
+    public virtual City? City { get; set; }
+    public virtual District? District { get; set; }
+    public virtual Account? Account { get; set; }
+
 
     public Address()
     {

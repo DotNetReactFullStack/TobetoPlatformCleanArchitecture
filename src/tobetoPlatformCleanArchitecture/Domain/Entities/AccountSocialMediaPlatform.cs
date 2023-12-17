@@ -13,6 +13,8 @@ public class AccountSocialMediaPlatform : Entity<int>
     public int Priority { get; set; }
     public string Link { get; set; }
 
+    public virtual Account? Account { get; set; }
+    public virtual SocialMediaPlatform? SocialMediaPlatform { get; set; }
 
     public AccountSocialMediaPlatform()
     {

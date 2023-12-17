@@ -13,6 +13,9 @@ public class LearningPath : Entity<int>
     public DateTime StartingTime { get; set; }
     public DateTime EndTime { get; set; }
 
+    public virtual ICollection<CourseLearningPath> CourseLearningPaths { get; set; }
+    public virtual ICollection<AccountLearningPath> AccountLearningPaths { get; set; }
+
     public LearningPath()
     {
 

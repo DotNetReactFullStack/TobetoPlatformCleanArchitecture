@@ -12,6 +12,8 @@ public class GraduationStatus : Entity<int>
     public int Priority { get; set; }
     public bool Visibility { get; set; }
 
+    public virtual ICollection<AccountCollageMetadata>AccountCollageMetadatas { get; set; }
+
     public GraduationStatus()
     {
 

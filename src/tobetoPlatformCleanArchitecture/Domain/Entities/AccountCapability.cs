@@ -12,6 +12,9 @@ public class AccountCapability : Entity<int>
     public int CapabilityId { get; set; }
     public int Priority { get; set; }
 
+    public virtual Account? Account { get; set; }
+    public virtual Capability? Capability { get; set; }
+
     public AccountCapability()
     {
         

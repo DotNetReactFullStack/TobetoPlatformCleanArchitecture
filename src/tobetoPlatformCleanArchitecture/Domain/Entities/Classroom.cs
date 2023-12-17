@@ -11,6 +11,9 @@ public class Classroom : Entity<int>
     public string Name { get; set; }
     public byte MaximumCapacity { get; set; }
 
+    public virtual ICollection<AccountClassroom> AccountClassrooms { get; set; }
+    public virtual ICollection<ClassroomExam> ClassroomExams { get; set; }
+
     public Classroom()
     {
         

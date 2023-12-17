@@ -12,6 +12,7 @@ public class Capability : Entity<int>
     public int Priority { get; set; }
     public bool Visibility { get; set; }
 
+    public virtual ICollection<AccountCapability> AccountCapabilities { get; set; }
 
     public Capability()
     {

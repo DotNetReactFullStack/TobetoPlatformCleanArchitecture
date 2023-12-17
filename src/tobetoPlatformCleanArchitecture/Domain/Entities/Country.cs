@@ -12,6 +12,9 @@ public class Country : Entity<int>
     public int Priority { get; set; }
     public bool Visibility { get; set; }
 
+    public virtual ICollection<City>? Cities { get; set; }
+    public virtual ICollection<Address>? Addresses { get; set; }
+
     public Country()
     {
         

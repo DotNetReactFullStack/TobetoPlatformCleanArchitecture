@@ -8,6 +8,9 @@ public class AccountCertificate : Entity<int>
     public int CertificateId { get; set; }
     public int Priority { get; set; }
 
+    public virtual Account? Account { get; set; }
+    public virtual Certificate? Certificate { get; set; }
+
     public AccountCertificate()
     {
 

@@ -11,6 +11,8 @@ public class QuestionCategory : Entity<int>
     public string Name { get; set; }
     public int Priority { get; set; }
 
+    public virtual ICollection<Question> Questions { get; set; }
+
     public QuestionCategory()
     {
         

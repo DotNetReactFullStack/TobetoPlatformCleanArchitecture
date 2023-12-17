@@ -12,6 +12,7 @@ public class Certificate : Entity<int>
     public string Path { get; set; }
     public int Priority { get; set; }
 
+    public virtual ICollection<AccountCertificate> AccountCertificates { get; set; }
 
     public Certificate()
     {

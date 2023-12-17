@@ -13,6 +13,9 @@ public class District : Entity<int>
     public int Priority { get; set; }
     public bool Visibility { get; set; }
 
+    public virtual City? City { get; set; }
+    public virtual ICollection<Address> Addresses { get; set; }
+
     public District()
     {
         

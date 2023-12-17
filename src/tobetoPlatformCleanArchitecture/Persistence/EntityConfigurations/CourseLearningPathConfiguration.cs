@@ -12,7 +12,7 @@ public class CourseLearningPathConfiguration : IEntityTypeConfiguration<CourseLe
 
         builder.Property(clp => clp.Id).HasColumnName("Id").IsRequired();
         builder.Property(clp => clp.CourseId).HasColumnName("CourseId");
-        builder.Property(clp => clp.PathId).HasColumnName("PathId");
+        builder.Property(clp => clp.LearningPathId).HasColumnName("LearningPathId");
         builder.Property(clp => clp.Visibility).HasColumnName("Visibility");
         builder.Property(clp => clp.CreatedDate).HasColumnName("CreatedDate").IsRequired();
         builder.Property(clp => clp.UpdatedDate).HasColumnName("UpdatedDate");

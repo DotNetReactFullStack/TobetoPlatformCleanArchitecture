@@ -12,6 +12,9 @@ public class ClassroomExam : Entity<int>
     public int ExamId { get; set; }
     public bool IsActive { get; set; }
 
+    public virtual Classroom? Classroom { get; set; }
+    public virtual Exam? Exam { get; set; }
+
     public ClassroomExam()
     {
     }
