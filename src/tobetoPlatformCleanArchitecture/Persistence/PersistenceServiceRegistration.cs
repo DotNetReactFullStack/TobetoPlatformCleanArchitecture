@@ -60,6 +60,9 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IAccountCourseRepository, AccountCourseRepository>();
         services.AddScoped<ILessonRepository, LessonRepository>();
         services.AddScoped<IAccountLessonRepository, AccountLessonRepository>();
+        services.AddScoped<IRecourseStepRepository, RecourseStepRepository>();
+        services.AddScoped<IRecourseRepository, RecourseRepository>();
+        services.AddScoped<IAccountRecourseRepository, AccountRecourseRepository>();
         return services;
     }
 }

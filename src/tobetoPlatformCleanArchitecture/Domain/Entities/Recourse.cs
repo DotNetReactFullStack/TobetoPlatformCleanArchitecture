@@ -6,23 +6,26 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Domain.Entities;
-public class Application : Entity<int>
+public class Recourse : Entity<int>
 {
     public int OrganizationId { get; set; }
+    public int Priority { get; set; }
     public bool Visibility { get; set; }
     public string Title { get; set; }
     public string Content { get; set; }
     public DateTime PublishedDate { get; set; }
 
 
-    public Application()
+    public Recourse()
     {
         
     }
 
-    public Application(int organizationId, bool visibility, string title, string content, DateTime publishedDate) : this()
+    public Recourse(int id, int organizationId, int priority, bool visibility, string title, string content, DateTime publishedDate) : this()
     {
+        Id = id;
         OrganizationId = organizationId;
+        Priority = priority;
         Visibility = visibility;
         Title = title;
         Content = content;

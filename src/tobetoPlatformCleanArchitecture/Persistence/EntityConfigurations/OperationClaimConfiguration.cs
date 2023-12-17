@@ -363,6 +363,30 @@ public class OperationClaimConfiguration : IEntityTypeConfiguration<OperationCla
         seeds.Add(new OperationClaim { Id = ++id, Name = "AccountLessons.Update" });
         seeds.Add(new OperationClaim { Id = ++id, Name = "AccountLessons.Delete" });
         #endregion
+        #region RecourseSteps
+        seeds.Add(new OperationClaim { Id = ++id, Name = "RecourseSteps.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "RecourseSteps.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "RecourseSteps.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "RecourseSteps.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "RecourseSteps.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "RecourseSteps.Delete" });
+        #endregion
+        #region Recourses
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Recourses.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Recourses.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Recourses.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Recourses.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Recourses.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "Recourses.Delete" });
+        #endregion
+        #region AccountRecourses
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountRecourses.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountRecourses.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountRecourses.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountRecourses.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountRecourses.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountRecourses.Delete" });
+        #endregion
         return seeds;
     }
 }
