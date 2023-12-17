@@ -12,7 +12,7 @@ using static Application.Features.Classrooms.Constants.ClassroomsOperationClaims
 
 namespace Application.Features.Classrooms.Commands.Create;
 
-public class CreateClassroomCommand : IRequest<CreatedClassroomResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateClassroomCommand : IRequest<CreatedClassroomResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public string Name { get; set; }
     public byte MaximumCapacity { get; set; }

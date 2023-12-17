@@ -12,7 +12,7 @@ using static Application.Features.SurveyTypes.Constants.SurveyTypesOperationClai
 
 namespace Application.Features.SurveyTypes.Commands.Create;
 
-public class CreateSurveyTypeCommand : IRequest<CreatedSurveyTypeResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateSurveyTypeCommand : IRequest<CreatedSurveyTypeResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public string Name { get; set; }
     public int Priority { get; set; }

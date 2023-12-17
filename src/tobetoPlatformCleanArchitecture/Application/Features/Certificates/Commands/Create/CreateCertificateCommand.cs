@@ -12,7 +12,7 @@ using static Application.Features.Certificates.Constants.CertificatesOperationCl
 
 namespace Application.Features.Certificates.Commands.Create;
 
-public class CreateCertificateCommand : IRequest<CreatedCertificateResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateCertificateCommand : IRequest<CreatedCertificateResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public string Name { get; set; }
     public string Path { get; set; }

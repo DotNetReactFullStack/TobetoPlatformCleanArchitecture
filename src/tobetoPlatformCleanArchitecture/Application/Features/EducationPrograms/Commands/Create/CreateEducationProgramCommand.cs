@@ -12,7 +12,7 @@ using static Application.Features.EducationPrograms.Constants.EducationProgramsO
 
 namespace Application.Features.EducationPrograms.Commands.Create;
 
-public class CreateEducationProgramCommand : IRequest<CreatedEducationProgramResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateEducationProgramCommand : IRequest<CreatedEducationProgramResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int CollegeId { get; set; }
     public string Name { get; set; }

@@ -13,7 +13,7 @@ using Application.Features.GraduationStatuses.Constants;
 
 namespace Application.Features.GraduationStatuses.Commands.Create;
 
-public class CreateGraduationStatusCommand : IRequest<CreatedGraduationStatusResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateGraduationStatusCommand : IRequest<CreatedGraduationStatusResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public string Name { get; set; }
     public int Priority { get; set; }

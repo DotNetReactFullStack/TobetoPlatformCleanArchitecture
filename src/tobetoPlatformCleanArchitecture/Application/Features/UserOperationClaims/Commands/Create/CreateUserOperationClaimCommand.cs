@@ -8,7 +8,7 @@ using static Application.Features.UserOperationClaims.Constants.UserOperationCla
 
 namespace Application.Features.UserOperationClaims.Commands.Create;
 
-public class CreateUserOperationClaimCommand : IRequest<CreatedUserOperationClaimResponse>, ISecuredRequest
+public class CreateUserOperationClaimCommand : IRequest<CreatedUserOperationClaimResponse>
 {
     public int UserId { get; set; }
     public int OperationClaimId { get; set; }

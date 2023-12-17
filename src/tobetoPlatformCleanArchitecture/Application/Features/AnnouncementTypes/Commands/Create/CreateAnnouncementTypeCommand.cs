@@ -12,7 +12,7 @@ using static Application.Features.AnnouncementTypes.Constants.AnnouncementTypesO
 
 namespace Application.Features.AnnouncementTypes.Commands.Create;
 
-public class CreateAnnouncementTypeCommand : IRequest<CreatedAnnouncementTypeResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateAnnouncementTypeCommand : IRequest<CreatedAnnouncementTypeResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public string Name { get; set; }
     public int Priority { get; set; }

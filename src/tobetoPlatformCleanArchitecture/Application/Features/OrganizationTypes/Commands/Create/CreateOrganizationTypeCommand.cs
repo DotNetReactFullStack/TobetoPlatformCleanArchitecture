@@ -12,7 +12,7 @@ using static Application.Features.OrganizationTypes.Constants.OrganizationTypesO
 
 namespace Application.Features.OrganizationTypes.Commands.Create;
 
-public class CreateOrganizationTypeCommand : IRequest<CreatedOrganizationTypeResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateOrganizationTypeCommand : IRequest<CreatedOrganizationTypeResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public string Name { get; set; }
     public int Priority { get; set; }

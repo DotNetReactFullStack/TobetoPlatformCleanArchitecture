@@ -12,7 +12,7 @@ using static Application.Features.AccountLessons.Constants.AccountLessonsOperati
 
 namespace Application.Features.AccountLessons.Commands.Create;
 
-public class CreateAccountLessonCommand : IRequest<CreatedAccountLessonResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateAccountLessonCommand : IRequest<CreatedAccountLessonResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int LessonId { get; set; }
     public int AccountId { get; set; }
