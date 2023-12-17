@@ -11,6 +11,5 @@ public class CreateAccountCommandValidator : AbstractValidator<CreateAccountComm
         RuleFor(c => c.PhoneNumber).NotEmpty();
         RuleFor(c => c.ProfilePhotoPath).NotEmpty();
         RuleFor(c => c.IsActive).NotEmpty();
-        RuleFor(c => c.User).NotEmpty();
     }
 }
