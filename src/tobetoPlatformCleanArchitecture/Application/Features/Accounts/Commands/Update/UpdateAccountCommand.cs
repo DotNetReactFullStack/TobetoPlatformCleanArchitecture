@@ -9,7 +9,6 @@ using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using MediatR;
 using static Application.Features.Accounts.Constants.AccountsOperationClaims;
-using Core.Security.Entities;
 
 namespace Application.Features.Accounts.Commands.Update;
 
@@ -21,7 +20,6 @@ public class UpdateAccountCommand : IRequest<UpdatedAccountResponse>, ISecuredRe
     public string PhoneNumber { get; set; }
     public string? ProfilePhotoPath { get; set; }
     public bool IsActive { get; set; }
-    public User? User { get; set; }
 
     public string[] Roles => new[] { Admin, Write, AccountsOperationClaims.Update };
 

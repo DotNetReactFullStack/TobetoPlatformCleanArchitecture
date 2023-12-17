@@ -1,5 +1,4 @@
 using Core.Application.Responses;
-using Core.Security.Entities;
 
 namespace Application.Features.Accounts.Queries.GetById;
 
@@ -11,5 +10,4 @@ public class GetByIdAccountResponse : IResponse
     public string PhoneNumber { get; set; }
     public string? ProfilePhotoPath { get; set; }
     public bool IsActive { get; set; }
-    public User? User { get; set; }
 }
