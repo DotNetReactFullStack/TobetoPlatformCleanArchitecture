@@ -9,9 +9,12 @@ namespace Domain.Entities;
 public class AccountLearningPath : Entity<int>
 {
     public int AccountId { get; set; }
-    public int PathId { get; set; }
+    public int LearningPathId { get; set; }
     public int TotalNumberOfPoints { get; set; }
     public byte PercentCompleted { get; set; }
+
+    public virtual Account? Account { get; set; }
+    public virtual LearningPath? LearningPath { get; set; }
 
 
     public AccountLearningPath()
@@ -19,11 +22,11 @@ public class AccountLearningPath : Entity<int>
 
     }
 
-    public AccountLearningPath(int id, int accountId, int pathId, int totalNumberOfPoints, byte percentCompleted) : this()
+    public AccountLearningPath(int id, int accountId, int learningPathId, int totalNumberOfPoints, byte percentCompleted) : this()
     {
         Id = id;
         AccountId = accountId;
-        PathId = pathId;
+        LearningPathId = learningPathId;
         TotalNumberOfPoints = totalNumberOfPoints;
         PercentCompleted = percentCompleted;
     }

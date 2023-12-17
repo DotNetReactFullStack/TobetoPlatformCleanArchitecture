@@ -12,6 +12,9 @@ public class Question : Entity<int>
     public string QuestionDetail { get; set; }
     public bool IsActive { get; set; }
 
+    public virtual QuestionCategory? QuestionCategory { get; set; }
+    public virtual ICollection<ExamQuestion> ExamQuestions { get; set; }
+    public virtual ICollection<Answer> Answers { get; set; }
 
     public Question()
     {

@@ -12,6 +12,8 @@ public class OrganizationType : Entity<int>
     public int Priority { get; set; }
     public bool Visibility { get; set; }
 
+    public virtual ICollection<Organization> Organizations { get; set; }
+
     public OrganizationType()
     {
         

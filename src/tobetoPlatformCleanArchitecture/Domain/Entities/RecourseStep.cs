@@ -11,7 +11,8 @@ public class RecourseStep : Entity<int>
     public string Name { get; set; }
     public int Priority { get; set; }
     public bool Visibility { get; set; }
-    
+
+    public virtual ICollection<AccountRecourse>AccountRecourses { get; set; }
 
     public RecourseStep()
     {

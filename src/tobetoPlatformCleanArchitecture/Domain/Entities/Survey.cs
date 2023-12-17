@@ -17,6 +17,9 @@ public class Survey : Entity<int>
     public string ConnectionLink { get; set; }
     public DateTime PublishedDate { get; set; }
 
+    public virtual SurveyType? SurveyType { get; set; }
+    public virtual Organization? Organization { get; set; }
+
     public Survey()
     {
         

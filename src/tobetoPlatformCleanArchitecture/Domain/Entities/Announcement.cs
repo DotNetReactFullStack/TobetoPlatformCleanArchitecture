@@ -16,6 +16,8 @@ public class Announcement : Entity<int>
     public string Content { get; set; }
     public DateTime PublishedDate { get; set; }
 
+    public virtual AnnouncementType? AnnouncementType { get; set; }
+    public virtual Organization? Organization { get; set; }
 
     public Announcement()
     {

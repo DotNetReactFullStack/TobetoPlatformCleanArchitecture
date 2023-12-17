@@ -12,6 +12,7 @@ public class Answer : Entity<int>
     public string AnswerDetail { get; set; }
     public bool RightAnswerBool { get; set; }
 
+    public virtual Question? Question { get; set; }
 
     public Answer()
     {

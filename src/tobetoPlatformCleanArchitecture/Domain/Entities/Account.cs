@@ -16,11 +16,32 @@ namespace Domain.Entities
         public string PhoneNumber { get; set; }
         public string? ProfilePhotoPath { get; set; }
         public bool IsActive { get; set; }
-        public User? User { get; set; }
+        
+        public virtual User User { get; set; }
+        public virtual Address? Address { get; set; }
+
+        public virtual ICollection<AccountCapability> AccountCapabilities { get; set; }
+        public virtual ICollection<AccountCertificate> AccountCertificates { get; set; }
+        public virtual ICollection<AccountSocialMediaPlatform> AccountSocialMediaPlatforms { get; set; }
+        public virtual ICollection<AccountCollageMetadata> AccountCollageMetadatas { get; set; }
+        public virtual ICollection<AccountForeignLanguageMetadata> AccountForeignLanguageMetadatas{ get; set; }
+        public virtual ICollection<AccountRecourse> AccountRecourses { get; set; }
+        public virtual ICollection<AccountExamResult> AccountExamResults { get; set; }
+        public virtual ICollection<AccountLearningPath> AccountLearningPaths { get; set; }
+        public virtual ICollection<AccountLesson> AccountLessons { get; set; }
+        public virtual ICollection<AccountClassroom> AccountClassrooms { get; set; }
+        public virtual ICollection<AccountCourse> AccountCourses { get; set; } 
+        //public virtual ICollection<UserOperationClaim> UserOperationClaims { get; set; } 
+
+        
+
+
         public Account()
         {
             
         }
+
+
         public Account(string firstName, string lastName, string email) :this()
         {
             User.FirstName = firstName;

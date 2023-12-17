@@ -12,6 +12,8 @@ public class CourseCategory : Entity<int>
     public int Priority { get; set; }
     public bool Visibility { get; set; }
 
+    public virtual ICollection<Course> Courses { get; set; }
+
     public CourseCategory()
     {
         

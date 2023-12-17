@@ -13,6 +13,8 @@ public class AccountLesson : Entity<int>
     public int Points { get; set; }
     public bool IsCompleted { get; set; }
 
+    public virtual Lesson? Lesson { get; set; }
+    public virtual Account? Account { get; set; }
 
     public AccountLesson()
     {

@@ -12,6 +12,8 @@ public class ForeignLanguageLevel : Entity<int>
     public int Priority { get; set; }
     public bool Visibility { get; set; }
 
+    public virtual ICollection<AccountForeignLanguageMetadata> AccountForeignLanguageMetadatas { get; set; }
+
     public ForeignLanguageLevel()
     {
         

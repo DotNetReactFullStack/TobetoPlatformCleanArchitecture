@@ -17,17 +17,21 @@ public class AccountCollageMetadata : Entity<int>
     public DateTime GraduationYear { get; set; }
     public bool ProgramOnGoing { get; set; }
 
+    public virtual Account? Account { get; set; }
+    public virtual GraduationStatus? GraduationStatus { get; set; }
+    public virtual College? College { get; set; }
+    public virtual EducationProgram? EducationProgram { get; set; }
 
     public AccountCollageMetadata()
     {
         
     }
 
-    public AccountCollageMetadata(int id, int accountId, int educationStatusId, int collegeId, int educationProgramId, bool visibility, DateTime startingYear, DateTime graduationYear, bool programOnGoing) : this()
+    public AccountCollageMetadata(int id, int accountId, int graduationStatusId, int collegeId, int educationProgramId, bool visibility, DateTime startingYear, DateTime graduationYear, bool programOnGoing) : this()
     {
         Id = id;
         AccountId = accountId;
-        GraduationStatusId = educationStatusId;
+        GraduationStatusId = graduationStatusId;
         CollegeId = collegeId;
         EducationProgramId = educationProgramId;
         Visibility = visibility;

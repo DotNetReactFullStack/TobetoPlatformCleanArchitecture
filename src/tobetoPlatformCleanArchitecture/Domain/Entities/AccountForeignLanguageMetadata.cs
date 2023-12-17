@@ -13,6 +13,9 @@ public class AccountForeignLanguageMetadata : Entity<int>
     public int ForeignLanguageLevelId { get; set; }
     public int Priority { get; set; }
 
+    public virtual Account? Account { get; set; }
+    public virtual ForeignLanguage? ForeignLanguage { get; set; }
+    public virtual ForeignLanguageLevel? ForeignLanguageLevel { get; set; }
 
     public AccountForeignLanguageMetadata()
     {

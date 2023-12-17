@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Domain.Entities;
 public class AccountRecourse : Entity<int>
@@ -11,6 +12,10 @@ public class AccountRecourse : Entity<int>
     public int AccountId { get; set; }
     public int ApplicationId { get; set; }
     public int ApplicationStepId { get; set; }
+
+    public virtual Account? Account { get; set; } 
+    public virtual Recourse? Recourse { get; set; } 
+    public virtual RecourseStep? RecourseStep { get; set; } 
 
     public AccountRecourse()
     {

@@ -12,6 +12,8 @@ public class SurveyType : Entity<int>
     public int Priority { get; set; }
     public bool Visibility { get; set; }
 
+    public virtual ICollection<Survey> Surveys { get; set; }
+
     public SurveyType()
     {
         

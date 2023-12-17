@@ -16,7 +16,8 @@ public class AccountExamResult : Entity<int>
     public int NumberOfNullAnswers { get; set; }
     public int Points { get; set; }
 
-
+    public virtual Account? Account { get; set; }
+    public virtual Exam? Exam { get; set; }
 
     public AccountExamResult()
     {

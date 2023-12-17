@@ -12,7 +12,7 @@ public class AccountLearningPathConfiguration : IEntityTypeConfiguration<Account
 
         builder.Property(alp => alp.Id).HasColumnName("Id").IsRequired();
         builder.Property(alp => alp.AccountId).HasColumnName("AccountId");
-        builder.Property(alp => alp.PathId).HasColumnName("PathId");
+        builder.Property(alp => alp.LearningPathId).HasColumnName("LearningPathId");
         builder.Property(alp => alp.TotalNumberOfPoints).HasColumnName("TotalNumberOfPoints");
         builder.Property(alp => alp.PercentCompleted).HasColumnName("PercentCompleted");
         builder.Property(alp => alp.CreatedDate).HasColumnName("CreatedDate").IsRequired();
