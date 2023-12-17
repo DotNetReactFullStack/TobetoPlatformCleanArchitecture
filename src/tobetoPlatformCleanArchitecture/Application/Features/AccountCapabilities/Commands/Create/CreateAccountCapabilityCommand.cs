@@ -12,7 +12,7 @@ using static Application.Features.AccountCapabilities.Constants.AccountCapabilit
 
 namespace Application.Features.AccountCapabilities.Commands.Create;
 
-public class CreateAccountCapabilityCommand : IRequest<CreatedAccountCapabilityResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateAccountCapabilityCommand : IRequest<CreatedAccountCapabilityResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int AccountId { get; set; }
     public int CapabilityId { get; set; }

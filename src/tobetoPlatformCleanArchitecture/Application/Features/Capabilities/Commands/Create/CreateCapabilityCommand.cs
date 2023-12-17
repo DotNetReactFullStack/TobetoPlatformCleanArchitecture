@@ -12,7 +12,7 @@ using static Application.Features.Capabilities.Constants.CapabilitiesOperationCl
 
 namespace Application.Features.Capabilities.Commands.Create;
 
-public class CreateCapabilityCommand : IRequest<CreatedCapabilityResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateCapabilityCommand : IRequest<CreatedCapabilityResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public string Name { get; set; }
     public int Priority { get; set; }

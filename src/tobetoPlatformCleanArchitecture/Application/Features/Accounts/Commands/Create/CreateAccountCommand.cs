@@ -13,7 +13,7 @@ using Core.Security.Entities;
 
 namespace Application.Features.Accounts.Commands.Create;
 
-public class CreateAccountCommand : IRequest<CreatedAccountResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateAccountCommand : IRequest<CreatedAccountResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int AddressId { get; set; }
     public DateTime BirthDate { get; set; }

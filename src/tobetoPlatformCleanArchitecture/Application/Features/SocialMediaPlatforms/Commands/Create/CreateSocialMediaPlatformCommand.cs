@@ -12,7 +12,7 @@ using static Application.Features.SocialMediaPlatforms.Constants.SocialMediaPlat
 
 namespace Application.Features.SocialMediaPlatforms.Commands.Create;
 
-public class CreateSocialMediaPlatformCommand : IRequest<CreatedSocialMediaPlatformResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateSocialMediaPlatformCommand : IRequest<CreatedSocialMediaPlatformResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public string Name { get; set; }
     public string IconPath { get; set; }

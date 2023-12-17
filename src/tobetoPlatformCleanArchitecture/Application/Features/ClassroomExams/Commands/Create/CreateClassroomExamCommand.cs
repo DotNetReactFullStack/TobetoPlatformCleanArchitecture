@@ -12,7 +12,7 @@ using static Application.Features.ClassroomExams.Constants.ClassroomExamsOperati
 
 namespace Application.Features.ClassroomExams.Commands.Create;
 
-public class CreateClassroomExamCommand : IRequest<CreatedClassroomExamResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateClassroomExamCommand : IRequest<CreatedClassroomExamResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int ClassroomId { get; set; }
     public int ExamId { get; set; }

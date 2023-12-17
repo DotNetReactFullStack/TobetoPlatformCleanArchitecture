@@ -12,7 +12,7 @@ using static Application.Features.Countries.Constants.CountriesOperationClaims;
 
 namespace Application.Features.Countries.Commands.Create;
 
-public class CreateCountryCommand : IRequest<CreatedCountryResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateCountryCommand : IRequest<CreatedCountryResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public string Name { get; set; }
     public int Priority { get; set; }

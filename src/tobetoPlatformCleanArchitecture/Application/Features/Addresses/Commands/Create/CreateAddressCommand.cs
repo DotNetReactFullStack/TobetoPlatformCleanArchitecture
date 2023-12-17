@@ -12,7 +12,7 @@ using static Application.Features.Addresses.Constants.AddressesOperationClaims;
 
 namespace Application.Features.Addresses.Commands.Create;
 
-public class CreateAddressCommand : IRequest<CreatedAddressResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateAddressCommand : IRequest<CreatedAddressResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int CountryId { get; set; }
     public int CityId { get; set; }

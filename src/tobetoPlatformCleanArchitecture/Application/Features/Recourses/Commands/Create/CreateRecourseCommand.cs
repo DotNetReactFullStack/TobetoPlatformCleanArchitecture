@@ -12,7 +12,7 @@ using static Application.Features.Recourses.Constants.RecoursesOperationClaims;
 
 namespace Application.Features.Recourses.Commands.Create;
 
-public class CreateRecourseCommand : IRequest<CreatedRecourseResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateRecourseCommand : IRequest<CreatedRecourseResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int OrganizationId { get; set; }
     public int Priority { get; set; }
