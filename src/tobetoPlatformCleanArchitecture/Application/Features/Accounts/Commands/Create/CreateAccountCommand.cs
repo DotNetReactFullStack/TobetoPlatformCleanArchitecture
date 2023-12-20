@@ -15,6 +15,7 @@ namespace Application.Features.Accounts.Commands.Create;
 public class CreateAccountCommand : IRequest<CreatedAccountResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int AddressId { get; set; }
+    public string NationalIdentificationNumber { get; set; }
     public DateTime BirthDate { get; set; }
     public string PhoneNumber { get; set; }
     public string? ProfilePhotoPath { get; set; }
