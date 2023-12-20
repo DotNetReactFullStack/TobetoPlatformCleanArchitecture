@@ -24,7 +24,7 @@ public class Recourse : Entity<int>
         
     }
 
-    public Recourse(int id, int organizationId, int priority, bool visibility, string title, string content, DateTime publishedDate) : this()
+    public Recourse(int id, int organizationId, int priority, bool visibility, string title, string content, DateTime publishedDate, bool isActive) : this()
     {
         Id = id;
         OrganizationId = organizationId;
@@ -32,6 +32,7 @@ public class Recourse : Entity<int>
         Visibility = visibility;
         Title = title;
         Content = content;
+        IsActive = isActive;
         PublishedDate = publishedDate;
     }
 }
