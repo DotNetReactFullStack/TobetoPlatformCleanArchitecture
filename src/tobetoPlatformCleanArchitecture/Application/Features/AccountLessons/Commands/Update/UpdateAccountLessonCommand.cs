@@ -12,13 +12,13 @@ using static Application.Features.AccountLessons.Constants.AccountLessonsOperati
 
 namespace Application.Features.AccountLessons.Commands.Update;
 
-public class UpdateAccountLessonCommand : IRequest<UpdatedAccountLessonResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateAccountLessonCommand : IRequest<UpdatedAccountLessonResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public int LessonId { get; set; }
     public int AccountId { get; set; }
     public int Points { get; set; }
-    public bool IsCompleted { get; set; }
+    public bool IsComplete { get; set; }
 
     public string[] Roles => new[] { Admin, Write, AccountLessonsOperationClaims.Update };
 

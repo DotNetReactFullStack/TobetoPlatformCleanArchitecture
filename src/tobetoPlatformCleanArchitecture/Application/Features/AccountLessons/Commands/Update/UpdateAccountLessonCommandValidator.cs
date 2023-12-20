@@ -10,6 +10,6 @@ public class UpdateAccountLessonCommandValidator : AbstractValidator<UpdateAccou
         RuleFor(c => c.LessonId).NotEmpty();
         RuleFor(c => c.AccountId).NotEmpty();
         RuleFor(c => c.Points).NotEmpty();
-        RuleFor(c => c.IsCompleted).NotEmpty();
+        RuleFor(c => c.IsComplete).NotEmpty();
     }
 }
