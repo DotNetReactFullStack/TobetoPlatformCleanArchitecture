@@ -9,7 +9,7 @@ using static Application.Features.LearningPaths.Constants.LearningPathsOperation
 
 namespace Application.Features.LearningPaths.Queries.GetById;
 
-public class GetByIdLearningPathQuery : IRequest<GetByIdLearningPathResponse>, ISecuredRequest
+public class GetByIdLearningPathQuery : IRequest<GetByIdLearningPathResponse>
 {
     public int Id { get; set; }
 

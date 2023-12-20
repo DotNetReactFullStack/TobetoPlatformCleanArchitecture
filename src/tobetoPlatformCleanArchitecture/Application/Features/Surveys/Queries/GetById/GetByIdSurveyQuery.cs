@@ -9,7 +9,7 @@ using static Application.Features.Surveys.Constants.SurveysOperationClaims;
 
 namespace Application.Features.Surveys.Queries.GetById;
 
-public class GetByIdSurveyQuery : IRequest<GetByIdSurveyResponse>, ISecuredRequest
+public class GetByIdSurveyQuery : IRequest<GetByIdSurveyResponse>
 {
     public int Id { get; set; }
 

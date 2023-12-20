@@ -9,7 +9,7 @@ using static Application.Features.Recourses.Constants.RecoursesOperationClaims;
 
 namespace Application.Features.Recourses.Queries.GetById;
 
-public class GetByIdRecourseQuery : IRequest<GetByIdRecourseResponse>, ISecuredRequest
+public class GetByIdRecourseQuery : IRequest<GetByIdRecourseResponse>
 {
     public int Id { get; set; }
 

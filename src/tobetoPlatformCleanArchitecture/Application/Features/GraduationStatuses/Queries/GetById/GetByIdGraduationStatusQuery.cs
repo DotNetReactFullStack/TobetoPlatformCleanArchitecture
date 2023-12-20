@@ -9,7 +9,7 @@ using static Application.Features.GraduationStatuses.Constants.GraduationStatuse
 
 namespace Application.Features.GraduationStatuses.Queries.GetById;
 
-public class GetByIdGraduationStatusQuery : IRequest<GetByIdGraduationStatusResponse>, ISecuredRequest
+public class GetByIdGraduationStatusQuery : IRequest<GetByIdGraduationStatusResponse>
 {
     public int Id { get; set; }
 
