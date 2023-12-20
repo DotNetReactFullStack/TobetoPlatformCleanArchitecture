@@ -14,6 +14,7 @@ public class Lesson : Entity<int>
     public string Language { get; set; }
     public string Content { get; set; }
     public int Duration { get; set; }
+    public bool IsActive { get; set; }
 
     public virtual Course? Course { get; set; }
     public virtual ICollection<AccountLesson> AccountLessons { get; set; }
@@ -23,7 +24,7 @@ public class Lesson : Entity<int>
         
     }
 
-    public Lesson(int id, int courseId, string name, bool visibility, string language, string content) : this()
+    public Lesson(int id, int courseId, string name, bool visibility, string language, string content, int duration, bool isActive) : this()
     {
         Id = id;
         CourseId = courseId;
@@ -31,5 +32,7 @@ public class Lesson : Entity<int>
         Visibility = visibility;
         Language = language;
         Content = content;
+        Duration = duration;
+        IsActive = isActive;
     }
 }
