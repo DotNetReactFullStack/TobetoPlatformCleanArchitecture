@@ -12,5 +12,6 @@ public class CreateLessonCommandValidator : AbstractValidator<CreateLessonComman
         RuleFor(c => c.Language).NotEmpty();
         RuleFor(c => c.Content).NotEmpty();
         RuleFor(c => c.Duration).NotEmpty();
+        RuleFor(c => c.IsActive).NotEmpty();
     }
 }
