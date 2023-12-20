@@ -12,13 +12,18 @@ using static Application.Features.AccountLearningPaths.Constants.AccountLearning
 
 namespace Application.Features.AccountLearningPaths.Commands.Update;
 
-public class UpdateAccountLearningPathCommand : IRequest<UpdatedAccountLearningPathResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateAccountLearningPathCommand : IRequest<UpdatedAccountLearningPathResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public int AccountId { get; set; }
-    public int PathId { get; set; }
+    public int LearningPathId { get; set; }
     public int TotalNumberOfPoints { get; set; }
-    public byte PercentCompleted { get; set; }
+    public byte PercentComplete { get; set; }
+    public bool IsContinue { get; set; }
+    public bool IsComplete { get; set; }
+    public bool IsLiked { get; set; }
+    public bool IsSaved { get; set; }
+    public bool IsActive { get; set; }
 
     public string[] Roles => new[] { Admin, Write, AccountLearningPathsOperationClaims.Update };
 
