@@ -10,6 +10,7 @@ public class Classroom : Entity<int>
 {
     public string Name { get; set; }
     public byte MaximumCapacity { get; set; }
+    public bool IsActive { get; set; }
 
     public virtual ICollection<AccountClassroom> AccountClassrooms { get; set; }
     public virtual ICollection<ClassroomExam> ClassroomExams { get; set; }
@@ -19,10 +20,11 @@ public class Classroom : Entity<int>
         
     }
 
-    public Classroom(int id, string name, byte maximumCapacity):this()
+    public Classroom(int id, string name, byte maximumCapacity, bool isActive) : this()
     {
         Id = id;
         Name = name;
         MaximumCapacity = maximumCapacity;
+        IsActive = isActive;
     }
 }
