@@ -11,7 +11,9 @@ public class Course : Entity<int>
 {
     public int CourseCategoryId { get; set; }
     public string Name { get; set; }
+    public int TotalDuration { get; set; }
     public int Priority { get; set; }
+    public bool IsActive { get; set; }
 
     public virtual CourseCategory? CourseCategory { get; set; }
     public virtual ICollection<Lesson> Lessons { get; set; }
@@ -24,11 +26,13 @@ public class Course : Entity<int>
         
     }
 
-    public Course(int id, int courseCategoryId, string name, int priority) : this()
+    public Course(int id, int courseCategoryId, string name, int totalDuration, int priority, bool isActive) : this()
     {
         Id = id;
         CourseCategoryId = courseCategoryId;
         Name = name;
+        TotalDuration = totalDuration;
         Priority = priority;
+        IsActive = isActive;
     }
 }
