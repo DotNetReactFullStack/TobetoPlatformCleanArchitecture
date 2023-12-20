@@ -13,6 +13,7 @@ public class Recourse : Entity<int>
     public bool Visibility { get; set; }
     public string Title { get; set; }
     public string Content { get; set; }
+    public bool IsActive { get; set; }
     public DateTime PublishedDate { get; set; }
 
     public virtual Organization Organization { get; set; }
