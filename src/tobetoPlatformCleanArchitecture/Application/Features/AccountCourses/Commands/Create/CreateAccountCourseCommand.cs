@@ -16,6 +16,7 @@ public class CreateAccountCourseCommand : IRequest<CreatedAccountCourseResponse>
 {
     public int CourseId { get; set; }
     public int AccountId { get; set; }
+    public bool IsActive { get; set; }
 
     public string[] Roles => new[] { Admin, Write, AccountCoursesOperationClaims.Create };
 

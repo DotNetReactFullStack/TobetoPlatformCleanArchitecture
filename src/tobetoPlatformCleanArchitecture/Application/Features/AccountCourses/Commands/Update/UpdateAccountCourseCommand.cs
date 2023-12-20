@@ -12,11 +12,12 @@ using static Application.Features.AccountCourses.Constants.AccountCoursesOperati
 
 namespace Application.Features.AccountCourses.Commands.Update;
 
-public class UpdateAccountCourseCommand : IRequest<UpdatedAccountCourseResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateAccountCourseCommand : IRequest<UpdatedAccountCourseResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public int CourseId { get; set; }
     public int AccountId { get; set; }
+    public bool IsActive { get; set; }
 
     public string[] Roles => new[] { Admin, Write, AccountCoursesOperationClaims.Update };
 
