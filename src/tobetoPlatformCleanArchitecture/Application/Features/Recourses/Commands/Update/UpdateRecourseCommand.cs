@@ -12,7 +12,7 @@ using static Application.Features.Recourses.Constants.RecoursesOperationClaims;
 
 namespace Application.Features.Recourses.Commands.Update;
 
-public class UpdateRecourseCommand : IRequest<UpdatedRecourseResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateRecourseCommand : IRequest<UpdatedRecourseResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public int OrganizationId { get; set; }
@@ -20,6 +20,7 @@ public class UpdateRecourseCommand : IRequest<UpdatedRecourseResponse>, ISecured
     public bool Visibility { get; set; }
     public string Title { get; set; }
     public string Content { get; set; }
+    public bool IsActive { get; set; }
     public DateTime PublishedDate { get; set; }
 
     public string[] Roles => new[] { Admin, Write, RecoursesOperationClaims.Update };

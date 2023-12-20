@@ -19,6 +19,7 @@ public class CreateRecourseCommand : IRequest<CreatedRecourseResponse>, ICacheRe
     public bool Visibility { get; set; }
     public string Title { get; set; }
     public string Content { get; set; }
+    public bool IsActive { get; set; }
     public DateTime PublishedDate { get; set; }
 
     public string[] Roles => new[] { Admin, Write, RecoursesOperationClaims.Create };

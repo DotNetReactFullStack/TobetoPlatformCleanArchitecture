@@ -12,6 +12,7 @@ public class UpdateRecourseCommandValidator : AbstractValidator<UpdateRecourseCo
         RuleFor(c => c.Visibility).NotEmpty();
         RuleFor(c => c.Title).NotEmpty();
         RuleFor(c => c.Content).NotEmpty();
+        RuleFor(c => c.IsActive).NotEmpty();
         RuleFor(c => c.PublishedDate).NotEmpty();
     }
 }
