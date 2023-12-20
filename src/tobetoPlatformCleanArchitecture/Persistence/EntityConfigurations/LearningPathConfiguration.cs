@@ -14,7 +14,9 @@ public class LearningPathConfiguration : IEntityTypeConfiguration<LearningPath>
         builder.Property(lp => lp.Name).HasColumnName("Name");
         builder.Property(lp => lp.Visibility).HasColumnName("Visibility");
         builder.Property(lp => lp.StartingTime).HasColumnName("StartingTime");
-        builder.Property(lp => lp.EndTime).HasColumnName("EndTime");
+        builder.Property(lp => lp.EndingTime).HasColumnName("EndingTime");
+        builder.Property(lp => lp.NumberOfLikes).HasColumnName("NumberOfLikes");
+        builder.Property(lp => lp.TotalDuration).HasColumnName("TotalDuration");
         builder.Property(lp => lp.CreatedDate).HasColumnName("CreatedDate").IsRequired();
         builder.Property(lp => lp.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(lp => lp.DeletedDate).HasColumnName("DeletedDate");

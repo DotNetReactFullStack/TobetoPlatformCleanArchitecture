@@ -12,13 +12,15 @@ using static Application.Features.LearningPaths.Constants.LearningPathsOperation
 
 namespace Application.Features.LearningPaths.Commands.Update;
 
-public class UpdateLearningPathCommand : IRequest<UpdatedLearningPathResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateLearningPathCommand : IRequest<UpdatedLearningPathResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public string Name { get; set; }
     public bool Visibility { get; set; }
     public DateTime StartingTime { get; set; }
-    public DateTime EndTime { get; set; }
+    public DateTime EndingTime { get; set; }
+    public int NumberOfLikes { get; set; }
+    public int TotalDuration { get; set; }
 
     public string[] Roles => new[] { Admin, Write, LearningPathsOperationClaims.Update };
 
