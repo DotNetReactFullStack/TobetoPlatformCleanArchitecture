@@ -21,6 +21,7 @@ public class CreateSurveyCommand : IRequest<CreatedSurveyResponse>, ICacheRemove
     public string Title { get; set; }
     public string Content { get; set; }
     public string ConnectionLink { get; set; }
+    public bool IsActive { get; set; }
     public DateTime PublishedDate { get; set; }
 
     public string[] Roles => new[] { Admin, Write, SurveysOperationClaims.Create };

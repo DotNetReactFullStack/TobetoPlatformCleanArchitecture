@@ -12,5 +12,6 @@ public class GetListSurveyListItemDto : IDto
     public string Title { get; set; }
     public string Content { get; set; }
     public string ConnectionLink { get; set; }
+    public bool IsActive { get; set; }
     public DateTime PublishedDate { get; set; }
 }

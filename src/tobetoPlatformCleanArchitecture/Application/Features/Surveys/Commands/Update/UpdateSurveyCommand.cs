@@ -12,7 +12,7 @@ using static Application.Features.Surveys.Constants.SurveysOperationClaims;
 
 namespace Application.Features.Surveys.Commands.Update;
 
-public class UpdateSurveyCommand : IRequest<UpdatedSurveyResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateSurveyCommand : IRequest<UpdatedSurveyResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public int SurveyTypeId { get; set; }
@@ -22,6 +22,7 @@ public class UpdateSurveyCommand : IRequest<UpdatedSurveyResponse>, ISecuredRequ
     public string Title { get; set; }
     public string Content { get; set; }
     public string ConnectionLink { get; set; }
+    public bool IsActive { get; set; }
     public DateTime PublishedDate { get; set; }
 
     public string[] Roles => new[] { Admin, Write, SurveysOperationClaims.Update };
