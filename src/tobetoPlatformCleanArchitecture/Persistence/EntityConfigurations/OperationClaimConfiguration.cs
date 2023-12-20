@@ -387,6 +387,14 @@ public class OperationClaimConfiguration : IEntityTypeConfiguration<OperationCla
         seeds.Add(new OperationClaim { Id = ++id, Name = "AccountRecourses.Update" });
         seeds.Add(new OperationClaim { Id = ++id, Name = "AccountRecourses.Delete" });
         #endregion
+        #region AccountAnnouncements
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountAnnouncements.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountAnnouncements.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountAnnouncements.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountAnnouncements.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountAnnouncements.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountAnnouncements.Delete" });
+        #endregion
         return seeds;
     }
 }
