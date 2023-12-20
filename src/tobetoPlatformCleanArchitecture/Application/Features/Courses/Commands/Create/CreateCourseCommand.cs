@@ -16,7 +16,9 @@ public class CreateCourseCommand : IRequest<CreatedCourseResponse>, ICacheRemove
 {
     public int CourseCategoryId { get; set; }
     public string Name { get; set; }
+    public int TotalDuration { get; set; }
     public int Priority { get; set; }
+    public bool IsActive { get; set; }
 
     public string[] Roles => new[] { Admin, Write, CoursesOperationClaims.Create };
 
