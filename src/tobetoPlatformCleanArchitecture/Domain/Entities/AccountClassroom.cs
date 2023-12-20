@@ -10,6 +10,7 @@ public class AccountClassroom : Entity<int>
 {
     public int AccountId { get; set; }
     public int ClassroomId { get; set; }
+    public bool IsActive { get; set; }
 
     public virtual Account? Account { get; set; }
     public virtual Classroom? Classroom { get; set; }
@@ -19,10 +20,11 @@ public class AccountClassroom : Entity<int>
         
     }
 
-    public AccountClassroom(int id, int accountId, int classroomId) : this()
+    public AccountClassroom(int id, int accountId, int classroomId, bool isActive) : this()
     {
         Id = id;
         AccountId = accountId;
         ClassroomId = classroomId;
+        IsActive = isActive;
     }
 }

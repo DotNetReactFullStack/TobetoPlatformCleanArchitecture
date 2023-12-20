@@ -14,6 +14,7 @@ public class UpdateSurveyCommandValidator : AbstractValidator<UpdateSurveyComman
         RuleFor(c => c.Title).NotEmpty();
         RuleFor(c => c.Content).NotEmpty();
         RuleFor(c => c.ConnectionLink).NotEmpty();
+        RuleFor(c => c.IsActive).NotEmpty();
         RuleFor(c => c.PublishedDate).NotEmpty();
     }
 }

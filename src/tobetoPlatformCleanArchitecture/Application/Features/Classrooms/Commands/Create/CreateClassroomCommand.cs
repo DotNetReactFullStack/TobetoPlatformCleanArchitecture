@@ -16,6 +16,7 @@ public class CreateClassroomCommand : IRequest<CreatedClassroomResponse>, ICache
 {
     public string Name { get; set; }
     public byte MaximumCapacity { get; set; }
+    public bool IsActive { get; set; }
 
     public string[] Roles => new[] { Admin, Write, ClassroomsOperationClaims.Create };
 

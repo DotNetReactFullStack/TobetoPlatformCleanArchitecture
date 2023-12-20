@@ -9,7 +9,7 @@ using static Application.Features.OrganizationTypes.Constants.OrganizationTypesO
 
 namespace Application.Features.OrganizationTypes.Queries.GetById;
 
-public class GetByIdOrganizationTypeQuery : IRequest<GetByIdOrganizationTypeResponse>, ISecuredRequest
+public class GetByIdOrganizationTypeQuery : IRequest<GetByIdOrganizationTypeResponse>
 {
     public int Id { get; set; }
 

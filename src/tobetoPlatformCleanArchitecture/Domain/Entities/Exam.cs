@@ -14,7 +14,8 @@ public class Exam : Entity<int>
     public string Description { get; set; }
     public byte NumberOfQuestions { get; set; }
     public DateTime StartingTime { get; set; }
-    public DateTime EndTime { get; set; }
+    public DateTime EndingTime { get; set; }
+    public bool IsActive { get; set; }
     public short Duration { get; set; }
 
     public virtual ICollection<ExamQuestion> ExamQuestions { get; set; }
@@ -26,7 +27,7 @@ public class Exam : Entity<int>
         
     }
 
-    public Exam(int id, string name, int priority, bool visibility, string description, byte numberOfQuestions, DateTime startingTime, DateTime endTime, short duration) :this()
+    public Exam(int id, string name, int priority, bool visibility, string description, byte numberOfQuestions, DateTime startingTime, DateTime endingTime, short duration, bool isActive) :this()
     {
         Id = id;
         Name = name;
@@ -35,7 +36,8 @@ public class Exam : Entity<int>
         Description = description;
         NumberOfQuestions = numberOfQuestions;
         StartingTime = startingTime;
-        EndTime = endTime;
+        EndingTime = endingTime;
         Duration = duration;
+        IsActive = isActive;
     }
 }

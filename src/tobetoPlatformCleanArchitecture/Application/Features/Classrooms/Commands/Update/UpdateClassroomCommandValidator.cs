@@ -9,5 +9,6 @@ public class UpdateClassroomCommandValidator : AbstractValidator<UpdateClassroom
         RuleFor(c => c.Id).NotEmpty();
         RuleFor(c => c.Name).NotEmpty();
         RuleFor(c => c.MaximumCapacity).NotEmpty();
+        RuleFor(c => c.IsActive).NotEmpty();
     }
 }

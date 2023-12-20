@@ -8,5 +8,6 @@ public class CreateAccountClassroomCommandValidator : AbstractValidator<CreateAc
     {
         RuleFor(c => c.AccountId).NotEmpty();
         RuleFor(c => c.ClassroomId).NotEmpty();
+        RuleFor(c => c.IsActive).NotEmpty();
     }
 }

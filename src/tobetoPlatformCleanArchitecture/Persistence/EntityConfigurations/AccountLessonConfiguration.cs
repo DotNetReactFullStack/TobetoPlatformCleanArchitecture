@@ -14,7 +14,7 @@ public class AccountLessonConfiguration : IEntityTypeConfiguration<AccountLesson
         builder.Property(al => al.LessonId).HasColumnName("LessonId");
         builder.Property(al => al.AccountId).HasColumnName("AccountId");
         builder.Property(al => al.Points).HasColumnName("Points");
-        builder.Property(al => al.IsCompleted).HasColumnName("IsCompleted");
+        builder.Property(al => al.IsComplete).HasColumnName("IsComplete");
         builder.Property(al => al.CreatedDate).HasColumnName("CreatedDate").IsRequired();
         builder.Property(al => al.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(al => al.DeletedDate).HasColumnName("DeletedDate");

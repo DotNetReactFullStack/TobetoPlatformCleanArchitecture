@@ -13,6 +13,7 @@ public class CreateSurveyCommandValidator : AbstractValidator<CreateSurveyComman
         RuleFor(c => c.Title).NotEmpty();
         RuleFor(c => c.Content).NotEmpty();
         RuleFor(c => c.ConnectionLink).NotEmpty();
+        RuleFor(c => c.IsActive).NotEmpty();
         RuleFor(c => c.PublishedDate).NotEmpty();
     }
 }

@@ -16,6 +16,7 @@ public class RecourseConfiguration : IEntityTypeConfiguration<Recourse>
         builder.Property(r => r.Visibility).HasColumnName("Visibility");
         builder.Property(r => r.Title).HasColumnName("Title");
         builder.Property(r => r.Content).HasColumnName("Content");
+        builder.Property(r => r.IsActive).HasColumnName("IsActive");
         builder.Property(r => r.PublishedDate).HasColumnName("PublishedDate");
         builder.Property(r => r.CreatedDate).HasColumnName("CreatedDate").IsRequired();
         builder.Property(r => r.UpdatedDate).HasColumnName("UpdatedDate");

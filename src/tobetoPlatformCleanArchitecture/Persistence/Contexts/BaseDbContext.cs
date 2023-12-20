@@ -59,6 +59,7 @@ public class BaseDbContext : DbContext
     public DbSet<RecourseStep> RecourseSteps { get; set; }
     public DbSet<Recourse> Recourses { get; set; }
     public DbSet<AccountRecourse> AccountRecourses { get; set; }
+    public DbSet<AccountAnnouncement> AccountAnnouncements { get; set; }
 
     public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration)
         : base(dbContextOptions)

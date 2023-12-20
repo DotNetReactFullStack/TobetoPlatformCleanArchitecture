@@ -13,6 +13,7 @@ public class Recourse : Entity<int>
     public bool Visibility { get; set; }
     public string Title { get; set; }
     public string Content { get; set; }
+    public bool IsActive { get; set; }
     public DateTime PublishedDate { get; set; }
 
     public virtual Organization Organization { get; set; }
@@ -23,7 +24,7 @@ public class Recourse : Entity<int>
         
     }
 
-    public Recourse(int id, int organizationId, int priority, bool visibility, string title, string content, DateTime publishedDate) : this()
+    public Recourse(int id, int organizationId, int priority, bool visibility, string title, string content, DateTime publishedDate, bool isActive) : this()
     {
         Id = id;
         OrganizationId = organizationId;
@@ -31,6 +32,7 @@ public class Recourse : Entity<int>
         Visibility = visibility;
         Title = title;
         Content = content;
+        IsActive = isActive;
         PublishedDate = publishedDate;
     }
 }

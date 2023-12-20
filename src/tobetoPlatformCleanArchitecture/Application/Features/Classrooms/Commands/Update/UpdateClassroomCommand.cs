@@ -12,11 +12,12 @@ using static Application.Features.Classrooms.Constants.ClassroomsOperationClaims
 
 namespace Application.Features.Classrooms.Commands.Update;
 
-public class UpdateClassroomCommand : IRequest<UpdatedClassroomResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateClassroomCommand : IRequest<UpdatedClassroomResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public string Name { get; set; }
     public byte MaximumCapacity { get; set; }
+    public bool IsActive { get; set; }
 
     public string[] Roles => new[] { Admin, Write, ClassroomsOperationClaims.Update };
 

@@ -8,5 +8,5 @@ public class CreatedAccountLessonResponse : IResponse
     public int LessonId { get; set; }
     public int AccountId { get; set; }
     public int Points { get; set; }
-    public bool IsCompleted { get; set; }
+    public bool IsComplete { get; set; }
 }

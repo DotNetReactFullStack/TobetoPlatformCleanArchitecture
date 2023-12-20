@@ -8,5 +8,6 @@ public class CreateClassroomCommandValidator : AbstractValidator<CreateClassroom
     {
         RuleFor(c => c.Name).NotEmpty();
         RuleFor(c => c.MaximumCapacity).NotEmpty();
+        RuleFor(c => c.IsActive).NotEmpty();
     }
 }

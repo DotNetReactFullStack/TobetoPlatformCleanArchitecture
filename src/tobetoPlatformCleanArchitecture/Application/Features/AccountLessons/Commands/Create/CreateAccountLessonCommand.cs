@@ -17,7 +17,7 @@ public class CreateAccountLessonCommand : IRequest<CreatedAccountLessonResponse>
     public int LessonId { get; set; }
     public int AccountId { get; set; }
     public int Points { get; set; }
-    public bool IsCompleted { get; set; }
+    public bool IsComplete { get; set; }
 
     public string[] Roles => new[] { Admin, Write, AccountLessonsOperationClaims.Create };
 

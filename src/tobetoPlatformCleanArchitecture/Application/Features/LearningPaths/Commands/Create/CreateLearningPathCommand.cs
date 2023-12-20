@@ -17,7 +17,9 @@ public class CreateLearningPathCommand : IRequest<CreatedLearningPathResponse>, 
     public string Name { get; set; }
     public bool Visibility { get; set; }
     public DateTime StartingTime { get; set; }
-    public DateTime EndTime { get; set; }
+    public DateTime EndingTime { get; set; }
+    public int NumberOfLikes { get; set; }
+    public int TotalDuration { get; set; }
 
     public string[] Roles => new[] { Admin, Write, LearningPathsOperationClaims.Create };
 

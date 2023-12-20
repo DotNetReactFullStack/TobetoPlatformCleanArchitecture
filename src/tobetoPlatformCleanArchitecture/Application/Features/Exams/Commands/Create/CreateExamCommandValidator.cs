@@ -12,7 +12,8 @@ public class CreateExamCommandValidator : AbstractValidator<CreateExamCommand>
         RuleFor(c => c.Description).NotEmpty();
         RuleFor(c => c.NumberOfQuestions).NotEmpty();
         RuleFor(c => c.StartingTime).NotEmpty();
-        RuleFor(c => c.EndTime).NotEmpty();
+        RuleFor(c => c.EndingTime).NotEmpty();
+        RuleFor(c => c.IsActive).NotEmpty();
         RuleFor(c => c.Duration).NotEmpty();
     }
 }

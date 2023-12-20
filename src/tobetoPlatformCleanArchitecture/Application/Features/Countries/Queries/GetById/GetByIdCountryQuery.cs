@@ -9,7 +9,7 @@ using static Application.Features.Countries.Constants.CountriesOperationClaims;
 
 namespace Application.Features.Countries.Queries.GetById;
 
-public class GetByIdCountryQuery : IRequest<GetByIdCountryResponse>, ISecuredRequest
+public class GetByIdCountryQuery : IRequest<GetByIdCountryResponse>
 {
     public int Id { get; set; }
 

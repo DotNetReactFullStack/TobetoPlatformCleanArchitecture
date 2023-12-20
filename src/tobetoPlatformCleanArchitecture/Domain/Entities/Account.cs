@@ -9,9 +9,10 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    public class Account : Entity<Guid>
+    public class Account : Entity<int>
     {
         public int AddressId { get; set; }
+        public string NationalIdentificationNumber { get; set; }
         public DateTime BirthDate { get; set; }
         public string PhoneNumber { get; set; }
         public string? ProfilePhotoPath { get; set; }
@@ -40,10 +41,11 @@ namespace Domain.Entities
             
         }
 
-        public Account(Guid id, int addressId, DateTime birthDate, string phoneNumber, string? profilePhotoPath, bool isActive) : this()
+        public Account(int id, int addressId, string nationalIdentificationNumber, DateTime birthDate, string phoneNumber, string? profilePhotoPath, bool isActive) : this()
         {
             Id = id;
             AddressId = addressId;
+            NationalIdentificationNumber = nationalIdentificationNumber;
             BirthDate = birthDate;
             PhoneNumber = phoneNumber;
             ProfilePhotoPath = profilePhotoPath;

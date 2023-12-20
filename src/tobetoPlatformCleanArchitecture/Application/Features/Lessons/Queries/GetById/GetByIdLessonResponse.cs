@@ -11,4 +11,5 @@ public class GetByIdLessonResponse : IResponse
     public string Language { get; set; }
     public string Content { get; set; }
     public int Duration { get; set; }
+    public bool IsActive { get; set; }
 }

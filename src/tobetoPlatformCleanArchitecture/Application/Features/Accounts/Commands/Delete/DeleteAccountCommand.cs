@@ -13,9 +13,9 @@ using static Application.Features.Accounts.Constants.AccountsOperationClaims;
 
 namespace Application.Features.Accounts.Commands.Delete;
 
-public class DeleteAccountCommand : IRequest<DeletedAccountResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class DeleteAccountCommand : IRequest<DeletedAccountResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
-    public Guid Id { get; set; }
+    public int Id { get; set; }
 
     public string[] Roles => new[] { Admin, Write, AccountsOperationClaims.Delete };
 

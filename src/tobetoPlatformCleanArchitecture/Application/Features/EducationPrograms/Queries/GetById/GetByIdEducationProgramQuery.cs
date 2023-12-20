@@ -9,7 +9,7 @@ using static Application.Features.EducationPrograms.Constants.EducationProgramsO
 
 namespace Application.Features.EducationPrograms.Queries.GetById;
 
-public class GetByIdEducationProgramQuery : IRequest<GetByIdEducationProgramResponse>, ISecuredRequest
+public class GetByIdEducationProgramQuery : IRequest<GetByIdEducationProgramResponse>
 {
     public int Id { get; set; }
 

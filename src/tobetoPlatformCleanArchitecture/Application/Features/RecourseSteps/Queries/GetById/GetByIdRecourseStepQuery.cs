@@ -9,7 +9,7 @@ using static Application.Features.RecourseSteps.Constants.RecourseStepsOperation
 
 namespace Application.Features.RecourseSteps.Queries.GetById;
 
-public class GetByIdRecourseStepQuery : IRequest<GetByIdRecourseStepResponse>, ISecuredRequest
+public class GetByIdRecourseStepQuery : IRequest<GetByIdRecourseStepResponse>
 {
     public int Id { get; set; }
 

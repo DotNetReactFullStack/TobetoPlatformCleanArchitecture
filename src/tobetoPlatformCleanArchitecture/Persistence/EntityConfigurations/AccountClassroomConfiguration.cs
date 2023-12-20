@@ -13,6 +13,7 @@ public class AccountClassroomConfiguration : IEntityTypeConfiguration<AccountCla
         builder.Property(ac => ac.Id).HasColumnName("Id").IsRequired();
         builder.Property(ac => ac.AccountId).HasColumnName("AccountId");
         builder.Property(ac => ac.ClassroomId).HasColumnName("ClassroomId");
+        builder.Property(ac => ac.IsActive).HasColumnName("IsActive");
         builder.Property(ac => ac.CreatedDate).HasColumnName("CreatedDate").IsRequired();
         builder.Property(ac => ac.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(ac => ac.DeletedDate).HasColumnName("DeletedDate");

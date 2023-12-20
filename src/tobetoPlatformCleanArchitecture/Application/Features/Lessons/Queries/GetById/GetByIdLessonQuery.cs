@@ -9,7 +9,7 @@ using static Application.Features.Lessons.Constants.LessonsOperationClaims;
 
 namespace Application.Features.Lessons.Queries.GetById;
 
-public class GetByIdLessonQuery : IRequest<GetByIdLessonResponse>, ISecuredRequest
+public class GetByIdLessonQuery : IRequest<GetByIdLessonResponse>
 {
     public int Id { get; set; }
 

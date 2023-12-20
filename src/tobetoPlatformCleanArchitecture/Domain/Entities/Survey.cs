@@ -15,6 +15,7 @@ public class Survey : Entity<int>
     public string Title { get; set; }
     public string Content { get; set; }
     public string ConnectionLink { get; set; }
+    public bool IsActive { get; set; }
     public DateTime PublishedDate { get; set; }
 
     public virtual SurveyType? SurveyType { get; set; }
@@ -25,7 +26,7 @@ public class Survey : Entity<int>
         
     }
 
-    public Survey(int id, int surveyTypeId, int organizationId, int priority, bool visibility, string title, string content, string connectionLink, DateTime publishedDate) : this()
+    public Survey(int id, int surveyTypeId, int organizationId, int priority, bool visibility, string title, string content, string connectionLink, bool isActive, DateTime publishedDate) : this()
     {
         Id = id;
         SurveyTypeId = surveyTypeId;
@@ -35,6 +36,7 @@ public class Survey : Entity<int>
         Title = title;
         Content = content;
         ConnectionLink = connectionLink;
+        IsActive = isActive;
         PublishedDate = publishedDate;
     }
 }

@@ -10,5 +10,6 @@ public class GetListRecourseListItemDto : IDto
     public bool Visibility { get; set; }
     public string Title { get; set; }
     public string Content { get; set; }
+    public bool IsActive { get; set; }
     public DateTime PublishedDate { get; set; }
 }

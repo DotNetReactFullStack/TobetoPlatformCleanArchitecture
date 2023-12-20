@@ -9,7 +9,7 @@ using static Application.Features.AccountCertificates.Constants.AccountCertifica
 
 namespace Application.Features.AccountCertificates.Queries.GetById;
 
-public class GetByIdAccountCertificateQuery : IRequest<GetByIdAccountCertificateResponse>, ISecuredRequest
+public class GetByIdAccountCertificateQuery : IRequest<GetByIdAccountCertificateResponse>
 {
     public int Id { get; set; }
 

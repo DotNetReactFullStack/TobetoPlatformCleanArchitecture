@@ -11,7 +11,12 @@ public class AccountLearningPath : Entity<int>
     public int AccountId { get; set; }
     public int LearningPathId { get; set; }
     public int TotalNumberOfPoints { get; set; }
-    public byte PercentCompleted { get; set; }
+    public byte PercentComplete { get; set; }
+    public bool IsContinue { get; set; }
+    public bool IsComplete { get; set; }
+    public bool IsLiked { get; set; }
+    public bool IsSaved { get; set; }
+    public bool IsActive { get; set; }
 
     public virtual Account? Account { get; set; }
     public virtual LearningPath? LearningPath { get; set; }
@@ -22,12 +27,17 @@ public class AccountLearningPath : Entity<int>
 
     }
 
-    public AccountLearningPath(int id, int accountId, int learningPathId, int totalNumberOfPoints, byte percentCompleted) : this()
+    public AccountLearningPath(int id, int accountId, int learningPathId, int totalNumberOfPoints, byte percentComplete, bool isContinue, bool isComplete, bool isLiked, bool isSaved, bool isActive) : this()
     {
         Id = id;
         AccountId = accountId;
         LearningPathId = learningPathId;
         TotalNumberOfPoints = totalNumberOfPoints;
-        PercentCompleted = percentCompleted;
+        PercentComplete = percentComplete;
+        IsContinue = isContinue;
+        IsComplete = isComplete;
+        IsLiked = isLiked;
+        IsSaved = isSaved;
+        IsActive = isActive;
     }
 }

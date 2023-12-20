@@ -11,6 +11,7 @@ public class GetListExamListItemDto : IDto
     public string Description { get; set; }
     public byte NumberOfQuestions { get; set; }
     public DateTime StartingTime { get; set; }
-    public DateTime EndTime { get; set; }
+    public DateTime EndingTime { get; set; }
+    public bool IsActive { get; set; }
     public short Duration { get; set; }
 }

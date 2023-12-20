@@ -11,7 +11,7 @@ public class AccountLesson : Entity<int>
     public int LessonId { get; set; }
     public int AccountId { get; set; }
     public int Points { get; set; }
-    public bool IsCompleted { get; set; }
+    public bool IsComplete { get; set; }
 
     public virtual Lesson? Lesson { get; set; }
     public virtual Account? Account { get; set; }
@@ -21,12 +21,12 @@ public class AccountLesson : Entity<int>
         
     }
 
-    public AccountLesson(int id, int lessonId, int accountId, int points, bool isCompleted) : this()
+    public AccountLesson(int id, int lessonId, int accountId, int points, bool isComplete) : this()
     {
         Id = id;
         LessonId = lessonId;
         AccountId = accountId;
         Points = points;
-        IsCompleted = isCompleted;
+        IsComplete = isComplete;
     }
 }

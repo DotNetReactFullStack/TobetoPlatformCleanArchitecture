@@ -9,9 +9,9 @@ using static Application.Features.Accounts.Constants.AccountsOperationClaims;
 
 namespace Application.Features.Accounts.Queries.GetById;
 
-public class GetByIdAccountQuery : IRequest<GetByIdAccountResponse>, ISecuredRequest
+public class GetByIdAccountQuery : IRequest<GetByIdAccountResponse>
 {
-    public Guid Id { get; set; }
+    public int Id { get; set; }
 
     public string[] Roles => new[] { Admin, Read };
 
