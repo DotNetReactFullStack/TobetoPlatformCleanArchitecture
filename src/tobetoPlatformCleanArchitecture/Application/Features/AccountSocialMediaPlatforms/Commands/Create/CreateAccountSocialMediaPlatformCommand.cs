@@ -43,6 +43,8 @@ public class CreateAccountSocialMediaPlatformCommand : IRequest<CreatedAccountSo
         {
             AccountSocialMediaPlatform accountSocialMediaPlatform = _mapper.Map<AccountSocialMediaPlatform>(request);
 
+            _accountSocialMediaPlatformBusinessRules.AccountCanHasMaximumThreeSocialMediaPlatforms(accountSocialMediaPlatform);
+
             await _accountSocialMediaPlatformRepository.AddAsync(accountSocialMediaPlatform);
 
             CreatedAccountSocialMediaPlatformResponse response = _mapper.Map<CreatedAccountSocialMediaPlatformResponse>(accountSocialMediaPlatform);
