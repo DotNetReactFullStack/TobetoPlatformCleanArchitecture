@@ -41,6 +41,8 @@ public class CreateExamQuestionCommand : IRequest<CreatedExamQuestionResponse>, 
         {
             ExamQuestion examQuestion = _mapper.Map<ExamQuestion>(request);
 
+            _examQuestionBusinessRules.ExamCanHasMaximumOneHundredQuestions(examQuestion);
+
             await _examQuestionRepository.AddAsync(examQuestion);
 
             CreatedExamQuestionResponse response = _mapper.Map<CreatedExamQuestionResponse>(examQuestion);
