@@ -1,3 +1,4 @@
+using Application.Features.AccountSocialMediaPlatforms.Constants;
 using Application.Features.ExamQuestions.Constants;
 using Application.Services.Repositories;
 using Core.Application.Rules;
@@ -30,5 +31,14 @@ public class ExamQuestionBusinessRules : BaseBusinessRules
             cancellationToken: cancellationToken
         );
         await ExamQuestionShouldExistWhenSelected(examQuestion);
+    }
+
+    public Task ExamCanHasMaximumOneHundredQuestions(ExamQuestion examQuestion)
+    {
+        var examQuestionCount = _examQuestionRepository.GetList(e => e.ExamId == examQuestion.ExamId).Count;
+
+        if (examQuestionCount >= 100)
+            throw new BusinessException(ExamQuestionsBusinessMessages.ExamCanHasMaximumOneHundredQuestions);
+        return Task.CompletedTask;
     }
 }
