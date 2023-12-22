@@ -15,8 +15,8 @@ namespace Application.Features.AccountRecourses.Commands.Create;
 public class CreateAccountRecourseCommand : IRequest<CreatedAccountRecourseResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int AccountId { get; set; }
-    public int ApplicationId { get; set; }
-    public int ApplicationStepId { get; set; }
+    public int RecourseId { get; set; }
+    public int RecourseStepId { get; set; }
 
     public string[] Roles => new[] { Admin, Write, AccountRecoursesOperationClaims.Create };
 

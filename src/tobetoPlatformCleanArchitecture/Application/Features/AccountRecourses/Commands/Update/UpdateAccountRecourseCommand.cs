@@ -12,12 +12,12 @@ using static Application.Features.AccountRecourses.Constants.AccountRecoursesOpe
 
 namespace Application.Features.AccountRecourses.Commands.Update;
 
-public class UpdateAccountRecourseCommand : IRequest<UpdatedAccountRecourseResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateAccountRecourseCommand : IRequest<UpdatedAccountRecourseResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public int AccountId { get; set; }
-    public int ApplicationId { get; set; }
-    public int ApplicationStepId { get; set; }
+    public int RecourseId { get; set; }
+    public int RecourseStepId { get; set; }
 
     public string[] Roles => new[] { Admin, Write, AccountRecoursesOperationClaims.Update };
 

@@ -13,7 +13,7 @@ using static Application.Features.AccountRecourses.Constants.AccountRecoursesOpe
 
 namespace Application.Features.AccountRecourses.Commands.Delete;
 
-public class DeleteAccountRecourseCommand : IRequest<DeletedAccountRecourseResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class DeleteAccountRecourseCommand : IRequest<DeletedAccountRecourseResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
 
