@@ -12,7 +12,7 @@ using static Application.Features.Colleges.Constants.CollegesOperationClaims;
 
 namespace Application.Features.Colleges.Commands.Update;
 
-public class UpdateCollegeCommand : IRequest<UpdatedCollegeResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateCollegeCommand : IRequest<UpdatedCollegeResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public string Name { get; set; }

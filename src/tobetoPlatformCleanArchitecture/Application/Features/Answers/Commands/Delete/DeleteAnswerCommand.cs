@@ -13,7 +13,7 @@ using static Application.Features.Answers.Constants.AnswersOperationClaims;
 
 namespace Application.Features.Answers.Commands.Delete;
 
-public class DeleteAnswerCommand : IRequest<DeletedAnswerResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class DeleteAnswerCommand : IRequest<DeletedAnswerResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
 

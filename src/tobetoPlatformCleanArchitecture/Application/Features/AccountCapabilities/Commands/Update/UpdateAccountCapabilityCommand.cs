@@ -12,7 +12,7 @@ using static Application.Features.AccountCapabilities.Constants.AccountCapabilit
 
 namespace Application.Features.AccountCapabilities.Commands.Update;
 
-public class UpdateAccountCapabilityCommand : IRequest<UpdatedAccountCapabilityResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateAccountCapabilityCommand : IRequest<UpdatedAccountCapabilityResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public int AccountId { get; set; }

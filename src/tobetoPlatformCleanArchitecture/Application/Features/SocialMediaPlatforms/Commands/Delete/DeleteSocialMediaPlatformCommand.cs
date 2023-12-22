@@ -13,7 +13,7 @@ using static Application.Features.SocialMediaPlatforms.Constants.SocialMediaPlat
 
 namespace Application.Features.SocialMediaPlatforms.Commands.Delete;
 
-public class DeleteSocialMediaPlatformCommand : IRequest<DeletedSocialMediaPlatformResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class DeleteSocialMediaPlatformCommand : IRequest<DeletedSocialMediaPlatformResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
 

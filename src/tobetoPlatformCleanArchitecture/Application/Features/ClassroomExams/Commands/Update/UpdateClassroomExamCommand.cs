@@ -12,7 +12,7 @@ using static Application.Features.ClassroomExams.Constants.ClassroomExamsOperati
 
 namespace Application.Features.ClassroomExams.Commands.Update;
 
-public class UpdateClassroomExamCommand : IRequest<UpdatedClassroomExamResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateClassroomExamCommand : IRequest<UpdatedClassroomExamResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public int ClassroomId { get; set; }

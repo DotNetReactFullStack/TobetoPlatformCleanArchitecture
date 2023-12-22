@@ -12,7 +12,7 @@ using static Application.Features.QuestionCategories.Constants.QuestionCategorie
 
 namespace Application.Features.QuestionCategories.Commands.Update;
 
-public class UpdateQuestionCategoryCommand : IRequest<UpdatedQuestionCategoryResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateQuestionCategoryCommand : IRequest<UpdatedQuestionCategoryResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public string Name { get; set; }
