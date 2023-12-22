@@ -12,7 +12,7 @@ using static Application.Features.AccountExamResults.Constants.AccountExamResult
 
 namespace Application.Features.AccountExamResults.Commands.Update;
 
-public class UpdateAccountExamResultCommand : IRequest<UpdatedAccountExamResultResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateAccountExamResultCommand : IRequest<UpdatedAccountExamResultResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public int AccountId { get; set; }

@@ -12,7 +12,7 @@ using static Application.Features.OrganizationTypes.Constants.OrganizationTypesO
 
 namespace Application.Features.OrganizationTypes.Commands.Update;
 
-public class UpdateOrganizationTypeCommand : IRequest<UpdatedOrganizationTypeResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateOrganizationTypeCommand : IRequest<UpdatedOrganizationTypeResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public string Name { get; set; }

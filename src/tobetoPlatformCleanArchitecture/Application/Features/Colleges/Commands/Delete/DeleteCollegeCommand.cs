@@ -13,7 +13,7 @@ using static Application.Features.Colleges.Constants.CollegesOperationClaims;
 
 namespace Application.Features.Colleges.Commands.Delete;
 
-public class DeleteCollegeCommand : IRequest<DeletedCollegeResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class DeleteCollegeCommand : IRequest<DeletedCollegeResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
 

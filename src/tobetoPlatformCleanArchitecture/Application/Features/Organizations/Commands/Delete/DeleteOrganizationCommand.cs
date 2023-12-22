@@ -13,7 +13,7 @@ using static Application.Features.Organizations.Constants.OrganizationsOperation
 
 namespace Application.Features.Organizations.Commands.Delete;
 
-public class DeleteOrganizationCommand : IRequest<DeletedOrganizationResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class DeleteOrganizationCommand : IRequest<DeletedOrganizationResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
 

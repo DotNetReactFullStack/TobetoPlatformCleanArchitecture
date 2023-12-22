@@ -13,7 +13,7 @@ using static Application.Features.AccountForeignLanguageMetadatas.Constants.Acco
 
 namespace Application.Features.AccountForeignLanguageMetadatas.Commands.Delete;
 
-public class DeleteAccountForeignLanguageMetadataCommand : IRequest<DeletedAccountForeignLanguageMetadataResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class DeleteAccountForeignLanguageMetadataCommand : IRequest<DeletedAccountForeignLanguageMetadataResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
 

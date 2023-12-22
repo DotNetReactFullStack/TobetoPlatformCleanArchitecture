@@ -13,7 +13,7 @@ using static Application.Features.Countries.Constants.CountriesOperationClaims;
 
 namespace Application.Features.Countries.Commands.Delete;
 
-public class DeleteCountryCommand : IRequest<DeletedCountryResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class DeleteCountryCommand : IRequest<DeletedCountryResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
 

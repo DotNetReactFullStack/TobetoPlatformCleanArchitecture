@@ -13,7 +13,7 @@ using static Application.Features.RecourseSteps.Constants.RecourseStepsOperation
 
 namespace Application.Features.RecourseSteps.Commands.Delete;
 
-public class DeleteRecourseStepCommand : IRequest<DeletedRecourseStepResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class DeleteRecourseStepCommand : IRequest<DeletedRecourseStepResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
 

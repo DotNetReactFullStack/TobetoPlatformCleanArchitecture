@@ -13,7 +13,7 @@ using static Application.Features.AccountCollageMetadatas.Constants.AccountColla
 
 namespace Application.Features.AccountCollageMetadatas.Commands.Delete;
 
-public class DeleteAccountCollageMetadataCommand : IRequest<DeletedAccountCollageMetadataResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class DeleteAccountCollageMetadataCommand : IRequest<DeletedAccountCollageMetadataResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
 

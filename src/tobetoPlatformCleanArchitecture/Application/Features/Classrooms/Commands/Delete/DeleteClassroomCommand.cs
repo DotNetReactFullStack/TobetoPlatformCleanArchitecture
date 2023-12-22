@@ -13,7 +13,7 @@ using static Application.Features.Classrooms.Constants.ClassroomsOperationClaims
 
 namespace Application.Features.Classrooms.Commands.Delete;
 
-public class DeleteClassroomCommand : IRequest<DeletedClassroomResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class DeleteClassroomCommand : IRequest<DeletedClassroomResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
 

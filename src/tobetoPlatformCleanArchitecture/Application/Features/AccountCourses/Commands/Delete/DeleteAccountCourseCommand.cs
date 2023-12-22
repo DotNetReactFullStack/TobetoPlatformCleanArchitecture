@@ -13,7 +13,7 @@ using static Application.Features.AccountCourses.Constants.AccountCoursesOperati
 
 namespace Application.Features.AccountCourses.Commands.Delete;
 
-public class DeleteAccountCourseCommand : IRequest<DeletedAccountCourseResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class DeleteAccountCourseCommand : IRequest<DeletedAccountCourseResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
 

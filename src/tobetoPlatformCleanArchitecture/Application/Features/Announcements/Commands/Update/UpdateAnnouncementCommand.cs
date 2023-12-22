@@ -12,7 +12,7 @@ using static Application.Features.Announcements.Constants.AnnouncementsOperation
 
 namespace Application.Features.Announcements.Commands.Update;
 
-public class UpdateAnnouncementCommand : IRequest<UpdatedAnnouncementResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateAnnouncementCommand : IRequest<UpdatedAnnouncementResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public int AnnouncementTypeId { get; set; }
