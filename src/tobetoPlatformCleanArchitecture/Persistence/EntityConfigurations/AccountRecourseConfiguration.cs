@@ -18,7 +18,6 @@ public class AccountRecourseConfiguration : IEntityTypeConfiguration<AccountReco
         builder.Property(ar => ar.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(ar => ar.DeletedDate).HasColumnName("DeletedDate");
 
-
         builder
            .HasOne(ar => ar.Recourse)
            .WithMany(a => a.AccountRecourses)
