@@ -18,6 +18,7 @@ public class Announcement : Entity<int>
 
     public virtual AnnouncementType? AnnouncementType { get; set; }
     public virtual Organization? Organization { get; set; }
+    public virtual ICollection<AccountAnnouncement> AccountAnnouncements { get; set; }
 
     public Announcement()
     {

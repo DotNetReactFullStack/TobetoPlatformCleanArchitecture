@@ -31,9 +31,11 @@ namespace Domain.Entities
         public virtual ICollection<AccountLesson> AccountLessons { get; set; }
         public virtual ICollection<AccountClassroom> AccountClassrooms { get; set; }
         public virtual ICollection<AccountCourse> AccountCourses { get; set; } 
-        public virtual ICollection<UserOperationClaim> UserOperationClaims { get; set; } 
+        public virtual ICollection<UserOperationClaim> UserOperationClaims { get; set; }
+        public virtual ICollection<AccountAnnouncement> AccountAnnouncements { get; set; }
 
-        
+
+
 
 
         public Account()
