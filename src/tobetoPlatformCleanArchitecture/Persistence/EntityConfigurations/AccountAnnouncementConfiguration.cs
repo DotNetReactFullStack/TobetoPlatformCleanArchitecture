@@ -18,6 +18,13 @@ public class AccountAnnouncementConfiguration : IEntityTypeConfiguration<Account
         builder.Property(aa => aa.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(aa => aa.DeletedDate).HasColumnName("DeletedDate");
 
+        //Relationships
+        builder
+            .HasOne(a => a.Announcement)
+            .WithMany(a => a.AccountAnnouncements)
+            .HasForeignKey(a => a.AnnouncementId)
+            .OnDelete(DeleteBehavior.ClientNoAction);
+
         builder.HasQueryFilter(aa => !aa.DeletedDate.HasValue);
     }
 }
