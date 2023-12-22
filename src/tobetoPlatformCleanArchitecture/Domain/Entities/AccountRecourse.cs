@@ -10,8 +10,8 @@ namespace Domain.Entities;
 public class AccountRecourse : Entity<int>
 {
     public int AccountId { get; set; }
-    public int ApplicationId { get; set; }
-    public int ApplicationStepId { get; set; }
+    public int RecourseId { get; set; }
+    public int RecourseStepId { get; set; }
 
     public virtual Account? Account { get; set; } 
     public virtual Recourse? Recourse { get; set; } 
@@ -22,11 +22,11 @@ public class AccountRecourse : Entity<int>
         
     }
 
-    public AccountRecourse(int id, int accountId, int applicationId, int applicationStepId) : this()
+    public AccountRecourse(int id, int accountId, int recourseId, int recourseStepId) : this()
     {
         Id = id;
         AccountId = accountId;
-        ApplicationId = applicationId;
-        ApplicationStepId = applicationStepId;
+        RecourseId = recourseId;
+        RecourseStepId = recourseStepId;
     }
 }
