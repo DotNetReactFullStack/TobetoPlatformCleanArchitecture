@@ -9,7 +9,7 @@ using static Application.Features.AccountRecourses.Constants.AccountRecoursesOpe
 
 namespace Application.Features.AccountRecourses.Queries.GetById;
 
-public class GetByIdAccountRecourseQuery : IRequest<GetByIdAccountRecourseResponse>
+public class GetByIdAccountRecourseQuery : IRequest<GetByIdAccountRecourseResponse>, ISecuredRequest
 {
     public int Id { get; set; }
 

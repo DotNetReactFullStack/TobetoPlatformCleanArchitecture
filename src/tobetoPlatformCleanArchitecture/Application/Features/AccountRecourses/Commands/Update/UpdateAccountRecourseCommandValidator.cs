@@ -8,7 +8,7 @@ public class UpdateAccountRecourseCommandValidator : AbstractValidator<UpdateAcc
     {
         RuleFor(c => c.Id).NotEmpty();
         RuleFor(c => c.AccountId).NotEmpty();
-        RuleFor(c => c.ApplicationId).NotEmpty();
-        RuleFor(c => c.ApplicationStepId).NotEmpty();
+        RuleFor(c => c.RecourseId).NotEmpty();
+        RuleFor(c => c.RecourseStepId).NotEmpty();
     }
 }
