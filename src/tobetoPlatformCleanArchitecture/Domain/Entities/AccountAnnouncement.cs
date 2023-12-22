@@ -12,6 +12,8 @@ public class AccountAnnouncement : Entity<int>
     public int AnnouncementId { get; set; }
     public bool Read { get; set; }
 
+    public virtual Account? Account { get; set; }
+    public virtual Announcement? Announcement { get; set; }
     public AccountAnnouncement()
     {
             
