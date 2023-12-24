@@ -20,4 +20,10 @@
     <ProjectReference Include="..\Application\Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="ConnectionStrings\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ConnectionStrings\" />
+  </ItemGroup>
 </Project>
