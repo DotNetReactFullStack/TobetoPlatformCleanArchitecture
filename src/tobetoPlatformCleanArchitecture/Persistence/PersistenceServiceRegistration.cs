@@ -2,6 +2,7 @@ using Application.Services.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Persistence.ConnectionStrings;
 using Persistence.Contexts;
 using Persistence.Repositories;
 
@@ -13,10 +14,7 @@ public static class PersistenceServiceRegistration
     {        
         services.AddDbContext<BaseDbContext>(
                         options => options
-                        .UseSqlServer(configuration
-                        .GetConnectionString
-                        ("TobetoPlatformConnectionString")
-                    ));
+                        .UseSqlServer(TobetoPlatformConnectionString.ConnectionString));
         services.AddScoped<IEmailAuthenticatorRepository, EmailAuthenticatorRepository>();
         services.AddScoped<IOperationClaimRepository, OperationClaimRepository>();
         services.AddScoped<IOtpAuthenticatorRepository, OtpAuthenticatorRepository>();
