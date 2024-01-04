@@ -1,4 +1,5 @@
 src/tobetoPlatformCleanArchitecture/Persistence/ConnectionStrings/
+src/tobetoPlatformCleanArchitecture/WebAPI/appsettings.json
 
 
 ## Ignore Visual Studio temporary files, build results, and
