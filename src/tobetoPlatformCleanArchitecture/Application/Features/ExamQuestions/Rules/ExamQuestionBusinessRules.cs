@@ -37,7 +37,7 @@ public class ExamQuestionBusinessRules : BaseBusinessRules
     {
         var examQuestionCount = _examQuestionRepository.GetList(e => e.ExamId == examQuestion.ExamId).Count;
 
-        if (examQuestionCount >= 100)
+        if (examQuestionCount >= ExamQuestionRules.MaximumNumberOfExamQuestion)
             throw new BusinessException(ExamQuestionsBusinessMessages.ExamCanHasMaximumOneHundredQuestions);
         return Task.CompletedTask;
     }
