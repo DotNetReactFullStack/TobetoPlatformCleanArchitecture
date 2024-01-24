@@ -50,11 +50,19 @@ builder.Services.AddDistributedMemoryCache(); // InMemory
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddCors(
     opt =>
-        opt.AddDefaultPolicy(p =>
+        opt.AddPolicy("default", policy =>
         {
-            p.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-        })
-);
+            policy.WithOrigins("http://localhost:3000").AllowAnyHeader().AllowAnyMethod();
+
+        }
+        //opt.AddDefaultPolicy(p =>
+        //{
+        //    p.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+        //})
+));
+
+
+
 builder.Services.AddSwaggerGen(opt =>
 {
     opt.AddSecurityDefinition(
@@ -98,6 +106,6 @@ const string webApiConfigurationSection = "WebAPIConfiguration";
 WebApiConfiguration webApiConfiguration =
     app.Configuration.GetSection(webApiConfigurationSection).Get<WebApiConfiguration>()
     ?? throw new InvalidOperationException($"\"{webApiConfigurationSection}\" section cannot found in configuration.");
-app.UseCors(opt => opt.WithOrigins(webApiConfiguration.AllowedOrigins).AllowAnyHeader().AllowAnyMethod().AllowCredentials());
-
+//app.UseCors(opt => opt.WithOrigins(webApiConfiguration.AllowedOrigins).AllowAnyHeader().AllowAnyMethod().AllowCredentials());
+app.UseCors("default");
 app.Run();

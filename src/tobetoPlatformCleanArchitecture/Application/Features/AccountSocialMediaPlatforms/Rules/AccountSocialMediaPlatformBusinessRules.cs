@@ -36,7 +36,7 @@ public class AccountSocialMediaPlatformBusinessRules : BaseBusinessRules
     {
         var accountSocialMediaPlatformCounts = _accountSocialMediaPlatformRepository.GetList(a=>a.AccountId == accountSocialMediaPlatform.AccountId).Count;
 
-        if (accountSocialMediaPlatformCounts > 2)
+        if (accountSocialMediaPlatformCounts > AccountSocialMediaPlatformsRules.AccountSocialMediaPlatformCount)
             throw new BusinessException(AccountSocialMediaPlatformsBusinessMessages.AccountCanHasMaximumThreeSocialMediaPlatforms);
         return Task.CompletedTask;
     } 
