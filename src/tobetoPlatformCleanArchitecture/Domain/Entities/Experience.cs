@@ -29,18 +29,18 @@ public class Experience : Entity<int>
         
     }
 
-    public Experience(int id, int accountId, int cityId, string companyName, string jobTitle, string ındustry, DateTime startingDate, DateTime? endingDate, bool ısCurrentlyWorking, string? description, bool ısActive) :this() 
+    public Experience(int id, int accountId, int cityId, string companyName, string jobTitle, string industry, DateTime startingDate, DateTime? endingDate, bool isCurrentlyWorking, string? description, bool isActive) :this() 
     {
         Id = id;
         AccountId = accountId;
         CityId = cityId;
         CompanyName = companyName;
         JobTitle = jobTitle;
-        Industry = ındustry;
+        Industry = industry;
         StartingDate = startingDate;
         EndingDate = endingDate;
-        IsCurrentlyWorking = ısCurrentlyWorking;
+        IsCurrentlyWorking = isCurrentlyWorking;
         Description = description;
-        IsActive = ısActive;
+        IsActive = isActive;
     }
 }
