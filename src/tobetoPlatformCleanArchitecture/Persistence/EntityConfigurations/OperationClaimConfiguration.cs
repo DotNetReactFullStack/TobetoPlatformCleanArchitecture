@@ -403,6 +403,14 @@ public class OperationClaimConfiguration : IEntityTypeConfiguration<OperationCla
         seeds.Add(new OperationClaim { Id = ++id, Name = "LearningPathCategories.Update" });
         seeds.Add(new OperationClaim { Id = ++id, Name = "LearningPathCategories.Delete" });
         #endregion
+        #region RecourseDetails
+        seeds.Add(new OperationClaim { Id = ++id, Name = "RecourseDetails.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "RecourseDetails.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "RecourseDetails.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "RecourseDetails.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "RecourseDetails.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "RecourseDetails.Delete" });
+        #endregion
         return seeds;
     }
 }

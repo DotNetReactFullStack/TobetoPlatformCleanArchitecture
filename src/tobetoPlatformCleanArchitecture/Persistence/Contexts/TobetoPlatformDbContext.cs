@@ -52,6 +52,7 @@ namespace Persistence.Contexts
         public DbSet<AccountRecourse> AccountRecourses { get; set; }
         public DbSet<AccountAnnouncement> AccountAnnouncements { get; set; }
         public DbSet<LearningPathCategory> LearningPathCategories { get; set; }
+        public DbSet<RecourseDetail> RecourseDetails { get; set; }
 
         public TobetoPlatformDbContext(DbContextOptions dbContextOptions, IConfiguration configuration) : base(dbContextOptions, configuration)
         {
