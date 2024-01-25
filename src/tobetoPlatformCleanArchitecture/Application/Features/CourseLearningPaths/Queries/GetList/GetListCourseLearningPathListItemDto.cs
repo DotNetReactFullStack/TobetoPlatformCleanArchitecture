@@ -6,6 +6,6 @@ public class GetListCourseLearningPathListItemDto : IDto
 {
     public int Id { get; set; }
     public int CourseId { get; set; }
-    public int PathId { get; set; }
+    public int LearningPathId { get; set; }
     public bool Visibility { get; set; }
 }

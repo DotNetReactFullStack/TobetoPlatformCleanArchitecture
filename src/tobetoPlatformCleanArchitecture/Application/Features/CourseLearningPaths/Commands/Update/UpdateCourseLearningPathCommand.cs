@@ -12,11 +12,11 @@ using static Application.Features.CourseLearningPaths.Constants.CourseLearningPa
 
 namespace Application.Features.CourseLearningPaths.Commands.Update;
 
-public class UpdateCourseLearningPathCommand : IRequest<UpdatedCourseLearningPathResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateCourseLearningPathCommand : IRequest<UpdatedCourseLearningPathResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public int CourseId { get; set; }
-    public int PathId { get; set; }
+    public int LearningPathId { get; set; }
     public bool Visibility { get; set; }
 
     public string[] Roles => new[] { Admin, Write, CourseLearningPathsOperationClaims.Update };
