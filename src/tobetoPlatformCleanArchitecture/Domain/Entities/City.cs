@@ -17,6 +17,7 @@ public class City : Entity<int>
 
     public virtual ICollection<Address> Addresses { get; set; }
     public virtual ICollection<District> Districts { get; set; }
+    public virtual ICollection<Experience> Experiences { get; set; }
 
     public City()
     {
