@@ -12,7 +12,7 @@ using static Application.Features.AccountAnnouncements.Constants.AccountAnnounce
 
 namespace Application.Features.AccountAnnouncements.Commands.Create;
 
-public class CreateAccountAnnouncementCommand : IRequest<CreatedAccountAnnouncementResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateAccountAnnouncementCommand : IRequest<CreatedAccountAnnouncementResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int AccountId { get; set; }
     public int AnnouncementId { get; set; }

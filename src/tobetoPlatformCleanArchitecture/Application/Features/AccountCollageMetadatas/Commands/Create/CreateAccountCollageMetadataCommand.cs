@@ -12,7 +12,7 @@ using static Application.Features.AccountCollageMetadatas.Constants.AccountColla
 
 namespace Application.Features.AccountCollageMetadatas.Commands.Create;
 
-public class CreateAccountCollageMetadataCommand : IRequest<CreatedAccountCollageMetadataResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateAccountCollageMetadataCommand : IRequest<CreatedAccountCollageMetadataResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int AccountId { get; set; }
     public int GraduationStatusId { get; set; }

@@ -9,7 +9,7 @@ using static Application.Features.AccountCourses.Constants.AccountCoursesOperati
 
 namespace Application.Features.AccountCourses.Queries.GetById;
 
-public class GetByIdAccountCourseQuery : IRequest<GetByIdAccountCourseResponse>
+public class GetByIdAccountCourseQuery : IRequest<GetByIdAccountCourseResponse>, ISecuredRequest
 {
     public int Id { get; set; }
 

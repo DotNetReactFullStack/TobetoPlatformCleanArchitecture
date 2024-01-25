@@ -12,13 +12,15 @@ using static Application.Features.Accounts.Constants.AccountsOperationClaims;
 
 namespace Application.Features.Accounts.Commands.Create;
 
-public class CreateAccountCommand : IRequest<CreatedAccountResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateAccountCommand : IRequest<CreatedAccountResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
-    public int AddressId { get; set; }
+    public int UserId { get; set; }
     public string NationalIdentificationNumber { get; set; }
     public DateTime BirthDate { get; set; }
     public string PhoneNumber { get; set; }
     public string? ProfilePhotoPath { get; set; }
+    public bool ShareProfile { get; set; }
+    public string ProfileLinkUrl { get; set; }
     public bool IsActive { get; set; }
 
     public string[] Roles => new[] { Admin, Write, AccountsOperationClaims.Create };

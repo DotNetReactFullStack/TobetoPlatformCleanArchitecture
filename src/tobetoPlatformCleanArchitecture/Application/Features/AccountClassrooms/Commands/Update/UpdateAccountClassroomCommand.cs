@@ -12,7 +12,7 @@ using static Application.Features.AccountClassrooms.Constants.AccountClassroomsO
 
 namespace Application.Features.AccountClassrooms.Commands.Update;
 
-public class UpdateAccountClassroomCommand : IRequest<UpdatedAccountClassroomResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateAccountClassroomCommand : IRequest<UpdatedAccountClassroomResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public int AccountId { get; set; }
