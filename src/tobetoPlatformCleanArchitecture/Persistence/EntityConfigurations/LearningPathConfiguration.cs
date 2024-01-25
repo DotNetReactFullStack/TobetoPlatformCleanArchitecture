@@ -11,6 +11,7 @@ public class LearningPathConfiguration : IEntityTypeConfiguration<LearningPath>
         builder.ToTable("LearningPaths").HasKey(lp => lp.Id);
 
         builder.Property(lp => lp.Id).HasColumnName("Id").IsRequired();
+        builder.Property(lp => lp.LearningPathCategoryId).HasColumnName("LearningPathCategoryId");
         builder.Property(lp => lp.Name).HasColumnName("Name");
         builder.Property(lp => lp.Visibility).HasColumnName("Visibility");
         builder.Property(lp => lp.StartingTime).HasColumnName("StartingTime");
