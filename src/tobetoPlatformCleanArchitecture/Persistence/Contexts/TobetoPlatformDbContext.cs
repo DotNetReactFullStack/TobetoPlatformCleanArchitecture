@@ -1,4 +1,4 @@
-﻿using Domain.Entities;
+using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -51,6 +51,7 @@ namespace Persistence.Contexts
         public DbSet<Recourse> Recourses { get; set; }
         public DbSet<AccountRecourse> AccountRecourses { get; set; }
         public DbSet<AccountAnnouncement> AccountAnnouncements { get; set; }
+        public DbSet<LearningPathCategory> LearningPathCategories { get; set; }
 
         public TobetoPlatformDbContext(DbContextOptions dbContextOptions, IConfiguration configuration) : base(dbContextOptions, configuration)
         {
