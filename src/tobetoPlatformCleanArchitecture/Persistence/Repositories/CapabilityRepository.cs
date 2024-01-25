@@ -5,9 +5,9 @@ using Persistence.Contexts;
 
 namespace Persistence.Repositories;
 
-public class CapabilityRepository : EfRepositoryBase<Capability, int, BaseDbContext>, ICapabilityRepository
+public class CapabilityRepository : EfRepositoryBase<Capability, int, TobetoPlatformDbContext>, ICapabilityRepository
 {
-    public CapabilityRepository(BaseDbContext context) : base(context)
+    public CapabilityRepository(TobetoPlatformDbContext context) : base(context)
     {
     }
 }

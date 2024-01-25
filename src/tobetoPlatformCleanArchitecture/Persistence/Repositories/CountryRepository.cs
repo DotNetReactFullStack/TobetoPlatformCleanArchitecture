@@ -5,9 +5,9 @@ using Persistence.Contexts;
 
 namespace Persistence.Repositories;
 
-public class CountryRepository : EfRepositoryBase<Country, int, BaseDbContext>, ICountryRepository
+public class CountryRepository : EfRepositoryBase<Country, int, TobetoPlatformDbContext>, ICountryRepository
 {
-    public CountryRepository(BaseDbContext context) : base(context)
+    public CountryRepository(TobetoPlatformDbContext context) : base(context)
     {
     }
 }

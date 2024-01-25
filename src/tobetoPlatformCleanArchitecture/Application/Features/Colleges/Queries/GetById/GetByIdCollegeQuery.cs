@@ -9,7 +9,7 @@ using static Application.Features.Colleges.Constants.CollegesOperationClaims;
 
 namespace Application.Features.Colleges.Queries.GetById;
 
-public class GetByIdCollegeQuery : IRequest<GetByIdCollegeResponse>
+public class GetByIdCollegeQuery : IRequest<GetByIdCollegeResponse>, ISecuredRequest
 {
     public int Id { get; set; }
 
