@@ -20,7 +20,7 @@ namespace Domain.Entities
         public string ProfileLinkUrl { get; set; }
         public bool IsActive { get; set; }
 
-        public virtual User User { get; set; } = null!;
+        public virtual User User { get; set; }
         public virtual Address? Address { get; set; }
         public virtual ICollection<AccountCapability> AccountCapabilities { get; set; }
         public virtual ICollection<AccountCertificate> AccountCertificates { get; set; }
@@ -35,6 +35,7 @@ namespace Domain.Entities
         public virtual ICollection<AccountCourse> AccountCourses { get; set; } 
         public virtual ICollection<UserOperationClaim> UserOperationClaims { get; set; }
         public virtual ICollection<AccountAnnouncement> AccountAnnouncements { get; set; }
+        public virtual ICollection<Experience> Experiences { get; set; }
 
         public Account()
         {
