@@ -12,7 +12,7 @@ using static Application.Features.Exams.Constants.ExamsOperationClaims;
 
 namespace Application.Features.Exams.Commands.Create;
 
-public class CreateExamCommand : IRequest<CreatedExamResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateExamCommand : IRequest<CreatedExamResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public string Name { get; set; }
     public int Priority { get; set; }
