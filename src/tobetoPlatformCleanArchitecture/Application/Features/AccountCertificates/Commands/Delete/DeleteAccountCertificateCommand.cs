@@ -13,7 +13,7 @@ using static Application.Features.AccountCertificates.Constants.AccountCertifica
 
 namespace Application.Features.AccountCertificates.Commands.Delete;
 
-public class DeleteAccountCertificateCommand : IRequest<DeletedAccountCertificateResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class DeleteAccountCertificateCommand : IRequest<DeletedAccountCertificateResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
 

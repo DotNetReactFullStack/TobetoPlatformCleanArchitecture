@@ -5,9 +5,9 @@ using Persistence.Contexts;
 
 namespace Persistence.Repositories;
 
-public class AccountCollageMetadataRepository : EfRepositoryBase<AccountCollageMetadata, int, BaseDbContext>, IAccountCollageMetadataRepository
+public class AccountCollageMetadataRepository : EfRepositoryBase<AccountCollageMetadata, int, TobetoPlatformDbContext>, IAccountCollageMetadataRepository
 {
-    public AccountCollageMetadataRepository(BaseDbContext context) : base(context)
+    public AccountCollageMetadataRepository(TobetoPlatformDbContext context) : base(context)
     {
     }
 }

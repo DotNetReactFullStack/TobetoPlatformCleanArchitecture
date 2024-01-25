@@ -5,9 +5,9 @@ using Persistence.Contexts;
 
 namespace Persistence.Repositories;
 
-public class AccountExamResultRepository : EfRepositoryBase<AccountExamResult, int, BaseDbContext>, IAccountExamResultRepository
+public class AccountExamResultRepository : EfRepositoryBase<AccountExamResult, int, TobetoPlatformDbContext>, IAccountExamResultRepository
 {
-    public AccountExamResultRepository(BaseDbContext context) : base(context)
+    public AccountExamResultRepository(TobetoPlatformDbContext context) : base(context)
     {
     }
 }

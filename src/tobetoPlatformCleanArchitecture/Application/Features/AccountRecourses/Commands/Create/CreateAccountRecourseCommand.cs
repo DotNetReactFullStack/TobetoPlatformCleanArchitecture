@@ -12,7 +12,7 @@ using static Application.Features.AccountRecourses.Constants.AccountRecoursesOpe
 
 namespace Application.Features.AccountRecourses.Commands.Create;
 
-public class CreateAccountRecourseCommand : IRequest<CreatedAccountRecourseResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateAccountRecourseCommand : IRequest<CreatedAccountRecourseResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int AccountId { get; set; }
     public int RecourseId { get; set; }

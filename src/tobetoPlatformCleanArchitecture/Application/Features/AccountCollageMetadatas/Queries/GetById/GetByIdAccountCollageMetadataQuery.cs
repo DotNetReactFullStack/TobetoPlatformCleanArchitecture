@@ -9,7 +9,7 @@ using static Application.Features.AccountCollageMetadatas.Constants.AccountColla
 
 namespace Application.Features.AccountCollageMetadatas.Queries.GetById;
 
-public class GetByIdAccountCollageMetadataQuery : IRequest<GetByIdAccountCollageMetadataResponse>
+public class GetByIdAccountCollageMetadataQuery : IRequest<GetByIdAccountCollageMetadataResponse>, ISecuredRequest
 {
     public int Id { get; set; }
 
