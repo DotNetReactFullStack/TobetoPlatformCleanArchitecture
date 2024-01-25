@@ -12,7 +12,7 @@ using static Application.Features.ForeignLanguageLevels.Constants.ForeignLanguag
 
 namespace Application.Features.ForeignLanguageLevels.Commands.Update;
 
-public class UpdateForeignLanguageLevelCommand : IRequest<UpdatedForeignLanguageLevelResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateForeignLanguageLevelCommand : IRequest<UpdatedForeignLanguageLevelResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public string Name { get; set; }
