@@ -411,6 +411,14 @@ public class OperationClaimConfiguration : IEntityTypeConfiguration<OperationCla
         seeds.Add(new OperationClaim { Id = ++id, Name = "RecourseDetails.Update" });
         seeds.Add(new OperationClaim { Id = ++id, Name = "RecourseDetails.Delete" });
         #endregion
+        #region RecourseDetailSteps
+        seeds.Add(new OperationClaim { Id = ++id, Name = "RecourseDetailSteps.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "RecourseDetailSteps.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "RecourseDetailSteps.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "RecourseDetailSteps.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "RecourseDetailSteps.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "RecourseDetailSteps.Delete" });
+        #endregion
         return seeds;
     }
 }

@@ -1,0 +1,13 @@
+using FluentValidation;
+
+namespace Application.Features.RecourseDetailSteps.Commands.Create;
+
+public class CreateRecourseDetailStepCommandValidator : AbstractValidator<CreateRecourseDetailStepCommand>
+{
+    public CreateRecourseDetailStepCommandValidator()
+    {
+        RuleFor(c => c.Name).NotEmpty();
+        RuleFor(c => c.Priority).NotEmpty();
+        RuleFor(c => c.Visibility).NotEmpty();
+    }
+}
