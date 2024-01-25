@@ -12,7 +12,7 @@ using static Application.Features.Recourses.Constants.RecoursesOperationClaims;
 
 namespace Application.Features.Recourses.Commands.Update;
 
-public class UpdateRecourseCommand : IRequest<UpdatedRecourseResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateRecourseCommand : IRequest<UpdatedRecourseResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public int OrganizationId { get; set; }
