@@ -70,6 +70,9 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IRecourseDetailRepository, RecourseDetailRepository>();
         services.AddScoped<IRecourseDetailStepRepository, RecourseDetailStepRepository>();
         services.AddScoped<IAccountRecourseDetailRepository, AccountRecourseDetailRepository>();
+        services.AddScoped<IExperienceRepository, ExperienceRepository>();
+        services.AddScoped<IImageRepository, ImageRepository>();
+        services.AddScoped<IImageExtensionRepository, ImageExtensionRepository>();
         return services;
     }
 }

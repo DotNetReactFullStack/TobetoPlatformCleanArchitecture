@@ -64,6 +64,10 @@ using Application.Services.LearningPathCategories;
 using Application.Services.RecourseDetails;
 using Application.Services.RecourseDetailSteps;
 using Application.Services.AccountRecourseDetails;
+using Application.Services.Experiences;
+using Application.Services.GraduationStatus;
+using Application.Services.Images;
+using Application.Services.ImageExtensions;
 
 namespace Application;
 
@@ -143,6 +147,10 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IRecourseDetailsService, RecourseDetailsManager>();
         services.AddScoped<IRecourseDetailStepsService, RecourseDetailStepsManager>();
         services.AddScoped<IAccountRecourseDetailsService, AccountRecourseDetailsManager>();
+        services.AddScoped<IExperiencesService, ExperiencesManager>();
+        services.AddScoped<IGraduationStatusService, GraduationStatusManager>();
+        services.AddScoped<IImagesService, ImagesManager>();
+        services.AddScoped<IImageExtensionsService, ImageExtensionsManager>();
         return services;
     }
 
