@@ -5,9 +5,9 @@ using Persistence.Contexts;
 
 namespace Persistence.Repositories;
 
-public class ForeignLanguageRepository : EfRepositoryBase<ForeignLanguage, int, BaseDbContext>, IForeignLanguageRepository
+public class ForeignLanguageRepository : EfRepositoryBase<ForeignLanguage, int, TobetoPlatformDbContext>, IForeignLanguageRepository
 {
-    public ForeignLanguageRepository(BaseDbContext context) : base(context)
+    public ForeignLanguageRepository(TobetoPlatformDbContext context) : base(context)
     {
     }
 }

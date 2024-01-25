@@ -13,7 +13,7 @@ using static Application.Features.ForeignLanguages.Constants.ForeignLanguagesOpe
 
 namespace Application.Features.ForeignLanguages.Commands.Delete;
 
-public class DeleteForeignLanguageCommand : IRequest<DeletedForeignLanguageResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class DeleteForeignLanguageCommand : IRequest<DeletedForeignLanguageResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
 

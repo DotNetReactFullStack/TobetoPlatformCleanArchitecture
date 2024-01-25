@@ -12,7 +12,7 @@ using static Application.Features.ForeignLanguages.Constants.ForeignLanguagesOpe
 
 namespace Application.Features.ForeignLanguages.Commands.Create;
 
-public class CreateForeignLanguageCommand : IRequest<CreatedForeignLanguageResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateForeignLanguageCommand : IRequest<CreatedForeignLanguageResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public string Name { get; set; }
     public int Priority { get; set; }
