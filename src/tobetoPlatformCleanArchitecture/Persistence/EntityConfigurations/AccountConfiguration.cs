@@ -11,7 +11,6 @@ public class AccountConfiguration : IEntityTypeConfiguration<Account>
         builder.ToTable("Accounts").HasKey(a => a.Id);
 
         builder.Property(a => a.Id).HasColumnName("Id").IsRequired();
-        builder.Property(a => a.AddressId).HasColumnName("AddressId");
         builder.Property(a => a.NationalIdentificationNumber).HasColumnName("NationalIdentificationNumber");
         builder.Property(a => a.BirthDate).HasColumnName("BirthDate");
         builder.Property(a => a.PhoneNumber).HasColumnName("PhoneNumber");
