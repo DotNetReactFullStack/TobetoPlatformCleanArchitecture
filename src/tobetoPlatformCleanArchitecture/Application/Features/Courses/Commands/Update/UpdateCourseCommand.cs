@@ -12,7 +12,7 @@ using static Application.Features.Courses.Constants.CoursesOperationClaims;
 
 namespace Application.Features.Courses.Commands.Update;
 
-public class UpdateCourseCommand : IRequest<UpdatedCourseResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateCourseCommand : IRequest<UpdatedCourseResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public int CourseCategoryId { get; set; }

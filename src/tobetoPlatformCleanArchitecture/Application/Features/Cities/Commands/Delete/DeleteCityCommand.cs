@@ -13,7 +13,7 @@ using static Application.Features.Cities.Constants.CitiesOperationClaims;
 
 namespace Application.Features.Cities.Commands.Delete;
 
-public class DeleteCityCommand : IRequest<DeletedCityResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class DeleteCityCommand : IRequest<DeletedCityResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
 

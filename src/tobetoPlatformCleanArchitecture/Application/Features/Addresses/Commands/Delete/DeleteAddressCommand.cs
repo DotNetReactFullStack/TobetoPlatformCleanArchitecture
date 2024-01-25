@@ -13,7 +13,7 @@ using static Application.Features.Addresses.Constants.AddressesOperationClaims;
 
 namespace Application.Features.Addresses.Commands.Delete;
 
-public class DeleteAddressCommand : IRequest<DeletedAddressResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class DeleteAddressCommand : IRequest<DeletedAddressResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
 

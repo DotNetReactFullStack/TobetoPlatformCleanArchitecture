@@ -12,7 +12,7 @@ using static Application.Features.AccountSocialMediaPlatforms.Constants.AccountS
 
 namespace Application.Features.AccountSocialMediaPlatforms.Commands.Create;
 
-public class CreateAccountSocialMediaPlatformCommand : IRequest<CreatedAccountSocialMediaPlatformResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateAccountSocialMediaPlatformCommand : IRequest<CreatedAccountSocialMediaPlatformResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int AccountId { get; set; }
     public int SocialMediaPlatformId { get; set; }
@@ -42,8 +42,6 @@ public class CreateAccountSocialMediaPlatformCommand : IRequest<CreatedAccountSo
         public async Task<CreatedAccountSocialMediaPlatformResponse> Handle(CreateAccountSocialMediaPlatformCommand request, CancellationToken cancellationToken)
         {
             AccountSocialMediaPlatform accountSocialMediaPlatform = _mapper.Map<AccountSocialMediaPlatform>(request);
-
-            _accountSocialMediaPlatformBusinessRules.AccountCanHasMaximumThreeSocialMediaPlatforms(accountSocialMediaPlatform);
 
             await _accountSocialMediaPlatformRepository.AddAsync(accountSocialMediaPlatform);
 

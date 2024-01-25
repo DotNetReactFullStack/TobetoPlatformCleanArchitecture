@@ -13,7 +13,7 @@ using static Application.Features.AccountSocialMediaPlatforms.Constants.AccountS
 
 namespace Application.Features.AccountSocialMediaPlatforms.Commands.Delete;
 
-public class DeleteAccountSocialMediaPlatformCommand : IRequest<DeletedAccountSocialMediaPlatformResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class DeleteAccountSocialMediaPlatformCommand : IRequest<DeletedAccountSocialMediaPlatformResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
 

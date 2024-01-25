@@ -9,7 +9,7 @@ using static Application.Features.Classrooms.Constants.ClassroomsOperationClaims
 
 namespace Application.Features.Classrooms.Queries.GetById;
 
-public class GetByIdClassroomQuery : IRequest<GetByIdClassroomResponse>
+public class GetByIdClassroomQuery : IRequest<GetByIdClassroomResponse>, ISecuredRequest
 {
     public int Id { get; set; }
 

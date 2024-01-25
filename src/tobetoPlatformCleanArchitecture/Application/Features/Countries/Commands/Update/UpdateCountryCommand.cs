@@ -12,7 +12,7 @@ using static Application.Features.Countries.Constants.CountriesOperationClaims;
 
 namespace Application.Features.Countries.Commands.Update;
 
-public class UpdateCountryCommand : IRequest<UpdatedCountryResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateCountryCommand : IRequest<UpdatedCountryResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public string Name { get; set; }

@@ -9,7 +9,7 @@ using static Application.Features.Answers.Constants.AnswersOperationClaims;
 
 namespace Application.Features.Answers.Queries.GetById;
 
-public class GetByIdAnswerQuery : IRequest<GetByIdAnswerResponse>
+public class GetByIdAnswerQuery : IRequest<GetByIdAnswerResponse>, ISecuredRequest
 {
     public int Id { get; set; }
 
