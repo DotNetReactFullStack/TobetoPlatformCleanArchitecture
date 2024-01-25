@@ -1,8 +1,8 @@
-using Application.Features.GraduationStatus.Commands.Create;
-using Application.Features.GraduationStatus.Commands.Delete;
-using Application.Features.GraduationStatus.Commands.Update;
-using Application.Features.GraduationStatus.Queries.GetById;
-using Application.Features.GraduationStatus.Queries.GetList;
+using Application.Features.GraduationStatuses.Commands.Create;
+using Application.Features.GraduationStatuses.Commands.Delete;
+using Application.Features.GraduationStatuses.Commands.Update;
+using Application.Features.GraduationStatuses.Queries.GetById;
+using Application.Features.GraduationStatuses.Queries.GetList;
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Microsoft.AspNetCore.Mvc;
