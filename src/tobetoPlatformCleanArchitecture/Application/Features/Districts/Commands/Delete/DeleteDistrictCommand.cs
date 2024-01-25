@@ -13,7 +13,7 @@ using static Application.Features.Districts.Constants.DistrictsOperationClaims;
 
 namespace Application.Features.Districts.Commands.Delete;
 
-public class DeleteDistrictCommand : IRequest<DeletedDistrictResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class DeleteDistrictCommand : IRequest<DeletedDistrictResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
 
