@@ -9,7 +9,7 @@ using static Application.Features.ForeignLanguages.Constants.ForeignLanguagesOpe
 
 namespace Application.Features.ForeignLanguages.Queries.GetById;
 
-public class GetByIdForeignLanguageQuery : IRequest<GetByIdForeignLanguageResponse>
+public class GetByIdForeignLanguageQuery : IRequest<GetByIdForeignLanguageResponse>, ISecuredRequest
 {
     public int Id { get; set; }
 

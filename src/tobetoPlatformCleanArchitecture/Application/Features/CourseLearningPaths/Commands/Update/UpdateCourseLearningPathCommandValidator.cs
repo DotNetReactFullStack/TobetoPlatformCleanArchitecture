@@ -8,7 +8,7 @@ public class UpdateCourseLearningPathCommandValidator : AbstractValidator<Update
     {
         RuleFor(c => c.Id).NotEmpty();
         RuleFor(c => c.CourseId).NotEmpty();
-        RuleFor(c => c.PathId).NotEmpty();
+        RuleFor(c => c.LearningPathId).NotEmpty();
         RuleFor(c => c.Visibility).NotEmpty();
     }
 }

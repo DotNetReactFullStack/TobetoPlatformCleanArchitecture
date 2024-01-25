@@ -13,7 +13,7 @@ using static Application.Features.CourseCategories.Constants.CourseCategoriesOpe
 
 namespace Application.Features.CourseCategories.Commands.Delete;
 
-public class DeleteCourseCategoryCommand : IRequest<DeletedCourseCategoryResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class DeleteCourseCategoryCommand : IRequest<DeletedCourseCategoryResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
 

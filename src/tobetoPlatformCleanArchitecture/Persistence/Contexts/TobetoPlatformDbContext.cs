@@ -55,6 +55,10 @@ namespace Persistence.Contexts
         public DbSet<RecourseDetail> RecourseDetails { get; set; }
         public DbSet<RecourseDetailStep> RecourseDetailSteps { get; set; }
         public DbSet<AccountRecourseDetail> AccountRecourseDetails { get; set; }
+        public DbSet<Experience> Experiences { get; set; }
+        public DbSet<GraduationStatus> GraduationStatus { get; set; }
+        public DbSet<Image> Images { get; set; }
+        public DbSet<ImageExtension> ImageExtensions { get; set; }
 
         public TobetoPlatformDbContext(DbContextOptions dbContextOptions, IConfiguration configuration) : base(dbContextOptions, configuration)
         {

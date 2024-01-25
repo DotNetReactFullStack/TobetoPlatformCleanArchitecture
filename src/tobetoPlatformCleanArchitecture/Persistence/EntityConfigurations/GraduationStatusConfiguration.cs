@@ -8,7 +8,7 @@ public class GraduationStatusConfiguration : IEntityTypeConfiguration<Graduation
 {
     public void Configure(EntityTypeBuilder<GraduationStatus> builder)
     {
-        builder.ToTable("GraduationStatuses").HasKey(gs => gs.Id);
+        builder.ToTable("GraduationStatus").HasKey(gs => gs.Id);
 
         builder.Property(gs => gs.Id).HasColumnName("Id").IsRequired();
         builder.Property(gs => gs.Name).HasColumnName("Name");

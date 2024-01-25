@@ -7,6 +7,7 @@ public class UpdateLearningPathCommandValidator : AbstractValidator<UpdateLearni
     public UpdateLearningPathCommandValidator()
     {
         RuleFor(c => c.Id).NotEmpty();
+        RuleFor(c => c.LearningPathCategoryId).NotEmpty();
         RuleFor(c => c.Name).NotEmpty();
         RuleFor(c => c.Visibility).NotEmpty();
         RuleFor(c => c.StartingTime).NotEmpty();

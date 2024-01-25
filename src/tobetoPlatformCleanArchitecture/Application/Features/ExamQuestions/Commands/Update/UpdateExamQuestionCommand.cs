@@ -12,7 +12,7 @@ using static Application.Features.ExamQuestions.Constants.ExamQuestionsOperation
 
 namespace Application.Features.ExamQuestions.Commands.Update;
 
-public class UpdateExamQuestionCommand : IRequest<UpdatedExamQuestionResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateExamQuestionCommand : IRequest<UpdatedExamQuestionResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public int ExamId { get; set; }

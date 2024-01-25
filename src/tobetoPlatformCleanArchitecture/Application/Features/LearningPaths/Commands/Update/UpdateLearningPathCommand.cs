@@ -12,9 +12,10 @@ using static Application.Features.LearningPaths.Constants.LearningPathsOperation
 
 namespace Application.Features.LearningPaths.Commands.Update;
 
-public class UpdateLearningPathCommand : IRequest<UpdatedLearningPathResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateLearningPathCommand : IRequest<UpdatedLearningPathResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
+    public int LearningPathCategoryId { get; set; }
     public string Name { get; set; }
     public bool Visibility { get; set; }
     public DateTime StartingTime { get; set; }

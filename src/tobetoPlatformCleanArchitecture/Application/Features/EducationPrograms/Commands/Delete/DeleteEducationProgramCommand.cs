@@ -13,7 +13,7 @@ using static Application.Features.EducationPrograms.Constants.EducationProgramsO
 
 namespace Application.Features.EducationPrograms.Commands.Delete;
 
-public class DeleteEducationProgramCommand : IRequest<DeletedEducationProgramResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class DeleteEducationProgramCommand : IRequest<DeletedEducationProgramResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
 

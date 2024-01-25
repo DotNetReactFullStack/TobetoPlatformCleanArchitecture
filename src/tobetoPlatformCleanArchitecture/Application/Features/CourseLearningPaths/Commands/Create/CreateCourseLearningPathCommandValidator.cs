@@ -7,7 +7,7 @@ public class CreateCourseLearningPathCommandValidator : AbstractValidator<Create
     public CreateCourseLearningPathCommandValidator()
     {
         RuleFor(c => c.CourseId).NotEmpty();
-        RuleFor(c => c.PathId).NotEmpty();
+        RuleFor(c => c.LearningPathId).NotEmpty();
         RuleFor(c => c.Visibility).NotEmpty();
     }
 }

@@ -12,7 +12,7 @@ using static Application.Features.ExamQuestions.Constants.ExamQuestionsOperation
 
 namespace Application.Features.ExamQuestions.Commands.Create;
 
-public class CreateExamQuestionCommand : IRequest<CreatedExamQuestionResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateExamQuestionCommand : IRequest<CreatedExamQuestionResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int ExamId { get; set; }
     public int QuestionId { get; set; }
@@ -40,8 +40,6 @@ public class CreateExamQuestionCommand : IRequest<CreatedExamQuestionResponse>, 
         public async Task<CreatedExamQuestionResponse> Handle(CreateExamQuestionCommand request, CancellationToken cancellationToken)
         {
             ExamQuestion examQuestion = _mapper.Map<ExamQuestion>(request);
-
-            _examQuestionBusinessRules.ExamCanHasMaximumOneHundredQuestions(examQuestion);
 
             await _examQuestionRepository.AddAsync(examQuestion);
 

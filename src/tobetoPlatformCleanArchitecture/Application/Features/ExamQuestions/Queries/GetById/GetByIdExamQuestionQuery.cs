@@ -9,7 +9,7 @@ using static Application.Features.ExamQuestions.Constants.ExamQuestionsOperation
 
 namespace Application.Features.ExamQuestions.Queries.GetById;
 
-public class GetByIdExamQuestionQuery : IRequest<GetByIdExamQuestionResponse>
+public class GetByIdExamQuestionQuery : IRequest<GetByIdExamQuestionResponse>, ISecuredRequest
 {
     public int Id { get; set; }
 
