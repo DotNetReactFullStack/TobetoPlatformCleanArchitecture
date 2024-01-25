@@ -65,7 +65,7 @@ using Application.Services.RecourseDetails;
 using Application.Services.RecourseDetailSteps;
 using Application.Services.AccountRecourseDetails;
 using Application.Services.Experiences;
-using Application.Services.GraduationStatus;
+using Application.Services.GraduationStatuses;
 using Application.Services.Images;
 using Application.Services.ImageExtensions;
 
@@ -148,7 +148,7 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IRecourseDetailStepsService, RecourseDetailStepsManager>();
         services.AddScoped<IAccountRecourseDetailsService, AccountRecourseDetailsManager>();
         services.AddScoped<IExperiencesService, ExperiencesManager>();
-        services.AddScoped<IGraduationStatusService, GraduationStatusManager>();
+        services.AddScoped<IGraduationStatusesService, GraduationStatusesManager>();
         services.AddScoped<IImagesService, ImagesManager>();
         services.AddScoped<IImageExtensionsService, ImageExtensionsManager>();
         return services;
