@@ -5,9 +5,9 @@ using Persistence.Contexts;
 
 namespace Persistence.Repositories;
 
-public class SocialMediaPlatformRepository : EfRepositoryBase<SocialMediaPlatform, int, BaseDbContext>, ISocialMediaPlatformRepository
+public class SocialMediaPlatformRepository : EfRepositoryBase<SocialMediaPlatform, int, TobetoPlatformDbContext>, ISocialMediaPlatformRepository
 {
-    public SocialMediaPlatformRepository(BaseDbContext context) : base(context)
+    public SocialMediaPlatformRepository(TobetoPlatformDbContext context) : base(context)
     {
     }
 }

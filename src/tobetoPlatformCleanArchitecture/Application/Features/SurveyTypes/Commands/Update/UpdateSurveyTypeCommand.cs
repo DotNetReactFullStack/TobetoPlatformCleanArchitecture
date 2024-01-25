@@ -12,7 +12,7 @@ using static Application.Features.SurveyTypes.Constants.SurveyTypesOperationClai
 
 namespace Application.Features.SurveyTypes.Commands.Update;
 
-public class UpdateSurveyTypeCommand : IRequest<UpdatedSurveyTypeResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateSurveyTypeCommand : IRequest<UpdatedSurveyTypeResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public string Name { get; set; }

@@ -5,9 +5,9 @@ using Persistence.Contexts;
 
 namespace Persistence.Repositories;
 
-public class OrganizationTypeRepository : EfRepositoryBase<OrganizationType, int, BaseDbContext>, IOrganizationTypeRepository
+public class OrganizationTypeRepository : EfRepositoryBase<OrganizationType, int, TobetoPlatformDbContext>, IOrganizationTypeRepository
 {
-    public OrganizationTypeRepository(BaseDbContext context) : base(context)
+    public OrganizationTypeRepository(TobetoPlatformDbContext context) : base(context)
     {
     }
 }

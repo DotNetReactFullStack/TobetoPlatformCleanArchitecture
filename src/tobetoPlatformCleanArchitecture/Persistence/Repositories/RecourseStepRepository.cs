@@ -5,9 +5,9 @@ using Persistence.Contexts;
 
 namespace Persistence.Repositories;
 
-public class RecourseStepRepository : EfRepositoryBase<RecourseStep, int, BaseDbContext>, IRecourseStepRepository
+public class RecourseStepRepository : EfRepositoryBase<RecourseStep, int, TobetoPlatformDbContext>, IRecourseStepRepository
 {
-    public RecourseStepRepository(BaseDbContext context) : base(context)
+    public RecourseStepRepository(TobetoPlatformDbContext context) : base(context)
     {
     }
 }

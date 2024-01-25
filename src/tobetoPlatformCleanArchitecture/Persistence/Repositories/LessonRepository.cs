@@ -5,9 +5,9 @@ using Persistence.Contexts;
 
 namespace Persistence.Repositories;
 
-public class LessonRepository : EfRepositoryBase<Lesson, int, BaseDbContext>, ILessonRepository
+public class LessonRepository : EfRepositoryBase<Lesson, int, TobetoPlatformDbContext>, ILessonRepository
 {
-    public LessonRepository(BaseDbContext context) : base(context)
+    public LessonRepository(TobetoPlatformDbContext context) : base(context)
     {
     }
 }

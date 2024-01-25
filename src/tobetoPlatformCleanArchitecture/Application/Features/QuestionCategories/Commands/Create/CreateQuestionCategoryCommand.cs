@@ -12,7 +12,7 @@ using static Application.Features.QuestionCategories.Constants.QuestionCategorie
 
 namespace Application.Features.QuestionCategories.Commands.Create;
 
-public class CreateQuestionCategoryCommand : IRequest<CreatedQuestionCategoryResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateQuestionCategoryCommand : IRequest<CreatedQuestionCategoryResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public string Name { get; set; }
     public int Priority { get; set; }

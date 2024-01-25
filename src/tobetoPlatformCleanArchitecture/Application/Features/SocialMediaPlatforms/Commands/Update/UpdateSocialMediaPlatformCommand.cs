@@ -12,7 +12,7 @@ using static Application.Features.SocialMediaPlatforms.Constants.SocialMediaPlat
 
 namespace Application.Features.SocialMediaPlatforms.Commands.Update;
 
-public class UpdateSocialMediaPlatformCommand : IRequest<UpdatedSocialMediaPlatformResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateSocialMediaPlatformCommand : IRequest<UpdatedSocialMediaPlatformResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public string Name { get; set; }
