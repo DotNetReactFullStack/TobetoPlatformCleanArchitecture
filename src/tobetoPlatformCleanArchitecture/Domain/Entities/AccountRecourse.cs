@@ -16,6 +16,7 @@ public class AccountRecourse : Entity<int>
     public virtual Account? Account { get; set; } 
     public virtual Recourse? Recourse { get; set; } 
     public virtual RecourseStep? RecourseStep { get; set; } 
+    public virtual ICollection<AccountRecourseDetail> AccountRecourseDetails { get; set; }
 
     public AccountRecourse()
     {
