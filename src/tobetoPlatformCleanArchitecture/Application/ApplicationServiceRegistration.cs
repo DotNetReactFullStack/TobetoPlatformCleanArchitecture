@@ -62,6 +62,9 @@ using Application.Services.AccountRecourses;
 using Application.Services.AccountAnnouncements;
 using Application.Services.Experiences;
 using Application.Services.LearningPathCategories;
+using Application.Services.AccountRecourseDetails;
+using Application.Services.RecourseDetails;
+using Application.Services.RecourseDetailSteps;
 
 namespace Application;
 
@@ -139,6 +142,9 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IAccountAnnouncementsService, AccountAnnouncementsManager>();
         services.AddScoped<IExperiencesService, ExperiencesManager>();
         services.AddScoped<ILearningPathCategoriesService, LearningPathCategoriesManager>();
+        services.AddScoped<IAccountRecourseDetailsService, AccountRecourseDetailsManager>();
+        services.AddScoped<IRecourseDetailsService, RecourseDetailsManager>();
+        services.AddScoped<IRecourseDetailStepsService, RecourseDetailStepsManager>();
         return services;
     }
 
