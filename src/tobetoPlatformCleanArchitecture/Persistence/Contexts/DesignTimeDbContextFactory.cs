@@ -4,13 +4,13 @@ using Microsoft.Extensions.Configuration;
 using Persistence;
 using Persistence.Contexts;
 
-public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<TobetoPlatformDbContext>
+public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<BaseDbContext>
 {
-    public TobetoPlatformDbContext CreateDbContext(string[] args)
+    public BaseDbContext CreateDbContext(string[] args)
     {
-        var optionsBuilder = new DbContextOptionsBuilder<TobetoPlatformDbContext>();
+        var optionsBuilder = new DbContextOptionsBuilder<BaseDbContext>();
         optionsBuilder.UseSqlServer(ConnectionStringConfiguration.ConnectionSettings.ConnectionString);
 
-        return new TobetoPlatformDbContext(optionsBuilder.Options, ConnectionStringConfiguration.ConnectionSettings.ConfigurationManager);
+        return new BaseDbContext(optionsBuilder.Options, ConnectionStringConfiguration.ConnectionSettings.ConfigurationManager);
     }
 }
