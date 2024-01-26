@@ -8,8 +8,8 @@ namespace Domain.Entities
         public int ContractId { get; set; }
         public bool IsAccept { get; set; }
 
-        public Account? Account { get; set; }
-        public Contract? Contract { get; set; }
+        public virtual Account? Account { get; set; }
+        public virtual Contract? Contract { get; set; }
 
         public AccountContract()
         {

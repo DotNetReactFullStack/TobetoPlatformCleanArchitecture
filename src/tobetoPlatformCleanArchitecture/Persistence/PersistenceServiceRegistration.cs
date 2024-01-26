@@ -73,6 +73,9 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IRecourseDetailStepRepository, RecourseDetailStepRepository>();
         services.AddScoped<IImageRepository, ImageRepository>();
         services.AddScoped<IImageExtensionRepository, ImageExtensionRepository>();
+        services.AddScoped<IContractTypeRepository, ContractTypeRepository>();
+        services.AddScoped<IAccountContractRepository, AccountContractRepository>();
+        services.AddScoped<IContractRepository, ContractRepository>();
         return services;
     }
 }
