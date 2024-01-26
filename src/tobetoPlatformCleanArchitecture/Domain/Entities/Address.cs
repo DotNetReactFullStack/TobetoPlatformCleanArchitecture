@@ -8,15 +8,16 @@ using System.Threading.Tasks;
 namespace Domain.Entities;
 public class Address : Entity<int>
 {
+    public int AccountId { get; set; }
     public int CountryId { get; set; }
     public int CityId { get; set; }
     public int DistrictId { get; set; }
     public string AddressDetail { get; set; }
 
+    public virtual Account? Account { get; set; }
     public virtual Country? Country { get; set; }
     public virtual City? City { get; set; }
     public virtual District? District { get; set; }
-    public virtual Account? Account { get; set; }
 
 
     public Address()
@@ -24,9 +25,10 @@ public class Address : Entity<int>
         
     }
 
-    public Address(int id, int cityId, int districtId, int countryId, string addressDetail) : this()
+    public Address(int id, int accountId, int cityId, int districtId, int countryId, string addressDetail) : this()
     {
         Id = id;
+        AccountId = accountId;
         CityId = cityId;
         DistrictId = districtId;
         CountryId = countryId;
