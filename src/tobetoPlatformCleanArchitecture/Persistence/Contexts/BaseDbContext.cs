@@ -60,6 +60,7 @@ public class BaseDbContext : DbContext
     public DbSet<Recourse> Recourses { get; set; }
     public DbSet<AccountRecourse> AccountRecourses { get; set; }
     public DbSet<AccountAnnouncement> AccountAnnouncements { get; set; }
+    public DbSet<Experience> Experiences { get; set; }
 
 
     public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration)
