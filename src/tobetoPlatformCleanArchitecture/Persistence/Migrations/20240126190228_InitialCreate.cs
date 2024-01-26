@@ -217,24 +217,37 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "LearningPaths",
+                name: "ImageExtensions",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Visibility = table.Column<bool>(type: "bit", nullable: false),
-                    StartingTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    EndingTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    NumberOfLikes = table.Column<int>(type: "int", nullable: false),
-                    TotalDuration = table.Column<int>(type: "int", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_LearningPaths", x => x.Id);
+                    table.PrimaryKey("PK_ImageExtensions", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "LearningPathCategories",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_LearningPathCategories", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -286,6 +299,42 @@ namespace Persistence.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_QuestionCategories", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "RecourseDetails",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Priority = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Visibility = table.Column<bool>(type: "bit", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RecourseDetails", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "RecourseDetailSteps",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Priority = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Visibility = table.Column<bool>(type: "bit", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RecourseDetailSteps", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -471,6 +520,59 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Images",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ImageExtensionId = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Url = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Images", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Images_ImageExtensions_ImageExtensionId",
+                        column: x => x.ImageExtensionId,
+                        principalTable: "ImageExtensions",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "LearningPaths",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    LearningPathCategoryId = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Visibility = table.Column<bool>(type: "bit", nullable: false),
+                    StartingTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    EndingTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    NumberOfLikes = table.Column<int>(type: "int", nullable: false),
+                    TotalDuration = table.Column<int>(type: "int", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_LearningPaths", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_LearningPaths_LearningPathCategories_LearningPathCategoryId",
+                        column: x => x.LearningPathCategoryId,
+                        principalTable: "LearningPathCategories",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Questions",
                 columns: table => new
                 {
@@ -626,6 +728,34 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Lessons",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CourseId = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Visibility = table.Column<bool>(type: "bit", nullable: false),
+                    Language = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Duration = table.Column<int>(type: "int", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Lessons", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Lessons_Courses_CourseId",
+                        column: x => x.CourseId,
+                        principalTable: "Courses",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "CourseLearningPaths",
                 columns: table => new
                 {
@@ -651,34 +781,6 @@ namespace Persistence.Migrations
                         name: "FK_CourseLearningPaths_LearningPaths_LearningPathId",
                         column: x => x.LearningPathId,
                         principalTable: "LearningPaths",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Lessons",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CourseId = table.Column<int>(type: "int", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Visibility = table.Column<bool>(type: "bit", nullable: false),
-                    Language = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Duration = table.Column<int>(type: "int", nullable: false),
-                    IsActive = table.Column<bool>(type: "bit", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Lessons", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Lessons_Courses_CourseId",
-                        column: x => x.CourseId,
-                        principalTable: "Courses",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -1041,6 +1143,43 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Experiences",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    AccountId = table.Column<int>(type: "int", nullable: false),
+                    CityId = table.Column<int>(type: "int", nullable: false),
+                    CompanyName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    JobTitle = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Industry = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    StartingDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    EndingDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsCurrentlyWorking = table.Column<bool>(type: "bit", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Experiences", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Experiences_Accounts_AccountId",
+                        column: x => x.AccountId,
+                        principalTable: "Accounts",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Experiences_Cities_CityId",
+                        column: x => x.CityId,
+                        principalTable: "Cities",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "UserOperationClaims",
                 columns: table => new
                 {
@@ -1342,6 +1481,42 @@ namespace Persistence.Migrations
                         principalColumn: "Id");
                 });
 
+            migrationBuilder.CreateTable(
+                name: "AccountRecourseDetails",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    AccountRecourseId = table.Column<int>(type: "int", nullable: false),
+                    RecourseDetailStepId = table.Column<int>(type: "int", nullable: false),
+                    RecourseDetailId = table.Column<int>(type: "int", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AccountRecourseDetails", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_AccountRecourseDetails_AccountRecourses_AccountRecourseId",
+                        column: x => x.AccountRecourseId,
+                        principalTable: "AccountRecourses",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_AccountRecourseDetails_RecourseDetailSteps_RecourseDetailStepId",
+                        column: x => x.RecourseDetailStepId,
+                        principalTable: "RecourseDetailSteps",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_AccountRecourseDetails_RecourseDetails_RecourseDetailId",
+                        column: x => x.RecourseDetailId,
+                        principalTable: "RecourseDetails",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.InsertData(
                 table: "OperationClaims",
                 columns: new[] { "Id", "CreatedDate", "DeletedDate", "Name", "UpdatedDate" },
@@ -1623,7 +1798,7 @@ namespace Persistence.Migrations
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "AuthenticatorType", "CreatedDate", "DeletedDate", "Email", "FirstName", "LastName", "PasswordHash", "PasswordSalt", "Status", "UpdatedDate" },
-                values: new object[] { 1, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "admin@admin.com", "Admin", "NArchitecture", new byte[] { 190, 37, 241, 147, 154, 255, 109, 151, 126, 249, 247, 144, 83, 171, 39, 39, 124, 75, 65, 246, 219, 82, 36, 154, 248, 33, 59, 71, 186, 15, 193, 118, 248, 101, 123, 162, 98, 105, 200, 191, 94, 57, 182, 203, 186, 96, 138, 229, 72, 137, 18, 127, 115, 82, 252, 230, 96, 131, 4, 26, 162, 200, 176, 50 }, new byte[] { 237, 173, 177, 37, 80, 191, 173, 156, 77, 197, 188, 41, 124, 144, 72, 169, 37, 192, 236, 223, 42, 202, 148, 89, 148, 107, 199, 45, 134, 165, 253, 146, 89, 171, 61, 34, 52, 197, 82, 54, 79, 104, 224, 39, 140, 75, 140, 56, 99, 32, 174, 98, 7, 230, 115, 13, 123, 153, 6, 112, 199, 85, 186, 107, 209, 253, 60, 110, 213, 127, 71, 143, 93, 22, 128, 203, 126, 216, 154, 38, 2, 125, 196, 182, 81, 66, 20, 135, 158, 41, 166, 206, 53, 39, 241, 158, 177, 67, 147, 254, 68, 127, 247, 50, 225, 3, 48, 154, 183, 59, 95, 127, 186, 163, 33, 26, 101, 187, 177, 14, 122, 87, 221, 110, 114, 9, 118, 60 }, true, null });
+                values: new object[] { 1, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "admin@admin.com", "Admin", "NArchitecture", new byte[] { 197, 123, 237, 99, 173, 254, 140, 109, 47, 75, 207, 21, 71, 143, 60, 42, 79, 8, 236, 248, 253, 84, 79, 52, 112, 107, 26, 182, 195, 150, 21, 166, 50, 35, 71, 132, 10, 196, 130, 193, 212, 201, 169, 196, 68, 235, 172, 202, 99, 69, 38, 242, 46, 162, 57, 182, 74, 83, 42, 57, 117, 57, 23, 138 }, new byte[] { 67, 113, 85, 71, 187, 51, 87, 107, 97, 165, 75, 105, 169, 93, 188, 249, 40, 96, 152, 209, 128, 9, 20, 105, 51, 206, 185, 30, 16, 198, 225, 165, 159, 150, 173, 224, 148, 109, 66, 248, 207, 144, 254, 125, 25, 234, 118, 23, 58, 192, 169, 138, 229, 248, 195, 199, 52, 117, 205, 31, 3, 192, 42, 49, 135, 134, 176, 44, 159, 80, 50, 51, 212, 28, 241, 142, 3, 20, 192, 143, 49, 51, 216, 47, 99, 113, 114, 227, 150, 231, 214, 233, 123, 202, 214, 102, 165, 79, 30, 205, 206, 244, 58, 17, 159, 152, 109, 209, 28, 39, 180, 226, 100, 210, 90, 17, 212, 255, 207, 169, 11, 141, 61, 184, 125, 162, 246, 226 }, true, null });
 
             migrationBuilder.InsertData(
                 table: "UserOperationClaims",
@@ -1744,6 +1919,21 @@ namespace Persistence.Migrations
                 name: "IX_AccountLessons_LessonId",
                 table: "AccountLessons",
                 column: "LessonId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AccountRecourseDetails_AccountRecourseId",
+                table: "AccountRecourseDetails",
+                column: "AccountRecourseId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AccountRecourseDetails_RecourseDetailId",
+                table: "AccountRecourseDetails",
+                column: "RecourseDetailId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AccountRecourseDetails_RecourseDetailStepId",
+                table: "AccountRecourseDetails",
+                column: "RecourseDetailStepId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AccountRecourses_AccountId",
@@ -1867,6 +2057,26 @@ namespace Persistence.Migrations
                 column: "QuestionId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Experiences_AccountId",
+                table: "Experiences",
+                column: "AccountId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Experiences_CityId",
+                table: "Experiences",
+                column: "CityId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Images_ImageExtensionId",
+                table: "Images",
+                column: "ImageExtensionId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_LearningPaths_LearningPathCategoryId",
+                table: "LearningPaths",
+                column: "LearningPathCategoryId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Lessons_CourseId",
                 table: "Lessons",
                 column: "CourseId");
@@ -1961,7 +2171,7 @@ namespace Persistence.Migrations
                 name: "AccountLessons");
 
             migrationBuilder.DropTable(
-                name: "AccountRecourses");
+                name: "AccountRecourseDetails");
 
             migrationBuilder.DropTable(
                 name: "AccountSocialMediaPlatforms");
@@ -1980,6 +2190,12 @@ namespace Persistence.Migrations
 
             migrationBuilder.DropTable(
                 name: "ExamQuestions");
+
+            migrationBuilder.DropTable(
+                name: "Experiences");
+
+            migrationBuilder.DropTable(
+                name: "Images");
 
             migrationBuilder.DropTable(
                 name: "OtpAuthenticators");
@@ -2018,10 +2234,13 @@ namespace Persistence.Migrations
                 name: "Lessons");
 
             migrationBuilder.DropTable(
-                name: "RecourseSteps");
+                name: "AccountRecourses");
 
             migrationBuilder.DropTable(
-                name: "Recourses");
+                name: "RecourseDetailSteps");
+
+            migrationBuilder.DropTable(
+                name: "RecourseDetails");
 
             migrationBuilder.DropTable(
                 name: "SocialMediaPlatforms");
@@ -2039,6 +2258,9 @@ namespace Persistence.Migrations
                 name: "Questions");
 
             migrationBuilder.DropTable(
+                name: "ImageExtensions");
+
+            migrationBuilder.DropTable(
                 name: "SurveyTypes");
 
             migrationBuilder.DropTable(
@@ -2054,13 +2276,22 @@ namespace Persistence.Migrations
                 name: "Courses");
 
             migrationBuilder.DropTable(
-                name: "Organizations");
+                name: "RecourseSteps");
+
+            migrationBuilder.DropTable(
+                name: "Recourses");
+
+            migrationBuilder.DropTable(
+                name: "LearningPathCategories");
 
             migrationBuilder.DropTable(
                 name: "QuestionCategories");
 
             migrationBuilder.DropTable(
                 name: "CourseCategories");
+
+            migrationBuilder.DropTable(
+                name: "Organizations");
 
             migrationBuilder.DropTable(
                 name: "Addresses");
