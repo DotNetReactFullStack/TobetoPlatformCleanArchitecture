@@ -61,6 +61,7 @@ public class BaseDbContext : DbContext
     public DbSet<AccountRecourse> AccountRecourses { get; set; }
     public DbSet<AccountAnnouncement> AccountAnnouncements { get; set; }
     public DbSet<Experience> Experiences { get; set; }
+    public DbSet<LearningPathCategory> LearningPathCategories { get; set; }
 
 
     public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration)
