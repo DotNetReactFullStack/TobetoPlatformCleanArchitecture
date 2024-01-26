@@ -20,7 +20,6 @@ public class AddressConfiguration : IEntityTypeConfiguration<Address>
         builder.Property(a => a.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(a => a.DeletedDate).HasColumnName("DeletedDate");
 
-        // Relationships
         builder
             .HasOne(a => a.Country)
             .WithMany(c => c.Addresses)

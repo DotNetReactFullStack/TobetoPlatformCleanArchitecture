@@ -6,6 +6,7 @@ public class CreateAddressCommandValidator : AbstractValidator<CreateAddressComm
 {
     public CreateAddressCommandValidator()
     {
+        RuleFor(c => c.AccountId).NotEmpty();
         RuleFor(c => c.CountryId).NotEmpty();
         RuleFor(c => c.CityId).NotEmpty();
         RuleFor(c => c.DistrictId).NotEmpty();
