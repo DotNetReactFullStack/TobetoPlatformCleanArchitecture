@@ -11,6 +11,7 @@ public class AddressConfiguration : IEntityTypeConfiguration<Address>
         builder.ToTable("Addresses").HasKey(a => a.Id);
 
         builder.Property(a => a.Id).HasColumnName("Id").IsRequired();
+        builder.Property(a => a.AccountId).HasColumnName("AccountId");
         builder.Property(a => a.CountryId).HasColumnName("CountryId");
         builder.Property(a => a.CityId).HasColumnName("CityId");
         builder.Property(a => a.DistrictId).HasColumnName("DistrictId");
