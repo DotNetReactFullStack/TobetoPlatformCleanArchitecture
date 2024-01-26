@@ -1893,8 +1893,8 @@ namespace Persistence.Migrations
                             Email = "admin@admin.com",
                             FirstName = "Admin",
                             LastName = "NArchitecture",
-                            PasswordHash = new byte[] { 190, 37, 241, 147, 154, 255, 109, 151, 126, 249, 247, 144, 83, 171, 39, 39, 124, 75, 65, 246, 219, 82, 36, 154, 248, 33, 59, 71, 186, 15, 193, 118, 248, 101, 123, 162, 98, 105, 200, 191, 94, 57, 182, 203, 186, 96, 138, 229, 72, 137, 18, 127, 115, 82, 252, 230, 96, 131, 4, 26, 162, 200, 176, 50 },
-                            PasswordSalt = new byte[] { 237, 173, 177, 37, 80, 191, 173, 156, 77, 197, 188, 41, 124, 144, 72, 169, 37, 192, 236, 223, 42, 202, 148, 89, 148, 107, 199, 45, 134, 165, 253, 146, 89, 171, 61, 34, 52, 197, 82, 54, 79, 104, 224, 39, 140, 75, 140, 56, 99, 32, 174, 98, 7, 230, 115, 13, 123, 153, 6, 112, 199, 85, 186, 107, 209, 253, 60, 110, 213, 127, 71, 143, 93, 22, 128, 203, 126, 216, 154, 38, 2, 125, 196, 182, 81, 66, 20, 135, 158, 41, 166, 206, 53, 39, 241, 158, 177, 67, 147, 254, 68, 127, 247, 50, 225, 3, 48, 154, 183, 59, 95, 127, 186, 163, 33, 26, 101, 187, 177, 14, 122, 87, 221, 110, 114, 9, 118, 60 },
+                            PasswordHash = new byte[] { 197, 123, 237, 99, 173, 254, 140, 109, 47, 75, 207, 21, 71, 143, 60, 42, 79, 8, 236, 248, 253, 84, 79, 52, 112, 107, 26, 182, 195, 150, 21, 166, 50, 35, 71, 132, 10, 196, 130, 193, 212, 201, 169, 196, 68, 235, 172, 202, 99, 69, 38, 242, 46, 162, 57, 182, 74, 83, 42, 57, 117, 57, 23, 138 },
+                            PasswordSalt = new byte[] { 67, 113, 85, 71, 187, 51, 87, 107, 97, 165, 75, 105, 169, 93, 188, 249, 40, 96, 152, 209, 128, 9, 20, 105, 51, 206, 185, 30, 16, 198, 225, 165, 159, 150, 173, 224, 148, 109, 66, 248, 207, 144, 254, 125, 25, 234, 118, 23, 58, 192, 169, 138, 229, 248, 195, 199, 52, 117, 205, 31, 3, 192, 42, 49, 135, 134, 176, 44, 159, 80, 50, 51, 212, 28, 241, 142, 3, 20, 192, 143, 49, 51, 216, 47, 99, 113, 114, 227, 150, 231, 214, 233, 123, 202, 214, 102, 165, 79, 30, 205, 206, 244, 58, 17, 159, 152, 109, 209, 28, 39, 180, 226, 100, 210, 90, 17, 212, 255, 207, 169, 11, 141, 61, 184, 125, 162, 246, 226 },
                             Status = true
                         });
                 });
@@ -2550,6 +2550,50 @@ namespace Persistence.Migrations
                     b.HasIndex("RecourseStepId");
 
                     b.ToTable("AccountRecourses", (string)null);
+                });
+
+            modelBuilder.Entity("Domain.Entities.AccountRecourseDetail", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("Id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AccountRecourseId")
+                        .HasColumnType("int")
+                        .HasColumnName("AccountRecourseId");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDate");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDate");
+
+                    b.Property<int>("RecourseDetailId")
+                        .HasColumnType("int")
+                        .HasColumnName("RecourseDetailId");
+
+                    b.Property<int>("RecourseDetailStepId")
+                        .HasColumnType("int")
+                        .HasColumnName("RecourseDetailStepId");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDate");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AccountRecourseId");
+
+                    b.HasIndex("RecourseDetailId");
+
+                    b.HasIndex("RecourseDetailStepId");
+
+                    b.ToTable("AccountRecourseDetails", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.AccountSocialMediaPlatform", b =>
@@ -3509,6 +3553,87 @@ namespace Persistence.Migrations
                     b.ToTable("GraduationStatuses", (string)null);
                 });
 
+            modelBuilder.Entity("Domain.Entities.Image", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("Id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDate");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDate");
+
+                    b.Property<int>("ImageExtensionId")
+                        .HasColumnType("int")
+                        .HasColumnName("ImageExtensionId");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsActive");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Name");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDate");
+
+                    b.Property<string>("Url")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Url");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ImageExtensionId");
+
+                    b.ToTable("Images", (string)null);
+                });
+
+            modelBuilder.Entity("Domain.Entities.ImageExtension", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("Id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDate");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDate");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsActive");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Name");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDate");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ImageExtensions", (string)null);
+                });
+
             modelBuilder.Entity("Domain.Entities.LearningPath", b =>
                 {
                     b.Property<int>("Id")
@@ -3529,6 +3654,10 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("EndingTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("EndingTime");
+
+                    b.Property<int>("LearningPathCategoryId")
+                        .HasColumnType("int")
+                        .HasColumnName("LearningPathCategoryId");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -3557,7 +3686,44 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("LearningPathCategoryId");
+
                     b.ToTable("LearningPaths", (string)null);
+                });
+
+            modelBuilder.Entity("Domain.Entities.LearningPathCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("Id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDate");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDate");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsActive");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Name");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDate");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LearningPathCategories", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.Lesson", b =>
@@ -3844,6 +4010,86 @@ namespace Persistence.Migrations
                     b.ToTable("Recourses", (string)null);
                 });
 
+            modelBuilder.Entity("Domain.Entities.RecourseDetail", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("Id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDate");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDate");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Name");
+
+                    b.Property<string>("Priority")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Priority");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDate");
+
+                    b.Property<bool>("Visibility")
+                        .HasColumnType("bit")
+                        .HasColumnName("Visibility");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RecourseDetails", (string)null);
+                });
+
+            modelBuilder.Entity("Domain.Entities.RecourseDetailStep", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("Id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDate");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDate");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Name");
+
+                    b.Property<string>("Priority")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Priority");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDate");
+
+                    b.Property<bool>("Visibility")
+                        .HasColumnType("bit")
+                        .HasColumnName("Visibility");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RecourseDetailSteps", (string)null);
+                });
+
             modelBuilder.Entity("Domain.Entities.RecourseStep", b =>
                 {
                     b.Property<int>("Id")
@@ -4033,6 +4279,79 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("SurveyTypes", (string)null);
+                });
+
+            modelBuilder.Entity("Experience", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("Id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AccountId")
+                        .HasColumnType("int")
+                        .HasColumnName("AccountId");
+
+                    b.Property<int>("CityId")
+                        .HasColumnType("int")
+                        .HasColumnName("CityId");
+
+                    b.Property<string>("CompanyName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("CompanyName");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDate");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDate");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Description");
+
+                    b.Property<DateTime?>("EndingDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("EndingDate");
+
+                    b.Property<string>("Industry")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Industry");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsActive");
+
+                    b.Property<bool>("IsCurrentlyWorking")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsCurrentlyWorking");
+
+                    b.Property<string>("JobTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("JobTitle");
+
+                    b.Property<DateTime>("StartingDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("StartingDate");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDate");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AccountId");
+
+                    b.HasIndex("CityId");
+
+                    b.ToTable("Experiences", (string)null);
                 });
 
             modelBuilder.Entity("Core.Security.Entities.EmailAuthenticator", b =>
@@ -4343,6 +4662,33 @@ namespace Persistence.Migrations
                     b.Navigation("RecourseStep");
                 });
 
+            modelBuilder.Entity("Domain.Entities.AccountRecourseDetail", b =>
+                {
+                    b.HasOne("Domain.Entities.AccountRecourse", "AccountRecourse")
+                        .WithMany("AccountRecourseDetails")
+                        .HasForeignKey("AccountRecourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.RecourseDetail", "RecourseDetail")
+                        .WithMany("AccountRecourseDetails")
+                        .HasForeignKey("RecourseDetailId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.RecourseDetailStep", "RecourseDetailStep")
+                        .WithMany("AccountRecourseDetails")
+                        .HasForeignKey("RecourseDetailStepId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AccountRecourse");
+
+                    b.Navigation("RecourseDetail");
+
+                    b.Navigation("RecourseDetailStep");
+                });
+
             modelBuilder.Entity("Domain.Entities.AccountSocialMediaPlatform", b =>
                 {
                     b.HasOne("Domain.Entities.Account", "Account")
@@ -4528,6 +4874,28 @@ namespace Persistence.Migrations
                     b.Navigation("Question");
                 });
 
+            modelBuilder.Entity("Domain.Entities.Image", b =>
+                {
+                    b.HasOne("Domain.Entities.ImageExtension", "ImageExtension")
+                        .WithMany("Images")
+                        .HasForeignKey("ImageExtensionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ImageExtension");
+                });
+
+            modelBuilder.Entity("Domain.Entities.LearningPath", b =>
+                {
+                    b.HasOne("Domain.Entities.LearningPathCategory", "LearningPathCategory")
+                        .WithMany("LearningPaths")
+                        .HasForeignKey("LearningPathCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("LearningPathCategory");
+                });
+
             modelBuilder.Entity("Domain.Entities.Lesson", b =>
                 {
                     b.HasOne("Domain.Entities.Course", "Course")
@@ -4599,6 +4967,25 @@ namespace Persistence.Migrations
                     b.Navigation("SurveyType");
                 });
 
+            modelBuilder.Entity("Experience", b =>
+                {
+                    b.HasOne("Domain.Entities.Account", "Account")
+                        .WithMany("Experiences")
+                        .HasForeignKey("AccountId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.City", "City")
+                        .WithMany("Experiences")
+                        .HasForeignKey("CityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Account");
+
+                    b.Navigation("City");
+                });
+
             modelBuilder.Entity("Core.Security.Entities.OperationClaim", b =>
                 {
                     b.Navigation("UserOperationClaims");
@@ -4643,7 +5030,14 @@ namespace Persistence.Migrations
 
                     b.Navigation("Address");
 
+                    b.Navigation("Experiences");
+
                     b.Navigation("UserOperationClaims");
+                });
+
+            modelBuilder.Entity("Domain.Entities.AccountRecourse", b =>
+                {
+                    b.Navigation("AccountRecourseDetails");
                 });
 
             modelBuilder.Entity("Domain.Entities.Announcement", b =>
@@ -4671,6 +5065,8 @@ namespace Persistence.Migrations
                     b.Navigation("Addresses");
 
                     b.Navigation("Districts");
+
+                    b.Navigation("Experiences");
                 });
 
             modelBuilder.Entity("Domain.Entities.Classroom", b =>
@@ -4742,11 +5138,21 @@ namespace Persistence.Migrations
                     b.Navigation("AccountCollageMetadatas");
                 });
 
+            modelBuilder.Entity("Domain.Entities.ImageExtension", b =>
+                {
+                    b.Navigation("Images");
+                });
+
             modelBuilder.Entity("Domain.Entities.LearningPath", b =>
                 {
                     b.Navigation("AccountLearningPaths");
 
                     b.Navigation("CourseLearningPaths");
+                });
+
+            modelBuilder.Entity("Domain.Entities.LearningPathCategory", b =>
+                {
+                    b.Navigation("LearningPaths");
                 });
 
             modelBuilder.Entity("Domain.Entities.Lesson", b =>
@@ -4783,6 +5189,16 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.Recourse", b =>
                 {
                     b.Navigation("AccountRecourses");
+                });
+
+            modelBuilder.Entity("Domain.Entities.RecourseDetail", b =>
+                {
+                    b.Navigation("AccountRecourseDetails");
+                });
+
+            modelBuilder.Entity("Domain.Entities.RecourseDetailStep", b =>
+                {
+                    b.Navigation("AccountRecourseDetails");
                 });
 
             modelBuilder.Entity("Domain.Entities.RecourseStep", b =>
