@@ -60,6 +60,7 @@ using Application.Services.RecourseSteps;
 using Application.Services.Recourses;
 using Application.Services.AccountRecourses;
 using Application.Services.AccountAnnouncements;
+using Application.Services.Experiences;
 
 namespace Application;
 
@@ -135,6 +136,7 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IRecoursesService, RecoursesManager>();
         services.AddScoped<IAccountRecoursesService, AccountRecoursesManager>();
         services.AddScoped<IAccountAnnouncementsService, AccountAnnouncementsManager>();
+        services.AddScoped<IExperiencesService, ExperiencesManager>();
         return services;
     }
 
