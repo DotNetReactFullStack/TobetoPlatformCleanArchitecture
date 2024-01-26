@@ -67,6 +67,9 @@ using Application.Services.RecourseDetails;
 using Application.Services.RecourseDetailSteps;
 using Application.Services.Images;
 using Application.Services.ImageExtensions;
+using Application.Services.ContractTypes;
+using Application.Services.AccountContracts;
+using Application.Services.Contracts;
 
 namespace Application;
 
@@ -149,6 +152,9 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IRecourseDetailStepsService, RecourseDetailStepsManager>();
         services.AddScoped<IImagesService, ImagesManager>();
         services.AddScoped<IImageExtensionsService, ImageExtensionsManager>();
+        services.AddScoped<IContractTypesService, ContractTypesManager>();
+        services.AddScoped<IAccountContractsService, AccountContractsManager>();
+        services.AddScoped<IContractsService, ContractsManager>();
         return services;
     }
 

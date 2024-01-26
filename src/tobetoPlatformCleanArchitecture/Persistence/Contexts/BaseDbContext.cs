@@ -67,6 +67,9 @@ public class BaseDbContext : DbContext
     public DbSet<RecourseDetailStep> RecourseDetailSteps { get; set; }
     public DbSet<Image> Images { get; set; }
     public DbSet<ImageExtension> ImageExtensions { get; set; }
+    public DbSet<ContractType> ContractTypes { get; set; }
+    public DbSet<AccountContract> AccountContracts { get; set; }
+    public DbSet<Contract> Contracts { get; set; }
 
 
     public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration)
