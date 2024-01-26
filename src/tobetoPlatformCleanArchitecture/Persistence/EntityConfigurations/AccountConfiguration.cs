@@ -16,6 +16,8 @@ public class AccountConfiguration : IEntityTypeConfiguration<Account>
         builder.Property(a => a.BirthDate).HasColumnName("BirthDate");
         builder.Property(a => a.PhoneNumber).HasColumnName("PhoneNumber");
         builder.Property(a => a.ProfilePhotoPath).HasColumnName("ProfilePhotoPath");
+        builder.Property(a => a.ShareProfile).HasColumnName("ShareProfile");
+        builder.Property(a => a.ProfileLinkUrl).HasColumnName("ProfileLinkUrl");
         builder.Property(a => a.IsActive).HasColumnName("IsActive");
         builder.Property(a => a.CreatedDate).HasColumnName("CreatedDate").IsRequired();
         builder.Property(a => a.UpdatedDate).HasColumnName("UpdatedDate");

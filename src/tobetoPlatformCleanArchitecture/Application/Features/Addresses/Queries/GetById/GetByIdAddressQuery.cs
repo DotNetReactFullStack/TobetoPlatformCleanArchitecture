@@ -9,7 +9,7 @@ using static Application.Features.Addresses.Constants.AddressesOperationClaims;
 
 namespace Application.Features.Addresses.Queries.GetById;
 
-public class GetByIdAddressQuery : IRequest<GetByIdAddressResponse>
+public class GetByIdAddressQuery : IRequest<GetByIdAddressResponse>, ISecuredRequest
 {
     public int Id { get; set; }
 

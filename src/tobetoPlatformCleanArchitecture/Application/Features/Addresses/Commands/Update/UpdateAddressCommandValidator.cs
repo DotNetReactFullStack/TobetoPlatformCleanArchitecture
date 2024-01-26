@@ -7,6 +7,7 @@ public class UpdateAddressCommandValidator : AbstractValidator<UpdateAddressComm
     public UpdateAddressCommandValidator()
     {
         RuleFor(c => c.Id).NotEmpty();
+        RuleFor(c => c.AccountId).NotEmpty();
         RuleFor(c => c.CountryId).NotEmpty();
         RuleFor(c => c.CityId).NotEmpty();
         RuleFor(c => c.DistrictId).NotEmpty();
