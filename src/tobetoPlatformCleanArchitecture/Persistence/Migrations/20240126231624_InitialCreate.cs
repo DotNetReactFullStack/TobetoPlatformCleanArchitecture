@@ -103,6 +103,23 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ContractTypes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ContractTypes", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Countries",
                 columns: table => new
                 {
@@ -434,6 +451,31 @@ namespace Persistence.Migrations
                         name: "FK_EducationPrograms_Colleges_CollegeId",
                         column: x => x.CollegeId,
                         principalTable: "Colleges",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Contracts",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ContractTypeId = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Path = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Contracts", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Contracts_ContractTypes_ContractTypeId",
+                        column: x => x.ContractTypeId,
+                        principalTable: "ContractTypes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -970,6 +1012,36 @@ namespace Persistence.Migrations
                         name: "FK_AccountCollageMetadatas_GraduationStatuses_GraduationStatusId",
                         column: x => x.GraduationStatusId,
                         principalTable: "GraduationStatuses",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AccountContracts",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    AccountId = table.Column<int>(type: "int", nullable: false),
+                    ContractId = table.Column<int>(type: "int", nullable: false),
+                    IsAccept = table.Column<bool>(type: "bit", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AccountContracts", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_AccountContracts_Accounts_AccountId",
+                        column: x => x.AccountId,
+                        principalTable: "Accounts",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_AccountContracts_Contracts_ContractId",
+                        column: x => x.ContractId,
+                        principalTable: "Contracts",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -1798,7 +1870,7 @@ namespace Persistence.Migrations
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "AuthenticatorType", "CreatedDate", "DeletedDate", "Email", "FirstName", "LastName", "PasswordHash", "PasswordSalt", "Status", "UpdatedDate" },
-                values: new object[] { 1, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "admin@admin.com", "Admin", "NArchitecture", new byte[] { 197, 123, 237, 99, 173, 254, 140, 109, 47, 75, 207, 21, 71, 143, 60, 42, 79, 8, 236, 248, 253, 84, 79, 52, 112, 107, 26, 182, 195, 150, 21, 166, 50, 35, 71, 132, 10, 196, 130, 193, 212, 201, 169, 196, 68, 235, 172, 202, 99, 69, 38, 242, 46, 162, 57, 182, 74, 83, 42, 57, 117, 57, 23, 138 }, new byte[] { 67, 113, 85, 71, 187, 51, 87, 107, 97, 165, 75, 105, 169, 93, 188, 249, 40, 96, 152, 209, 128, 9, 20, 105, 51, 206, 185, 30, 16, 198, 225, 165, 159, 150, 173, 224, 148, 109, 66, 248, 207, 144, 254, 125, 25, 234, 118, 23, 58, 192, 169, 138, 229, 248, 195, 199, 52, 117, 205, 31, 3, 192, 42, 49, 135, 134, 176, 44, 159, 80, 50, 51, 212, 28, 241, 142, 3, 20, 192, 143, 49, 51, 216, 47, 99, 113, 114, 227, 150, 231, 214, 233, 123, 202, 214, 102, 165, 79, 30, 205, 206, 244, 58, 17, 159, 152, 109, 209, 28, 39, 180, 226, 100, 210, 90, 17, 212, 255, 207, 169, 11, 141, 61, 184, 125, 162, 246, 226 }, true, null });
+                values: new object[] { 1, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "admin@admin.com", "Admin", "NArchitecture", new byte[] { 103, 228, 87, 22, 56, 6, 38, 114, 92, 160, 133, 99, 102, 70, 123, 158, 120, 32, 56, 202, 177, 46, 32, 51, 87, 197, 56, 26, 202, 201, 203, 20, 48, 83, 224, 182, 3, 194, 38, 73, 172, 93, 83, 162, 10, 91, 181, 166, 216, 207, 217, 130, 247, 74, 65, 134, 231, 156, 23, 126, 219, 170, 82, 36 }, new byte[] { 107, 38, 214, 108, 232, 113, 247, 76, 42, 218, 96, 231, 225, 222, 16, 192, 206, 111, 246, 196, 158, 40, 67, 222, 75, 231, 214, 254, 127, 88, 56, 171, 94, 25, 217, 204, 131, 206, 76, 9, 191, 123, 251, 65, 183, 18, 122, 189, 30, 111, 28, 32, 234, 27, 229, 247, 193, 132, 194, 56, 52, 220, 156, 251, 224, 63, 146, 125, 40, 48, 46, 121, 255, 12, 135, 30, 131, 29, 217, 158, 195, 217, 38, 184, 194, 62, 211, 160, 47, 77, 253, 169, 22, 84, 98, 179, 176, 166, 107, 197, 98, 170, 126, 98, 217, 159, 118, 239, 33, 177, 126, 145, 181, 235, 251, 165, 244, 61, 54, 85, 32, 156, 176, 174, 166, 36, 31, 87 }, true, null });
 
             migrationBuilder.InsertData(
                 table: "UserOperationClaims",
@@ -1864,6 +1936,16 @@ namespace Persistence.Migrations
                 name: "IX_AccountCollageMetadatas_GraduationStatusId",
                 table: "AccountCollageMetadatas",
                 column: "GraduationStatusId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AccountContracts_AccountId",
+                table: "AccountContracts",
+                column: "AccountId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AccountContracts_ContractId",
+                table: "AccountContracts",
+                column: "ContractId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AccountCourses_AccountId",
@@ -2017,6 +2099,11 @@ namespace Persistence.Migrations
                 column: "ExamId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Contracts_ContractTypeId",
+                table: "Contracts",
+                column: "ContractTypeId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_CourseLearningPaths_CourseId",
                 table: "CourseLearningPaths",
                 column: "CourseId");
@@ -2156,6 +2243,9 @@ namespace Persistence.Migrations
                 name: "AccountCollageMetadatas");
 
             migrationBuilder.DropTable(
+                name: "AccountContracts");
+
+            migrationBuilder.DropTable(
                 name: "AccountCourses");
 
             migrationBuilder.DropTable(
@@ -2225,6 +2315,9 @@ namespace Persistence.Migrations
                 name: "GraduationStatuses");
 
             migrationBuilder.DropTable(
+                name: "Contracts");
+
+            migrationBuilder.DropTable(
                 name: "ForeignLanguageLevels");
 
             migrationBuilder.DropTable(
@@ -2271,6 +2364,9 @@ namespace Persistence.Migrations
 
             migrationBuilder.DropTable(
                 name: "Colleges");
+
+            migrationBuilder.DropTable(
+                name: "ContractTypes");
 
             migrationBuilder.DropTable(
                 name: "Courses");

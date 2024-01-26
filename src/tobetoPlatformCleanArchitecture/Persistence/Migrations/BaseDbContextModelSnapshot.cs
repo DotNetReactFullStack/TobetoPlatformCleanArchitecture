@@ -1893,8 +1893,8 @@ namespace Persistence.Migrations
                             Email = "admin@admin.com",
                             FirstName = "Admin",
                             LastName = "NArchitecture",
-                            PasswordHash = new byte[] { 254, 21, 142, 49, 128, 244, 23, 23, 91, 202, 188, 38, 59, 68, 160, 79, 189, 98, 191, 239, 28, 219, 128, 176, 92, 127, 172, 138, 187, 90, 117, 107, 34, 106, 204, 205, 241, 28, 77, 16, 99, 35, 173, 59, 138, 255, 161, 191, 237, 166, 117, 76, 200, 91, 153, 133, 27, 52, 234, 182, 184, 104, 201, 13 },
-                            PasswordSalt = new byte[] { 66, 8, 233, 90, 89, 36, 218, 206, 65, 177, 127, 107, 140, 72, 230, 178, 183, 44, 2, 39, 43, 145, 147, 236, 11, 131, 170, 211, 242, 62, 87, 155, 44, 122, 142, 83, 63, 246, 19, 243, 51, 30, 181, 155, 103, 210, 49, 207, 179, 85, 196, 251, 9, 228, 141, 216, 180, 77, 248, 157, 178, 152, 61, 234, 241, 191, 11, 181, 171, 73, 193, 236, 30, 73, 141, 54, 254, 211, 142, 19, 124, 44, 86, 70, 112, 21, 161, 240, 139, 118, 73, 63, 127, 177, 24, 28, 153, 107, 60, 224, 225, 16, 232, 26, 102, 19, 163, 216, 27, 228, 4, 106, 228, 236, 172, 131, 192, 192, 62, 219, 101, 117, 100, 28, 127, 37, 22, 66 },
+                            PasswordHash = new byte[] { 103, 228, 87, 22, 56, 6, 38, 114, 92, 160, 133, 99, 102, 70, 123, 158, 120, 32, 56, 202, 177, 46, 32, 51, 87, 197, 56, 26, 202, 201, 203, 20, 48, 83, 224, 182, 3, 194, 38, 73, 172, 93, 83, 162, 10, 91, 181, 166, 216, 207, 217, 130, 247, 74, 65, 134, 231, 156, 23, 126, 219, 170, 82, 36 },
+                            PasswordSalt = new byte[] { 107, 38, 214, 108, 232, 113, 247, 76, 42, 218, 96, 231, 225, 222, 16, 192, 206, 111, 246, 196, 158, 40, 67, 222, 75, 231, 214, 254, 127, 88, 56, 171, 94, 25, 217, 204, 131, 206, 76, 9, 191, 123, 251, 65, 183, 18, 122, 189, 30, 111, 28, 32, 234, 27, 229, 247, 193, 132, 194, 56, 52, 220, 156, 251, 224, 63, 146, 125, 40, 48, 46, 121, 255, 12, 135, 30, 131, 29, 217, 158, 195, 217, 38, 184, 194, 62, 211, 160, 47, 77, 253, 169, 22, 84, 98, 179, 176, 166, 107, 197, 98, 170, 126, 98, 217, 159, 118, 239, 33, 177, 126, 145, 181, 235, 251, 165, 244, 61, 54, 85, 32, 156, 176, 174, 166, 36, 31, 87 },
                             Status = true
                         });
                 });
@@ -1907,6 +1907,9 @@ namespace Persistence.Migrations
                         .HasColumnName("Id");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("AccountId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2")
@@ -1929,6 +1932,8 @@ namespace Persistence.Migrations
                         .HasColumnName("UserId");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AccountId");
 
                     b.HasIndex("OperationClaimId");
 
@@ -2724,7 +2729,8 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AccountId");
+                    b.HasIndex("AccountId")
+                        .IsUnique();
 
                     b.HasIndex("CityId");
 
@@ -4506,6 +4512,10 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Core.Security.Entities.UserOperationClaim", b =>
                 {
+                    b.HasOne("Domain.Entities.Account", null)
+                        .WithMany("UserOperationClaims")
+                        .HasForeignKey("AccountId");
+
                     b.HasOne("Core.Security.Entities.OperationClaim", "OperationClaim")
                         .WithMany("UserOperationClaims")
                         .HasForeignKey("OperationClaimId")
@@ -4537,7 +4547,7 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.AccountAnnouncement", b =>
                 {
                     b.HasOne("Domain.Entities.Account", "Account")
-                        .WithMany()
+                        .WithMany("AccountAnnouncements")
                         .HasForeignKey("AccountId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -4556,7 +4566,7 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.AccountCapability", b =>
                 {
                     b.HasOne("Domain.Entities.Account", "Account")
-                        .WithMany()
+                        .WithMany("AccountCapabilities")
                         .HasForeignKey("AccountId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -4575,7 +4585,7 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.AccountCertificate", b =>
                 {
                     b.HasOne("Domain.Entities.Account", "Account")
-                        .WithMany()
+                        .WithMany("AccountCertificates")
                         .HasForeignKey("AccountId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -4594,7 +4604,7 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.AccountClassroom", b =>
                 {
                     b.HasOne("Domain.Entities.Account", "Account")
-                        .WithMany()
+                        .WithMany("AccountClassrooms")
                         .HasForeignKey("AccountId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -4613,7 +4623,7 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.AccountCollageMetadata", b =>
                 {
                     b.HasOne("Domain.Entities.Account", "Account")
-                        .WithMany()
+                        .WithMany("AccountCollageMetadatas")
                         .HasForeignKey("AccountId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -4667,7 +4677,7 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.AccountCourse", b =>
                 {
                     b.HasOne("Domain.Entities.Account", "Account")
-                        .WithMany()
+                        .WithMany("AccountCourses")
                         .HasForeignKey("AccountId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -4686,7 +4696,7 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.AccountExamResult", b =>
                 {
                     b.HasOne("Domain.Entities.Account", "Account")
-                        .WithMany()
+                        .WithMany("AccountExamResults")
                         .HasForeignKey("AccountId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -4705,7 +4715,7 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.AccountForeignLanguageMetadata", b =>
                 {
                     b.HasOne("Domain.Entities.Account", "Account")
-                        .WithMany()
+                        .WithMany("AccountForeignLanguageMetadatas")
                         .HasForeignKey("AccountId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -4732,7 +4742,7 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.AccountLearningPath", b =>
                 {
                     b.HasOne("Domain.Entities.Account", "Account")
-                        .WithMany()
+                        .WithMany("AccountLearningPaths")
                         .HasForeignKey("AccountId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -4751,7 +4761,7 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.AccountLesson", b =>
                 {
                     b.HasOne("Domain.Entities.Account", "Account")
-                        .WithMany()
+                        .WithMany("AccountLessons")
                         .HasForeignKey("AccountId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -4770,7 +4780,7 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.AccountRecourse", b =>
                 {
                     b.HasOne("Domain.Entities.Account", "Account")
-                        .WithMany()
+                        .WithMany("AccountRecourses")
                         .HasForeignKey("AccountId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -4824,7 +4834,7 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.AccountSocialMediaPlatform", b =>
                 {
                     b.HasOne("Domain.Entities.Account", "Account")
-                        .WithMany()
+                        .WithMany("AccountSocialMediaPlatforms")
                         .HasForeignKey("AccountId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -4843,8 +4853,8 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.Address", b =>
                 {
                     b.HasOne("Domain.Entities.Account", "Account")
-                        .WithMany()
-                        .HasForeignKey("AccountId")
+                        .WithOne("Address")
+                        .HasForeignKey("Domain.Entities.Address", "AccountId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -4938,7 +4948,7 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.Contract", b =>
                 {
                     b.HasOne("Domain.Entities.ContractType", "ContractType")
-                        .WithMany()
+                        .WithMany("Contracts")
                         .HasForeignKey("ContractTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -5113,7 +5123,7 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Experience", b =>
                 {
                     b.HasOne("Domain.Entities.Account", "Account")
-                        .WithMany()
+                        .WithMany("Experiences")
                         .HasForeignKey("AccountId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -5141,6 +5151,39 @@ namespace Persistence.Migrations
                     b.Navigation("OtpAuthenticators");
 
                     b.Navigation("RefreshTokens");
+
+                    b.Navigation("UserOperationClaims");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Account", b =>
+                {
+                    b.Navigation("AccountAnnouncements");
+
+                    b.Navigation("AccountCapabilities");
+
+                    b.Navigation("AccountCertificates");
+
+                    b.Navigation("AccountClassrooms");
+
+                    b.Navigation("AccountCollageMetadatas");
+
+                    b.Navigation("AccountCourses");
+
+                    b.Navigation("AccountExamResults");
+
+                    b.Navigation("AccountForeignLanguageMetadatas");
+
+                    b.Navigation("AccountLearningPaths");
+
+                    b.Navigation("AccountLessons");
+
+                    b.Navigation("AccountRecourses");
+
+                    b.Navigation("AccountSocialMediaPlatforms");
+
+                    b.Navigation("Address");
+
+                    b.Navigation("Experiences");
 
                     b.Navigation("UserOperationClaims");
                 });
@@ -5191,6 +5234,11 @@ namespace Persistence.Migrations
                     b.Navigation("AccountCollageMetadatas");
 
                     b.Navigation("EducationPrograms");
+                });
+
+            modelBuilder.Entity("Domain.Entities.ContractType", b =>
+                {
+                    b.Navigation("Contracts");
                 });
 
             modelBuilder.Entity("Domain.Entities.Country", b =>
