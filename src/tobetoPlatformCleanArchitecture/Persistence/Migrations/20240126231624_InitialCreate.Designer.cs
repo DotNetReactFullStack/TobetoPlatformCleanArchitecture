@@ -12,7 +12,7 @@ using Persistence.Contexts;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    [Migration("20240126190228_InitialCreate")]
+    [Migration("20240126231624_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -1896,8 +1896,8 @@ namespace Persistence.Migrations
                             Email = "admin@admin.com",
                             FirstName = "Admin",
                             LastName = "NArchitecture",
-                            PasswordHash = new byte[] { 197, 123, 237, 99, 173, 254, 140, 109, 47, 75, 207, 21, 71, 143, 60, 42, 79, 8, 236, 248, 253, 84, 79, 52, 112, 107, 26, 182, 195, 150, 21, 166, 50, 35, 71, 132, 10, 196, 130, 193, 212, 201, 169, 196, 68, 235, 172, 202, 99, 69, 38, 242, 46, 162, 57, 182, 74, 83, 42, 57, 117, 57, 23, 138 },
-                            PasswordSalt = new byte[] { 67, 113, 85, 71, 187, 51, 87, 107, 97, 165, 75, 105, 169, 93, 188, 249, 40, 96, 152, 209, 128, 9, 20, 105, 51, 206, 185, 30, 16, 198, 225, 165, 159, 150, 173, 224, 148, 109, 66, 248, 207, 144, 254, 125, 25, 234, 118, 23, 58, 192, 169, 138, 229, 248, 195, 199, 52, 117, 205, 31, 3, 192, 42, 49, 135, 134, 176, 44, 159, 80, 50, 51, 212, 28, 241, 142, 3, 20, 192, 143, 49, 51, 216, 47, 99, 113, 114, 227, 150, 231, 214, 233, 123, 202, 214, 102, 165, 79, 30, 205, 206, 244, 58, 17, 159, 152, 109, 209, 28, 39, 180, 226, 100, 210, 90, 17, 212, 255, 207, 169, 11, 141, 61, 184, 125, 162, 246, 226 },
+                            PasswordHash = new byte[] { 103, 228, 87, 22, 56, 6, 38, 114, 92, 160, 133, 99, 102, 70, 123, 158, 120, 32, 56, 202, 177, 46, 32, 51, 87, 197, 56, 26, 202, 201, 203, 20, 48, 83, 224, 182, 3, 194, 38, 73, 172, 93, 83, 162, 10, 91, 181, 166, 216, 207, 217, 130, 247, 74, 65, 134, 231, 156, 23, 126, 219, 170, 82, 36 },
+                            PasswordSalt = new byte[] { 107, 38, 214, 108, 232, 113, 247, 76, 42, 218, 96, 231, 225, 222, 16, 192, 206, 111, 246, 196, 158, 40, 67, 222, 75, 231, 214, 254, 127, 88, 56, 171, 94, 25, 217, 204, 131, 206, 76, 9, 191, 123, 251, 65, 183, 18, 122, 189, 30, 111, 28, 32, 234, 27, 229, 247, 193, 132, 194, 56, 52, 220, 156, 251, 224, 63, 146, 125, 40, 48, 46, 121, 255, 12, 135, 30, 131, 29, 217, 158, 195, 217, 38, 184, 194, 62, 211, 160, 47, 77, 253, 169, 22, 84, 98, 179, 176, 166, 107, 197, 98, 170, 126, 98, 217, 159, 118, 239, 33, 177, 126, 145, 181, 235, 251, 165, 244, 61, 54, 85, 32, 156, 176, 174, 166, 36, 31, 87 },
                             Status = true
                         });
                 });
@@ -2249,6 +2249,48 @@ namespace Persistence.Migrations
                     b.HasIndex("GraduationStatusId");
 
                     b.ToTable("AccountCollageMetadatas", (string)null);
+                });
+
+            modelBuilder.Entity("Domain.Entities.AccountContract", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("Id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AccountId")
+                        .HasColumnType("int")
+                        .HasColumnName("AccountId");
+
+                    b.Property<int>("ContractId")
+                        .HasColumnType("int")
+                        .HasColumnName("ContractId");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDate");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDate");
+
+                    b.Property<bool>("IsAccept")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsAccept");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDate");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AccountId");
+
+                    b.HasIndex("ContractId");
+
+                    b.ToTable("AccountContracts", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.AccountCourse", b =>
@@ -3080,6 +3122,87 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Colleges", (string)null);
+                });
+
+            modelBuilder.Entity("Domain.Entities.Contract", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("Id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ContractTypeId")
+                        .HasColumnType("int")
+                        .HasColumnName("ContractTypeId");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDate");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDate");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsActive");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Name");
+
+                    b.Property<string>("Path")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Path");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDate");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ContractTypeId");
+
+                    b.ToTable("Contracts", (string)null);
+                });
+
+            modelBuilder.Entity("Domain.Entities.ContractType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("Id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedDate");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletedDate");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsActive");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Name");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("UpdatedDate");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ContractTypes", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.Country", b =>
@@ -4535,6 +4658,25 @@ namespace Persistence.Migrations
                     b.Navigation("GraduationStatus");
                 });
 
+            modelBuilder.Entity("Domain.Entities.AccountContract", b =>
+                {
+                    b.HasOne("Domain.Entities.Account", "Account")
+                        .WithMany()
+                        .HasForeignKey("AccountId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.Contract", "Contract")
+                        .WithMany()
+                        .HasForeignKey("ContractId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Account");
+
+                    b.Navigation("Contract");
+                });
+
             modelBuilder.Entity("Domain.Entities.AccountCourse", b =>
                 {
                     b.HasOne("Domain.Entities.Account", "Account")
@@ -4804,6 +4946,17 @@ namespace Persistence.Migrations
                     b.Navigation("Classroom");
 
                     b.Navigation("Exam");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Contract", b =>
+                {
+                    b.HasOne("Domain.Entities.ContractType", "ContractType")
+                        .WithMany("Contracts")
+                        .HasForeignKey("ContractTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ContractType");
                 });
 
             modelBuilder.Entity("Domain.Entities.Course", b =>
@@ -5084,6 +5237,11 @@ namespace Persistence.Migrations
                     b.Navigation("AccountCollageMetadatas");
 
                     b.Navigation("EducationPrograms");
+                });
+
+            modelBuilder.Entity("Domain.Entities.ContractType", b =>
+                {
+                    b.Navigation("Contracts");
                 });
 
             modelBuilder.Entity("Domain.Entities.Country", b =>
