@@ -14,5 +14,8 @@ public class UpdateAnnouncementCommandValidator : AbstractValidator<UpdateAnnoun
         RuleFor(c => c.Name).NotEmpty();
         RuleFor(c => c.Content).NotEmpty();
         RuleFor(c => c.PublishedDate).NotEmpty();
+
+        RuleFor(c => c.Name).MaximumLength(100);
+
     }
 }

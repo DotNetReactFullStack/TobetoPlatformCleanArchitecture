@@ -10,5 +10,8 @@ public class UpdateCertificateCommandValidator : AbstractValidator<UpdateCertifi
         RuleFor(c => c.Name).NotEmpty();
         RuleFor(c => c.Path).NotEmpty();
         RuleFor(c => c.Priority).NotEmpty();
+
+        RuleFor(c => c.Name).MaximumLength(30);
+
     }
 }

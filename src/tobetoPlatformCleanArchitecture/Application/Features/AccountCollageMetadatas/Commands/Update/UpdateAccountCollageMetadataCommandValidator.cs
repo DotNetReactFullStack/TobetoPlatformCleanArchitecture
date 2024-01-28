@@ -12,8 +12,8 @@ public class UpdateAccountCollageMetadataCommandValidator : AbstractValidator<Up
         RuleFor(c => c.CollegeId).NotEmpty();
         RuleFor(c => c.EducationProgramId).NotEmpty();
         RuleFor(c => c.Visibility).NotEmpty();
-        RuleFor(c => c.StartingYear).NotEmpty();
-        RuleFor(c => c.GraduationYear).NotEmpty();
+        RuleFor(c => c.StartingYear).NotEmpty();  // Duzenleme yapilacak
+        RuleFor(c => c.GraduationYear).NotEmpty(); // Duzenleme yapilacak
         RuleFor(c => c.ProgramOnGoing).NotEmpty();
     }
 }

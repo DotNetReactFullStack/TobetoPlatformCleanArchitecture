@@ -11,5 +11,9 @@ public class UpdateAccountLessonCommandValidator : AbstractValidator<UpdateAccou
         RuleFor(c => c.AccountId).NotEmpty();
         RuleFor(c => c.Points).NotEmpty();
         RuleFor(c => c.IsComplete).NotEmpty();
+
+        RuleFor(c => c.Points).GreaterThanOrEqualTo(0);
+        RuleFor(c => c.Points).LessThanOrEqualTo(100);
+
     }
 }

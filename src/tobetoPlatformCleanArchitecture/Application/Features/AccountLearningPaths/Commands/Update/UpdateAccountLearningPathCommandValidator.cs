@@ -16,5 +16,8 @@ public class UpdateAccountLearningPathCommandValidator : AbstractValidator<Updat
         RuleFor(c => c.IsLiked).NotEmpty();
         RuleFor(c => c.IsSaved).NotEmpty();
         RuleFor(c => c.IsActive).NotEmpty();
+
+        RuleFor(c => c.TotalNumberOfPoints).GreaterThanOrEqualTo(0);
+        RuleFor(c => (int)c.PercentComplete).LessThanOrEqualTo(100);
     }
 }
