@@ -13,7 +13,7 @@ using static Application.Features.AccountAnnouncements.Constants.AccountAnnounce
 
 namespace Application.Features.AccountAnnouncements.Commands.Delete;
 
-public class DeleteAccountAnnouncementCommand : IRequest<DeletedAccountAnnouncementResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class DeleteAccountAnnouncementCommand : IRequest<DeletedAccountAnnouncementResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
 
