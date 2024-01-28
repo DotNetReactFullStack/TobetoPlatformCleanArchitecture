@@ -14,6 +14,7 @@ public class Image : Entity<int>
     public bool IsActive { get; set; }
 
     public virtual ImageExtension ImageExtension { get; set; }
+
     public Image()
     {
 

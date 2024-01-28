@@ -16,14 +16,13 @@ namespace Domain.Entities
 
         }
 
-        public Contract(int id, int contractTypeId, string name, string path, bool isActive, ContractType? contractType) : this()
+        public Contract(int id, int contractTypeId, string name, string path, bool isActive) : this()
         {
             Id = id;
             ContractTypeId = contractTypeId;
             Name = name;
             Path = path;
             IsActive = isActive;
-            ContractType = contractType;
         }
     }
 }
