@@ -11,7 +11,7 @@ public class UpdateSurveyCommandValidator : AbstractValidator<UpdateSurveyComman
         RuleFor(c => c.OrganizationId).NotEmpty();
         RuleFor(c => c.Priority).NotEmpty();
         RuleFor(c => c.Visibility).NotEmpty();
-        RuleFor(c => c.Title).NotEmpty();
+        RuleFor(c => c.Title).NotEmpty().MaximumLength(100);
         RuleFor(c => c.Content).NotEmpty();
         RuleFor(c => c.ConnectionLink).NotEmpty();
         RuleFor(c => c.IsActive).NotEmpty();
