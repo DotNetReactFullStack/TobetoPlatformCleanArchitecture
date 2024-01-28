@@ -16,14 +16,12 @@ namespace Domain.Entities
 
         }
 
-        public AccountContract(int id, int accountId, int contractId, bool isAccept, Account? account, Contract? contract) : this()
+        public AccountContract(int id, int accountId, int contractId, bool isAccept) : this()
         {
             Id = id;
             AccountId = accountId;
             ContractId = contractId;
             IsAccept = isAccept;
-            Account = account;
-            Contract = contract;
         }
     }
 }
