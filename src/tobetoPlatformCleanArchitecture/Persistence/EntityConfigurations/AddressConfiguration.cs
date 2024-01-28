@@ -20,17 +20,6 @@ public class AddressConfiguration : IEntityTypeConfiguration<Address>
         builder.Property(a => a.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(a => a.DeletedDate).HasColumnName("DeletedDate");
 
-        builder
-            .HasOne(a => a.Country)
-            .WithMany(c => c.Addresses)
-            .HasForeignKey(a => a.CountryId)
-            .OnDelete(DeleteBehavior.ClientNoAction);
-        builder
-            .HasOne(a => a.District)
-            .WithMany(d => d.Addresses)
-            .HasForeignKey(a => a.DistrictId)
-            .OnDelete(DeleteBehavior.ClientNoAction);
-
         builder.HasQueryFilter(a => !a.DeletedDate.HasValue);
     }
 }

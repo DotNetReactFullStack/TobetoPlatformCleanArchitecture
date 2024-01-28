@@ -12,7 +12,7 @@ using static Application.Features.AccountAnnouncements.Constants.AccountAnnounce
 
 namespace Application.Features.AccountAnnouncements.Queries.GetList;
 
-public class GetListAccountAnnouncementQuery : IRequest<GetListResponse<GetListAccountAnnouncementListItemDto>>, ICachableRequest
+public class GetListAccountAnnouncementQuery : IRequest<GetListResponse<GetListAccountAnnouncementListItemDto>>, ISecuredRequest, ICachableRequest
 {
     public PageRequest PageRequest { get; set; }
 
