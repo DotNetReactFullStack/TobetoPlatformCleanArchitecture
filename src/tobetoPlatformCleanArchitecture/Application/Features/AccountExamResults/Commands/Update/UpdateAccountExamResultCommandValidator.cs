@@ -14,5 +14,8 @@ public class UpdateAccountExamResultCommandValidator : AbstractValidator<UpdateA
         RuleFor(c => c.NumberOfWrongAnswers).NotEmpty();
         RuleFor(c => c.NumberOfNullAnswers).NotEmpty();
         RuleFor(c => c.Points).NotEmpty();
+
+        RuleFor(c => c.Points).GreaterThanOrEqualTo(0);
+        RuleFor(c => c.Points).LessThanOrEqualTo(100);
     }
 }

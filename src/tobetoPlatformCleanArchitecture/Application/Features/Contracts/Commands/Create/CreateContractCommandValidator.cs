@@ -10,5 +10,8 @@ public class CreateContractCommandValidator : AbstractValidator<CreateContractCo
         RuleFor(c => c.Name).NotEmpty();
         RuleFor(c => c.Path).NotEmpty();
         RuleFor(c => c.IsActive).NotEmpty();
+
+        RuleFor(c => c.Name).MaximumLength(150);
+
     }
 }
