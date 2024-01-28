@@ -12,7 +12,7 @@ using static Application.Features.AccountCertificates.Constants.AccountCertifica
 
 namespace Application.Features.AccountCertificates.Commands.Update;
 
-public class UpdateAccountCertificateCommand : IRequest<UpdatedAccountCertificateResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateAccountCertificateCommand : IRequest<UpdatedAccountCertificateResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public int AccountId { get; set; }

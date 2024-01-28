@@ -12,7 +12,7 @@ using static Application.Features.AccountSocialMediaPlatforms.Constants.AccountS
 
 namespace Application.Features.AccountSocialMediaPlatforms.Commands.Create;
 
-public class CreateAccountSocialMediaPlatformCommand : IRequest<CreatedAccountSocialMediaPlatformResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateAccountSocialMediaPlatformCommand : IRequest<CreatedAccountSocialMediaPlatformResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int AccountId { get; set; }
     public int SocialMediaPlatformId { get; set; }

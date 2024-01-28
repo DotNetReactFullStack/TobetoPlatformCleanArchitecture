@@ -13,7 +13,7 @@ using static Application.Features.Capabilities.Constants.CapabilitiesOperationCl
 
 namespace Application.Features.Capabilities.Commands.Delete;
 
-public class DeleteCapabilityCommand : IRequest<DeletedCapabilityResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class DeleteCapabilityCommand : IRequest<DeletedCapabilityResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
 

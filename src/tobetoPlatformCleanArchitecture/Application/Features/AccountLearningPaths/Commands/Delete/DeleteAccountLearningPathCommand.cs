@@ -13,7 +13,7 @@ using static Application.Features.AccountLearningPaths.Constants.AccountLearning
 
 namespace Application.Features.AccountLearningPaths.Commands.Delete;
 
-public class DeleteAccountLearningPathCommand : IRequest<DeletedAccountLearningPathResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class DeleteAccountLearningPathCommand : IRequest<DeletedAccountLearningPathResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
 

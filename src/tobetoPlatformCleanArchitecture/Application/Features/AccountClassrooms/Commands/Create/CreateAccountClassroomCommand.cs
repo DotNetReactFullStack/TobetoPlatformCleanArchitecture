@@ -12,7 +12,7 @@ using static Application.Features.AccountClassrooms.Constants.AccountClassroomsO
 
 namespace Application.Features.AccountClassrooms.Commands.Create;
 
-public class CreateAccountClassroomCommand : IRequest<CreatedAccountClassroomResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateAccountClassroomCommand : IRequest<CreatedAccountClassroomResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int AccountId { get; set; }
     public int ClassroomId { get; set; }

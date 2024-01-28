@@ -9,7 +9,7 @@ using static Application.Features.AccountForeignLanguageMetadatas.Constants.Acco
 
 namespace Application.Features.AccountForeignLanguageMetadatas.Queries.GetById;
 
-public class GetByIdAccountForeignLanguageMetadataQuery : IRequest<GetByIdAccountForeignLanguageMetadataResponse>
+public class GetByIdAccountForeignLanguageMetadataQuery : IRequest<GetByIdAccountForeignLanguageMetadataResponse>, ISecuredRequest
 {
     public int Id { get; set; }
 

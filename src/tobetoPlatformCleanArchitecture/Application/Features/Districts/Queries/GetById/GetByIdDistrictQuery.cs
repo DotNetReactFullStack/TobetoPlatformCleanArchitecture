@@ -9,7 +9,7 @@ using static Application.Features.Districts.Constants.DistrictsOperationClaims;
 
 namespace Application.Features.Districts.Queries.GetById;
 
-public class GetByIdDistrictQuery : IRequest<GetByIdDistrictResponse>
+public class GetByIdDistrictQuery : IRequest<GetByIdDistrictResponse>, ISecuredRequest
 {
     public int Id { get; set; }
 

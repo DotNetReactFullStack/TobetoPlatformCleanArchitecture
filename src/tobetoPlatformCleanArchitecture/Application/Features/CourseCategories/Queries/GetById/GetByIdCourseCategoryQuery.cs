@@ -9,7 +9,7 @@ using static Application.Features.CourseCategories.Constants.CourseCategoriesOpe
 
 namespace Application.Features.CourseCategories.Queries.GetById;
 
-public class GetByIdCourseCategoryQuery : IRequest<GetByIdCourseCategoryResponse>
+public class GetByIdCourseCategoryQuery : IRequest<GetByIdCourseCategoryResponse>, ISecuredRequest
 {
     public int Id { get; set; }
 

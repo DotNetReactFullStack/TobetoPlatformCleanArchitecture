@@ -9,7 +9,7 @@ using static Application.Features.AccountCapabilities.Constants.AccountCapabilit
 
 namespace Application.Features.AccountCapabilities.Queries.GetById;
 
-public class GetByIdAccountCapabilityQuery : IRequest<GetByIdAccountCapabilityResponse>
+public class GetByIdAccountCapabilityQuery : IRequest<GetByIdAccountCapabilityResponse>, ISecuredRequest
 {
     public int Id { get; set; }
 

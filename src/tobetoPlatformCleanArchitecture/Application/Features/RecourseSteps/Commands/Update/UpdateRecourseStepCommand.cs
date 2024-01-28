@@ -12,7 +12,7 @@ using static Application.Features.RecourseSteps.Constants.RecourseStepsOperation
 
 namespace Application.Features.RecourseSteps.Commands.Update;
 
-public class UpdateRecourseStepCommand : IRequest<UpdatedRecourseStepResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateRecourseStepCommand : IRequest<UpdatedRecourseStepResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public string Name { get; set; }

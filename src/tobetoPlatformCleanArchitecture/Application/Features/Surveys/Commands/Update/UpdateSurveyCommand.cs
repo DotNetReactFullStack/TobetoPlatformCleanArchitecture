@@ -12,7 +12,7 @@ using static Application.Features.Surveys.Constants.SurveysOperationClaims;
 
 namespace Application.Features.Surveys.Commands.Update;
 
-public class UpdateSurveyCommand : IRequest<UpdatedSurveyResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateSurveyCommand : IRequest<UpdatedSurveyResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public int SurveyTypeId { get; set; }

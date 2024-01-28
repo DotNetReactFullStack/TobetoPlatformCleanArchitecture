@@ -12,7 +12,7 @@ using static Application.Features.AccountLearningPaths.Constants.AccountLearning
 
 namespace Application.Features.AccountLearningPaths.Commands.Update;
 
-public class UpdateAccountLearningPathCommand : IRequest<UpdatedAccountLearningPathResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateAccountLearningPathCommand : IRequest<UpdatedAccountLearningPathResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public int AccountId { get; set; }

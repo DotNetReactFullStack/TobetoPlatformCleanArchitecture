@@ -9,7 +9,7 @@ using static Application.Features.AnnouncementTypes.Constants.AnnouncementTypesO
 
 namespace Application.Features.AnnouncementTypes.Queries.GetById;
 
-public class GetByIdAnnouncementTypeQuery : IRequest<GetByIdAnnouncementTypeResponse>
+public class GetByIdAnnouncementTypeQuery : IRequest<GetByIdAnnouncementTypeResponse>, ISecuredRequest
 {
     public int Id { get; set; }
 

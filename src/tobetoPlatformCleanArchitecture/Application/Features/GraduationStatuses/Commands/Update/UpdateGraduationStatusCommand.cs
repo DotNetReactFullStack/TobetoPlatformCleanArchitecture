@@ -12,7 +12,7 @@ using static Application.Features.GraduationStatuses.Constants.GraduationStatuse
 
 namespace Application.Features.GraduationStatuses.Commands.Update;
 
-public class UpdateGraduationStatusCommand : IRequest<UpdatedGraduationStatusResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateGraduationStatusCommand : IRequest<UpdatedGraduationStatusResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public string Name { get; set; }

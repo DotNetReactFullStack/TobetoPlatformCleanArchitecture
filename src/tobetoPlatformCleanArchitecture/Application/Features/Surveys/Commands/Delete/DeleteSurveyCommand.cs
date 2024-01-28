@@ -13,7 +13,7 @@ using static Application.Features.Surveys.Constants.SurveysOperationClaims;
 
 namespace Application.Features.Surveys.Commands.Delete;
 
-public class DeleteSurveyCommand : IRequest<DeletedSurveyResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class DeleteSurveyCommand : IRequest<DeletedSurveyResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
 

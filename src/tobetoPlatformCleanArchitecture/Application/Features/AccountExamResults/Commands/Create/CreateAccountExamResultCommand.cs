@@ -12,7 +12,7 @@ using static Application.Features.AccountExamResults.Constants.AccountExamResult
 
 namespace Application.Features.AccountExamResults.Commands.Create;
 
-public class CreateAccountExamResultCommand : IRequest<CreatedAccountExamResultResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateAccountExamResultCommand : IRequest<CreatedAccountExamResultResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int AccountId { get; set; }
     public int ExamId { get; set; }

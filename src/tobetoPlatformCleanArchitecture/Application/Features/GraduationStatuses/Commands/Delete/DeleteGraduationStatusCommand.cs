@@ -13,7 +13,7 @@ using static Application.Features.GraduationStatuses.Constants.GraduationStatuse
 
 namespace Application.Features.GraduationStatuses.Commands.Delete;
 
-public class DeleteGraduationStatusCommand : IRequest<DeletedGraduationStatusResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class DeleteGraduationStatusCommand : IRequest<DeletedGraduationStatusResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
 

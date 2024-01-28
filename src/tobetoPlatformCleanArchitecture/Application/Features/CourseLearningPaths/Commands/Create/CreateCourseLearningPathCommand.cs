@@ -12,7 +12,7 @@ using static Application.Features.CourseLearningPaths.Constants.CourseLearningPa
 
 namespace Application.Features.CourseLearningPaths.Commands.Create;
 
-public class CreateCourseLearningPathCommand : IRequest<CreatedCourseLearningPathResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateCourseLearningPathCommand : IRequest<CreatedCourseLearningPathResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int CourseId { get; set; }
     public int PathId { get; set; }

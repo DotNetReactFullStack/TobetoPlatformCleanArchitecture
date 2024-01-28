@@ -12,7 +12,7 @@ using static Application.Features.AccountForeignLanguageMetadatas.Constants.Acco
 
 namespace Application.Features.AccountForeignLanguageMetadatas.Commands.Update;
 
-public class UpdateAccountForeignLanguageMetadataCommand : IRequest<UpdatedAccountForeignLanguageMetadataResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class UpdateAccountForeignLanguageMetadataCommand : IRequest<UpdatedAccountForeignLanguageMetadataResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
     public int AccountId { get; set; }

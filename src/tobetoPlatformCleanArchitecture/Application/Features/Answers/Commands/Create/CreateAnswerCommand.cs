@@ -12,7 +12,7 @@ using static Application.Features.Answers.Constants.AnswersOperationClaims;
 
 namespace Application.Features.Answers.Commands.Create;
 
-public class CreateAnswerCommand : IRequest<CreatedAnswerResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateAnswerCommand : IRequest<CreatedAnswerResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int QuestionId { get; set; }
     public string AnswerDetail { get; set; }

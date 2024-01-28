@@ -12,7 +12,7 @@ using static Application.Features.Colleges.Constants.CollegesOperationClaims;
 
 namespace Application.Features.Colleges.Commands.Create;
 
-public class CreateCollegeCommand : IRequest<CreatedCollegeResponse>, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateCollegeCommand : IRequest<CreatedCollegeResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public string Name { get; set; }
     public bool Visibility { get; set; }

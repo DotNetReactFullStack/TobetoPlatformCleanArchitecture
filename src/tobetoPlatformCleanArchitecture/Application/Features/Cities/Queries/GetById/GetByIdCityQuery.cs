@@ -9,7 +9,7 @@ using static Application.Features.Cities.Constants.CitiesOperationClaims;
 
 namespace Application.Features.Cities.Queries.GetById;
 
-public class GetByIdCityQuery : IRequest<GetByIdCityResponse>
+public class GetByIdCityQuery : IRequest<GetByIdCityResponse>, ISecuredRequest
 {
     public int Id { get; set; }
 

@@ -9,7 +9,7 @@ using static Application.Features.QuestionCategories.Constants.QuestionCategorie
 
 namespace Application.Features.QuestionCategories.Queries.GetById;
 
-public class GetByIdQuestionCategoryQuery : IRequest<GetByIdQuestionCategoryResponse>
+public class GetByIdQuestionCategoryQuery : IRequest<GetByIdQuestionCategoryResponse>, ISecuredRequest
 {
     public int Id { get; set; }
 
