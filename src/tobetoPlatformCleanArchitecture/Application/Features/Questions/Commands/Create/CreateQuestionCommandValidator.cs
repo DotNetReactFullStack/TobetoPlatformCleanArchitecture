@@ -7,7 +7,7 @@ public class CreateQuestionCommandValidator : AbstractValidator<CreateQuestionCo
     public CreateQuestionCommandValidator()
     {
         RuleFor(c => c.QuestionCategoryId).NotEmpty();
-        RuleFor(c => c.QuestionDetail).NotEmpty();
+        RuleFor(c => c.QuestionDetail).NotEmpty().MaximumLength(1000);
         RuleFor(c => c.IsActive).NotEmpty();
     }
 }

@@ -7,7 +7,7 @@ public class UpdateRecourseDetailCommandValidator : AbstractValidator<UpdateReco
     public UpdateRecourseDetailCommandValidator()
     {
         RuleFor(c => c.Id).NotEmpty();
-        RuleFor(c => c.Name).NotEmpty();
+        RuleFor(c => c.Name).NotEmpty().MaximumLength(100);
         RuleFor(c => c.Priority).NotEmpty();
         RuleFor(c => c.Visibility).NotEmpty();
     }

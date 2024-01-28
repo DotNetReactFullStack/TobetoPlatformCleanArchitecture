@@ -8,11 +8,11 @@ public class UpdateLessonCommandValidator : AbstractValidator<UpdateLessonComman
     {
         RuleFor(c => c.Id).NotEmpty();
         RuleFor(c => c.CourseId).NotEmpty();
-        RuleFor(c => c.Name).NotEmpty();
+        RuleFor(c => c.Name).NotEmpty().MaximumLength(50);
         RuleFor(c => c.Visibility).NotEmpty();
-        RuleFor(c => c.Language).NotEmpty();
-        RuleFor(c => c.Content).NotEmpty();
-        RuleFor(c => c.Duration).NotEmpty();
+        RuleFor(c => c.Language).NotEmpty().MaximumLength(30);
+        RuleFor(c => c.Content).NotEmpty().MaximumLength(300);
+        RuleFor(c => c.Duration).NotEmpty().GreaterThanOrEqualTo(0);
         RuleFor(c => c.IsActive).NotEmpty();
     }
 }

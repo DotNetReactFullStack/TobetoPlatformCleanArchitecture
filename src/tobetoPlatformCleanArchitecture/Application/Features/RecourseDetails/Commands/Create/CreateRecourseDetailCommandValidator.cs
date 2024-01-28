@@ -6,7 +6,7 @@ public class CreateRecourseDetailCommandValidator : AbstractValidator<CreateReco
 {
     public CreateRecourseDetailCommandValidator()
     {
-        RuleFor(c => c.Name).NotEmpty();
+        RuleFor(c => c.Name).NotEmpty().MaximumLength(100);
         RuleFor(c => c.Priority).NotEmpty();
         RuleFor(c => c.Visibility).NotEmpty();
     }

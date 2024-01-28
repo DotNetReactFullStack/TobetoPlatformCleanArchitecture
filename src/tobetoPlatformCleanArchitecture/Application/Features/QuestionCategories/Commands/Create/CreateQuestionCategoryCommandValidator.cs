@@ -6,7 +6,7 @@ public class CreateQuestionCategoryCommandValidator : AbstractValidator<CreateQu
 {
     public CreateQuestionCategoryCommandValidator()
     {
-        RuleFor(c => c.Name).NotEmpty();
+        RuleFor(c => c.Name).NotEmpty().MaximumLength(30);
         RuleFor(c => c.Priority).NotEmpty();
     }
 }

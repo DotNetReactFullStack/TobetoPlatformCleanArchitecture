@@ -7,7 +7,7 @@ public class CreateEducationProgramCommandValidator : AbstractValidator<CreateEd
     public CreateEducationProgramCommandValidator()
     {
         RuleFor(c => c.CollegeId).NotEmpty();
-        RuleFor(c => c.Name).NotEmpty();
+        RuleFor(c => c.Name).NotEmpty().MaximumLength(70);
         RuleFor(c => c.Visibility).NotEmpty();
     }
 }
