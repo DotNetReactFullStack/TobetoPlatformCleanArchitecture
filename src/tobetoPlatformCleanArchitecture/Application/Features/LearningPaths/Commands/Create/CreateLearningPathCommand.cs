@@ -46,6 +46,7 @@ public class CreateLearningPathCommand : IRequest<CreatedLearningPathResponse>, 
         {
             LearningPath learningPath = _mapper.Map<LearningPath>(request);
 
+            await _learningPathBusinessRules.LearningPathEndingTimeMustBeOlderThanStartingTime(learningPath);
             await _learningPathRepository.AddAsync(learningPath);
 
             CreatedLearningPathResponse response = _mapper.Map<CreatedLearningPathResponse>(learningPath);
