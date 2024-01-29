@@ -1,3 +1,4 @@
+using Application.Features.Exams.Constants;
 using Application.Features.LearningPaths.Constants;
 using Application.Services.Repositories;
 using Core.Application.Rules;
@@ -31,4 +32,12 @@ public class LearningPathBusinessRules : BaseBusinessRules
         );
         await LearningPathShouldExistWhenSelected(learningPath);
     }
+    public async Task LearningPathEndingTimeMustBeOlderThanStartingTime(LearningPath learningPath) // Duzenleme
+    {
+        if (learningPath.EndingTime <= learningPath.StartingTime)
+            throw new BusinessException(LearningPathsBusinessMessages.LearningPathEndingTimeMustBeOlderThanStartingTime);
+
+        await Task.CompletedTask;
+    }
+
 }
