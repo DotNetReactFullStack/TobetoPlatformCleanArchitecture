@@ -43,6 +43,8 @@ public class CreateAccountForeignLanguageMetadataCommand : IRequest<CreatedAccou
         {
             AccountForeignLanguageMetadata accountForeignLanguageMetadata = _mapper.Map<AccountForeignLanguageMetadata>(request);
 
+            await _accountForeignLanguageMetadataBusinessRules.UserCanNotDuplicateSameForeingLanguageMoreThanOnceWhenInsert(accountForeignLanguageMetadata);
+
             await _accountForeignLanguageMetadataRepository.AddAsync(accountForeignLanguageMetadata);
 
             CreatedAccountForeignLanguageMetadataResponse response = _mapper.Map<CreatedAccountForeignLanguageMetadataResponse>(accountForeignLanguageMetadata);

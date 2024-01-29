@@ -3,6 +3,7 @@ using Application.Services.Repositories;
 using Core.Application.Rules;
 using Core.CrossCuttingConcerns.Exceptions.Types;
 using Domain.Entities;
+using Nest;
 
 namespace Application.Features.AccountForeignLanguageMetadatas.Rules;
 
@@ -30,5 +31,16 @@ public class AccountForeignLanguageMetadataBusinessRules : BaseBusinessRules
             cancellationToken: cancellationToken
         );
         await AccountForeignLanguageMetadataShouldExistWhenSelected(accountForeignLanguageMetadata);
+    }
+
+    public async Task UserCanNotDuplicateSameForeingLanguageMoreThanOnceWhenInsert (AccountForeignLanguageMetadata AccountForeignLanguageMetadata)
+    {
+        AccountForeignLanguageMetadata? accountForeignLanguageMetadata = await _accountForeignLanguageMetadataRepository.GetAsync(
+            predicate: aflm => aflm.AccountId == AccountForeignLanguageMetadata.AccountId && aflm.ForeignLanguageId == AccountForeignLanguageMetadata.ForeignLanguageId);
+
+        if (accountForeignLanguageMetadata != null)
+            throw new BusinessException(AccountForeignLanguageMetadatasBusinessMessages.UserCanNotDuplicateSameForeingLanguageMoreThanOnce);
+
+        await Task.CompletedTask;
     }
 }
