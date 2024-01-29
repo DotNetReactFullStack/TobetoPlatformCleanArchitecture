@@ -1,3 +1,4 @@
+using Application.Features.Exams.Constants;
 using Application.Features.Experiences.Constants;
 using Application.Services.Repositories;
 using Core.Application.Rules;
@@ -30,5 +31,16 @@ public class ExperienceBusinessRules : BaseBusinessRules
             cancellationToken: cancellationToken
         );
         await ExperienceShouldExistWhenSelected(experience);
+
     }
+
+    public async Task WorksEndingDateMustBeOlderThanStartingDate(Experience experience)
+    {
+        if (experience.EndingDate <= experience.StartingDate)
+            throw new BusinessException(ExperiencesBusinessMessages.WorksEndingDateMustBeOlderThanStartingDate);
+
+        await Task.CompletedTask;
+    }
+
+
 }

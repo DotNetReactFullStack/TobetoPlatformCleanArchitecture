@@ -48,6 +48,7 @@ public class CreateExperienceCommand : IRequest<CreatedExperienceResponse>, ISec
         public async Task<CreatedExperienceResponse> Handle(CreateExperienceCommand request, CancellationToken cancellationToken)
         {
             Experience experience = _mapper.Map<Experience>(request);
+            await _experienceBusinessRules.WorksEndingDateMustBeOlderThanStartingDate(experience);
 
             await _experienceRepository.AddAsync(experience);
 
