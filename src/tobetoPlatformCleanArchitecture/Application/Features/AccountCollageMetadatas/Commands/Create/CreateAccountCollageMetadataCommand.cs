@@ -46,7 +46,7 @@ public class CreateAccountCollageMetadataCommand : IRequest<CreatedAccountCollag
         public async Task<CreatedAccountCollageMetadataResponse> Handle(CreateAccountCollageMetadataCommand request, CancellationToken cancellationToken)
         {
             AccountCollageMetadata accountCollageMetadata = _mapper.Map<AccountCollageMetadata>(request);
-
+            await _accountCollageMetadataBusinessRules.AccountCollageMetadataGraduationYearMustBeOlderThanStartingYear(accountCollageMetadata);
             await _accountCollageMetadataRepository.AddAsync(accountCollageMetadata);
 
             CreatedAccountCollageMetadataResponse response = _mapper.Map<CreatedAccountCollageMetadataResponse>(accountCollageMetadata);

@@ -1,4 +1,5 @@
 using Application.Features.AccountCollageMetadatas.Constants;
+using Application.Features.AccountForeignLanguageMetadatas.Constants;
 using Application.Services.Repositories;
 using Core.Application.Rules;
 using Core.CrossCuttingConcerns.Exceptions.Types;
@@ -31,4 +32,15 @@ public class AccountCollageMetadataBusinessRules : BaseBusinessRules
         );
         await AccountCollageMetadataShouldExistWhenSelected(accountCollageMetadata);
     }
+
+    public async Task AccountCollageMetadataGraduationYearMustBeOlderThanStartingYear(AccountCollageMetadata accountCollageMetadata)
+    {
+        if (accountCollageMetadata.GraduationYear <= accountCollageMetadata.StartingYear)
+            throw new BusinessException(AccountCollageMetadatasBusinessMessages.AccountCollageMetadataGraduationYearMustBeOlderThanStartingYear);
+
+        await Task.CompletedTask;
+    }
+
+
+
 }
