@@ -1,3 +1,4 @@
+using Application.Features.AccountCollageMetadatas.Constants;
 using Application.Features.Exams.Constants;
 using Application.Services.Repositories;
 using Core.Application.Rules;
@@ -30,5 +31,13 @@ public class ExamBusinessRules : BaseBusinessRules
             cancellationToken: cancellationToken
         );
         await ExamShouldExistWhenSelected(exam);
+    }
+
+    public async Task ExamsEndingTimeMustBeOlderThanStartingTime(Exam exam)
+    {
+        if (exam.EndingTime <= exam.StartingTime)
+            throw new BusinessException(ExamsBusinessMessages.ExamsEndingTimeMustBeOlderThanStartingTime);
+
+        await Task.CompletedTask;
     }
 }
