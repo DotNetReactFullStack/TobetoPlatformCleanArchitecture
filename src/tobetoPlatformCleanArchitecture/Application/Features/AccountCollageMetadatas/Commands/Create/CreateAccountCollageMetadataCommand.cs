@@ -20,7 +20,7 @@ public class CreateAccountCollageMetadataCommand : IRequest<CreatedAccountCollag
     public int EducationProgramId { get; set; }
     public bool Visibility { get; set; }
     public DateTime StartingYear { get; set; }
-    public DateTime GraduationYear { get; set; }
+    public DateTime? GraduationYear { get; set; }
     public bool ProgramOnGoing { get; set; }
 
     public string[] Roles => new[] { Admin, Write, AccountCollageMetadatasOperationClaims.Create };
