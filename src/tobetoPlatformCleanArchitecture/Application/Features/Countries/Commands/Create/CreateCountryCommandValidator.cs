@@ -10,7 +10,7 @@ public class CreateCountryCommandValidator : AbstractValidator<CreateCountryComm
         RuleFor(c => c.Priority).NotEmpty();
         RuleFor(c => c.Visibility).NotEmpty();
 
-        RuleFor(c => c.Name).MaximumLength(50);
+        RuleFor(c => c.Name).MinimumLength(2).MaximumLength(30);
 
     }
 }
