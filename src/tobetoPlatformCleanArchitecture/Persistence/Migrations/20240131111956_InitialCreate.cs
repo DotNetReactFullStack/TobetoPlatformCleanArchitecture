@@ -982,7 +982,7 @@ namespace Persistence.Migrations
                     EducationProgramId = table.Column<int>(type: "int", nullable: false),
                     Visibility = table.Column<bool>(type: "bit", nullable: false),
                     StartingYear = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    GraduationYear = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    GraduationYear = table.Column<DateTime>(type: "datetime2", nullable: true),
                     ProgramOnGoing = table.Column<bool>(type: "bit", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -1870,7 +1870,7 @@ namespace Persistence.Migrations
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "AuthenticatorType", "CreatedDate", "DeletedDate", "Email", "FirstName", "LastName", "PasswordHash", "PasswordSalt", "Status", "UpdatedDate" },
-                values: new object[] { 1, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "admin@admin.com", "Admin", "NArchitecture", new byte[] { 66, 123, 237, 203, 35, 190, 101, 111, 189, 236, 39, 228, 200, 176, 230, 215, 0, 240, 207, 66, 229, 189, 239, 19, 150, 0, 91, 63, 243, 3, 35, 14, 216, 7, 88, 172, 207, 58, 92, 22, 242, 226, 4, 169, 211, 159, 217, 29, 13, 7, 182, 105, 240, 13, 26, 226, 28, 24, 191, 132, 220, 144, 207, 243 }, new byte[] { 108, 162, 22, 32, 139, 127, 52, 245, 91, 41, 242, 68, 145, 55, 62, 140, 13, 37, 231, 61, 23, 59, 60, 100, 48, 253, 145, 212, 191, 34, 25, 41, 176, 67, 201, 96, 18, 8, 163, 151, 128, 71, 95, 109, 73, 174, 217, 109, 47, 102, 201, 204, 102, 243, 81, 151, 63, 166, 53, 212, 118, 231, 86, 150, 153, 191, 105, 60, 212, 63, 240, 128, 91, 82, 191, 213, 79, 42, 223, 65, 67, 205, 6, 8, 155, 68, 222, 108, 78, 5, 188, 255, 187, 200, 174, 225, 149, 68, 159, 80, 152, 213, 217, 8, 254, 87, 20, 115, 85, 230, 17, 71, 186, 255, 113, 203, 99, 226, 221, 106, 136, 52, 140, 28, 13, 101, 113, 229 }, true, null });
+                values: new object[] { 1, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "admin@admin.com", "Admin", "NArchitecture", new byte[] { 81, 229, 116, 64, 189, 192, 79, 55, 200, 92, 2, 19, 82, 3, 215, 241, 46, 231, 125, 194, 203, 119, 72, 46, 64, 6, 106, 204, 72, 116, 15, 109, 211, 99, 36, 183, 114, 122, 89, 218, 26, 204, 143, 240, 179, 50, 98, 52, 119, 146, 3, 170, 147, 168, 113, 119, 94, 160, 63, 226, 255, 78, 123, 237 }, new byte[] { 242, 37, 118, 19, 244, 55, 16, 54, 143, 114, 73, 30, 201, 77, 45, 111, 60, 244, 217, 252, 50, 73, 89, 40, 173, 67, 104, 98, 150, 139, 81, 36, 245, 27, 135, 253, 177, 236, 104, 25, 178, 254, 33, 187, 201, 63, 57, 85, 201, 130, 244, 131, 137, 41, 173, 195, 176, 116, 3, 27, 179, 45, 144, 167, 79, 94, 162, 87, 58, 25, 22, 172, 133, 252, 31, 37, 175, 144, 8, 109, 101, 19, 119, 68, 24, 46, 122, 181, 187, 250, 147, 239, 64, 199, 31, 213, 172, 160, 117, 96, 78, 155, 25, 179, 138, 169, 168, 217, 11, 107, 244, 74, 143, 90, 7, 33, 159, 237, 243, 202, 5, 132, 13, 86, 64, 170, 62, 176 }, true, null });
 
             migrationBuilder.InsertData(
                 table: "UserOperationClaims",
