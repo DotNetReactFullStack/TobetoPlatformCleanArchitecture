@@ -8,7 +8,8 @@ public class UpdateEducationProgramCommandValidator : AbstractValidator<UpdateEd
     {
         RuleFor(c => c.Id).NotEmpty();
         RuleFor(c => c.CollegeId).NotEmpty();
-        RuleFor(c => c.Name).NotEmpty().MaximumLength(70);
+        RuleFor(c => c.Name).MinimumLength(2);
+        RuleFor(c => c.Name).MaximumLength(50);
         RuleFor(c => c.Visibility).NotEmpty();
     }
 }

@@ -13,6 +13,6 @@ public class UpdateAddressCommandValidator : AbstractValidator<UpdateAddressComm
         RuleFor(c => c.DistrictId).NotEmpty();
         RuleFor(c => c.AddressDetail).NotEmpty();
 
-        RuleFor(c => c.AddressDetail).MaximumLength(250);
+        RuleFor(c => c.AddressDetail).MaximumLength(200);
     }
 }
