@@ -23,6 +23,12 @@ public class AccountCollageMetadataConfiguration : IEntityTypeConfiguration<Acco
         builder.Property(acm => acm.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(acm => acm.DeletedDate).HasColumnName("DeletedDate");
 
+        builder
+           .HasOne(acm => acm.EducationProgram)
+           .WithMany(ep => ep.AccountCollageMetadatas)
+           .HasForeignKey(acm => acm.EducationProgramId)
+           .OnDelete(DeleteBehavior.ClientNoAction);
+
         builder.HasQueryFilter(acm => !acm.DeletedDate.HasValue);
     }
 }
