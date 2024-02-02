@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Application.Features.ExamQuestions.Constants
 {
-    public static class ExamQuestionRules
+    public static class ExamQuestionBusinessRuleConstants
     {
         public const int MaximumNumberOfExamQuestion = 100;
     }
