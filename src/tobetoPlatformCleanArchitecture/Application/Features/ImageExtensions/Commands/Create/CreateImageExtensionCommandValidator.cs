@@ -7,6 +7,6 @@ public class CreateImageExtensionCommandValidator : AbstractValidator<CreateImag
     public CreateImageExtensionCommandValidator()
     {
         RuleFor(c => c.Name).NotEmpty();
-        RuleFor(c => c.IsActive).NotEmpty();
+        RuleFor(c => c.IsActive).NotNull();
     }
 }

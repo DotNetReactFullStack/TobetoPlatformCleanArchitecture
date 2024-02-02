@@ -9,7 +9,7 @@ public class UpdateLearningPathCommandValidator : AbstractValidator<UpdateLearni
         RuleFor(c => c.Id).NotEmpty();
         RuleFor(c => c.LearningPathCategoryId).NotEmpty();
         RuleFor(c => c.Name).NotEmpty().MaximumLength(100);
-        RuleFor(c => c.Visibility).NotEmpty();
+        RuleFor(c => c.Visibility).NotNull();
         RuleFor(c => c.StartingTime).NotEmpty();
         RuleFor(c => c.EndingTime).NotEmpty();
         RuleFor(c => c.NumberOfLikes).NotEmpty().GreaterThanOrEqualTo(0);
