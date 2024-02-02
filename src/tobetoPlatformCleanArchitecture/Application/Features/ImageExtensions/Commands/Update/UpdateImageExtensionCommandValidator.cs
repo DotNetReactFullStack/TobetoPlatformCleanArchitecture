@@ -8,6 +8,6 @@ public class UpdateImageExtensionCommandValidator : AbstractValidator<UpdateImag
     {
         RuleFor(c => c.Id).NotEmpty();
         RuleFor(c => c.Name).NotEmpty();
-        RuleFor(c => c.IsActive).NotEmpty();
+        RuleFor(c => c.IsActive).NotNull();
     }
 }
