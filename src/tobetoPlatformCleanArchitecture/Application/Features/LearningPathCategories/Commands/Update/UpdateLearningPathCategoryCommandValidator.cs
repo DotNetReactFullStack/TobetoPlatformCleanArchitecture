@@ -8,6 +8,6 @@ public class UpdateLearningPathCategoryCommandValidator : AbstractValidator<Upda
     {
         RuleFor(c => c.Id).NotEmpty();
         RuleFor(c => c.Name).NotEmpty().MaximumLength(30);
-        RuleFor(c => c.IsActive).NotEmpty();
+        RuleFor(c => c.IsActive).NotNull();
     }
 }
