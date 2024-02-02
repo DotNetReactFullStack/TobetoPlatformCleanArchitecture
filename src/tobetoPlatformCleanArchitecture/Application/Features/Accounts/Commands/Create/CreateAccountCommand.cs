@@ -47,6 +47,9 @@ public class CreateAccountCommand : IRequest<CreatedAccountResponse>, ISecuredRe
         {
             Account account = _mapper.Map<Account>(request);
 
+            _accountBusinessRules.IsUserAlreadyLinkedToAccount(account);
+            _accountBusinessRules.NationalIdentificationNumberMustBeUnique(account);
+
             await _accountRepository.AddAsync(account);
 
             CreatedAccountResponse response = _mapper.Map<CreatedAccountResponse>(account);
