@@ -103,1619 +103,1631 @@ namespace Persistence.Migrations
                         {
                             Id = 2,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Accounts.Admin"
+                            Name = "Instructor"
                         },
                         new
                         {
                             Id = 3,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Accounts.Read"
+                            Name = "Student"
                         },
                         new
                         {
                             Id = 4,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Accounts.Write"
+                            Name = "Accounts.Admin"
                         },
                         new
                         {
                             Id = 5,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Accounts.Add"
+                            Name = "Accounts.Read"
                         },
                         new
                         {
                             Id = 6,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Accounts.Update"
+                            Name = "Accounts.Write"
                         },
                         new
                         {
                             Id = 7,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Accounts.Delete"
+                            Name = "Accounts.Add"
                         },
                         new
                         {
                             Id = 8,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Cities.Admin"
+                            Name = "Accounts.Update"
                         },
                         new
                         {
                             Id = 9,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Cities.Read"
+                            Name = "Accounts.Delete"
                         },
                         new
                         {
                             Id = 10,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Cities.Write"
+                            Name = "Cities.Admin"
                         },
                         new
                         {
                             Id = 11,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Cities.Add"
+                            Name = "Cities.Read"
                         },
                         new
                         {
                             Id = 12,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Cities.Update"
+                            Name = "Cities.Write"
                         },
                         new
                         {
                             Id = 13,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Cities.Delete"
+                            Name = "Cities.Add"
                         },
                         new
                         {
                             Id = 14,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Countries.Admin"
+                            Name = "Cities.Update"
                         },
                         new
                         {
                             Id = 15,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Countries.Read"
+                            Name = "Cities.Delete"
                         },
                         new
                         {
                             Id = 16,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Countries.Write"
+                            Name = "Countries.Admin"
                         },
                         new
                         {
                             Id = 17,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Countries.Add"
+                            Name = "Countries.Read"
                         },
                         new
                         {
                             Id = 18,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Countries.Update"
+                            Name = "Countries.Write"
                         },
                         new
                         {
                             Id = 19,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Countries.Delete"
+                            Name = "Countries.Add"
                         },
                         new
                         {
                             Id = 20,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Addresses.Admin"
+                            Name = "Countries.Update"
                         },
                         new
                         {
                             Id = 21,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Addresses.Read"
+                            Name = "Countries.Delete"
                         },
                         new
                         {
                             Id = 22,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Addresses.Write"
+                            Name = "Addresses.Admin"
                         },
                         new
                         {
                             Id = 23,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Addresses.Add"
+                            Name = "Addresses.Read"
                         },
                         new
                         {
                             Id = 24,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Addresses.Update"
+                            Name = "Addresses.Write"
                         },
                         new
                         {
                             Id = 25,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Addresses.Delete"
+                            Name = "Addresses.Add"
                         },
                         new
                         {
                             Id = 26,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Districts.Admin"
+                            Name = "Addresses.Update"
                         },
                         new
                         {
                             Id = 27,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Districts.Read"
+                            Name = "Addresses.Delete"
                         },
                         new
                         {
                             Id = 28,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Districts.Write"
+                            Name = "Districts.Admin"
                         },
                         new
                         {
                             Id = 29,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Districts.Add"
+                            Name = "Districts.Read"
                         },
                         new
                         {
                             Id = 30,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Districts.Update"
+                            Name = "Districts.Write"
                         },
                         new
                         {
                             Id = 31,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Districts.Delete"
+                            Name = "Districts.Add"
                         },
                         new
                         {
                             Id = 32,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Capabilities.Admin"
+                            Name = "Districts.Update"
                         },
                         new
                         {
                             Id = 33,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Capabilities.Read"
+                            Name = "Districts.Delete"
                         },
                         new
                         {
                             Id = 34,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Capabilities.Write"
+                            Name = "Capabilities.Admin"
                         },
                         new
                         {
                             Id = 35,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Capabilities.Add"
+                            Name = "Capabilities.Read"
                         },
                         new
                         {
                             Id = 36,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Capabilities.Update"
+                            Name = "Capabilities.Write"
                         },
                         new
                         {
                             Id = 37,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Capabilities.Delete"
+                            Name = "Capabilities.Add"
                         },
                         new
                         {
                             Id = 38,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCapabilities.Admin"
+                            Name = "Capabilities.Update"
                         },
                         new
                         {
                             Id = 39,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCapabilities.Read"
+                            Name = "Capabilities.Delete"
                         },
                         new
                         {
                             Id = 40,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCapabilities.Write"
+                            Name = "AccountCapabilities.Admin"
                         },
                         new
                         {
                             Id = 41,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCapabilities.Add"
+                            Name = "AccountCapabilities.Read"
                         },
                         new
                         {
                             Id = 42,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCapabilities.Update"
+                            Name = "AccountCapabilities.Write"
                         },
                         new
                         {
                             Id = 43,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCapabilities.Delete"
+                            Name = "AccountCapabilities.Add"
                         },
                         new
                         {
                             Id = 44,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ForeignLanguageLevels.Admin"
+                            Name = "AccountCapabilities.Update"
                         },
                         new
                         {
                             Id = 45,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ForeignLanguageLevels.Read"
+                            Name = "AccountCapabilities.Delete"
                         },
                         new
                         {
                             Id = 46,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ForeignLanguageLevels.Write"
+                            Name = "ForeignLanguageLevels.Admin"
                         },
                         new
                         {
                             Id = 47,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ForeignLanguageLevels.Add"
+                            Name = "ForeignLanguageLevels.Read"
                         },
                         new
                         {
                             Id = 48,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ForeignLanguageLevels.Update"
+                            Name = "ForeignLanguageLevels.Write"
                         },
                         new
                         {
                             Id = 49,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ForeignLanguageLevels.Delete"
+                            Name = "ForeignLanguageLevels.Add"
                         },
                         new
                         {
                             Id = 50,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ForeignLanguages.Admin"
+                            Name = "ForeignLanguageLevels.Update"
                         },
                         new
                         {
                             Id = 51,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ForeignLanguages.Read"
+                            Name = "ForeignLanguageLevels.Delete"
                         },
                         new
                         {
                             Id = 52,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ForeignLanguages.Write"
+                            Name = "ForeignLanguages.Admin"
                         },
                         new
                         {
                             Id = 53,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ForeignLanguages.Add"
+                            Name = "ForeignLanguages.Read"
                         },
                         new
                         {
                             Id = 54,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ForeignLanguages.Update"
+                            Name = "ForeignLanguages.Write"
                         },
                         new
                         {
                             Id = 55,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ForeignLanguages.Delete"
+                            Name = "ForeignLanguages.Add"
                         },
                         new
                         {
                             Id = 56,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountForeignLanguageMetadatas.Admin"
+                            Name = "ForeignLanguages.Update"
                         },
                         new
                         {
                             Id = 57,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountForeignLanguageMetadatas.Read"
+                            Name = "ForeignLanguages.Delete"
                         },
                         new
                         {
                             Id = 58,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountForeignLanguageMetadatas.Write"
+                            Name = "AccountForeignLanguageMetadatas.Admin"
                         },
                         new
                         {
                             Id = 59,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountForeignLanguageMetadatas.Add"
+                            Name = "AccountForeignLanguageMetadatas.Read"
                         },
                         new
                         {
                             Id = 60,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountForeignLanguageMetadatas.Update"
+                            Name = "AccountForeignLanguageMetadatas.Write"
                         },
                         new
                         {
                             Id = 61,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountForeignLanguageMetadatas.Delete"
+                            Name = "AccountForeignLanguageMetadatas.Add"
                         },
                         new
                         {
                             Id = 62,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Certificates.Admin"
+                            Name = "AccountForeignLanguageMetadatas.Update"
                         },
                         new
                         {
                             Id = 63,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Certificates.Read"
+                            Name = "AccountForeignLanguageMetadatas.Delete"
                         },
                         new
                         {
                             Id = 64,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Certificates.Write"
+                            Name = "Certificates.Admin"
                         },
                         new
                         {
                             Id = 65,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Certificates.Add"
+                            Name = "Certificates.Read"
                         },
                         new
                         {
                             Id = 66,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Certificates.Update"
+                            Name = "Certificates.Write"
                         },
                         new
                         {
                             Id = 67,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Certificates.Delete"
+                            Name = "Certificates.Add"
                         },
                         new
                         {
                             Id = 68,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCertificates.Admin"
+                            Name = "Certificates.Update"
                         },
                         new
                         {
                             Id = 69,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCertificates.Read"
+                            Name = "Certificates.Delete"
                         },
                         new
                         {
                             Id = 70,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCertificates.Write"
+                            Name = "AccountCertificates.Admin"
                         },
                         new
                         {
                             Id = 71,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCertificates.Add"
+                            Name = "AccountCertificates.Read"
                         },
                         new
                         {
                             Id = 72,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCertificates.Update"
+                            Name = "AccountCertificates.Write"
                         },
                         new
                         {
                             Id = 73,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCertificates.Delete"
+                            Name = "AccountCertificates.Add"
                         },
                         new
                         {
                             Id = 74,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "SocialMediaPlatforms.Admin"
+                            Name = "AccountCertificates.Update"
                         },
                         new
                         {
                             Id = 75,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "SocialMediaPlatforms.Read"
+                            Name = "AccountCertificates.Delete"
                         },
                         new
                         {
                             Id = 76,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "SocialMediaPlatforms.Write"
+                            Name = "SocialMediaPlatforms.Admin"
                         },
                         new
                         {
                             Id = 77,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "SocialMediaPlatforms.Add"
+                            Name = "SocialMediaPlatforms.Read"
                         },
                         new
                         {
                             Id = 78,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "SocialMediaPlatforms.Update"
+                            Name = "SocialMediaPlatforms.Write"
                         },
                         new
                         {
                             Id = 79,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "SocialMediaPlatforms.Delete"
+                            Name = "SocialMediaPlatforms.Add"
                         },
                         new
                         {
                             Id = 80,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountSocialMediaPlatforms.Admin"
+                            Name = "SocialMediaPlatforms.Update"
                         },
                         new
                         {
                             Id = 81,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountSocialMediaPlatforms.Read"
+                            Name = "SocialMediaPlatforms.Delete"
                         },
                         new
                         {
                             Id = 82,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountSocialMediaPlatforms.Write"
+                            Name = "AccountSocialMediaPlatforms.Admin"
                         },
                         new
                         {
                             Id = 83,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountSocialMediaPlatforms.Add"
+                            Name = "AccountSocialMediaPlatforms.Read"
                         },
                         new
                         {
                             Id = 84,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountSocialMediaPlatforms.Update"
+                            Name = "AccountSocialMediaPlatforms.Write"
                         },
                         new
                         {
                             Id = 85,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountSocialMediaPlatforms.Delete"
+                            Name = "AccountSocialMediaPlatforms.Add"
                         },
                         new
                         {
                             Id = 86,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "GraduationStatus.Admin"
+                            Name = "AccountSocialMediaPlatforms.Update"
                         },
                         new
                         {
                             Id = 87,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "GraduationStatus.Read"
+                            Name = "AccountSocialMediaPlatforms.Delete"
                         },
                         new
                         {
                             Id = 88,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "GraduationStatus.Write"
+                            Name = "GraduationStatus.Admin"
                         },
                         new
                         {
                             Id = 89,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "GraduationStatus.Add"
+                            Name = "GraduationStatus.Read"
                         },
                         new
                         {
                             Id = 90,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "GraduationStatus.Update"
+                            Name = "GraduationStatus.Write"
                         },
                         new
                         {
                             Id = 91,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "GraduationStatus.Delete"
+                            Name = "GraduationStatus.Add"
                         },
                         new
                         {
                             Id = 92,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Colleges.Admin"
+                            Name = "GraduationStatus.Update"
                         },
                         new
                         {
                             Id = 93,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Colleges.Read"
+                            Name = "GraduationStatus.Delete"
                         },
                         new
                         {
                             Id = 94,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Colleges.Write"
+                            Name = "Colleges.Admin"
                         },
                         new
                         {
                             Id = 95,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Colleges.Add"
+                            Name = "Colleges.Read"
                         },
                         new
                         {
                             Id = 96,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Colleges.Update"
+                            Name = "Colleges.Write"
                         },
                         new
                         {
                             Id = 97,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Colleges.Delete"
+                            Name = "Colleges.Add"
                         },
                         new
                         {
                             Id = 98,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "EducationPrograms.Admin"
+                            Name = "Colleges.Update"
                         },
                         new
                         {
                             Id = 99,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "EducationPrograms.Read"
+                            Name = "Colleges.Delete"
                         },
                         new
                         {
                             Id = 100,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "EducationPrograms.Write"
+                            Name = "EducationPrograms.Admin"
                         },
                         new
                         {
                             Id = 101,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "EducationPrograms.Add"
+                            Name = "EducationPrograms.Read"
                         },
                         new
                         {
                             Id = 102,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "EducationPrograms.Update"
+                            Name = "EducationPrograms.Write"
                         },
                         new
                         {
                             Id = 103,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "EducationPrograms.Delete"
+                            Name = "EducationPrograms.Add"
                         },
                         new
                         {
                             Id = 104,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCollageMetadatas.Admin"
+                            Name = "EducationPrograms.Update"
                         },
                         new
                         {
                             Id = 105,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCollageMetadatas.Read"
+                            Name = "EducationPrograms.Delete"
                         },
                         new
                         {
                             Id = 106,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCollageMetadatas.Write"
+                            Name = "AccountCollageMetadatas.Admin"
                         },
                         new
                         {
                             Id = 107,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCollageMetadatas.Add"
+                            Name = "AccountCollageMetadatas.Read"
                         },
                         new
                         {
                             Id = 108,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCollageMetadatas.Update"
+                            Name = "AccountCollageMetadatas.Write"
                         },
                         new
                         {
                             Id = 109,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCollageMetadatas.Delete"
+                            Name = "AccountCollageMetadatas.Add"
                         },
                         new
                         {
                             Id = 110,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "SurveyTypes.Admin"
+                            Name = "AccountCollageMetadatas.Update"
                         },
                         new
                         {
                             Id = 111,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "SurveyTypes.Read"
+                            Name = "AccountCollageMetadatas.Delete"
                         },
                         new
                         {
                             Id = 112,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "SurveyTypes.Write"
+                            Name = "SurveyTypes.Admin"
                         },
                         new
                         {
                             Id = 113,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "SurveyTypes.Add"
+                            Name = "SurveyTypes.Read"
                         },
                         new
                         {
                             Id = 114,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "SurveyTypes.Update"
+                            Name = "SurveyTypes.Write"
                         },
                         new
                         {
                             Id = 115,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "SurveyTypes.Delete"
+                            Name = "SurveyTypes.Add"
                         },
                         new
                         {
                             Id = 116,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Surveys.Admin"
+                            Name = "SurveyTypes.Update"
                         },
                         new
                         {
                             Id = 117,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Surveys.Read"
+                            Name = "SurveyTypes.Delete"
                         },
                         new
                         {
                             Id = 118,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Surveys.Write"
+                            Name = "Surveys.Admin"
                         },
                         new
                         {
                             Id = 119,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Surveys.Add"
+                            Name = "Surveys.Read"
                         },
                         new
                         {
                             Id = 120,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Surveys.Update"
+                            Name = "Surveys.Write"
                         },
                         new
                         {
                             Id = 121,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Surveys.Delete"
+                            Name = "Surveys.Add"
                         },
                         new
                         {
                             Id = 122,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "OrganizationTypes.Admin"
+                            Name = "Surveys.Update"
                         },
                         new
                         {
                             Id = 123,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "OrganizationTypes.Read"
+                            Name = "Surveys.Delete"
                         },
                         new
                         {
                             Id = 124,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "OrganizationTypes.Write"
+                            Name = "OrganizationTypes.Admin"
                         },
                         new
                         {
                             Id = 125,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "OrganizationTypes.Add"
+                            Name = "OrganizationTypes.Read"
                         },
                         new
                         {
                             Id = 126,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "OrganizationTypes.Update"
+                            Name = "OrganizationTypes.Write"
                         },
                         new
                         {
                             Id = 127,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "OrganizationTypes.Delete"
+                            Name = "OrganizationTypes.Add"
                         },
                         new
                         {
                             Id = 128,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Organizations.Admin"
+                            Name = "OrganizationTypes.Update"
                         },
                         new
                         {
                             Id = 129,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Organizations.Read"
+                            Name = "OrganizationTypes.Delete"
                         },
                         new
                         {
                             Id = 130,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Organizations.Write"
+                            Name = "Organizations.Admin"
                         },
                         new
                         {
                             Id = 131,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Organizations.Add"
+                            Name = "Organizations.Read"
                         },
                         new
                         {
                             Id = 132,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Organizations.Update"
+                            Name = "Organizations.Write"
                         },
                         new
                         {
                             Id = 133,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Organizations.Delete"
+                            Name = "Organizations.Add"
                         },
                         new
                         {
                             Id = 134,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AnnouncementTypes.Admin"
+                            Name = "Organizations.Update"
                         },
                         new
                         {
                             Id = 135,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AnnouncementTypes.Read"
+                            Name = "Organizations.Delete"
                         },
                         new
                         {
                             Id = 136,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AnnouncementTypes.Write"
+                            Name = "AnnouncementTypes.Admin"
                         },
                         new
                         {
                             Id = 137,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AnnouncementTypes.Add"
+                            Name = "AnnouncementTypes.Read"
                         },
                         new
                         {
                             Id = 138,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AnnouncementTypes.Update"
+                            Name = "AnnouncementTypes.Write"
                         },
                         new
                         {
                             Id = 139,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AnnouncementTypes.Delete"
+                            Name = "AnnouncementTypes.Add"
                         },
                         new
                         {
                             Id = 140,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Announcements.Admin"
+                            Name = "AnnouncementTypes.Update"
                         },
                         new
                         {
                             Id = 141,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Announcements.Read"
+                            Name = "AnnouncementTypes.Delete"
                         },
                         new
                         {
                             Id = 142,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Announcements.Write"
+                            Name = "Announcements.Admin"
                         },
                         new
                         {
                             Id = 143,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Announcements.Add"
+                            Name = "Announcements.Read"
                         },
                         new
                         {
                             Id = 144,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Announcements.Update"
+                            Name = "Announcements.Write"
                         },
                         new
                         {
                             Id = 145,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Announcements.Delete"
+                            Name = "Announcements.Add"
                         },
                         new
                         {
                             Id = 146,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "QuestionCategories.Admin"
+                            Name = "Announcements.Update"
                         },
                         new
                         {
                             Id = 147,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "QuestionCategories.Read"
+                            Name = "Announcements.Delete"
                         },
                         new
                         {
                             Id = 148,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "QuestionCategories.Write"
+                            Name = "QuestionCategories.Admin"
                         },
                         new
                         {
                             Id = 149,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "QuestionCategories.Add"
+                            Name = "QuestionCategories.Read"
                         },
                         new
                         {
                             Id = 150,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "QuestionCategories.Update"
+                            Name = "QuestionCategories.Write"
                         },
                         new
                         {
                             Id = 151,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "QuestionCategories.Delete"
+                            Name = "QuestionCategories.Add"
                         },
                         new
                         {
                             Id = 152,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Questions.Admin"
+                            Name = "QuestionCategories.Update"
                         },
                         new
                         {
                             Id = 153,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Questions.Read"
+                            Name = "QuestionCategories.Delete"
                         },
                         new
                         {
                             Id = 154,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Questions.Write"
+                            Name = "Questions.Admin"
                         },
                         new
                         {
                             Id = 155,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Questions.Add"
+                            Name = "Questions.Read"
                         },
                         new
                         {
                             Id = 156,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Questions.Update"
+                            Name = "Questions.Write"
                         },
                         new
                         {
                             Id = 157,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Questions.Delete"
+                            Name = "Questions.Add"
                         },
                         new
                         {
                             Id = 158,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Answers.Admin"
+                            Name = "Questions.Update"
                         },
                         new
                         {
                             Id = 159,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Answers.Read"
+                            Name = "Questions.Delete"
                         },
                         new
                         {
                             Id = 160,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Answers.Write"
+                            Name = "Answers.Admin"
                         },
                         new
                         {
                             Id = 161,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Answers.Add"
+                            Name = "Answers.Read"
                         },
                         new
                         {
                             Id = 162,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Answers.Update"
+                            Name = "Answers.Write"
                         },
                         new
                         {
                             Id = 163,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Answers.Delete"
+                            Name = "Answers.Add"
                         },
                         new
                         {
                             Id = 164,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Exams.Admin"
+                            Name = "Answers.Update"
                         },
                         new
                         {
                             Id = 165,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Exams.Read"
+                            Name = "Answers.Delete"
                         },
                         new
                         {
                             Id = 166,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Exams.Write"
+                            Name = "Exams.Admin"
                         },
                         new
                         {
                             Id = 167,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Exams.Add"
+                            Name = "Exams.Read"
                         },
                         new
                         {
                             Id = 168,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Exams.Update"
+                            Name = "Exams.Write"
                         },
                         new
                         {
                             Id = 169,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Exams.Delete"
+                            Name = "Exams.Add"
                         },
                         new
                         {
                             Id = 170,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ExamQuestions.Admin"
+                            Name = "Exams.Update"
                         },
                         new
                         {
                             Id = 171,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ExamQuestions.Read"
+                            Name = "Exams.Delete"
                         },
                         new
                         {
                             Id = 172,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ExamQuestions.Write"
+                            Name = "ExamQuestions.Admin"
                         },
                         new
                         {
                             Id = 173,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ExamQuestions.Add"
+                            Name = "ExamQuestions.Read"
                         },
                         new
                         {
                             Id = 174,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ExamQuestions.Update"
+                            Name = "ExamQuestions.Write"
                         },
                         new
                         {
                             Id = 175,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ExamQuestions.Delete"
+                            Name = "ExamQuestions.Add"
                         },
                         new
                         {
                             Id = 176,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ClassroomExams.Admin"
+                            Name = "ExamQuestions.Update"
                         },
                         new
                         {
                             Id = 177,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ClassroomExams.Read"
+                            Name = "ExamQuestions.Delete"
                         },
                         new
                         {
                             Id = 178,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ClassroomExams.Write"
+                            Name = "ClassroomExams.Admin"
                         },
                         new
                         {
                             Id = 179,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ClassroomExams.Add"
+                            Name = "ClassroomExams.Read"
                         },
                         new
                         {
                             Id = 180,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ClassroomExams.Update"
+                            Name = "ClassroomExams.Write"
                         },
                         new
                         {
                             Id = 181,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ClassroomExams.Delete"
+                            Name = "ClassroomExams.Add"
                         },
                         new
                         {
                             Id = 182,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountExamResults.Admin"
+                            Name = "ClassroomExams.Update"
                         },
                         new
                         {
                             Id = 183,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountExamResults.Read"
+                            Name = "ClassroomExams.Delete"
                         },
                         new
                         {
                             Id = 184,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountExamResults.Write"
+                            Name = "AccountExamResults.Admin"
                         },
                         new
                         {
                             Id = 185,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountExamResults.Add"
+                            Name = "AccountExamResults.Read"
                         },
                         new
                         {
                             Id = 186,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountExamResults.Update"
+                            Name = "AccountExamResults.Write"
                         },
                         new
                         {
                             Id = 187,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountExamResults.Delete"
+                            Name = "AccountExamResults.Add"
                         },
                         new
                         {
                             Id = 188,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Classrooms.Admin"
+                            Name = "AccountExamResults.Update"
                         },
                         new
                         {
                             Id = 189,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Classrooms.Read"
+                            Name = "AccountExamResults.Delete"
                         },
                         new
                         {
                             Id = 190,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Classrooms.Write"
+                            Name = "Classrooms.Admin"
                         },
                         new
                         {
                             Id = 191,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Classrooms.Add"
+                            Name = "Classrooms.Read"
                         },
                         new
                         {
                             Id = 192,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Classrooms.Update"
+                            Name = "Classrooms.Write"
                         },
                         new
                         {
                             Id = 193,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Classrooms.Delete"
+                            Name = "Classrooms.Add"
                         },
                         new
                         {
                             Id = 194,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountClassrooms.Admin"
+                            Name = "Classrooms.Update"
                         },
                         new
                         {
                             Id = 195,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountClassrooms.Read"
+                            Name = "Classrooms.Delete"
                         },
                         new
                         {
                             Id = 196,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountClassrooms.Write"
+                            Name = "AccountClassrooms.Admin"
                         },
                         new
                         {
                             Id = 197,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountClassrooms.Add"
+                            Name = "AccountClassrooms.Read"
                         },
                         new
                         {
                             Id = 198,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountClassrooms.Update"
+                            Name = "AccountClassrooms.Write"
                         },
                         new
                         {
                             Id = 199,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountClassrooms.Delete"
+                            Name = "AccountClassrooms.Add"
                         },
                         new
                         {
                             Id = 200,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountLearningPaths.Admin"
+                            Name = "AccountClassrooms.Update"
                         },
                         new
                         {
                             Id = 201,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountLearningPaths.Read"
+                            Name = "AccountClassrooms.Delete"
                         },
                         new
                         {
                             Id = 202,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountLearningPaths.Write"
+                            Name = "AccountLearningPaths.Admin"
                         },
                         new
                         {
                             Id = 203,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountLearningPaths.Add"
+                            Name = "AccountLearningPaths.Read"
                         },
                         new
                         {
                             Id = 204,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountLearningPaths.Update"
+                            Name = "AccountLearningPaths.Write"
                         },
                         new
                         {
                             Id = 205,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountLearningPaths.Delete"
+                            Name = "AccountLearningPaths.Add"
                         },
                         new
                         {
                             Id = 206,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "CourseLearningPaths.Admin"
+                            Name = "AccountLearningPaths.Update"
                         },
                         new
                         {
                             Id = 207,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "CourseLearningPaths.Read"
+                            Name = "AccountLearningPaths.Delete"
                         },
                         new
                         {
                             Id = 208,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "CourseLearningPaths.Write"
+                            Name = "CourseLearningPaths.Admin"
                         },
                         new
                         {
                             Id = 209,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "CourseLearningPaths.Add"
+                            Name = "CourseLearningPaths.Read"
                         },
                         new
                         {
                             Id = 210,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "CourseLearningPaths.Update"
+                            Name = "CourseLearningPaths.Write"
                         },
                         new
                         {
                             Id = 211,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "CourseLearningPaths.Delete"
+                            Name = "CourseLearningPaths.Add"
                         },
                         new
                         {
                             Id = 212,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "LearningPaths.Admin"
+                            Name = "CourseLearningPaths.Update"
                         },
                         new
                         {
                             Id = 213,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "LearningPaths.Read"
+                            Name = "CourseLearningPaths.Delete"
                         },
                         new
                         {
                             Id = 214,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "LearningPaths.Write"
+                            Name = "LearningPaths.Admin"
                         },
                         new
                         {
                             Id = 215,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "LearningPaths.Add"
+                            Name = "LearningPaths.Read"
                         },
                         new
                         {
                             Id = 216,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "LearningPaths.Update"
+                            Name = "LearningPaths.Write"
                         },
                         new
                         {
                             Id = 217,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "LearningPaths.Delete"
+                            Name = "LearningPaths.Add"
                         },
                         new
                         {
                             Id = 218,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "CourseCategories.Admin"
+                            Name = "LearningPaths.Update"
                         },
                         new
                         {
                             Id = 219,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "CourseCategories.Read"
+                            Name = "LearningPaths.Delete"
                         },
                         new
                         {
                             Id = 220,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "CourseCategories.Write"
+                            Name = "CourseCategories.Admin"
                         },
                         new
                         {
                             Id = 221,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "CourseCategories.Add"
+                            Name = "CourseCategories.Read"
                         },
                         new
                         {
                             Id = 222,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "CourseCategories.Update"
+                            Name = "CourseCategories.Write"
                         },
                         new
                         {
                             Id = 223,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "CourseCategories.Delete"
+                            Name = "CourseCategories.Add"
                         },
                         new
                         {
                             Id = 224,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Courses.Admin"
+                            Name = "CourseCategories.Update"
                         },
                         new
                         {
                             Id = 225,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Courses.Read"
+                            Name = "CourseCategories.Delete"
                         },
                         new
                         {
                             Id = 226,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Courses.Write"
+                            Name = "Courses.Admin"
                         },
                         new
                         {
                             Id = 227,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Courses.Add"
+                            Name = "Courses.Read"
                         },
                         new
                         {
                             Id = 228,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Courses.Update"
+                            Name = "Courses.Write"
                         },
                         new
                         {
                             Id = 229,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Courses.Delete"
+                            Name = "Courses.Add"
                         },
                         new
                         {
                             Id = 230,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCourses.Admin"
+                            Name = "Courses.Update"
                         },
                         new
                         {
                             Id = 231,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCourses.Read"
+                            Name = "Courses.Delete"
                         },
                         new
                         {
                             Id = 232,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCourses.Write"
+                            Name = "AccountCourses.Admin"
                         },
                         new
                         {
                             Id = 233,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCourses.Add"
+                            Name = "AccountCourses.Read"
                         },
                         new
                         {
                             Id = 234,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCourses.Update"
+                            Name = "AccountCourses.Write"
                         },
                         new
                         {
                             Id = 235,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCourses.Delete"
+                            Name = "AccountCourses.Add"
                         },
                         new
                         {
                             Id = 236,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Lessons.Admin"
+                            Name = "AccountCourses.Update"
                         },
                         new
                         {
                             Id = 237,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Lessons.Read"
+                            Name = "AccountCourses.Delete"
                         },
                         new
                         {
                             Id = 238,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Lessons.Write"
+                            Name = "Lessons.Admin"
                         },
                         new
                         {
                             Id = 239,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Lessons.Add"
+                            Name = "Lessons.Read"
                         },
                         new
                         {
                             Id = 240,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Lessons.Update"
+                            Name = "Lessons.Write"
                         },
                         new
                         {
                             Id = 241,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Lessons.Delete"
+                            Name = "Lessons.Add"
                         },
                         new
                         {
                             Id = 242,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountLessons.Admin"
+                            Name = "Lessons.Update"
                         },
                         new
                         {
                             Id = 243,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountLessons.Read"
+                            Name = "Lessons.Delete"
                         },
                         new
                         {
                             Id = 244,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountLessons.Write"
+                            Name = "AccountLessons.Admin"
                         },
                         new
                         {
                             Id = 245,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountLessons.Add"
+                            Name = "AccountLessons.Read"
                         },
                         new
                         {
                             Id = 246,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountLessons.Update"
+                            Name = "AccountLessons.Write"
                         },
                         new
                         {
                             Id = 247,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountLessons.Delete"
+                            Name = "AccountLessons.Add"
                         },
                         new
                         {
                             Id = 248,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "RecourseSteps.Admin"
+                            Name = "AccountLessons.Update"
                         },
                         new
                         {
                             Id = 249,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "RecourseSteps.Read"
+                            Name = "AccountLessons.Delete"
                         },
                         new
                         {
                             Id = 250,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "RecourseSteps.Write"
+                            Name = "RecourseSteps.Admin"
                         },
                         new
                         {
                             Id = 251,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "RecourseSteps.Add"
+                            Name = "RecourseSteps.Read"
                         },
                         new
                         {
                             Id = 252,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "RecourseSteps.Update"
+                            Name = "RecourseSteps.Write"
                         },
                         new
                         {
                             Id = 253,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "RecourseSteps.Delete"
+                            Name = "RecourseSteps.Add"
                         },
                         new
                         {
                             Id = 254,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Recourses.Admin"
+                            Name = "RecourseSteps.Update"
                         },
                         new
                         {
                             Id = 255,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Recourses.Read"
+                            Name = "RecourseSteps.Delete"
                         },
                         new
                         {
                             Id = 256,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Recourses.Write"
+                            Name = "Recourses.Admin"
                         },
                         new
                         {
                             Id = 257,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Recourses.Add"
+                            Name = "Recourses.Read"
                         },
                         new
                         {
                             Id = 258,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Recourses.Update"
+                            Name = "Recourses.Write"
                         },
                         new
                         {
                             Id = 259,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Recourses.Delete"
+                            Name = "Recourses.Add"
                         },
                         new
                         {
                             Id = 260,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountRecourses.Admin"
+                            Name = "Recourses.Update"
                         },
                         new
                         {
                             Id = 261,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountRecourses.Read"
+                            Name = "Recourses.Delete"
                         },
                         new
                         {
                             Id = 262,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountRecourses.Write"
+                            Name = "AccountRecourses.Admin"
                         },
                         new
                         {
                             Id = 263,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountRecourses.Add"
+                            Name = "AccountRecourses.Read"
                         },
                         new
                         {
                             Id = 264,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountRecourses.Update"
+                            Name = "AccountRecourses.Write"
                         },
                         new
                         {
                             Id = 265,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountRecourses.Delete"
+                            Name = "AccountRecourses.Add"
                         },
                         new
                         {
                             Id = 266,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountAnnouncements.Admin"
+                            Name = "AccountRecourses.Update"
                         },
                         new
                         {
                             Id = 267,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountAnnouncements.Read"
+                            Name = "AccountRecourses.Delete"
                         },
                         new
                         {
                             Id = 268,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountAnnouncements.Write"
+                            Name = "AccountAnnouncements.Admin"
                         },
                         new
                         {
                             Id = 269,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountAnnouncements.Add"
+                            Name = "AccountAnnouncements.Read"
                         },
                         new
                         {
                             Id = 270,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountAnnouncements.Update"
+                            Name = "AccountAnnouncements.Write"
                         },
                         new
                         {
                             Id = 271,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "AccountAnnouncements.Add"
+                        },
+                        new
+                        {
+                            Id = 272,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "AccountAnnouncements.Update"
+                        },
+                        new
+                        {
+                            Id = 273,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "AccountAnnouncements.Delete"
                         });
@@ -1893,8 +1905,8 @@ namespace Persistence.Migrations
                             Email = "admin@admin.com",
                             FirstName = "Admin",
                             LastName = "NArchitecture",
-                            PasswordHash = new byte[] { 81, 229, 116, 64, 189, 192, 79, 55, 200, 92, 2, 19, 82, 3, 215, 241, 46, 231, 125, 194, 203, 119, 72, 46, 64, 6, 106, 204, 72, 116, 15, 109, 211, 99, 36, 183, 114, 122, 89, 218, 26, 204, 143, 240, 179, 50, 98, 52, 119, 146, 3, 170, 147, 168, 113, 119, 94, 160, 63, 226, 255, 78, 123, 237 },
-                            PasswordSalt = new byte[] { 242, 37, 118, 19, 244, 55, 16, 54, 143, 114, 73, 30, 201, 77, 45, 111, 60, 244, 217, 252, 50, 73, 89, 40, 173, 67, 104, 98, 150, 139, 81, 36, 245, 27, 135, 253, 177, 236, 104, 25, 178, 254, 33, 187, 201, 63, 57, 85, 201, 130, 244, 131, 137, 41, 173, 195, 176, 116, 3, 27, 179, 45, 144, 167, 79, 94, 162, 87, 58, 25, 22, 172, 133, 252, 31, 37, 175, 144, 8, 109, 101, 19, 119, 68, 24, 46, 122, 181, 187, 250, 147, 239, 64, 199, 31, 213, 172, 160, 117, 96, 78, 155, 25, 179, 138, 169, 168, 217, 11, 107, 244, 74, 143, 90, 7, 33, 159, 237, 243, 202, 5, 132, 13, 86, 64, 170, 62, 176 },
+                            PasswordHash = new byte[] { 54, 227, 22, 71, 90, 250, 31, 164, 17, 192, 103, 45, 16, 126, 118, 202, 98, 136, 169, 156, 184, 225, 204, 3, 171, 194, 125, 161, 33, 43, 50, 134, 167, 191, 15, 188, 174, 105, 157, 192, 11, 11, 26, 128, 120, 197, 214, 33, 195, 118, 120, 99, 237, 107, 86, 178, 128, 51, 72, 86, 40, 171, 39, 202 },
+                            PasswordSalt = new byte[] { 58, 207, 188, 130, 93, 145, 120, 232, 149, 252, 30, 135, 218, 27, 47, 109, 143, 231, 42, 222, 148, 80, 210, 169, 145, 135, 41, 147, 109, 127, 207, 6, 75, 130, 18, 3, 232, 167, 45, 5, 140, 191, 210, 211, 42, 90, 44, 192, 98, 225, 79, 31, 228, 83, 241, 217, 101, 51, 123, 95, 203, 171, 193, 190, 210, 125, 79, 164, 15, 86, 59, 232, 47, 223, 1, 105, 119, 162, 107, 162, 82, 32, 16, 232, 119, 106, 223, 246, 188, 34, 68, 203, 165, 110, 171, 193, 228, 145, 60, 174, 13, 135, 89, 58, 73, 23, 11, 55, 216, 13, 232, 22, 155, 170, 197, 64, 27, 139, 79, 229, 125, 101, 74, 209, 173, 93, 157, 79 },
                             Status = true
                         });
                 });
