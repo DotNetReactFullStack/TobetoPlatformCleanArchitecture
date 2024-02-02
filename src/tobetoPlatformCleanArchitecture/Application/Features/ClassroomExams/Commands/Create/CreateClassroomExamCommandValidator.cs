@@ -8,6 +8,6 @@ public class CreateClassroomExamCommandValidator : AbstractValidator<CreateClass
     {
         RuleFor(c => c.ClassroomId).NotEmpty();
         RuleFor(c => c.ExamId).NotEmpty();
-        RuleFor(c => c.IsActive).NotEmpty();
+        RuleFor(c => c.IsActive).NotNull();
     }
 }

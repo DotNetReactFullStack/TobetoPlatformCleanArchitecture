@@ -7,7 +7,7 @@ public class CreateContractTypeCommandValidator : AbstractValidator<CreateContra
     public CreateContractTypeCommandValidator()
     {
         RuleFor(c => c.Name).NotEmpty();
-        RuleFor(c => c.IsActive).NotEmpty();
+        RuleFor(c => c.IsActive).NotNull();
 
         RuleFor(c => c.Name).MaximumLength(150);
 
