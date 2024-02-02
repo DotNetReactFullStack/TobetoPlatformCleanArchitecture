@@ -9,6 +9,6 @@ public class UpdateAccountContractCommandValidator : AbstractValidator<UpdateAcc
         RuleFor(c => c.Id).NotEmpty();
         RuleFor(c => c.AccountId).NotEmpty();
         RuleFor(c => c.ContractId).NotEmpty();
-        RuleFor(c => c.IsAccept).NotEmpty();
+        RuleFor(c => c.IsAccept).NotNull();
     }
 }

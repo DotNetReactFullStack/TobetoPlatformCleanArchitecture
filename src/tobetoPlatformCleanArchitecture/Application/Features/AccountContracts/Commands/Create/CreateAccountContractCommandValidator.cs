@@ -8,6 +8,6 @@ public class CreateAccountContractCommandValidator : AbstractValidator<CreateAcc
     {
         RuleFor(c => c.AccountId).NotEmpty();
         RuleFor(c => c.ContractId).NotEmpty();
-        RuleFor(c => c.IsAccept).NotEmpty();
+        RuleFor(c => c.IsAccept).NotNull();
     }
 }
