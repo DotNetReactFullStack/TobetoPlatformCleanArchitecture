@@ -18,6 +18,6 @@ public class UpdateExperienceCommandValidator : AbstractValidator<UpdateExperien
         RuleFor(c => c.StartingDate).NotEmpty();
         RuleFor(c => c.IsCurrentlyWorking).NotEmpty();
         RuleFor(c => c.Description).MaximumLength(300);
-        RuleFor(c => c.IsActive).NotEmpty();
+        RuleFor(c => c.IsActive).NotNull();
     }
 }

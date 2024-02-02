@@ -11,7 +11,7 @@ public class UpdateCourseCommandValidator : AbstractValidator<UpdateCourseComman
         RuleFor(c => c.Name).NotEmpty();
         RuleFor(c => c.TotalDuration).NotEmpty();
         RuleFor(c => c.Priority).NotEmpty();
-        RuleFor(c => c.IsActive).NotEmpty();
+        RuleFor(c => c.IsActive).NotNull();
 
         RuleFor(c => c.Name).MaximumLength(50);
         RuleFor(c => c.TotalDuration).GreaterThanOrEqualTo(0);

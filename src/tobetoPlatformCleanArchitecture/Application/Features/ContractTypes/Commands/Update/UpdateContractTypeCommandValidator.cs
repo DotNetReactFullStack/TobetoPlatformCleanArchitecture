@@ -8,7 +8,7 @@ public class UpdateContractTypeCommandValidator : AbstractValidator<UpdateContra
     {
         RuleFor(c => c.Id).NotEmpty();
         RuleFor(c => c.Name).NotEmpty();
-        RuleFor(c => c.IsActive).NotEmpty();
+        RuleFor(c => c.IsActive).NotNull();
 
         RuleFor(c => c.Name).MaximumLength(150);
 

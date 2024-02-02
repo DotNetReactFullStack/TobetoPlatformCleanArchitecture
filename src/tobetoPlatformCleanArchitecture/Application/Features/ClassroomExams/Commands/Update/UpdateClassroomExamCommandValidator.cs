@@ -9,6 +9,6 @@ public class UpdateClassroomExamCommandValidator : AbstractValidator<UpdateClass
         RuleFor(c => c.Id).NotEmpty();
         RuleFor(c => c.ClassroomId).NotEmpty();
         RuleFor(c => c.ExamId).NotEmpty();
-        RuleFor(c => c.IsActive).NotEmpty();
+        RuleFor(c => c.IsActive).NotNull();
     }
 }
