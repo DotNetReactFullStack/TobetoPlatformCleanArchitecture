@@ -15,8 +15,6 @@ namespace Application.Features.Accounts.Commands.Update;
 public class UpdateAccountCommand : IRequest<UpdatedAccountResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
-    public int UserId { get; set; }
-    public string NationalIdentificationNumber { get; set; }
     public DateTime BirthDate { get; set; }
     public string PhoneNumber { get; set; }
     public string? ProfilePhotoPath { get; set; }

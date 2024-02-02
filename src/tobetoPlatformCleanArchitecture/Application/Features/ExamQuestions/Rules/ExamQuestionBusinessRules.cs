@@ -1,4 +1,3 @@
-using Application.Features.AccountSocialMediaPlatforms.Constants;
 using Application.Features.ExamQuestions.Constants;
 using Application.Services.Repositories;
 using Core.Application.Rules;
@@ -37,7 +36,7 @@ public class ExamQuestionBusinessRules : BaseBusinessRules
     {
         var examQuestionCount = _examQuestionRepository.GetList(e => e.ExamId == examQuestion.ExamId).Count;
 
-        if (examQuestionCount >= ExamQuestionRules.MaximumNumberOfExamQuestion)
+        if (examQuestionCount >= ExamQuestionBusinessRuleConstants.MaximumNumberOfExamQuestion)
             throw new BusinessException(ExamQuestionsBusinessMessages.ExamCanHasMaximumOneHundredQuestions);
         return Task.CompletedTask;
     }
