@@ -10,6 +10,6 @@ public class UpdateImageCommandValidator : AbstractValidator<UpdateImageCommand>
         RuleFor(c => c.ImageExtensionId).NotEmpty();
         RuleFor(c => c.Name).NotEmpty();
         RuleFor(c => c.Url).NotEmpty();
-        RuleFor(c => c.IsActive).NotEmpty();
+        RuleFor(c => c.IsActive).NotNull();
     }
 }
