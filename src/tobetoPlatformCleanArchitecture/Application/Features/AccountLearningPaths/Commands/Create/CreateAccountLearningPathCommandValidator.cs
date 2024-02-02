@@ -10,11 +10,11 @@ public class CreateAccountLearningPathCommandValidator : AbstractValidator<Creat
         RuleFor(c => c.LearningPathId).NotEmpty();
         RuleFor(c => c.TotalNumberOfPoints).NotEmpty();
         RuleFor(c => c.PercentComplete).NotEmpty();
-        RuleFor(c => c.IsContinue).NotEmpty();
-        RuleFor(c => c.IsComplete).NotEmpty();
-        RuleFor(c => c.IsLiked).NotEmpty();
-        RuleFor(c => c.IsSaved).NotEmpty();
-        RuleFor(c => c.IsActive).NotEmpty();
+        RuleFor(c => c.IsContinue).NotNull();
+        RuleFor(c => c.IsComplete).NotNull();
+        RuleFor(c => c.IsLiked).NotNull();
+        RuleFor(c => c.IsSaved).NotNull();
+        RuleFor(c => c.IsActive).NotNull();
 
         RuleFor(c => c.TotalNumberOfPoints).GreaterThanOrEqualTo(0);
         RuleFor(c => (int)c.PercentComplete).LessThanOrEqualTo(100);

@@ -8,6 +8,6 @@ public class CreateAccountAnnouncementCommandValidator : AbstractValidator<Creat
     {
         RuleFor(c => c.AccountId).NotEmpty();
         RuleFor(c => c.AnnouncementId).NotEmpty();
-        RuleFor(c => c.Read).NotEmpty();
+        RuleFor(c => c.Read).NotNull();
     }
 }

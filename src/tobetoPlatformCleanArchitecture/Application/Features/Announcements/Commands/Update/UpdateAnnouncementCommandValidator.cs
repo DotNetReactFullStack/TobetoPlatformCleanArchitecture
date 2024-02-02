@@ -10,7 +10,7 @@ public class UpdateAnnouncementCommandValidator : AbstractValidator<UpdateAnnoun
         RuleFor(c => c.AnnouncementTypeId).NotEmpty();
         RuleFor(c => c.OrganizationId).NotEmpty();
         RuleFor(c => c.Priority).NotEmpty();
-        RuleFor(c => c.Visibility).NotEmpty();
+        RuleFor(c => c.Visibility).NotNull();
         RuleFor(c => c.Name).NotEmpty();
         RuleFor(c => c.Content).NotEmpty();
         RuleFor(c => c.PublishedDate).NotEmpty();

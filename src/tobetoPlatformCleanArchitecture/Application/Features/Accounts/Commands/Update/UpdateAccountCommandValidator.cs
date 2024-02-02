@@ -11,9 +11,9 @@ public class UpdateAccountCommandValidator : AbstractValidator<UpdateAccountComm
         RuleFor(c => c.BirthDate).NotEmpty();
         RuleFor(c => c.PhoneNumber).NotEmpty();
         //RuleFor(c => c.ProfilePhotoPath).NotEmpty();
-        RuleFor(c => c.ShareProfile).NotEmpty();
+        RuleFor(c => c.ShareProfile).NotNull();
         RuleFor(c => c.ProfileLinkUrl).NotEmpty();
-        RuleFor(c => c.IsActive).NotEmpty();
+        RuleFor(c => c.IsActive).NotNull();
         RuleFor(a => a.PhoneNumber).Length(12).Matches(new Regex(@"((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}"));
     }
 }

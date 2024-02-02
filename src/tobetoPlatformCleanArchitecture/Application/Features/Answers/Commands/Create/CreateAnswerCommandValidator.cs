@@ -8,7 +8,7 @@ public class CreateAnswerCommandValidator : AbstractValidator<CreateAnswerComman
     {
         RuleFor(c => c.QuestionId).NotEmpty();
         RuleFor(c => c.AnswerDetail).NotEmpty();
-        RuleFor(c => c.RightAnswerBool).NotEmpty();
+        RuleFor(c => c.RightAnswerBool).NotNull();
 
         RuleFor(c => c.AnswerDetail).MaximumLength(300);
 

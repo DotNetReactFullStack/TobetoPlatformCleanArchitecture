@@ -9,6 +9,6 @@ public class UpdateAccountAnnouncementCommandValidator : AbstractValidator<Updat
         RuleFor(c => c.Id).NotEmpty();
         RuleFor(c => c.AccountId).NotEmpty();
         RuleFor(c => c.AnnouncementId).NotEmpty();
-        RuleFor(c => c.Read).NotEmpty();
+        RuleFor(c => c.Read).NotNull();
     }
 }
