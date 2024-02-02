@@ -31,4 +31,44 @@ public class AccountBusinessRules : BaseBusinessRules
         );
         await AccountShouldExistWhenSelected(account);
     }
+
+    public Task IsUserAlreadyLinkedToAccount(Account? account)
+    {
+        var accountCount = _accountRepository.GetList(a => a.UserId == account.UserId).Count;
+
+        bool isLinked = accountCount == AccountsBusinessRuleConstants.MaximumNumberOfAccountsForEachUser ? true : false;
+
+        if (isLinked)
+        {
+            throw new BusinessException(AccountsBusinessMessages.UserCanHaveAtMostOneAccount);
+        }
+        return Task.CompletedTask;
+    }
+
+    public Task NationalIdentificationNumberMustBeUnique(Account? account)
+    {
+        var isUnique = _accountRepository.Get(a => a.NationalIdentificationNumber == account.NationalIdentificationNumber) == null
+                   ? false : true;
+
+        if (isUnique)
+        {
+            throw new BusinessException(AccountsBusinessMessages.NationalIdentificationNumberMustBeUnique);
+        }
+        return Task.CompletedTask;
+    }
+
+    //public Task UserCanOnlyUpdateTheirOwnAccount(Account? account)
+    //{
+    //    var isAllowed = _accountRepository
+    //        .Get(a => a.UserId == account.UserId
+    //                    && a.NationalIdentificationNumber == account.NationalIdentificationNumber)
+    //                    != null
+    //                    ? false : true;
+
+    //    if (isAllowed)
+    //    {
+    //        throw new BusinessException(AccountsBusinessMessages.UserCanOnlyUpdateTheirOwnAccount);
+    //    }
+    //    return Task.CompletedTask;
+    //}
 }
