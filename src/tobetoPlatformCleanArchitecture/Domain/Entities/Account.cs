@@ -13,6 +13,7 @@ namespace Domain.Entities
     {
         public int UserId { get; set; }
         public string NationalIdentificationNumber { get; set; }
+        public string AboutMe { get; set; }
         public DateTime BirthDate { get; set; }
         public string PhoneNumber { get; set; }
         public string? ProfilePhotoPath { get; set; }
@@ -26,13 +27,13 @@ namespace Domain.Entities
         public virtual ICollection<AccountCertificate> AccountCertificates { get; set; }
         public virtual ICollection<AccountSocialMediaPlatform> AccountSocialMediaPlatforms { get; set; }
         public virtual ICollection<AccountCollageMetadata> AccountCollageMetadatas { get; set; }
-        public virtual ICollection<AccountForeignLanguageMetadata> AccountForeignLanguageMetadatas{ get; set; }
+        public virtual ICollection<AccountForeignLanguageMetadata> AccountForeignLanguageMetadatas { get; set; }
         public virtual ICollection<AccountRecourse> AccountRecourses { get; set; }
         public virtual ICollection<AccountExamResult> AccountExamResults { get; set; }
         public virtual ICollection<AccountLearningPath> AccountLearningPaths { get; set; }
         public virtual ICollection<AccountLesson> AccountLessons { get; set; }
         public virtual ICollection<AccountClassroom> AccountClassrooms { get; set; }
-        public virtual ICollection<AccountCourse> AccountCourses { get; set; } 
+        public virtual ICollection<AccountCourse> AccountCourses { get; set; }
         public virtual ICollection<UserOperationClaim> UserOperationClaims { get; set; }
         public virtual ICollection<AccountAnnouncement> AccountAnnouncements { get; set; }
         public virtual ICollection<Experience> Experiences { get; set; }
