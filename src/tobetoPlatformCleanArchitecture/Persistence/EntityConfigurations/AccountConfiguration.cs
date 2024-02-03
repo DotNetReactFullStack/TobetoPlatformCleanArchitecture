@@ -13,6 +13,7 @@ public class AccountConfiguration : IEntityTypeConfiguration<Account>
         builder.Property(a => a.Id).HasColumnName("Id").IsRequired();
         builder.Property(a => a.UserId).HasColumnName("UserId");
         builder.Property(a => a.NationalIdentificationNumber).HasColumnName("NationalIdentificationNumber");
+        builder.Property(a => a.AboutMe).HasColumnName("AboutMe");
         builder.Property(a => a.BirthDate).HasColumnName("BirthDate");
         builder.Property(a => a.PhoneNumber).HasColumnName("PhoneNumber");
         builder.Property(a => a.ProfilePhotoPath).HasColumnName("ProfilePhotoPath");

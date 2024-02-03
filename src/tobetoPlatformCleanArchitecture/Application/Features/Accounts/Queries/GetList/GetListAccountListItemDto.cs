@@ -7,6 +7,7 @@ public class GetListAccountListItemDto : IDto
     public int Id { get; set; }
     public int UserId { get; set; }
     public string NationalIdentificationNumber { get; set; }
+    public string AboutMe { get; set; }
     public DateTime BirthDate { get; set; }
     public string PhoneNumber { get; set; }
     public string? ProfilePhotoPath { get; set; }
