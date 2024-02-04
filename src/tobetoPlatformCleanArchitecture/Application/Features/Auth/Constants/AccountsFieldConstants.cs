@@ -3,7 +3,6 @@ namespace Application.Features.Auth.Constants
 {
     public static class AccountsFieldConstants
     {
-        public const string NationalIdentificationNumber = "";
         public const string AboutMe = "";
         public const string PhoneNumber = "";
         public const string ProfileLinkUrl = "profiles/";
