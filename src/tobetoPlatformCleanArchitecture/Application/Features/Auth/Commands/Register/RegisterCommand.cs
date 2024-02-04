@@ -1,4 +1,5 @@
-﻿using Application.Features.Auth.Rules;
+﻿using Application.Features.Auth.Constants;
+using Application.Features.Auth.Rules;
 using Application.Services.AuthService;
 using Application.Services.Repositories;
 using Core.Application.Dtos;
@@ -31,12 +32,14 @@ public class RegisterCommand : IRequest<RegisteredResponse>
         private readonly IUserRepository _userRepository;
         private readonly IAuthService _authService;
         private readonly AuthBusinessRules _authBusinessRules;
+        IUserOperationClaimRepository _userOperationClaimRepository;
 
-        public RegisterCommandHandler(IUserRepository userRepository, IAuthService authService, AuthBusinessRules authBusinessRules)
+        public RegisterCommandHandler(IUserRepository userRepository, IAuthService authService, AuthBusinessRules authBusinessRules, IUserOperationClaimRepository userOperationClaimRepository)
         {
             _userRepository = userRepository;
             _authService = authService;
             _authBusinessRules = authBusinessRules;
+            _userOperationClaimRepository = userOperationClaimRepository;
         }
 
         public async Task<RegisteredResponse> Handle(RegisterCommand request, CancellationToken cancellationToken)
@@ -59,6 +62,10 @@ public class RegisterCommand : IRequest<RegisteredResponse>
                     Status = true
                 };
             User createdUser = await _userRepository.AddAsync(newUser);
+
+            // Refactor
+            UserOperationClaim defaultUserOperationClaim = new(userId: createdUser.Id, operationClaimId: AuthOperationClaims.DefaultOperationClaimIdForEachRegistration);
+            UserOperationClaim createdDefaultUserOperationClaim = await _userOperationClaimRepository.AddAsync(defaultUserOperationClaim);
 
             AccessToken createdAccessToken = await _authService.CreateAccessToken(createdUser);
 
