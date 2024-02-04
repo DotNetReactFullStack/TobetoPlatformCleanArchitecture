@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <Folder Include="Services\Repositories" />
+    <Folder Include="Dtos\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,4 +26,7 @@
     <PackageReference Include="MediatR" Version="12.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Dtos\" />
+  </ItemGroup>
 </Project>
