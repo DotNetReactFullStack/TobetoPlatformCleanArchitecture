@@ -646,6 +646,7 @@ namespace Persistence.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<int>(type: "int", nullable: false),
                     NationalIdentificationNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AboutMe = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ProfilePhotoPath = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -1872,7 +1873,7 @@ namespace Persistence.Migrations
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "AuthenticatorType", "CreatedDate", "DeletedDate", "Email", "FirstName", "LastName", "PasswordHash", "PasswordSalt", "Status", "UpdatedDate" },
-                values: new object[] { 1, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "admin@admin.com", "Admin", "NArchitecture", new byte[] { 54, 227, 22, 71, 90, 250, 31, 164, 17, 192, 103, 45, 16, 126, 118, 202, 98, 136, 169, 156, 184, 225, 204, 3, 171, 194, 125, 161, 33, 43, 50, 134, 167, 191, 15, 188, 174, 105, 157, 192, 11, 11, 26, 128, 120, 197, 214, 33, 195, 118, 120, 99, 237, 107, 86, 178, 128, 51, 72, 86, 40, 171, 39, 202 }, new byte[] { 58, 207, 188, 130, 93, 145, 120, 232, 149, 252, 30, 135, 218, 27, 47, 109, 143, 231, 42, 222, 148, 80, 210, 169, 145, 135, 41, 147, 109, 127, 207, 6, 75, 130, 18, 3, 232, 167, 45, 5, 140, 191, 210, 211, 42, 90, 44, 192, 98, 225, 79, 31, 228, 83, 241, 217, 101, 51, 123, 95, 203, 171, 193, 190, 210, 125, 79, 164, 15, 86, 59, 232, 47, 223, 1, 105, 119, 162, 107, 162, 82, 32, 16, 232, 119, 106, 223, 246, 188, 34, 68, 203, 165, 110, 171, 193, 228, 145, 60, 174, 13, 135, 89, 58, 73, 23, 11, 55, 216, 13, 232, 22, 155, 170, 197, 64, 27, 139, 79, 229, 125, 101, 74, 209, 173, 93, 157, 79 }, true, null });
+                values: new object[] { 1, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "admin@admin.com", "Admin", "NArchitecture", new byte[] { 116, 188, 15, 252, 181, 108, 231, 254, 15, 167, 18, 254, 195, 3, 118, 157, 253, 93, 90, 224, 223, 51, 162, 139, 166, 193, 138, 29, 95, 191, 30, 31, 144, 156, 45, 224, 16, 135, 198, 152, 22, 218, 254, 195, 93, 229, 56, 2, 70, 155, 229, 128, 22, 192, 51, 72, 138, 105, 199, 55, 82, 120, 196, 252 }, new byte[] { 98, 25, 224, 117, 22, 237, 196, 199, 217, 240, 192, 244, 210, 132, 248, 66, 124, 110, 146, 107, 45, 92, 7, 255, 99, 214, 105, 186, 100, 106, 102, 137, 63, 64, 244, 125, 86, 185, 8, 22, 132, 106, 140, 50, 103, 131, 43, 53, 172, 204, 198, 89, 145, 189, 81, 221, 95, 112, 41, 109, 47, 81, 172, 60, 209, 101, 166, 25, 197, 143, 224, 92, 132, 83, 71, 2, 137, 64, 14, 142, 168, 84, 251, 10, 251, 169, 180, 116, 149, 6, 231, 208, 84, 211, 117, 27, 65, 235, 124, 244, 144, 220, 53, 160, 185, 48, 155, 3, 118, 172, 165, 186, 232, 218, 184, 105, 22, 96, 45, 192, 105, 187, 166, 146, 87, 79, 84, 147 }, true, null });
 
             migrationBuilder.InsertData(
                 table: "UserOperationClaims",
