@@ -17,8 +17,8 @@ namespace Domain.Entities
         public DateTime BirthDate { get; set; }
         public string PhoneNumber { get; set; }
         public string? ProfilePhotoPath { get; set; }
-        public bool ShareProfile { get; set; }
         public string ProfileLinkUrl { get; set; }
+        public bool ShareProfile { get; set; }
         public bool IsActive { get; set; }
 
         public virtual User User { get; set; }
@@ -43,16 +43,29 @@ namespace Domain.Entities
             
         }
 
-        public Account(int id, int userId, string nationalIdentificationNumber, DateTime birthDate, string phoneNumber, string? profilePhotoPath, bool shareProfile, string profileLinkUrl, bool isActive) : this()
+        public Account(int userId, string nationalIdentificationNumber, string aboutMe, DateTime birthDate, string phoneNumber, bool shareProfile, string profileLinkUrl, bool isActive) : this()
+        {
+            UserId = userId;
+            NationalIdentificationNumber = nationalIdentificationNumber;
+            AboutMe = aboutMe;
+            BirthDate = birthDate;
+            PhoneNumber = phoneNumber;
+            ProfileLinkUrl = profileLinkUrl;
+            ShareProfile = shareProfile;
+            IsActive = isActive;
+        }
+
+        public Account(int id, int userId, string nationalIdentificationNumber, string aboutMe, DateTime birthDate, string phoneNumber, string? profilePhotoPath, bool shareProfile, string profileLinkUrl, bool isActive) : this()
         {
             Id = id;
             UserId = userId;
             NationalIdentificationNumber = nationalIdentificationNumber;
+            AboutMe = aboutMe;
             BirthDate = birthDate;
             PhoneNumber = phoneNumber;
             ProfilePhotoPath = profilePhotoPath;
-            ShareProfile = shareProfile;
             ProfileLinkUrl = profileLinkUrl;
+            ShareProfile = shareProfile;
             IsActive = isActive;
         }
     }
