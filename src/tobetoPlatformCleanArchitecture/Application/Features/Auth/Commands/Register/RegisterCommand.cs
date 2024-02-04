@@ -2,10 +2,12 @@
 using Application.Features.Auth.Rules;
 using Application.Services.AuthService;
 using Application.Services.Repositories;
+using AutoMapper;
 using Core.Application.Dtos;
 using Core.Security.Entities;
 using Core.Security.Hashing;
 using Core.Security.JWT;
+using Domain.Entities;
 using MediatR;
 
 namespace Application.Features.Auth.Commands.Register;
@@ -32,14 +34,18 @@ public class RegisterCommand : IRequest<RegisteredResponse>
         private readonly IUserRepository _userRepository;
         private readonly IAuthService _authService;
         private readonly AuthBusinessRules _authBusinessRules;
-        IUserOperationClaimRepository _userOperationClaimRepository;
 
-        public RegisterCommandHandler(IUserRepository userRepository, IAuthService authService, AuthBusinessRules authBusinessRules, IUserOperationClaimRepository userOperationClaimRepository)
+        private readonly IUserOperationClaimRepository _userOperationClaimRepository;
+        private readonly IAccountRepository _accountRepository;
+
+
+        public RegisterCommandHandler(IUserRepository userRepository, IAuthService authService, AuthBusinessRules authBusinessRules, IUserOperationClaimRepository userOperationClaimRepository, IAccountRepository accountRepository)
         {
             _userRepository = userRepository;
             _authService = authService;
             _authBusinessRules = authBusinessRules;
             _userOperationClaimRepository = userOperationClaimRepository;
+            _accountRepository = accountRepository;
         }
 
         public async Task<RegisteredResponse> Handle(RegisterCommand request, CancellationToken cancellationToken)
@@ -64,8 +70,23 @@ public class RegisterCommand : IRequest<RegisteredResponse>
             User createdUser = await _userRepository.AddAsync(newUser);
 
             // Refactor
+            // Add default operation claim id for each registration
             UserOperationClaim defaultUserOperationClaim = new(userId: createdUser.Id, operationClaimId: AuthOperationClaims.DefaultOperationClaimIdForEachRegistration);
             UserOperationClaim createdDefaultUserOperationClaim = await _userOperationClaimRepository.AddAsync(defaultUserOperationClaim);
+
+            // Refactor
+            // Create an account for each registration
+            Account account = new(
+                userId: createdUser.Id,
+                nationalIdentificationNumber: AccountsFieldConstants.NationalIdentificationNumber,
+                aboutMe: AccountsFieldConstants.AboutMe,
+                birthDate: new DateTime(),
+                phoneNumber: AccountsFieldConstants.PhoneNumber,
+                profileLinkUrl: AccountsFieldConstants.ProfileLinkUrl + createdUser.Id,
+                shareProfile: AccountsFieldConstants.ShareProfile,
+                isActive: AccountsFieldConstants.IsActive
+                );
+            await _accountRepository.AddAsync(account);
 
             AccessToken createdAccessToken = await _authService.CreateAccessToken(createdUser);
 
