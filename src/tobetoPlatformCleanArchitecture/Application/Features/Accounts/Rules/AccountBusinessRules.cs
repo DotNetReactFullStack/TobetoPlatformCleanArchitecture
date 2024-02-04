@@ -56,4 +56,20 @@ public class AccountBusinessRules : BaseBusinessRules
         }
         return Task.CompletedTask;
     }
+
+    //// Uncomment for NationalIdentificationNumber to be updateable
+    //public Task UserCanOnlyUpdateTheirOwnAccount(Account? account)
+    //{
+    //    var isAllowed = _accountRepository
+    //        .Get(a => a.UserId == account.UserId
+    //               && a.NationalIdentificationNumber == account.NationalIdentificationNumber)
+    //                    != null
+    //                    ? false : true;
+
+    //    if (isAllowed)
+    //    {
+    //        throw new BusinessException(AccountsBusinessMessages.UserCanOnlyUpdateTheirOwnAccount);
+    //    }
+    //    return Task.CompletedTask;
+    //}
 }

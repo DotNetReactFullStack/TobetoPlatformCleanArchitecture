@@ -43,6 +43,11 @@ namespace Domain.Entities
             
         }
 
+        public Account(string nationalIdentificationNumber)
+        {
+            NationalIdentificationNumber = nationalIdentificationNumber;
+        }
+
         public Account(int userId, string nationalIdentificationNumber, string aboutMe, DateTime birthDate, string phoneNumber, bool shareProfile, string profileLinkUrl, bool isActive) : this()
         {
             UserId = userId;
