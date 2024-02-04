@@ -1,4 +1,6 @@
-﻿using Application.Features.Auth.Constants;
+﻿using Application.Dtos;
+using Application.Features.Accounts.Rules;
+using Application.Features.Auth.Constants;
 using Application.Features.Auth.Rules;
 using Application.Services.AuthService;
 using Application.Services.Repositories;
@@ -14,18 +16,18 @@ namespace Application.Features.Auth.Commands.Register;
 
 public class RegisterCommand : IRequest<RegisteredResponse>
 {
-    public UserForRegisterDto UserForRegisterDto { get; set; }
+    public UserWithNationalIdentificationNumberForRegisterDto UserWithNationalIdentificationNumberForRegisterDto { get; set; }
     public string IpAddress { get; set; }
 
     public RegisterCommand()
     {
-        UserForRegisterDto = null!;
+        UserWithNationalIdentificationNumberForRegisterDto = null!;
         IpAddress = string.Empty;
     }
 
-    public RegisterCommand(UserForRegisterDto userForRegisterDto, string ipAddress)
+    public RegisterCommand(UserWithNationalIdentificationNumberForRegisterDto userWithNationalIdentificationNumberForRegisterDto, string ipAddress)
     {
-        UserForRegisterDto = userForRegisterDto;
+        UserWithNationalIdentificationNumberForRegisterDto = userWithNationalIdentificationNumberForRegisterDto;
         IpAddress = ipAddress;
     }
 
@@ -37,32 +39,46 @@ public class RegisterCommand : IRequest<RegisteredResponse>
 
         private readonly IUserOperationClaimRepository _userOperationClaimRepository;
         private readonly IAccountRepository _accountRepository;
+        private readonly AccountBusinessRules _accountBusinessRules;
 
 
-        public RegisterCommandHandler(IUserRepository userRepository, IAuthService authService, AuthBusinessRules authBusinessRules, IUserOperationClaimRepository userOperationClaimRepository, IAccountRepository accountRepository)
+        public RegisterCommandHandler(IUserRepository userRepository, IAuthService authService, AuthBusinessRules authBusinessRules, IUserOperationClaimRepository userOperationClaimRepository, IAccountRepository accountRepository, AccountBusinessRules accountBusinessRules)
         {
             _userRepository = userRepository;
             _authService = authService;
             _authBusinessRules = authBusinessRules;
+
             _userOperationClaimRepository = userOperationClaimRepository;
             _accountRepository = accountRepository;
+            _accountBusinessRules = accountBusinessRules;
         }
 
         public async Task<RegisteredResponse> Handle(RegisterCommand request, CancellationToken cancellationToken)
         {
-            await _authBusinessRules.UserEmailShouldBeNotExists(request.UserForRegisterDto.Email);
+
+            _accountBusinessRules.NationalIdentificationNumberMustBeUnique(new Account(nationalIdentificationNumber:request.UserWithNationalIdentificationNumberForRegisterDto.NationalIdentificationNumber));
+
+            await _authBusinessRules.UserEmailShouldBeNotExists(request.UserWithNationalIdentificationNumberForRegisterDto.UserForRegisterDto.Email);
 
             HashingHelper.CreatePasswordHash(
-                request.UserForRegisterDto.Password,
+                request
+                .UserWithNationalIdentificationNumberForRegisterDto
+                .UserForRegisterDto.Password,
                 passwordHash: out byte[] passwordHash,
                 passwordSalt: out byte[] passwordSalt
             );
             User newUser =
                 new()
                 {
-                    Email = request.UserForRegisterDto.Email,
-                    FirstName = request.UserForRegisterDto.FirstName,
-                    LastName = request.UserForRegisterDto.LastName,
+                    Email = request
+                    .UserWithNationalIdentificationNumberForRegisterDto
+                    .UserForRegisterDto.Email,
+                    FirstName = request
+                    .UserWithNationalIdentificationNumberForRegisterDto
+                    .UserForRegisterDto.FirstName,
+                    LastName = request
+                    .UserWithNationalIdentificationNumberForRegisterDto
+                    .UserForRegisterDto.LastName,
                     PasswordHash = passwordHash,
                     PasswordSalt = passwordSalt,
                     Status = true
@@ -78,7 +94,8 @@ public class RegisterCommand : IRequest<RegisteredResponse>
             // Create an account for each registration
             Account account = new(
                 userId: createdUser.Id,
-                nationalIdentificationNumber: AccountsFieldConstants.NationalIdentificationNumber,
+                nationalIdentificationNumber: request
+                .UserWithNationalIdentificationNumberForRegisterDto.NationalIdentificationNumber,
                 aboutMe: AccountsFieldConstants.AboutMe,
                 birthDate: new DateTime(),
                 phoneNumber: AccountsFieldConstants.PhoneNumber,
@@ -86,6 +103,7 @@ public class RegisterCommand : IRequest<RegisteredResponse>
                 shareProfile: AccountsFieldConstants.ShareProfile,
                 isActive: AccountsFieldConstants.IsActive
                 );
+
             await _accountRepository.AddAsync(account);
 
             AccessToken createdAccessToken = await _authService.CreateAccessToken(createdUser);
