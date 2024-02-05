@@ -10,6 +10,7 @@ using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using MediatR;
 using static Application.Features.AccountCollageMetadatas.Constants.AccountCollageMetadatasOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.AccountCollageMetadatas.Commands.Delete;
 
@@ -17,7 +18,7 @@ public class DeleteAccountCollageMetadataCommand : IRequest<DeletedAccountCollag
 {
     public int Id { get; set; }
 
-    public string[] Roles => new[] { Admin, Write, AccountCollageMetadatasOperationClaims.Delete };
+    public string[] Roles => new[] { Admin, Write, AccountCollageMetadatasOperationClaims.Delete, GeneralOperationClaims.Student };
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }

@@ -9,6 +9,7 @@ using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using MediatR;
 using static Application.Features.Experiences.Constants.ExperiencesOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.Experiences.Commands.Create;
 
@@ -25,7 +26,7 @@ public class CreateExperienceCommand : IRequest<CreatedExperienceResponse>, ISec
     public string? Description { get; set; }
     public bool IsActive { get; set; }
 
-    public string[] Roles => new[] { Admin, Write, ExperiencesOperationClaims.Create };
+    public string[] Roles => new[] { Admin, Write, ExperiencesOperationClaims.Create, GeneralOperationClaims.Student };
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }

@@ -9,6 +9,7 @@ using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using MediatR;
 using static Application.Features.AccountForeignLanguageMetadatas.Constants.AccountForeignLanguageMetadatasOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.AccountForeignLanguageMetadatas.Commands.Create;
 
@@ -19,7 +20,7 @@ public class CreateAccountForeignLanguageMetadataCommand : IRequest<CreatedAccou
     public int ForeignLanguageLevelId { get; set; }
     public int Priority { get; set; }
 
-    public string[] Roles => new[] { Admin, Write, AccountForeignLanguageMetadatasOperationClaims.Create };
+    public string[] Roles => new[] { Admin, Write, AccountForeignLanguageMetadatasOperationClaims.Create, GeneralOperationClaims.Student };
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }

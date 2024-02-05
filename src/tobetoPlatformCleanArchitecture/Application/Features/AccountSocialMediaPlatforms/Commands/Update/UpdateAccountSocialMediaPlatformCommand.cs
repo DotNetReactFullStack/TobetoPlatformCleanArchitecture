@@ -9,6 +9,7 @@ using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using MediatR;
 using static Application.Features.AccountSocialMediaPlatforms.Constants.AccountSocialMediaPlatformsOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.AccountSocialMediaPlatforms.Commands.Update;
 
@@ -20,7 +21,7 @@ public class UpdateAccountSocialMediaPlatformCommand : IRequest<UpdatedAccountSo
     public int Priority { get; set; }
     public string Link { get; set; }
 
-    public string[] Roles => new[] { Admin, Write, AccountSocialMediaPlatformsOperationClaims.Update };
+    public string[] Roles => new[] { Admin, Write, AccountSocialMediaPlatformsOperationClaims.Update, GeneralOperationClaims.Student };
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }

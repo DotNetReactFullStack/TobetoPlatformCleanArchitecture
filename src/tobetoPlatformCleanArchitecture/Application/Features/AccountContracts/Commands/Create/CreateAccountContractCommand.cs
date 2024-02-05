@@ -19,7 +19,7 @@ public class CreateAccountContractCommand : IRequest<CreatedAccountContractRespo
     public int ContractId { get; set; }
     public bool IsAccept { get; set; }
 
-    public string[] Roles => new[] { Admin, Write, AccountContractsOperationClaims.Create, GeneralOperationClaims.Instructor };
+    public string[] Roles => new[] { Admin, Write, AccountContractsOperationClaims.Create, GeneralOperationClaims.Instructor, GeneralOperationClaims.Student };
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }

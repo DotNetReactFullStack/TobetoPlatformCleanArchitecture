@@ -10,6 +10,7 @@ using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using MediatR;
 using static Application.Features.AccountSocialMediaPlatforms.Constants.AccountSocialMediaPlatformsOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.AccountSocialMediaPlatforms.Commands.Delete;
 
@@ -17,7 +18,7 @@ public class DeleteAccountSocialMediaPlatformCommand : IRequest<DeletedAccountSo
 {
     public int Id { get; set; }
 
-    public string[] Roles => new[] { Admin, Write, AccountSocialMediaPlatformsOperationClaims.Delete };
+    public string[] Roles => new[] { Admin, Write, AccountSocialMediaPlatformsOperationClaims.Delete, GeneralOperationClaims.Student };
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }

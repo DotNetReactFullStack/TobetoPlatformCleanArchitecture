@@ -10,6 +10,7 @@ using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using MediatR;
 using static Application.Features.AccountCertificates.Constants.AccountCertificatesOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.AccountCertificates.Commands.Delete;
 
@@ -17,7 +18,7 @@ public class DeleteAccountCertificateCommand : IRequest<DeletedAccountCertificat
 {
     public int Id { get; set; }
 
-    public string[] Roles => new[] { Admin, Write, AccountCertificatesOperationClaims.Delete };
+    public string[] Roles => new[] { Admin, Write, AccountCertificatesOperationClaims.Delete, GeneralOperationClaims.Student };
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }
