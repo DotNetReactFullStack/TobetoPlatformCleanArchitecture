@@ -9,6 +9,7 @@ using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using MediatR;
 using static Application.Features.Questions.Constants.QuestionsOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.Questions.Commands.Create;
 
@@ -18,7 +19,7 @@ public class CreateQuestionCommand : IRequest<CreatedQuestionResponse>, ISecured
     public string QuestionDetail { get; set; }
     public bool IsActive { get; set; }
 
-    public string[] Roles => new[] { Admin, Write, QuestionsOperationClaims.Create };
+    public string[] Roles => new[] { Admin, Write, QuestionsOperationClaims.Create, GeneralOperationClaims.Instructor };
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }

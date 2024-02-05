@@ -10,6 +10,7 @@ using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using MediatR;
 using static Application.Features.Exams.Constants.ExamsOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.Exams.Commands.Delete;
 
@@ -17,7 +18,7 @@ public class DeleteExamCommand : IRequest<DeletedExamResponse>, ISecuredRequest,
 {
     public int Id { get; set; }
 
-    public string[] Roles => new[] { Admin, Write, ExamsOperationClaims.Delete };
+    public string[] Roles => new[] { Admin, Write, ExamsOperationClaims.Delete, GeneralOperationClaims.Instructor};
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }

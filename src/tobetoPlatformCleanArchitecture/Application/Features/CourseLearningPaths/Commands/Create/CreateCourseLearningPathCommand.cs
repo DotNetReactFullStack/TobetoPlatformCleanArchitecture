@@ -9,6 +9,7 @@ using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using MediatR;
 using static Application.Features.CourseLearningPaths.Constants.CourseLearningPathsOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.CourseLearningPaths.Commands.Create;
 
@@ -18,7 +19,7 @@ public class CreateCourseLearningPathCommand : IRequest<CreatedCourseLearningPat
     public int PathId { get; set; }
     public bool Visibility { get; set; }
 
-    public string[] Roles => new[] { Admin, Write, CourseLearningPathsOperationClaims.Create };
+    public string[] Roles => new[] { Admin, Write, CourseLearningPathsOperationClaims.Create, GeneralOperationClaims.Instructor };
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }

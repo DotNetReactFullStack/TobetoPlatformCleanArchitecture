@@ -9,6 +9,7 @@ using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using MediatR;
 using static Application.Features.ExamQuestions.Constants.ExamQuestionsOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.ExamQuestions.Commands.Update;
 
@@ -18,7 +19,7 @@ public class UpdateExamQuestionCommand : IRequest<UpdatedExamQuestionResponse>, 
     public int ExamId { get; set; }
     public int QuestionId { get; set; }
 
-    public string[] Roles => new[] { Admin, Write, ExamQuestionsOperationClaims.Update };
+    public string[] Roles => new[] { Admin, Write, ExamQuestionsOperationClaims.Update, GeneralOperationClaims.Instructor };
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }

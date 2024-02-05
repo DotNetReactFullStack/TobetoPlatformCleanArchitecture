@@ -9,6 +9,7 @@ using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using MediatR;
 using static Application.Features.QuestionCategories.Constants.QuestionCategoriesOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.QuestionCategories.Commands.Update;
 
@@ -18,7 +19,7 @@ public class UpdateQuestionCategoryCommand : IRequest<UpdatedQuestionCategoryRes
     public string Name { get; set; }
     public int Priority { get; set; }
 
-    public string[] Roles => new[] { Admin, Write, QuestionCategoriesOperationClaims.Update };
+    public string[] Roles => new[] { Admin, Write, QuestionCategoriesOperationClaims.Update, GeneralOperationClaims.Instructor };
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }

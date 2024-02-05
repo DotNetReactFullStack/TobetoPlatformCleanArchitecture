@@ -10,6 +10,7 @@ using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using MediatR;
 using static Application.Features.CourseLearningPaths.Constants.CourseLearningPathsOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.CourseLearningPaths.Commands.Delete;
 
@@ -17,7 +18,7 @@ public class DeleteCourseLearningPathCommand : IRequest<DeletedCourseLearningPat
 {
     public int Id { get; set; }
 
-    public string[] Roles => new[] { Admin, Write, CourseLearningPathsOperationClaims.Delete };
+    public string[] Roles => new[] { Admin, Write, CourseLearningPathsOperationClaims.Delete, GeneralOperationClaims.Instructor };
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }

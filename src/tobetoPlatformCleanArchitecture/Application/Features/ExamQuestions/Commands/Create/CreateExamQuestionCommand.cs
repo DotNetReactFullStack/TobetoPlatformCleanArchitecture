@@ -9,6 +9,7 @@ using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using MediatR;
 using static Application.Features.ExamQuestions.Constants.ExamQuestionsOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.ExamQuestions.Commands.Create;
 
@@ -17,7 +18,7 @@ public class CreateExamQuestionCommand : IRequest<CreatedExamQuestionResponse>, 
     public int ExamId { get; set; }
     public int QuestionId { get; set; }
 
-    public string[] Roles => new[] { Admin, Write, ExamQuestionsOperationClaims.Create };
+    public string[] Roles => new[] { Admin, Write, ExamQuestionsOperationClaims.Create, GeneralOperationClaims.Instructor };
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }

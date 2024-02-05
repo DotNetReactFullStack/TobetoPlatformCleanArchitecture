@@ -9,6 +9,7 @@ using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using MediatR;
 using static Application.Features.Answers.Constants.AnswersOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.Answers.Commands.Update;
 
@@ -19,7 +20,7 @@ public class UpdateAnswerCommand : IRequest<UpdatedAnswerResponse>, ISecuredRequ
     public string AnswerDetail { get; set; }
     public bool RightAnswerBool { get; set; }
 
-    public string[] Roles => new[] { Admin, Write, AnswersOperationClaims.Update };
+    public string[] Roles => new[] { Admin, Write, AnswersOperationClaims.Update, GeneralOperationClaims.Instructor };
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }

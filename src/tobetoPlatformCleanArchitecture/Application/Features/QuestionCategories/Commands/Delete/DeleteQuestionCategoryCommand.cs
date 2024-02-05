@@ -10,6 +10,7 @@ using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using MediatR;
 using static Application.Features.QuestionCategories.Constants.QuestionCategoriesOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.QuestionCategories.Commands.Delete;
 
@@ -17,7 +18,7 @@ public class DeleteQuestionCategoryCommand : IRequest<DeletedQuestionCategoryRes
 {
     public int Id { get; set; }
 
-    public string[] Roles => new[] { Admin, Write, QuestionCategoriesOperationClaims.Delete };
+    public string[] Roles => new[] { Admin, Write, QuestionCategoriesOperationClaims.Delete, GeneralOperationClaims.Instructor };
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }
