@@ -2,8 +2,10 @@
 using Application.Features.Accounts.Rules;
 using Application.Features.Auth.Constants;
 using Application.Features.Auth.Rules;
+using Application.Services.Accounts;
 using Application.Services.AuthService;
 using Application.Services.Repositories;
+using Application.Services.UserOperationClaims;
 using AutoMapper;
 using Core.Application.Dtos;
 using Core.Security.Entities;
@@ -37,19 +39,20 @@ public class RegisterCommand : IRequest<RegisteredResponse>
         private readonly IAuthService _authService;
         private readonly AuthBusinessRules _authBusinessRules;
 
-        private readonly IUserOperationClaimRepository _userOperationClaimRepository;
-        private readonly IAccountRepository _accountRepository;
+        private readonly IUserOperationClaimService _userOperationClaimService;
+        private readonly IAccountsService _accountsService;
         private readonly AccountBusinessRules _accountBusinessRules;
 
 
-        public RegisterCommandHandler(IUserRepository userRepository, IAuthService authService, AuthBusinessRules authBusinessRules, IUserOperationClaimRepository userOperationClaimRepository, IAccountRepository accountRepository, AccountBusinessRules accountBusinessRules)
+        public RegisterCommandHandler(IUserRepository userRepository, IAuthService authService, AuthBusinessRules authBusinessRules, IUserOperationClaimService userOperationClaimService, IAccountsService accountsService, AccountBusinessRules accountBusinessRules)
         {
             _userRepository = userRepository;
             _authService = authService;
             _authBusinessRules = authBusinessRules;
 
-            _userOperationClaimRepository = userOperationClaimRepository;
-            _accountRepository = accountRepository;
+
+            _userOperationClaimService = userOperationClaimService;
+            _accountsService = accountsService;
             _accountBusinessRules = accountBusinessRules;
         }
 
@@ -88,7 +91,7 @@ public class RegisterCommand : IRequest<RegisteredResponse>
             // Refactor
             // Add default operation claim id for each registration
             UserOperationClaim defaultUserOperationClaim = new(userId: createdUser.Id, operationClaimId: AuthOperationClaims.DefaultOperationClaimIdForEachRegistration);
-            UserOperationClaim createdDefaultUserOperationClaim = await _userOperationClaimRepository.AddAsync(defaultUserOperationClaim);
+            UserOperationClaim createdDefaultUserOperationClaim = await _userOperationClaimService.AddAsync(defaultUserOperationClaim);
 
             // Refactor
             // Create an account for each registration
@@ -104,7 +107,7 @@ public class RegisterCommand : IRequest<RegisteredResponse>
                 isActive: AccountsFieldConstants.IsActive
                 );
 
-            await _accountRepository.AddAsync(account);
+            await _accountsService.AddAsync(account);
 
             AccessToken createdAccessToken = await _authService.CreateAccessToken(createdUser);
 
