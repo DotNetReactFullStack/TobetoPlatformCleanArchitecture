@@ -9,6 +9,7 @@ using Core.Application.Responses;
 using Core.Persistence.Paging;
 using MediatR;
 using static Application.Features.SocialMediaPlatforms.Constants.SocialMediaPlatformsOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.SocialMediaPlatforms.Queries.GetList;
 
@@ -16,7 +17,7 @@ public class GetListSocialMediaPlatformQuery : IRequest<GetListResponse<GetListS
 {
     public PageRequest PageRequest { get; set; }
 
-    public string[] Roles => new[] { Admin, Read };
+    public string[] Roles => new[] { Admin, Read, GeneralOperationClaims.Instructor };
 
     public bool BypassCache { get; }
     public string CacheKey => $"GetListSocialMediaPlatforms({PageRequest.PageIndex},{PageRequest.PageSize})";

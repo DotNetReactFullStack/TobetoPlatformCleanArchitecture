@@ -6,6 +6,7 @@ using Domain.Entities;
 using Core.Application.Pipelines.Authorization;
 using MediatR;
 using static Application.Features.Accounts.Constants.AccountsOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.Accounts.Queries.GetById;
 
@@ -13,7 +14,7 @@ public class GetByIdAccountQuery : IRequest<GetByIdAccountResponse>, ISecuredReq
 {
     public int Id { get; set; }
 
-    public string[] Roles => new[] { Admin, Read };
+    public string[] Roles => new[] { Admin, Read,GeneralOperationClaims.Instructor };
 
     public class GetByIdAccountQueryHandler : IRequestHandler<GetByIdAccountQuery, GetByIdAccountResponse>
     {
