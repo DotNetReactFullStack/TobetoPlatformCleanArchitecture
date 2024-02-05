@@ -3,9 +3,11 @@ using Application.Features.Accounts.Commands.Delete;
 using Application.Features.Accounts.Commands.Update;
 using Application.Features.Accounts.Queries.GetById;
 using Application.Features.Accounts.Queries.GetList;
+using Application.Services.Accounts;
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Microsoft.AspNetCore.Mvc;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace WebAPI.Controllers;
 
@@ -13,6 +15,13 @@ namespace WebAPI.Controllers;
 [ApiController]
 public class AccountsController : BaseController
 {
+    IAccountsService _accountsService;
+
+    public AccountsController(IAccountsService accountsService)
+    {
+        _accountsService = accountsService;
+    }
+
     [HttpPost]
     public async Task<IActionResult> Add([FromBody] CreateAccountCommand createAccountCommand)
     {
@@ -24,6 +33,8 @@ public class AccountsController : BaseController
     [HttpPut]
     public async Task<IActionResult> Update([FromBody] UpdateAccountCommand updateAccountCommand)
     {
+        updateAccountCommand.UserIdForCheck = _accountsService.GetUserIdFromToken(HttpContext.Request.Headers["Authorization"]);
+
         UpdatedAccountResponse response = await Mediator.Send(updateAccountCommand);
 
         return Ok(response);

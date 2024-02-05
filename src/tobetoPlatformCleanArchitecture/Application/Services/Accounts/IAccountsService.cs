@@ -27,4 +27,5 @@ public interface IAccountsService
     Task<Account> AddAsync(Account account);
     Task<Account> UpdateAsync(Account account);
     Task<Account> DeleteAsync(Account account, bool permanent = false);
+    int GetUserIdFromToken(string token);
 }
