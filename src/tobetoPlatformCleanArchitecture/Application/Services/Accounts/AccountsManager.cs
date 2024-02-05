@@ -2,7 +2,9 @@ using Application.Features.Accounts.Rules;
 using Application.Services.Repositories;
 using Core.Persistence.Paging;
 using Domain.Entities;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore.Query;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq.Expressions;
 
 namespace Application.Services.Accounts;
@@ -73,5 +75,17 @@ public class AccountsManager : IAccountsService
         Account deletedAccount = await _accountRepository.DeleteAsync(account);
 
         return deletedAccount;
+    }
+
+    public int GetUserIdFromToken(string bearerToken)
+    {
+        string token = bearerToken.Replace("Bearer ", "");
+
+        var handler = new JwtSecurityTokenHandler();
+        var jsonToken = handler.ReadToken(token) as JwtSecurityToken;
+
+        int.TryParse(jsonToken.Claims.FirstOrDefault(claim => claim.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier")?.Value, out int userId);
+
+        return userId;
     }
 }

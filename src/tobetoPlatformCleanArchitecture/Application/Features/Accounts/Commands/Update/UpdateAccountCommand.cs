@@ -16,7 +16,6 @@ namespace Application.Features.Accounts.Commands.Update;
 public class UpdateAccountCommand : IRequest<UpdatedAccountResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int Id { get; set; }
-    //public string NationalIdentificationNumber { get; set; } // Uncomment for NationalIdentificationNumber to be updateable
     public string AboutMe { get; set; }
     public DateTime BirthDate { get; set; }
     public string PhoneNumber { get; set; }
@@ -24,6 +23,7 @@ public class UpdateAccountCommand : IRequest<UpdatedAccountResponse>, ISecuredRe
     public bool ShareProfile { get; set; }
     public string ProfileLinkUrl { get; set; }
     public bool IsActive { get; set; }
+    public int? UserIdForCheck { get; set; }
 
     public string[] Roles => new[] { Admin, Write, AccountsOperationClaims.Update, GeneralOperationClaims.Instructor, GeneralOperationClaims.Student };
 
@@ -51,7 +51,7 @@ public class UpdateAccountCommand : IRequest<UpdatedAccountResponse>, ISecuredRe
             await _accountBusinessRules.AccountShouldExistWhenSelected(account);
             account = _mapper.Map(request, account);
 
-            //_accountBusinessRules.UserCanOnlyUpdateTheirOwnAccount(account); // Uncomment for NationalIdentificationNumber to be updateable
+            _accountBusinessRules.UserCanOnlyUpdateTheirOwnAccount(account: account, userIdForCheck: request.UserIdForCheck);
 
             await _accountRepository.UpdateAsync(account!);
 
