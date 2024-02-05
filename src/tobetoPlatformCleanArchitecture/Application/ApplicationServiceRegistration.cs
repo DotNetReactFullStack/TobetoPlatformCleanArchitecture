@@ -70,6 +70,7 @@ using Application.Services.ImageExtensions;
 using Application.Services.ContractTypes;
 using Application.Services.AccountContracts;
 using Application.Services.Contracts;
+using Application.Services.UserOperationClaims;
 
 namespace Application;
 
@@ -99,6 +100,8 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IAuthService, AuthManager>();
         services.AddScoped<IAuthenticatorService, AuthenticatorManager>();
         services.AddScoped<IUserService, UserManager>();
+
+        services.AddScoped<IUserOperationClaimService, UserUserOperationClaimManager>();
 
         services.AddScoped<IAccountsService, AccountsManager>();
         services.AddScoped<ICitiesService, CitiesManager>();
