@@ -9,6 +9,7 @@ using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using MediatR;
 using static Application.Features.AccountCertificates.Constants.AccountCertificatesOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.AccountCertificates.Commands.Create;
 
@@ -18,7 +19,7 @@ public class CreateAccountCertificateCommand : IRequest<CreatedAccountCertificat
     public int CertificateId { get; set; }
     public int Priority { get; set; }
 
-    public string[] Roles => new[] { Admin, Write, AccountCertificatesOperationClaims.Create };
+    public string[] Roles => new[] { Admin, Write, AccountCertificatesOperationClaims.Create, GeneralOperationClaims.Student };
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }

@@ -10,6 +10,7 @@ using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using MediatR;
 using static Application.Features.AccountForeignLanguageMetadatas.Constants.AccountForeignLanguageMetadatasOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.AccountForeignLanguageMetadatas.Commands.Delete;
 
@@ -17,7 +18,7 @@ public class DeleteAccountForeignLanguageMetadataCommand : IRequest<DeletedAccou
 {
     public int Id { get; set; }
 
-    public string[] Roles => new[] { Admin, Write, AccountForeignLanguageMetadatasOperationClaims.Delete };
+    public string[] Roles => new[] { Admin, Write, AccountForeignLanguageMetadatasOperationClaims.Delete, GeneralOperationClaims.Student };
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }

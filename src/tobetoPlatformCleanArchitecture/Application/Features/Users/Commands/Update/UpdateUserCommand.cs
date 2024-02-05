@@ -1,3 +1,4 @@
+using Application.Features.OperationClaims.Constants;
 using Application.Features.Users.Constants;
 using Application.Features.Users.Rules;
 using Application.Services.Repositories;
@@ -35,7 +36,7 @@ public class UpdateUserCommand : IRequest<UpdatedUserResponse>, ISecuredRequest
         Password = password;
     }
 
-    public string[] Roles => new[] { Admin, Write, UsersOperationClaims.Update };
+    public string[] Roles => new[] { Admin, Write, UsersOperationClaims.Update, GeneralOperationClaims.Student };
 
     public class UpdateUserCommandHandler : IRequestHandler<UpdateUserCommand, UpdatedUserResponse>
     {

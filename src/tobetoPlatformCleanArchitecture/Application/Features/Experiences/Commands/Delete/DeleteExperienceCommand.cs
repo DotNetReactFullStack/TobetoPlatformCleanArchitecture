@@ -10,6 +10,7 @@ using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using MediatR;
 using static Application.Features.Experiences.Constants.ExperiencesOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.Experiences.Commands.Delete;
 
@@ -17,7 +18,7 @@ public class DeleteExperienceCommand : IRequest<DeletedExperienceResponse>, ISec
 {
     public int Id { get; set; }
 
-    public string[] Roles => new[] { Admin, Write, ExperiencesOperationClaims.Delete };
+    public string[] Roles => new[] { Admin, Write, ExperiencesOperationClaims.Delete, GeneralOperationClaims.Student };
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }

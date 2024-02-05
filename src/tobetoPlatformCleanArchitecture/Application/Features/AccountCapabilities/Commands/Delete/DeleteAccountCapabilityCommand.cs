@@ -10,6 +10,7 @@ using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using MediatR;
 using static Application.Features.AccountCapabilities.Constants.AccountCapabilitiesOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.AccountCapabilities.Commands.Delete;
 
@@ -17,7 +18,7 @@ public class DeleteAccountCapabilityCommand : IRequest<DeletedAccountCapabilityR
 {
     public int Id { get; set; }
 
-    public string[] Roles => new[] { Admin, Write, AccountCapabilitiesOperationClaims.Delete };
+    public string[] Roles => new[] { Admin, Write, AccountCapabilitiesOperationClaims.Delete, GeneralOperationClaims.Student };
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }

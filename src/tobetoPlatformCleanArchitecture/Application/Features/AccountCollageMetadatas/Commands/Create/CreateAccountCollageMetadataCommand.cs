@@ -9,6 +9,7 @@ using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using MediatR;
 using static Application.Features.AccountCollageMetadatas.Constants.AccountCollageMetadatasOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.AccountCollageMetadatas.Commands.Create;
 
@@ -23,7 +24,7 @@ public class CreateAccountCollageMetadataCommand : IRequest<CreatedAccountCollag
     public DateTime? GraduationYear { get; set; }
     public bool ProgramOnGoing { get; set; }
 
-    public string[] Roles => new[] { Admin, Write, AccountCollageMetadatasOperationClaims.Create };
+    public string[] Roles => new[] { Admin, Write, AccountCollageMetadatasOperationClaims.Create, GeneralOperationClaims.Student };
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }
