@@ -14,7 +14,7 @@ public class GetByIdAccountQuery : IRequest<GetByIdAccountResponse>, ISecuredReq
 {
     public int Id { get; set; }
 
-    public string[] Roles => new[] { Admin, Read,GeneralOperationClaims.Instructor };
+    public string[] Roles => new[] { Admin, Read, GeneralOperationClaims.Instructor, GeneralOperationClaims.Student };
 
     public class GetByIdAccountQueryHandler : IRequestHandler<GetByIdAccountQuery, GetByIdAccountResponse>
     {
