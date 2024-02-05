@@ -9,6 +9,7 @@ using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using MediatR;
 using static Application.Features.AccountContracts.Constants.AccountContractsOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.AccountContracts.Commands.Create;
 
@@ -18,7 +19,7 @@ public class CreateAccountContractCommand : IRequest<CreatedAccountContractRespo
     public int ContractId { get; set; }
     public bool IsAccept { get; set; }
 
-    public string[] Roles => new[] { Admin, Write, AccountContractsOperationClaims.Create };
+    public string[] Roles => new[] { Admin, Write, AccountContractsOperationClaims.Create, GeneralOperationClaims.Instructor };
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }

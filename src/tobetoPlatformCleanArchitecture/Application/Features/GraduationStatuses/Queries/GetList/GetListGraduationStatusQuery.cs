@@ -9,6 +9,7 @@ using Core.Application.Responses;
 using Core.Persistence.Paging;
 using MediatR;
 using static Application.Features.GraduationStatuses.Constants.GraduationStatusesOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.GraduationStatuses.Queries.GetList;
 
@@ -16,7 +17,7 @@ public class GetListGraduationStatusQuery : IRequest<GetListResponse<GetListGrad
 {
     public PageRequest PageRequest { get; set; }
 
-    public string[] Roles => new[] { Admin, Read };
+    public string[] Roles => new[] { Admin, Read, GeneralOperationClaims.Instructor };
 
     public bool BypassCache { get; }
     public string CacheKey => $"GetListGraduationStatus({PageRequest.PageIndex},{PageRequest.PageSize})";

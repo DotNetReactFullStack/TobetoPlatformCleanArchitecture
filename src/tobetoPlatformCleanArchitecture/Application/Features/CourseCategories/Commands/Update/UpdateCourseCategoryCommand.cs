@@ -9,6 +9,7 @@ using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using MediatR;
 using static Application.Features.CourseCategories.Constants.CourseCategoriesOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.CourseCategories.Commands.Update;
 
@@ -19,7 +20,7 @@ public class UpdateCourseCategoryCommand : IRequest<UpdatedCourseCategoryRespons
     public int Priority { get; set; }
     public bool Visibility { get; set; }
 
-    public string[] Roles => new[] { Admin, Write, CourseCategoriesOperationClaims.Update };
+    public string[] Roles => new[] { Admin, Write, CourseCategoriesOperationClaims.Update, GeneralOperationClaims.Instructor };
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }

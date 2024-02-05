@@ -9,6 +9,7 @@ using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using MediatR;
 using static Application.Features.LearningPaths.Constants.LearningPathsOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.LearningPaths.Commands.Update;
 
@@ -23,7 +24,7 @@ public class UpdateLearningPathCommand : IRequest<UpdatedLearningPathResponse>, 
     public int NumberOfLikes { get; set; }
     public int TotalDuration { get; set; }
 
-    public string[] Roles => new[] { Admin, Write, LearningPathsOperationClaims.Update };
+    public string[] Roles => new[] { Admin, Write, LearningPathsOperationClaims.Update, GeneralOperationClaims.Instructor };
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }

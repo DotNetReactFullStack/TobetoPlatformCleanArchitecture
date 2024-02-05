@@ -9,6 +9,7 @@ using Core.Application.Responses;
 using Core.Persistence.Paging;
 using MediatR;
 using static Application.Features.Capabilities.Constants.CapabilitiesOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.Capabilities.Queries.GetList;
 
@@ -16,7 +17,7 @@ public class GetListCapabilityQuery : IRequest<GetListResponse<GetListCapability
 {
     public PageRequest PageRequest { get; set; }
 
-    public string[] Roles => new[] { Admin, Read };
+    public string[] Roles => new[] { Admin, Read, GeneralOperationClaims.Instructor };
 
     public bool BypassCache { get; }
     public string CacheKey => $"GetListCapabilities({PageRequest.PageIndex},{PageRequest.PageSize})";
