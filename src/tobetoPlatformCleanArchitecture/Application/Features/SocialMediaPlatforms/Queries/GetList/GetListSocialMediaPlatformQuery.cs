@@ -17,7 +17,7 @@ public class GetListSocialMediaPlatformQuery : IRequest<GetListResponse<GetListS
 {
     public PageRequest PageRequest { get; set; }
 
-    public string[] Roles => new[] { Admin, Read, GeneralOperationClaims.Instructor };
+    public string[] Roles => new[] { Admin, Read, GeneralOperationClaims.Instructor, GeneralOperationClaims.Student };
 
     public bool BypassCache { get; }
     public string CacheKey => $"GetListSocialMediaPlatforms({PageRequest.PageIndex},{PageRequest.PageSize})";

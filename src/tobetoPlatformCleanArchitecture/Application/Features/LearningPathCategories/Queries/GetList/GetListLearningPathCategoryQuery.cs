@@ -9,6 +9,7 @@ using Core.Application.Responses;
 using Core.Persistence.Paging;
 using MediatR;
 using static Application.Features.LearningPathCategories.Constants.LearningPathCategoriesOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.LearningPathCategories.Queries.GetList;
 
@@ -16,7 +17,7 @@ public class GetListLearningPathCategoryQuery : IRequest<GetListResponse<GetList
 {
     public PageRequest PageRequest { get; set; }
 
-    public string[] Roles => new[] { Admin, Read };
+    public string[] Roles => new[] { Admin, Read, GeneralOperationClaims.Student };
 
     public bool BypassCache { get; }
     public string CacheKey => $"GetListLearningPathCategories({PageRequest.PageIndex},{PageRequest.PageSize})";

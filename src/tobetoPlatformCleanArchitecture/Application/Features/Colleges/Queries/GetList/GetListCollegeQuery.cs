@@ -17,7 +17,7 @@ public class GetListCollegeQuery : IRequest<GetListResponse<GetListCollegeListIt
 {
     public PageRequest PageRequest { get; set; }
 
-    public string[] Roles => new[] { Admin, Read, GeneralOperationClaims.Instructor };
+    public string[] Roles => new[] { Admin, Read, GeneralOperationClaims.Instructor, GeneralOperationClaims.Student };
 
     public bool BypassCache { get; }
     public string CacheKey => $"GetListColleges({PageRequest.PageIndex},{PageRequest.PageSize})";

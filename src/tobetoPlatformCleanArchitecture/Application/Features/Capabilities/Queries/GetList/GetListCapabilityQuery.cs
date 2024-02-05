@@ -17,7 +17,7 @@ public class GetListCapabilityQuery : IRequest<GetListResponse<GetListCapability
 {
     public PageRequest PageRequest { get; set; }
 
-    public string[] Roles => new[] { Admin, Read, GeneralOperationClaims.Instructor };
+    public string[] Roles => new[] { Admin, Read, GeneralOperationClaims.Instructor, GeneralOperationClaims.Student };
 
     public bool BypassCache { get; }
     public string CacheKey => $"GetListCapabilities({PageRequest.PageIndex},{PageRequest.PageSize})";
