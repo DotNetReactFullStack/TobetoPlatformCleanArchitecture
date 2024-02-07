@@ -53,7 +53,7 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
                 PasswordHash = passwordHash,
                 PasswordSalt = passwordSalt
             };
-        users.Add(adminUser);
+        //users.Add(adminUser);
 
         return users.ToArray();
     }

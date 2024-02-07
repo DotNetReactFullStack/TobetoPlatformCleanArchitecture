@@ -650,8 +650,8 @@ namespace Persistence.Migrations
                     BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ProfilePhotoPath = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ShareProfile = table.Column<bool>(type: "bit", nullable: false),
                     ProfileLinkUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ShareProfile = table.Column<bool>(type: "bit", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -1869,16 +1869,6 @@ namespace Persistence.Migrations
                     { 272, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "AccountAnnouncements.Update", null },
                     { 273, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "AccountAnnouncements.Delete", null }
                 });
-
-            migrationBuilder.InsertData(
-                table: "Users",
-                columns: new[] { "Id", "AuthenticatorType", "CreatedDate", "DeletedDate", "Email", "FirstName", "LastName", "PasswordHash", "PasswordSalt", "Status", "UpdatedDate" },
-                values: new object[] { 1, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "admin@admin.com", "Admin", "NArchitecture", new byte[] { 116, 188, 15, 252, 181, 108, 231, 254, 15, 167, 18, 254, 195, 3, 118, 157, 253, 93, 90, 224, 223, 51, 162, 139, 166, 193, 138, 29, 95, 191, 30, 31, 144, 156, 45, 224, 16, 135, 198, 152, 22, 218, 254, 195, 93, 229, 56, 2, 70, 155, 229, 128, 22, 192, 51, 72, 138, 105, 199, 55, 82, 120, 196, 252 }, new byte[] { 98, 25, 224, 117, 22, 237, 196, 199, 217, 240, 192, 244, 210, 132, 248, 66, 124, 110, 146, 107, 45, 92, 7, 255, 99, 214, 105, 186, 100, 106, 102, 137, 63, 64, 244, 125, 86, 185, 8, 22, 132, 106, 140, 50, 103, 131, 43, 53, 172, 204, 198, 89, 145, 189, 81, 221, 95, 112, 41, 109, 47, 81, 172, 60, 209, 101, 166, 25, 197, 143, 224, 92, 132, 83, 71, 2, 137, 64, 14, 142, 168, 84, 251, 10, 251, 169, 180, 116, 149, 6, 231, 208, 84, 211, 117, 27, 65, 235, 124, 244, 144, 220, 53, 160, 185, 48, 155, 3, 118, 172, 165, 186, 232, 218, 184, 105, 22, 96, 45, 192, 105, 187, 166, 146, 87, 79, 84, 147 }, true, null });
-
-            migrationBuilder.InsertData(
-                table: "UserOperationClaims",
-                columns: new[] { "Id", "AccountId", "CreatedDate", "DeletedDate", "OperationClaimId", "UpdatedDate", "UserId" },
-                values: new object[] { 1, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, null, 1 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AccountAnnouncements_AccountId",
