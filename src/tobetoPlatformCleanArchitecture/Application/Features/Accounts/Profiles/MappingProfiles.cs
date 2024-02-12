@@ -8,6 +8,7 @@ using Core.Application.Responses;
 using Domain.Entities;
 using Core.Persistence.Paging;
 using Application.Features.Accounts.Queries.GetByUserId;
+using Core.Security.Entities;
 
 namespace Application.Features.Accounts.Profiles;
 
@@ -23,6 +24,7 @@ public class MappingProfiles : Profile
         CreateMap<Account, DeletedAccountResponse>().ReverseMap();
         CreateMap<Account, GetByIdAccountResponse>().ReverseMap();
         CreateMap<Account, GetByUserIdAccountResponse>().ReverseMap();
+        CreateMap<User, GetByUserIdAccountResponse>().ReverseMap();
         CreateMap<Account, GetListAccountListItemDto>().ReverseMap();
         CreateMap<IPaginate<Account>, GetListResponse<GetListAccountListItemDto>>().ReverseMap();
     }
