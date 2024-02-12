@@ -16,14 +16,11 @@ namespace Application.Features.Accounts.Queries.GetByUserId
         public bool ShareProfile { get; set; }
         public string ProfileLinkUrl { get; set; }
         public bool IsActive { get; set; }
-        public object MyProperty { get; set; }
 
         //User
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
-        public byte[] PasswordSalt { get; set; }
-        public byte[] PasswordHash { get; set; }
         public bool Status { get; set; }
         public AuthenticatorType AuthenticatorType { get; set; }
 
