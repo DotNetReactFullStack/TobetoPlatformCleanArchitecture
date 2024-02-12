@@ -18,6 +18,7 @@
   <ItemGroup>
     <Folder Include="Services\Repositories" />
     <Folder Include="Dtos\" />
+    <Folder Include="Features\Accounts\Queries\GetByUserId\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,5 +29,6 @@
 
   <ItemGroup>
     <None Remove="Dtos\" />
+    <None Remove="Features\Accounts\Queries\GetByUserId\" />
   </ItemGroup>
 </Project>

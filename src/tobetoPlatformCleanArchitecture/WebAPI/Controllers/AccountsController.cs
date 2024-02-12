@@ -2,6 +2,7 @@ using Application.Features.Accounts.Commands.Create;
 using Application.Features.Accounts.Commands.Delete;
 using Application.Features.Accounts.Commands.Update;
 using Application.Features.Accounts.Queries.GetById;
+using Application.Features.Accounts.Queries.GetByUserId;
 using Application.Features.Accounts.Queries.GetList;
 using Application.Services.Accounts;
 using Core.Application.Requests;
@@ -52,6 +53,13 @@ public class AccountsController : BaseController
     public async Task<IActionResult> GetById([FromRoute] int id)
     {
         GetByIdAccountResponse response = await Mediator.Send(new GetByIdAccountQuery { Id = id });
+        return Ok(response);
+    }
+
+    [HttpGet("getByUserId/{userId}")]
+    public async Task<IActionResult> GetByUserId([FromRoute] int userId)
+    {
+        GetByUserIdAccountResponse response = await Mediator.Send(new GetByUserIdAccountQuery { UserId = userId });
         return Ok(response);
     }
 
