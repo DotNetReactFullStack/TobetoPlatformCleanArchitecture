@@ -13,12 +13,10 @@ using static Application.Features.Accounts.Constants.AccountsOperationClaims;
 
 namespace Application.Features.Accounts.Queries.GetByUserId
 {
-    public class GetByUserIdAccountQuery : IRequest<GetByUserIdAccountResponse>, ISecuredRequest
+    public class GetByUserIdAccountQuery : IRequest<GetByUserIdAccountResponse>
     {
         public int? Id { get; set; }
         public int UserId { get; set; }
-
-        public string[] Roles => new[] { Admin, Read, GeneralOperationClaims.Instructor, GeneralOperationClaims.Student };
 
         public class GetByUserIdAccountQueryHandler : IRequestHandler<GetByUserIdAccountQuery, GetByUserIdAccountResponse>
         {
