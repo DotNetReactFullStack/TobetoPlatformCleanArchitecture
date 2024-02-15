@@ -37,7 +37,6 @@ public class CapabilityConfiguration : IEntityTypeConfiguration<Capability>
                 new Capability { Id = ++id, Name = "Vue.js", Priority= 1, Visibility=true },
                 new Capability { Id = ++id, Name = "React", Priority= 1, Visibility=true },
                 new Capability { Id = ++id, Name = "Angular", Priority= 1, Visibility=true },
-                new Capability { Id = ++id, Name = "Vue", Priority= 1, Visibility=true },
                 new Capability { Id = ++id, Name = ".NET", Priority= 1, Visibility=true },
                 new Capability { Id = ++id, Name = "C#", Priority= 1, Visibility=true },
                 new Capability { Id = ++id, Name = "Spring Boot", Priority= 1, Visibility=true },
