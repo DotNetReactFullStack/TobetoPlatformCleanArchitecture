@@ -19,5 +19,22 @@ public class ForeignLanguageLevelConfiguration : IEntityTypeConfiguration<Foreig
         builder.Property(fll => fll.DeletedDate).HasColumnName("DeletedDate");
 
         builder.HasQueryFilter(fll => !fll.DeletedDate.HasValue);
+
+        builder.HasData(getSeeds());
+    }
+
+    private HashSet<ForeignLanguageLevel> getSeeds()
+    {
+        int id = 0;
+        HashSet<ForeignLanguageLevel> seeds =
+            new()
+            {
+                new ForeignLanguageLevel { Id = ++id, Name = "Temel Seviye (A1, A2)", Priority= 1, Visibility=true },
+                new ForeignLanguageLevel { Id = ++id, Name = "Orta Seviye (B1, B2)", Priority= 1, Visibility=true },
+                new ForeignLanguageLevel { Id = ++id, Name = "İleri Seviye (C1, C2)", Priority= 1, Visibility=true },
+                new ForeignLanguageLevel { Id = ++id, Name = "Anadil", Priority= 1, Visibility=true },
+            };
+
+        return seeds;
     }
 }
