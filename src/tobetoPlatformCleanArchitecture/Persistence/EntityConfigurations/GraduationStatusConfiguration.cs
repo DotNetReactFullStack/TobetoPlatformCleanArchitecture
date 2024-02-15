@@ -19,5 +19,21 @@ public class GraduationStatusConfiguration : IEntityTypeConfiguration<Graduation
         builder.Property(gs => gs.DeletedDate).HasColumnName("DeletedDate");
 
         builder.HasQueryFilter(gs => !gs.DeletedDate.HasValue);
+
+        builder.HasData(getSeeds());
+    }
+
+    private HashSet<GraduationStatus> getSeeds()
+    {
+        int id = 0;
+        HashSet<GraduationStatus> seeds =
+            new()
+            {
+                new GraduationStatus { Id = ++id, Name = "Lisans", Priority= 1, Visibility=true },
+                new GraduationStatus { Id = ++id, Name = "Ön Lisans", Priority= 1, Visibility=true },
+                new GraduationStatus { Id = ++id, Name = "Yüksek Lisans", Priority= 1, Visibility=true },
+                new GraduationStatus { Id = ++id, Name = "Doktora", Priority= 1, Visibility=true }
+            };
+        return seeds;
     }
 }
