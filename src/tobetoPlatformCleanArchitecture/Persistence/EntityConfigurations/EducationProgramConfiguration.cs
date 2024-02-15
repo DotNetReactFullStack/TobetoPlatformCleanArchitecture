@@ -30,31 +30,31 @@ public class EducationProgramConfiguration : IEntityTypeConfiguration<EducationP
             new()
             {
                 new EducationProgram { Id = ++id, CollegeId = ++collegeId, Name = "Matematik", Visibility=true },
-                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Bilgisayar Mühendisliði", Visibility=true },
-                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Elektrik-Elektronik Mühendisliði", Visibility=true },
+                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Bilgisayar MÃ¼hendisliÄŸi", Visibility=true },
+                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Elektrik-Elektronik MÃ¼hendisliÄŸi", Visibility=true },
 
-                new EducationProgram { Id = ++id, CollegeId = ++collegeId, Name = "Endüstri Mühendisliði", Visibility=true },
+                new EducationProgram { Id = ++id, CollegeId = ++collegeId, Name = "EndÃ¼stri MÃ¼hendisliÄŸi", Visibility=true },
                 new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Kimya", Visibility=true },
-                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Makine Mühendisliði", Visibility=true },
+                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Makine MÃ¼hendisliÄŸi", Visibility=true },
 
-                new EducationProgram { Id = ++id, CollegeId = ++collegeId, Name = "Ýnþaat Mühendisliði", Visibility=true },
-                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Gýda Mühendisliði", Visibility=true },
-                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Yazýlým Mühendisliði", Visibility=true },
+                new EducationProgram { Id = ++id, CollegeId = ++collegeId, Name = "Ä°nÅŸaat MÃ¼hendisliÄŸi", Visibility=true },
+                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "GÄ±da MÃ¼hendisliÄŸi", Visibility=true },
+                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "YazÄ±lÄ±m MÃ¼hendisliÄŸi", Visibility=true },
 
-                new EducationProgram { Id = ++id, CollegeId = ++collegeId, Name = "Ýngilizce Öðretmenliði", Visibility=true },
-                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Ýþletme", Visibility=true },
-                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Elektrik-Elektronik Mühendisliði", Visibility=true },
+                new EducationProgram { Id = ++id, CollegeId = ++collegeId, Name = "Ä°ngilizce Ã–ÄŸretmenliÄŸi", Visibility=true },
+                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Ä°ÅŸletme", Visibility=true },
+                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Elektrik-Elektronik MÃ¼hendisliÄŸi", Visibility=true },
 
                 new EducationProgram { Id = ++id, CollegeId = ++collegeId, Name = "Matematik", Visibility=true },
                 new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Ekonometri", Visibility=true },
-                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Mimarlýk", Visibility=true },
+                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "MimarlÄ±k", Visibility=true },
 
                 new EducationProgram { Id = ++id, CollegeId = ++collegeId, Name = "Biyoloji", Visibility=true },
                 new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Tarih", Visibility=true },
-                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Týp", Visibility=true },
+                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "TÄ±p", Visibility=true },
 
-                new EducationProgram { Id = ++id, CollegeId = ++collegeId, Name = "Türkçe Öðretmenliði", Visibility=true },
-                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Uluslararasý Ýliþkiler", Visibility=true },
+                new EducationProgram { Id = ++id, CollegeId = ++collegeId, Name = "TÃ¼rkÃ§e Ã–ÄŸretmenliÄŸi", Visibility=true },
+                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "UluslararasÄ± Ä°liÅŸkiler", Visibility=true },
                 new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Veterinerlik", Visibility=true },
 
             };

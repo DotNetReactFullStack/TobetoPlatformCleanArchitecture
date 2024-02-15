@@ -30,8 +30,8 @@ public class GraduationStatusConfiguration : IEntityTypeConfiguration<Graduation
             new()
             {
                 new GraduationStatus { Id = ++id, Name = "Lisans", Priority= 1, Visibility=true },
-                new GraduationStatus { Id = ++id, Name = "Ön Lisans", Priority= 1, Visibility=true },
-                new GraduationStatus { Id = ++id, Name = "Yüksek Lisans", Priority= 1, Visibility=true },
+                new GraduationStatus { Id = ++id, Name = "Ã–n Lisans", Priority= 1, Visibility=true },
+                new GraduationStatus { Id = ++id, Name = "YÃ¼ksek Lisans", Priority= 1, Visibility=true },
                 new GraduationStatus { Id = ++id, Name = "Doktora", Priority= 1, Visibility=true }
             };
         return seeds;

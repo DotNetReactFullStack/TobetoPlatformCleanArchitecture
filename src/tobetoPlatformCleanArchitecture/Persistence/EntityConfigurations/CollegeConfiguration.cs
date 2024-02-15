@@ -28,13 +28,16 @@ public class CollegeConfiguration : IEntityTypeConfiguration<College>
         HashSet<College> seeds =
             new()
             {
-                new College { Id = ++id, Name = "Boðaziçi Üniversitesi", Visibility=true },
-                new College { Id = ++id, Name = "Ýstanbul Teknik Üniversitesi", Visibility=true },
-                new College { Id = ++id, Name = "Orta Doðu Teknik Üniversitesi", Visibility=true },
-                new College { Id = ++id, Name = "Bursa Uludað Üniversitesi", Visibility=true },
-                new College { Id = ++id, Name = "Hacettepe Üniversitesi", Visibility=true },
-                new College { Id = ++id, Name = "Ýstanbul Üniversitesi", Visibility=true },
-                new College { Id = ++id, Name = "Gazi Üniversitesi", Visibility=true }
+                new College { Id = ++id, Name = "Anadolu Ãœniversitesi", Visibility=true },
+                new College { Id = ++id, Name = "Beykoz Ãœniversitesi", Visibility=true },
+                new College { Id = ++id, Name = "DÃ¼zce Ãœniversitesi", Visibility=true },
+                new College { Id = ++id, Name = "Ä°stanbul Teknik Ãœniversitesi", Visibility=true },
+                new College { Id = ++id, Name = "Orta DoÄŸu Teknik Ãœniversitesi", Visibility=true },
+                new College { Id = ++id, Name = "Bursa UludaÄŸ Ãœniversitesi", Visibility=true },
+                new College { Id = ++id, Name = "BoÄŸaziÃ§i Ãœniversitesi", Visibility=true },
+                new College { Id = ++id, Name = "Hacettepe Ãœniversitesi", Visibility=true },
+                new College { Id = ++id, Name = "Ä°stanbul Ãœniversitesi", Visibility=true },
+                new College { Id = ++id, Name = "Gazi Ãœniversitesi", Visibility=true },
             };
         return seeds;
     }
