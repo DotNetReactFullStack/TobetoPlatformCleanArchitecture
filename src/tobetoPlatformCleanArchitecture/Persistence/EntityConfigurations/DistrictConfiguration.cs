@@ -32,15 +32,15 @@ public class DistrictConfiguration : IEntityTypeConfiguration<District>
             new()
             {
                 //__District________________________ istanbul, bursa, ankara
-                new District { Id = ++id, CityId=++cityId, Name = "Kadiköy", Priority= 1, Visibility=true },
-                new District { Id = ++id, CityId=cityId, Name = "Bakýrköy", Priority= 2, Visibility=true },
+                new District { Id = ++id, CityId=++cityId, Name = "KadikÃ¶y", Priority= 1, Visibility=true },
+                new District { Id = ++id, CityId=cityId, Name = "BakÄ±rkÃ¶y", Priority= 2, Visibility=true },
                 new District { Id = ++id, CityId=cityId, Name = "Tuzla", Priority= 3, Visibility=true },
                                   
                 new District { Id = ++id, CityId=++cityId, Name = "Osmangazi", Priority= 1, Visibility=true },
-                new District { Id = ++id, CityId=cityId, Name = "Nilüfer", Priority= 2, Visibility=true },
-                new District { Id = ++id, CityId=cityId, Name = "Ýnegöl", Priority= 3, Visibility=true },
+                new District { Id = ++id, CityId=cityId, Name = "NilÃ¼fer", Priority= 2, Visibility=true },
+                new District { Id = ++id, CityId=cityId, Name = "Ä°negÃ¶l", Priority= 3, Visibility=true },
                                   
-                new District { Id = ++id, CityId=++cityId, Name = "Çankaya", Priority= 1, Visibility=true },
+                new District { Id = ++id, CityId=++cityId, Name = "Ã‡ankaya", Priority= 1, Visibility=true },
                 new District { Id = ++id, CityId=cityId, Name = "Etimesgut", Priority= 2, Visibility=true },
                 new District { Id = ++id, CityId=cityId, Name = "Yenimahalle", Priority= 3, Visibility=true },
                     
