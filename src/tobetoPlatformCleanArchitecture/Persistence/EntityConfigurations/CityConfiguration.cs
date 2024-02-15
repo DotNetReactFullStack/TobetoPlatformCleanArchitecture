@@ -20,5 +20,30 @@ public class CityConfiguration : IEntityTypeConfiguration<City>
         builder.Property(c => c.DeletedDate).HasColumnName("DeletedDate");
 
         builder.HasQueryFilter(c => !c.DeletedDate.HasValue);
+
+        builder.HasData(getSeeds());
+    }
+
+    private HashSet<City> getSeeds()
+    {
+        int id = 0;
+        int countryId = 0;
+        HashSet<City> seeds =
+            new()
+            {
+                new City { Id = ++id, CountryId=++countryId, Name = "İstanbul", Priority= 1, Visibility=true },
+                new City { Id = ++id, CountryId=countryId, Name = "Bursa", Priority= 1, Visibility=true },
+                new City { Id = ++id, CountryId=countryId, Name = "Ankara", Priority= 1, Visibility=true },
+
+                new City { Id = ++id, CountryId=++countryId, Name = "Londra", Priority= 1, Visibility=true },
+                new City { Id = ++id, CountryId=countryId, Name = "Liverpool", Priority= 1, Visibility=true },
+                new City { Id = ++id, CountryId=countryId, Name = "Manchester", Priority= 1, Visibility=true },
+
+                new City { Id = ++id, CountryId=++countryId, Name = "Roma", Priority= 1, Visibility=true },
+                new City { Id = ++id, CountryId=countryId, Name = "Floransa", Priority= 1, Visibility=true },
+                new City { Id = ++id, CountryId=countryId, Name = "Torino", Priority= 1, Visibility=true },
+            };
+
+        return seeds;
     }
 }

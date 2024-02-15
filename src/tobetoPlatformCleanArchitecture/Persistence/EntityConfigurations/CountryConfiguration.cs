@@ -19,5 +19,21 @@ public class CountryConfiguration : IEntityTypeConfiguration<Country>
         builder.Property(c => c.DeletedDate).HasColumnName("DeletedDate");
 
         builder.HasQueryFilter(c => !c.DeletedDate.HasValue);
+
+        builder.HasData(getSeeds());
+    }
+
+    private HashSet<Country> getSeeds()
+    {
+        int id = 0;
+        HashSet<Country> seeds =
+            new()
+            {
+                new Country { Id = ++id, Name = "Türkiye", Priority= 1, Visibility=true },
+                new Country { Id = ++id, Name = "İngiltere", Priority= 1, Visibility=true },
+                new Country { Id = ++id, Name = "İtalya", Priority= 1, Visibility=true },
+            };
+
+        return seeds;
     }
 }
