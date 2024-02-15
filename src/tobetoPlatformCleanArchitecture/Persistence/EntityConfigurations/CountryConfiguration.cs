@@ -30,8 +30,8 @@ public class CountryConfiguration : IEntityTypeConfiguration<Country>
             new()
             {
                 new Country { Id = ++id, Name = "Türkiye", Priority= 1, Visibility=true },
-                new Country { Id = ++id, Name = "İngiltere", Priority= 1, Visibility=true },
-                new Country { Id = ++id, Name = "İtalya", Priority= 1, Visibility=true },
+                new Country { Id = ++id, Name = "İngiltere", Priority= 2, Visibility=true },
+                new Country { Id = ++id, Name = "İtalya", Priority= 3, Visibility=true },
             };
 
         return seeds;
