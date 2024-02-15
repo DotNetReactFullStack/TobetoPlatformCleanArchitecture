@@ -19,5 +19,45 @@ public class EducationProgramConfiguration : IEntityTypeConfiguration<EducationP
         builder.Property(ep => ep.DeletedDate).HasColumnName("DeletedDate");
 
         builder.HasQueryFilter(ep => !ep.DeletedDate.HasValue);
+
+        builder.HasData(getSeeds());
+    }
+    private HashSet<EducationProgram> getSeeds()
+    {
+        int id = 0;
+        int collegeId = 0;
+        HashSet<EducationProgram> seeds =
+            new()
+            {
+                new EducationProgram { Id = ++id, CollegeId = ++collegeId, Name = "Matematik", Visibility=true },
+                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Bilgisayar Mühendisliði", Visibility=true },
+                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Elektrik-Elektronik Mühendisliði", Visibility=true },
+
+                new EducationProgram { Id = ++id, CollegeId = ++collegeId, Name = "Endüstri Mühendisliði", Visibility=true },
+                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Kimya", Visibility=true },
+                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Makine Mühendisliði", Visibility=true },
+
+                new EducationProgram { Id = ++id, CollegeId = ++collegeId, Name = "Ýnþaat Mühendisliði", Visibility=true },
+                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Gýda Mühendisliði", Visibility=true },
+                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Yazýlým Mühendisliði", Visibility=true },
+
+                new EducationProgram { Id = ++id, CollegeId = ++collegeId, Name = "Ýngilizce Öðretmenliði", Visibility=true },
+                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Ýþletme", Visibility=true },
+                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Elektrik-Elektronik Mühendisliði", Visibility=true },
+
+                new EducationProgram { Id = ++id, CollegeId = ++collegeId, Name = "Matematik", Visibility=true },
+                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Ekonometri", Visibility=true },
+                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Mimarlýk", Visibility=true },
+
+                new EducationProgram { Id = ++id, CollegeId = ++collegeId, Name = "Biyoloji", Visibility=true },
+                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Tarih", Visibility=true },
+                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Týp", Visibility=true },
+
+                new EducationProgram { Id = ++id, CollegeId = ++collegeId, Name = "Türkçe Öðretmenliði", Visibility=true },
+                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Uluslararasý Ýliþkiler", Visibility=true },
+                new EducationProgram { Id = ++id, CollegeId = collegeId, Name = "Veterinerlik", Visibility=true },
+
+            };
+        return seeds;
     }
 }
