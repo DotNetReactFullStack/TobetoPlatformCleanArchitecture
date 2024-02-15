@@ -32,16 +32,16 @@ public class CityConfiguration : IEntityTypeConfiguration<City>
             new()
             {
                 new City { Id = ++id, CountryId=++countryId, Name = "İstanbul", Priority= 1, Visibility=true },
-                new City { Id = ++id, CountryId=countryId, Name = "Bursa", Priority= 1, Visibility=true },
-                new City { Id = ++id, CountryId=countryId, Name = "Ankara", Priority= 1, Visibility=true },
+                new City { Id = ++id, CountryId=countryId, Name = "Bursa", Priority= 2, Visibility=true },
+                new City { Id = ++id, CountryId=countryId, Name = "Ankara", Priority= 3, Visibility=true },
 
                 new City { Id = ++id, CountryId=++countryId, Name = "Londra", Priority= 1, Visibility=true },
-                new City { Id = ++id, CountryId=countryId, Name = "Liverpool", Priority= 1, Visibility=true },
-                new City { Id = ++id, CountryId=countryId, Name = "Manchester", Priority= 1, Visibility=true },
+                new City { Id = ++id, CountryId=countryId, Name = "Liverpool", Priority= 2, Visibility=true },
+                new City { Id = ++id, CountryId=countryId, Name = "Manchester", Priority= 3, Visibility=true },
 
                 new City { Id = ++id, CountryId=++countryId, Name = "Roma", Priority= 1, Visibility=true },
-                new City { Id = ++id, CountryId=countryId, Name = "Floransa", Priority= 1, Visibility=true },
-                new City { Id = ++id, CountryId=countryId, Name = "Torino", Priority= 1, Visibility=true },
+                new City { Id = ++id, CountryId=countryId, Name = "Floransa", Priority= 2, Visibility=true },
+                new City { Id = ++id, CountryId=countryId, Name = "Torino", Priority= 3, Visibility=true },
             };
 
         return seeds;
