@@ -3,6 +3,8 @@ using Application.Features.AccountCapabilities.Commands.Delete;
 using Application.Features.AccountCapabilities.Commands.Update;
 using Application.Features.AccountCapabilities.Queries.GetById;
 using Application.Features.AccountCapabilities.Queries.GetList;
+using Application.Features.AccountCapabilities.Queries.GetListByAccountId;
+using Application.Features.Accounts.Queries.GetByUserId;
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Microsoft.AspNetCore.Mvc;
@@ -41,6 +43,14 @@ public class AccountCapabilitiesController : BaseController
     public async Task<IActionResult> GetById([FromRoute] int id)
     {
         GetByIdAccountCapabilityResponse response = await Mediator.Send(new GetByIdAccountCapabilityQuery { Id = id });
+        return Ok(response);
+    }
+
+    [HttpGet("getByAccountId/{accountId}")]
+    public async Task<IActionResult> GetByAccountId([FromRoute] int accountId, [FromQuery] PageRequest pageRequest)
+    {
+        GetListByAccountIdAccountCapabilityQuery getListByAccountIdAccountCapabilityQuery = new() { AccountId=accountId, PageRequest = pageRequest };
+        GetListResponse<GetListByAccountIdAccountCapabilityListItemDto> response = await Mediator.Send(getListByAccountIdAccountCapabilityQuery);
         return Ok(response);
     }
 

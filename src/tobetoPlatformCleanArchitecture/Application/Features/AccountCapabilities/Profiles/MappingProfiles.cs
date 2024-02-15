@@ -7,6 +7,7 @@ using AutoMapper;
 using Core.Application.Responses;
 using Domain.Entities;
 using Core.Persistence.Paging;
+using Application.Features.AccountCapabilities.Queries.GetListByAccountId;
 
 namespace Application.Features.AccountCapabilities.Profiles;
 
@@ -22,6 +23,8 @@ public class MappingProfiles : Profile
         CreateMap<AccountCapability, DeletedAccountCapabilityResponse>().ReverseMap();
         CreateMap<AccountCapability, GetByIdAccountCapabilityResponse>().ReverseMap();
         CreateMap<AccountCapability, GetListAccountCapabilityListItemDto>().ReverseMap();
+        CreateMap<AccountCapability, GetListByAccountIdAccountCapabilityListItemDto>().ReverseMap();
         CreateMap<IPaginate<AccountCapability>, GetListResponse<GetListAccountCapabilityListItemDto>>().ReverseMap();
+        CreateMap<IPaginate<AccountCapability>, GetListResponse<GetListByAccountIdAccountCapabilityListItemDto>>().ReverseMap();
     }
 }
