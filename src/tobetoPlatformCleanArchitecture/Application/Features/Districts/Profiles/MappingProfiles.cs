@@ -7,6 +7,8 @@ using AutoMapper;
 using Core.Application.Responses;
 using Domain.Entities;
 using Core.Persistence.Paging;
+using Application.Features.Cities.Queries.GetListByCountryId;
+using Application.Features.Districts.Queries.GetListByCityId;
 
 namespace Application.Features.Districts.Profiles;
 
@@ -23,5 +25,7 @@ public class MappingProfiles : Profile
         CreateMap<District, GetByIdDistrictResponse>().ReverseMap();
         CreateMap<District, GetListDistrictListItemDto>().ReverseMap();
         CreateMap<IPaginate<District>, GetListResponse<GetListDistrictListItemDto>>().ReverseMap();
+        CreateMap<District, GetListByCityIdDistrictListItemDto>().ReverseMap();
+        CreateMap<IPaginate<District>, GetListResponse<GetListByCityIdDistrictListItemDto>>().ReverseMap();
     }
 }
