@@ -47,7 +47,7 @@ public class EducationProgramsController : BaseController
     }
 
     [HttpGet("getByCollegeId/{collegeId}")]
-    public async Task<IActionResult> GetListByCollegeId([FromQuery] PageRequest pageRequest, int collegeId)
+    public async Task<IActionResult> GetListByCollegeId(int collegeId, [FromQuery] PageRequest pageRequest)
     {
         GetListByCollegeIdEducationProgramQuery getListByCollegeIdEducationProgramQuery = new() { PageRequest = pageRequest, CollegeId = collegeId };
         GetListResponse<GetListByCollegeIdEducationProgramListItemDto> response = await Mediator.Send(getListByCollegeIdEducationProgramQuery);
