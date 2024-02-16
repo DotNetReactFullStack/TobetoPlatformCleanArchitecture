@@ -3,9 +3,11 @@ using Application.Features.EducationPrograms.Commands.Delete;
 using Application.Features.EducationPrograms.Commands.Update;
 using Application.Features.EducationPrograms.Queries.GetById;
 using Application.Features.EducationPrograms.Queries.GetList;
+using Application.Features.EducationPrograms.Queries.GetListByCollegeId;
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace WebAPI.Controllers;
 
@@ -41,6 +43,14 @@ public class EducationProgramsController : BaseController
     public async Task<IActionResult> GetById([FromRoute] int id)
     {
         GetByIdEducationProgramResponse response = await Mediator.Send(new GetByIdEducationProgramQuery { Id = id });
+        return Ok(response);
+    }
+
+    [HttpGet("getByCollegeId/{collegeId}")]
+    public async Task<IActionResult> GetListByCollegeId([FromQuery] PageRequest pageRequest, int collegeId)
+    {
+        GetListByCollegeIdEducationProgramQuery getListByCollegeIdEducationProgramQuery = new() { PageRequest = pageRequest, CollegeId = collegeId };
+        GetListResponse<GetListByCollegeIdEducationProgramListItemDto> response = await Mediator.Send(getListByCollegeIdEducationProgramQuery);
         return Ok(response);
     }
 
