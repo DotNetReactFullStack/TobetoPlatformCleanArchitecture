@@ -3,6 +3,8 @@ using Application.Features.Cities.Commands.Delete;
 using Application.Features.Cities.Commands.Update;
 using Application.Features.Cities.Queries.GetById;
 using Application.Features.Cities.Queries.GetList;
+using Application.Features.Cities.Queries.GetListByCountryId;
+using Application.Features.EducationPrograms.Queries.GetListByCollegeId;
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Microsoft.AspNetCore.Mvc;
@@ -41,6 +43,14 @@ public class CitiesController : BaseController
     public async Task<IActionResult> GetById([FromRoute] int id)
     {
         GetByIdCityResponse response = await Mediator.Send(new GetByIdCityQuery { Id = id });
+        return Ok(response);
+    }
+
+    [HttpGet("getByCountryId/{countryId}")]
+    public async Task<IActionResult> GetListByCountryId(int countryId, [FromQuery] PageRequest pageRequest )
+    {
+        GetListByCountryIdCityQuery getListByCountryIdCityQuery = new() { PageRequest = pageRequest, CountryId = countryId };
+        GetListResponse<GetListByCountryIdCityListItemDto> response = await Mediator.Send(getListByCountryIdCityQuery);
         return Ok(response);
     }
 
