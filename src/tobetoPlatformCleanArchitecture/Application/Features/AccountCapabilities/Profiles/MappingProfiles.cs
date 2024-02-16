@@ -23,7 +23,12 @@ public class MappingProfiles : Profile
         CreateMap<AccountCapability, DeletedAccountCapabilityResponse>().ReverseMap();
         CreateMap<AccountCapability, GetByIdAccountCapabilityResponse>().ReverseMap();
         CreateMap<AccountCapability, GetListAccountCapabilityListItemDto>().ReverseMap();
-        CreateMap<AccountCapability, GetListByAccountIdAccountCapabilityListItemDto>().ReverseMap();
+        CreateMap<AccountCapability, GetListByAccountIdAccountCapabilityListItemDto>()
+            .ForMember(destinationMember: d=>d.CapabilityName,
+            memberOptions: opt=>opt.MapFrom(ac=>ac.Capability.Name))
+           //.ForMember(destinationMember: d => d.CapabilityName,
+           // memberOptions: opt => opt.MapFrom(ac => ac.Capability.Name))
+            .ReverseMap();
         CreateMap<IPaginate<AccountCapability>, GetListResponse<GetListAccountCapabilityListItemDto>>().ReverseMap();
         CreateMap<IPaginate<AccountCapability>, GetListResponse<GetListByAccountIdAccountCapabilityListItemDto>>().ReverseMap();
     }

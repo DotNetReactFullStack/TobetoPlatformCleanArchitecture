@@ -11,6 +11,7 @@ using MediatR;
 using static Application.Features.AccountCapabilities.Constants.AccountCapabilitiesOperationClaims;
 using System;
 using Application.Features.OperationClaims.Constants;
+using Microsoft.EntityFrameworkCore;
 
 namespace Application.Features.AccountCapabilities.Queries.GetListByAccountId
 {
@@ -45,7 +46,9 @@ namespace Application.Features.AccountCapabilities.Queries.GetListByAccountId
                     predicate: (ac=>ac.AccountId == request.AccountId),
                     index: request.PageRequest.PageIndex,
                     size: request.PageRequest.PageSize,
-                    cancellationToken: cancellationToken
+                    cancellationToken: cancellationToken,
+                    include:ac=>ac.Include(p=>p.Capability)
+                    //.Include(p => p.Capability)
                 );
 
                 GetListResponse<GetListByAccountIdAccountCapabilityListItemDto> response = _mapper.Map<GetListResponse<GetListByAccountIdAccountCapabilityListItemDto>>(accountCapabilities);
