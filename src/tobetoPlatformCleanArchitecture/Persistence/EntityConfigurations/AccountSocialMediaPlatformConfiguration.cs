@@ -30,7 +30,7 @@ public class AccountSocialMediaPlatformConfiguration : IEntityTypeConfiguration<
             new()
             {
                 new AccountSocialMediaPlatform { Id = ++id, AccountId = 1, SocialMediaPlatformId=1, Priority= 1, Link="https://github.com/DotNetReactFullStack" },
-                new AccountSocialMediaPlatform { Id = ++id, AccountId = 1, SocialMediaPlatformId=2, Priority= 2, Link="https://github.com/DotNetReactFullStack" },
+                new AccountSocialMediaPlatform { Id = ++id, AccountId = 1, SocialMediaPlatformId=2, Priority= 2, Link="https://www.linkedin.com/company/github/" },
             };
 
         return seeds;
