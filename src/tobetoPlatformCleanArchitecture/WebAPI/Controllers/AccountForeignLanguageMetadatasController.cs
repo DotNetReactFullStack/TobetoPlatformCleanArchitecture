@@ -1,8 +1,10 @@
+using Application.Features.AccountCapabilities.Queries.GetListByAccountId;
 using Application.Features.AccountForeignLanguageMetadatas.Commands.Create;
 using Application.Features.AccountForeignLanguageMetadatas.Commands.Delete;
 using Application.Features.AccountForeignLanguageMetadatas.Commands.Update;
 using Application.Features.AccountForeignLanguageMetadatas.Queries.GetById;
 using Application.Features.AccountForeignLanguageMetadatas.Queries.GetList;
+using Application.Features.AccountForeignLanguageMetadatas.Queries.GetListByAccountId;
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Microsoft.AspNetCore.Mvc;
@@ -41,6 +43,14 @@ public class AccountForeignLanguageMetadatasController : BaseController
     public async Task<IActionResult> GetById([FromRoute] int id)
     {
         GetByIdAccountForeignLanguageMetadataResponse response = await Mediator.Send(new GetByIdAccountForeignLanguageMetadataQuery { Id = id });
+        return Ok(response);
+    }
+
+    [HttpGet("getByAccountId/{accountId}")]
+    public async Task<IActionResult> GetByAccountId([FromRoute] int accountId, [FromQuery] PageRequest pageRequest)
+    {
+        GetListByAccountIdAccountForeingLanguageMetaDataQuery getListByAccountIdAccountForeingLanguageMetaDataQuery = new() { AccountId = accountId, PageRequest = pageRequest };
+        GetListResponse<GetListByAccountIdAccountForeingLanguageMetaDataItemDto> response = await Mediator.Send(getListByAccountIdAccountForeingLanguageMetaDataQuery);
         return Ok(response);
     }
 

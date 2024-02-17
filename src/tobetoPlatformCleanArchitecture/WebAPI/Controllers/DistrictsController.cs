@@ -47,7 +47,7 @@ public class DistrictsController : BaseController
     }
 
     [HttpGet("getByCityId/{cityId}")]
-    public async Task<IActionResult> GetListByCountryId(int cityId, [FromQuery] PageRequest pageRequest)
+    public async Task<IActionResult> GetListByCountryId([FromRoute] int cityId, [FromQuery] PageRequest pageRequest)
     {
         GetListByCityIdDistrictQuery getListByCityIdDistrictQuery = new() { PageRequest = pageRequest, CityId = cityId };
         GetListResponse<GetListByCityIdDistrictListItemDto> response = await Mediator.Send(getListByCityIdDistrictQuery);

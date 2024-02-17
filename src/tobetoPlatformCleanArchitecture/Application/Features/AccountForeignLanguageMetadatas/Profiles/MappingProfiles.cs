@@ -7,6 +7,8 @@ using AutoMapper;
 using Core.Application.Responses;
 using Domain.Entities;
 using Core.Persistence.Paging;
+using Application.Features.AccountForeignLanguageMetadatas.Queries.GetListByAccountId;
+using Application.Features.AccountCapabilities.Queries.GetListByAccountId;
 
 namespace Application.Features.AccountForeignLanguageMetadatas.Profiles;
 
@@ -21,7 +23,16 @@ public class MappingProfiles : Profile
         CreateMap<AccountForeignLanguageMetadata, DeleteAccountForeignLanguageMetadataCommand>().ReverseMap();
         CreateMap<AccountForeignLanguageMetadata, DeletedAccountForeignLanguageMetadataResponse>().ReverseMap();
         CreateMap<AccountForeignLanguageMetadata, GetByIdAccountForeignLanguageMetadataResponse>().ReverseMap();
-        CreateMap<AccountForeignLanguageMetadata, GetListAccountForeignLanguageMetadataListItemDto>().ReverseMap();
+        CreateMap<AccountForeignLanguageMetadata, GetByIdAccountForeignLanguageMetadataResponse>().ReverseMap();
+        CreateMap<AccountForeignLanguageMetadata, GetListByAccountIdAccountForeingLanguageMetaDataItemDto>().ReverseMap();
+        //CreateMap<AccountForeignLanguageMetadata, GetListByAccountIdAccountForeingLanguageMetaDataItemDto>()
+        //    .ForMember(destinationMember: d => d.ForeignLanguageLevelName,
+        //    memberOptions: opt => opt.MapFrom(fl => fl.ForeignLanguageLevel.Name))
+        //    .ForMember(destinationMember: d => d.ForeingLanguageName,
+        //    memberOptions: opt => opt.MapFrom(fl => fl.ForeignLanguage.Name)).ReverseMap();
         CreateMap<IPaginate<AccountForeignLanguageMetadata>, GetListResponse<GetListAccountForeignLanguageMetadataListItemDto>>().ReverseMap();
+        CreateMap<IPaginate<AccountForeignLanguageMetadata>, GetListResponse<GetListByAccountIdAccountForeingLanguageMetaDataItemDto>>().ReverseMap();
+        
+        
     }
 }

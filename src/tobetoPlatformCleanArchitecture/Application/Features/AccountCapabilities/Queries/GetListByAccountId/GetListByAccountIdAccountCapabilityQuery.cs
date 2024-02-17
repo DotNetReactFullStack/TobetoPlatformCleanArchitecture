@@ -25,7 +25,7 @@ namespace Application.Features.AccountCapabilities.Queries.GetListByAccountId
         public string[] Roles => new[] { Admin, Read, GeneralOperationClaims.Instructor, GeneralOperationClaims.Student };
 
         public bool BypassCache { get; }
-        public string CacheKey => $"GetListByAccountIdAccountCapabilities({PageRequest.PageIndex},{PageRequest.PageSize})";
+        public string CacheKey => $"GetListByAccountId({AccountId})AccountCapabilities({PageRequest.PageIndex},{PageRequest.PageSize})";
         public string CacheGroupKey => "GetAccountCapabilities";
         public TimeSpan? SlidingExpiration { get; }
 

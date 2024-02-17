@@ -3,6 +3,7 @@ using Application.Features.OperationClaims.Constants;
 using Application.Services.Repositories;
 using AutoMapper;
 using Core.Application.Pipelines.Authorization;
+using Core.Application.Pipelines.Caching;
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Core.Persistence.Paging;
@@ -16,12 +17,17 @@ using System.Threading.Tasks;
 using static Application.Features.Districts.Constants.DistrictsOperationClaims;
 
 namespace Application.Features.Districts.Queries.GetListByCityId;
-public class GetListByCityIdDistrictQuery : IRequest<GetListResponse<GetListByCityIdDistrictListItemDto>>, ISecuredRequest
+public class GetListByCityIdDistrictQuery : IRequest<GetListResponse<GetListByCityIdDistrictListItemDto>>, ISecuredRequest, ICachableRequest
 {
     public PageRequest PageRequest { get; set; }
     public int CityId { get; set; }
 
     public string[] Roles => new[] { Admin, Read, GeneralOperationClaims.Instructor, GeneralOperationClaims.Student };
+
+    public bool BypassCache { get; }
+    public string CacheKey => $"GetListByCityId({CityId})Districts({PageRequest.PageIndex},{PageRequest.PageSize})";
+    public string CacheGroupKey => "GetDistricts";
+    public TimeSpan? SlidingExpiration { get; }
 
     public class GetListByCityIdDistrictQueryHandler : IRequestHandler<GetListByCityIdDistrictQuery, GetListResponse<GetListByCityIdDistrictListItemDto>>
     {
