@@ -22,7 +22,10 @@ public class MappingProfiles : Profile
         CreateMap<Experience, DeletedExperienceResponse>().ReverseMap();
         CreateMap<Experience, GetByIdExperienceResponse>().ReverseMap();
         CreateMap<Experience, GetListExperienceListItemDto>().ReverseMap();
-        CreateMap<Experience, GetListByAccountIdExperienceListItemDto>().ReverseMap();
+        CreateMap<Experience, GetListByAccountIdExperienceListItemDto>()
+            .ForMember(destinationMember: d=>d.CityName,
+            memberOptions: opt => opt.MapFrom(e => e.City.Name))
+            .ReverseMap();
         CreateMap<IPaginate<Experience>, GetListResponse<GetListExperienceListItemDto>>().ReverseMap();
         CreateMap<IPaginate<Experience>, GetListResponse<GetListByAccountIdExperienceListItemDto>>().ReverseMap();
     }

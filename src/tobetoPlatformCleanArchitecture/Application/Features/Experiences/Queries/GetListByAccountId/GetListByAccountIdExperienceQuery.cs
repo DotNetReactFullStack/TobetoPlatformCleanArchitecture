@@ -7,6 +7,7 @@ using Core.Application.Requests;
 using Core.Application.Responses;
 using Core.Persistence.Paging;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using static Application.Features.AccountCapabilities.Constants.AccountCapabilitiesOperationClaims;
 
 namespace Application.Features.Experiences.Queries.GetListByAccountId;
@@ -19,7 +20,7 @@ public class GetListByAccountIdExperienceQuery : IRequest<GetListResponse<GetLis
     public string[] Roles => new[] { Admin, Read, GeneralOperationClaims.Instructor, GeneralOperationClaims.Student };
 
     public bool BypassCache { get; }
-    public string CacheKey => $"GetListExperiences({PageRequest.PageIndex},{PageRequest.PageSize})";
+    public string CacheKey => $"GetListByAccountId({AccountId})Experiences({PageRequest.PageIndex},{PageRequest.PageSize})";
     public string CacheGroupKey => "GetExperiences";
     public TimeSpan? SlidingExpiration { get; }
 
@@ -40,7 +41,8 @@ public class GetListByAccountIdExperienceQuery : IRequest<GetListResponse<GetLis
                 predicate: e => e.AccountId == request.AccountId,
                 index: request.PageRequest.PageIndex,
                 size: request.PageRequest.PageSize,
-                cancellationToken: cancellationToken
+                cancellationToken: cancellationToken,
+                include: e => e.Include(e => e.City)
             );
 
             GetListResponse<GetListByAccountIdExperienceListItemDto> response = _mapper.Map<GetListResponse<GetListByAccountIdExperienceListItemDto>>(experiences);

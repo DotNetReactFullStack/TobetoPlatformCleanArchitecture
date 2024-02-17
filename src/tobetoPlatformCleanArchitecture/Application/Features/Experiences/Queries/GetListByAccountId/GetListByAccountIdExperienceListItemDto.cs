@@ -9,8 +9,7 @@ namespace Application.Features.Experiences.Queries.GetListByAccountId;
 public class GetListByAccountIdExperienceListItemDto : IDto
 {
     public int Id { get; set; }
-    public int AccountId { get; set; }
-    public int CityId { get; set; }
+    public string CityName { get; set; }
     public string CompanyName { get; set; }
     public string JobTitle { get; set; }
     public string Industry { get; set; }
