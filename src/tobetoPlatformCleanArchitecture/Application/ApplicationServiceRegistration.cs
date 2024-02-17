@@ -32,7 +32,7 @@ using Application.Services.AccountSocialMediaPlatforms;
 using Application.Services.GraduationStatuses;
 using Application.Services.Colleges;
 using Application.Services.EducationPrograms;
-using Application.Services.AccountCollageMetadatas;
+using Application.Services.AccountCollegeMetadatas;
 using Application.Services.SurveyTypes;
 using Application.Services.Surveys;
 using Application.Services.OrganizationTypes;
@@ -120,7 +120,7 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IGraduationStatusesService, GraduationStatusesManager>();
         services.AddScoped<ICollegesService, CollegesManager>();
         services.AddScoped<IEducationProgramsService, EducationProgramsManager>();
-        services.AddScoped<IAccountCollageMetadatasService, AccountCollageMetadatasManager>();
+        services.AddScoped<IAccountCollegeMetadatasService, AccountCollegeMetadatasManager>();
         services.AddScoped<ISurveyTypesService, SurveyTypesManager>();
         services.AddScoped<ISurveysService, SurveysManager>();
         services.AddScoped<IOrganizationTypesService, OrganizationTypesManager>();

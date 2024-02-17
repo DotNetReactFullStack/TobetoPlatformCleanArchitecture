@@ -26,7 +26,7 @@ namespace Domain.Entities
         public virtual ICollection<AccountCapability> AccountCapabilities { get; set; }
         public virtual ICollection<AccountCertificate> AccountCertificates { get; set; }
         public virtual ICollection<AccountSocialMediaPlatform> AccountSocialMediaPlatforms { get; set; }
-        public virtual ICollection<AccountCollageMetadata> AccountCollageMetadatas { get; set; }
+        public virtual ICollection<AccountCollegeMetadata> AccountCollegeMetadatas { get; set; }
         public virtual ICollection<AccountForeignLanguageMetadata> AccountForeignLanguageMetadatas { get; set; }
         public virtual ICollection<AccountRecourse> AccountRecourses { get; set; }
         public virtual ICollection<AccountExamResult> AccountExamResults { get; set; }

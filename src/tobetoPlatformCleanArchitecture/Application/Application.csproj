@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\Repositories" />
+    <Folder Include="Features\AccountCollegeMetadatas\Queries\GetListByAccountId\" />
     <Folder Include="Dtos\" />
     <Folder Include="Features\Accounts\Queries\GetByUserId\" />
     <Folder Include="Features\AccountCapabilities\Queries\GetListByAccountId\" />

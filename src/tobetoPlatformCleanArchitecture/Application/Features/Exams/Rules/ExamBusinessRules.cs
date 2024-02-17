@@ -1,4 +1,4 @@
-using Application.Features.AccountCollageMetadatas.Constants;
+using Application.Features.AccountCollegeMetadatas.Constants;
 using Application.Features.Exams.Constants;
 using Application.Services.Repositories;
 using Core.Application.Rules;

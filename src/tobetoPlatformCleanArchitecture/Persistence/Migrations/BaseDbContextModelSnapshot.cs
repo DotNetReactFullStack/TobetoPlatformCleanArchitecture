@@ -727,37 +727,37 @@ namespace Persistence.Migrations
                         {
                             Id = 106,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCollageMetadatas.Admin"
+                            Name = "AccountCollegeMetadatas.Admin"
                         },
                         new
                         {
                             Id = 107,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCollageMetadatas.Read"
+                            Name = "AccountCollegeMetadatas.Read"
                         },
                         new
                         {
                             Id = 108,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCollageMetadatas.Write"
+                            Name = "AccountCollegeMetadatas.Write"
                         },
                         new
                         {
                             Id = 109,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCollageMetadatas.Add"
+                            Name = "AccountCollegeMetadatas.Add"
                         },
                         new
                         {
                             Id = 110,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCollageMetadatas.Update"
+                            Name = "AccountCollegeMetadatas.Update"
                         },
                         new
                         {
                             Id = 111,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "AccountCollageMetadatas.Delete"
+                            Name = "AccountCollegeMetadatas.Delete"
                         },
                         new
                         {
@@ -2176,7 +2176,7 @@ namespace Persistence.Migrations
                     b.ToTable("AccountClassrooms", (string)null);
                 });
 
-            modelBuilder.Entity("Domain.Entities.AccountCollageMetadata", b =>
+            modelBuilder.Entity("Domain.Entities.AccountCollegeMetadata", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -2239,7 +2239,7 @@ namespace Persistence.Migrations
 
                     b.HasIndex("GraduationStatusId");
 
-                    b.ToTable("AccountCollageMetadatas", (string)null);
+                    b.ToTable("AccountCollegeMetadatas", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.AccountContract", b =>
@@ -4614,28 +4614,28 @@ namespace Persistence.Migrations
                     b.Navigation("Classroom");
                 });
 
-            modelBuilder.Entity("Domain.Entities.AccountCollageMetadata", b =>
+            modelBuilder.Entity("Domain.Entities.AccountCollegeMetadata", b =>
                 {
                     b.HasOne("Domain.Entities.Account", "Account")
-                        .WithMany("AccountCollageMetadatas")
+                        .WithMany("AccountCollegeMetadatas")
                         .HasForeignKey("AccountId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.College", "College")
-                        .WithMany("AccountCollageMetadatas")
+                        .WithMany("AccountCollegeMetadatas")
                         .HasForeignKey("CollegeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.EducationProgram", "EducationProgram")
-                        .WithMany("AccountCollageMetadatas")
+                        .WithMany("AccountCollegeMetadatas")
                         .HasForeignKey("EducationProgramId")
                         .OnDelete(DeleteBehavior.ClientNoAction)
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.GraduationStatus", "GraduationStatus")
-                        .WithMany("AccountCollageMetadatas")
+                        .WithMany("AccountCollegeMetadatas")
                         .HasForeignKey("GraduationStatusId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -5159,7 +5159,7 @@ namespace Persistence.Migrations
 
                     b.Navigation("AccountClassrooms");
 
-                    b.Navigation("AccountCollageMetadatas");
+                    b.Navigation("AccountCollegeMetadatas");
 
                     b.Navigation("AccountCourses");
 
@@ -5225,7 +5225,7 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.College", b =>
                 {
-                    b.Navigation("AccountCollageMetadatas");
+                    b.Navigation("AccountCollegeMetadatas");
 
                     b.Navigation("EducationPrograms");
                 });
@@ -5263,7 +5263,7 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.EducationProgram", b =>
                 {
-                    b.Navigation("AccountCollageMetadatas");
+                    b.Navigation("AccountCollegeMetadatas");
                 });
 
             modelBuilder.Entity("Domain.Entities.Exam", b =>
@@ -5287,7 +5287,7 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.GraduationStatus", b =>
                 {
-                    b.Navigation("AccountCollageMetadatas");
+                    b.Navigation("AccountCollegeMetadatas");
                 });
 
             modelBuilder.Entity("Domain.Entities.ImageExtension", b =>

@@ -972,7 +972,7 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "AccountCollageMetadatas",
+                name: "AccountCollegeMetadatas",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -991,26 +991,26 @@ namespace Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AccountCollageMetadatas", x => x.Id);
+                    table.PrimaryKey("PK_AccountCollegeMetadatas", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_AccountCollageMetadatas_Accounts_AccountId",
+                        name: "FK_AccountCollegeMetadatas_Accounts_AccountId",
                         column: x => x.AccountId,
                         principalTable: "Accounts",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_AccountCollageMetadatas_Colleges_CollegeId",
+                        name: "FK_AccountCollegeMetadatas_Colleges_CollegeId",
                         column: x => x.CollegeId,
                         principalTable: "Colleges",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_AccountCollageMetadatas_EducationPrograms_EducationProgramId",
+                        name: "FK_AccountCollegeMetadatas_EducationPrograms_EducationProgramId",
                         column: x => x.EducationProgramId,
                         principalTable: "EducationPrograms",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_AccountCollageMetadatas_GraduationStatuses_GraduationStatusId",
+                        name: "FK_AccountCollegeMetadatas_GraduationStatuses_GraduationStatusId",
                         column: x => x.GraduationStatusId,
                         principalTable: "GraduationStatuses",
                         principalColumn: "Id",
@@ -1700,12 +1700,12 @@ namespace Persistence.Migrations
                     { 103, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "EducationPrograms.Add", null },
                     { 104, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "EducationPrograms.Update", null },
                     { 105, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "EducationPrograms.Delete", null },
-                    { 106, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "AccountCollageMetadatas.Admin", null },
-                    { 107, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "AccountCollageMetadatas.Read", null },
-                    { 108, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "AccountCollageMetadatas.Write", null },
-                    { 109, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "AccountCollageMetadatas.Add", null },
-                    { 110, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "AccountCollageMetadatas.Update", null },
-                    { 111, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "AccountCollageMetadatas.Delete", null },
+                    { 106, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "AccountCollegeMetadatas.Admin", null },
+                    { 107, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "AccountCollegeMetadatas.Read", null },
+                    { 108, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "AccountCollegeMetadatas.Write", null },
+                    { 109, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "AccountCollegeMetadatas.Add", null },
+                    { 110, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "AccountCollegeMetadatas.Update", null },
+                    { 111, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "AccountCollegeMetadatas.Delete", null },
                     { 112, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "SurveyTypes.Admin", null },
                     { 113, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "SurveyTypes.Read", null },
                     { 114, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "SurveyTypes.Write", null },
@@ -1911,23 +1911,23 @@ namespace Persistence.Migrations
                 column: "ClassroomId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_AccountCollageMetadatas_AccountId",
-                table: "AccountCollageMetadatas",
+                name: "IX_AccountCollegeMetadatas_AccountId",
+                table: "AccountCollegeMetadatas",
                 column: "AccountId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_AccountCollageMetadatas_CollegeId",
-                table: "AccountCollageMetadatas",
+                name: "IX_AccountCollegeMetadatas_CollegeId",
+                table: "AccountCollegeMetadatas",
                 column: "CollegeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_AccountCollageMetadatas_EducationProgramId",
-                table: "AccountCollageMetadatas",
+                name: "IX_AccountCollegeMetadatas_EducationProgramId",
+                table: "AccountCollegeMetadatas",
                 column: "EducationProgramId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_AccountCollageMetadatas_GraduationStatusId",
-                table: "AccountCollageMetadatas",
+                name: "IX_AccountCollegeMetadatas_GraduationStatusId",
+                table: "AccountCollegeMetadatas",
                 column: "GraduationStatusId");
 
             migrationBuilder.CreateIndex(
@@ -2233,7 +2233,7 @@ namespace Persistence.Migrations
                 name: "AccountClassrooms");
 
             migrationBuilder.DropTable(
-                name: "AccountCollageMetadatas");
+                name: "AccountCollegeMetadatas");
 
             migrationBuilder.DropTable(
                 name: "AccountContracts");
