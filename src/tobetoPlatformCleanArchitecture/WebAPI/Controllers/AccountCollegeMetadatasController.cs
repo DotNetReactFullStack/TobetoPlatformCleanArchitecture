@@ -3,6 +3,7 @@ using Application.Features.AccountCollegeMetadatas.Commands.Delete;
 using Application.Features.AccountCollegeMetadatas.Commands.Update;
 using Application.Features.AccountCollegeMetadatas.Queries.GetById;
 using Application.Features.AccountCollegeMetadatas.Queries.GetList;
+using Application.Features.AccountCollegeMetadatas.Queries.GetListByAccountId;
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Microsoft.AspNetCore.Mvc;
@@ -41,6 +42,14 @@ public class AccountCollegeMetadatasController : BaseController
     public async Task<IActionResult> GetById([FromRoute] int id)
     {
         GetByIdAccountCollegeMetadataResponse response = await Mediator.Send(new GetByIdAccountCollegeMetadataQuery { Id = id });
+        return Ok(response);
+    }
+
+    [HttpGet("getByAccountId/{accountId}")]
+    public async Task<IActionResult> GetList([FromRoute] int accountId, [FromQuery] PageRequest pageRequest)
+    {
+        GetListByAccountIdAccountCollegeMetadataQuery getListByAccountIdAccountCollegeMetadataQuery = new() {AccountId = accountId, PageRequest = pageRequest };
+        GetListResponse<GetListByAccountIdAccountCollegeMetadataListItemDto> response = await Mediator.Send(getListByAccountIdAccountCollegeMetadataQuery);
         return Ok(response);
     }
 
