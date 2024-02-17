@@ -19,5 +19,20 @@ public class AccountCapabilityConfiguration : IEntityTypeConfiguration<AccountCa
         builder.Property(ac => ac.DeletedDate).HasColumnName("DeletedDate");
 
         builder.HasQueryFilter(ac => !ac.DeletedDate.HasValue);
+        builder.HasData(getSeeds());
     }
+    private HashSet<AccountCapability> getSeeds()
+    {
+        int id = 0;
+        HashSet<AccountCapability> seeds =
+            new()
+            {
+                new AccountCapability { Id = ++id, AccountId = 1, CapabilityId=9, Priority= 1 },
+                new AccountCapability { Id = ++id, AccountId = 1, CapabilityId=10, Priority= 2 },
+                new AccountCapability { Id = ++id, AccountId = 1, CapabilityId=3, Priority= 3 },
+            };
+
+        return seeds;
+    }
+
 }
