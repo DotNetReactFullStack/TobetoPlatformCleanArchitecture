@@ -1,24 +1,22 @@
-﻿using Application.Features.Experiences.Queries.GetList;
+﻿using Application.Features.OperationClaims.Constants;
 using Application.Services.Repositories;
 using AutoMapper;
+using Core.Application.Pipelines.Authorization;
+using Core.Application.Pipelines.Caching;
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Core.Persistence.Paging;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using static Application.Features.AccountCapabilities.Constants.AccountCapabilitiesOperationClaims;
 
 namespace Application.Features.Experiences.Queries.GetListByAccountId;
-public class GetListByAccountIdExperienceQuery : IRequest<GetListResponse<GetListByAccountIdExperienceListItemDto>>
+public class GetListByAccountIdExperienceQuery : IRequest<GetListResponse<GetListByAccountIdExperienceListItemDto>>, ISecuredRequest, ICachableRequest
 {
     public int? Id { get; set; }
     public int AccountId { get; set; }
     public PageRequest PageRequest { get; set; }
 
-    //public string[] Roles => new[] { Admin, Read };
+    public string[] Roles => new[] { Admin, Read, GeneralOperationClaims.Instructor, GeneralOperationClaims.Student };
 
     public bool BypassCache { get; }
     public string CacheKey => $"GetListExperiences({PageRequest.PageIndex},{PageRequest.PageSize})";
