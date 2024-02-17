@@ -3,9 +3,9 @@ using Application.Features.Experiences.Commands.Delete;
 using Application.Features.Experiences.Commands.Update;
 using Application.Features.Experiences.Queries.GetById;
 using Application.Features.Experiences.Queries.GetList;
+using Application.Features.Experiences.Queries.GetListByAccountId;
 using AutoMapper;
 using Core.Application.Responses;
-using Domain.Entities;
 using Core.Persistence.Paging;
 
 namespace Application.Features.Experiences.Profiles;
@@ -22,6 +22,8 @@ public class MappingProfiles : Profile
         CreateMap<Experience, DeletedExperienceResponse>().ReverseMap();
         CreateMap<Experience, GetByIdExperienceResponse>().ReverseMap();
         CreateMap<Experience, GetListExperienceListItemDto>().ReverseMap();
+        CreateMap<Experience, GetListByAccountIdExperienceListItemDto>().ReverseMap();
         CreateMap<IPaginate<Experience>, GetListResponse<GetListExperienceListItemDto>>().ReverseMap();
+        CreateMap<IPaginate<Experience>, GetListResponse<GetListByAccountIdExperienceListItemDto>>().ReverseMap();
     }
 }

@@ -3,6 +3,7 @@ using Application.Features.Experiences.Commands.Delete;
 using Application.Features.Experiences.Commands.Update;
 using Application.Features.Experiences.Queries.GetById;
 using Application.Features.Experiences.Queries.GetList;
+using Application.Features.Experiences.Queries.GetListByAccountId;
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Microsoft.AspNetCore.Mvc;
@@ -41,6 +42,15 @@ public class ExperiencesController : BaseController
     public async Task<IActionResult> GetById([FromRoute] int id)
     {
         GetByIdExperienceResponse response = await Mediator.Send(new GetByIdExperienceQuery { Id = id });
+        return Ok(response);
+    }
+
+    
+    [HttpGet("getByAccountId/{accountId}")]
+    public async Task<IActionResult> GetList([FromRoute] int accountId, [FromQuery] PageRequest pageRequest)
+    {
+        GetListByAccountIdExperienceQuery getListByAccountIdExperienceQuery = new() {AccountId = accountId ,PageRequest = pageRequest };
+        GetListResponse<GetListByAccountIdExperienceListItemDto> response = await Mediator.Send(getListByAccountIdExperienceQuery);
         return Ok(response);
     }
 

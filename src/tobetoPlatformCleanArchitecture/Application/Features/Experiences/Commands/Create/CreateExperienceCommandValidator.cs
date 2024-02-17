@@ -15,7 +15,7 @@ public class CreateExperienceCommandValidator : AbstractValidator<CreateExperien
         RuleFor(c => c.Industry).NotEmpty();
         RuleFor(c => c.Industry).MaximumLength(30);
         RuleFor(c => c.StartingDate).NotEmpty();
-        RuleFor(c => c.IsCurrentlyWorking).NotEmpty();
+        RuleFor(c => c.IsCurrentlyWorking).NotNull();
         RuleFor(c => c.Description).MaximumLength(300);
         RuleFor(c => c.IsActive).NotNull();
     }
