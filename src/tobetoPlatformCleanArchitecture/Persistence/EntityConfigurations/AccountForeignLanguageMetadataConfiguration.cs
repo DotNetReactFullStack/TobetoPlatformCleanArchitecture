@@ -31,10 +31,8 @@ public class AccountForeignLanguageMetadataConfiguration : IEntityTypeConfigurat
             {
                 new AccountForeignLanguageMetadata { Id = ++id, AccountId = 1, ForeignLanguageId=1, ForeignLanguageLevelId=1, Priority= 1 },
                 new AccountForeignLanguageMetadata { Id = ++id, AccountId = 1, ForeignLanguageId=2, ForeignLanguageLevelId=2, Priority= 2 },
-                new AccountForeignLanguageMetadata { Id = ++id, AccountId = 1, ForeignLanguageId=3, ForeignLanguageLevelId=1, Priority= 3 },              
+                new AccountForeignLanguageMetadata { Id = ++id, AccountId = 1, ForeignLanguageId=3, ForeignLanguageLevelId=1, Priority= 3 },
             };
-
         return seeds;
     }
-
 }

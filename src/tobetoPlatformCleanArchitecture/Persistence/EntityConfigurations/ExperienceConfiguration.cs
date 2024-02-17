@@ -36,9 +36,9 @@ public class ExperienceConfiguration : IEntityTypeConfiguration<Experience>
         HashSet<Experience> seeds =
             new()
             {
-                new Experience { Id = ++id, AccountId = 1, CityId = 1, CompanyName =  "Amazon", JobTitle = "Back-End Developer", Industry = "Yazýlým" , StartingDate = new DateTime(2020, 1, 2), EndingDate = new DateTime(2021, 1, 3), IsCurrentlyWorking = false, Description = "Amazon iþ açýklamasý", IsActive = true},
-                new Experience { Id = ++id, AccountId = 1, CityId = 2, CompanyName =  "Google", JobTitle = "Front-End Developer", Industry = "Yazýlým" , StartingDate = new DateTime(2021, 2, 5), EndingDate = new DateTime(2022, 2, 8), IsCurrentlyWorking = false, Description = "Google iþ açýklamasý", IsActive = true},
-                new Experience { Id = ++id, AccountId = 1, CityId = 3, CompanyName =  "Microsoft", JobTitle = "Full-Stack Developer", Industry = "Yazýlým" , StartingDate = new DateTime(2022, 2, 10), EndingDate = null, IsCurrentlyWorking = true, Description = "Microsoft iþ açýklamasý", IsActive = true},
+                new Experience { Id = ++id, AccountId = 1, CityId = 1, CompanyName =  "Amazon", JobTitle = "Back-End Developer", Industry = "YazÄ±lÄ±m" , StartingDate = new DateTime(2020, 1, 2), EndingDate = new DateTime(2021, 1, 3), IsCurrentlyWorking = false, Description = "Amazon iÅŸ aÃ§Ä±klamasÄ±", IsActive = true},
+                new Experience { Id = ++id, AccountId = 1, CityId = 2, CompanyName =  "Google", JobTitle = "Front-End Developer", Industry = "YazÄ±lÄ±m" , StartingDate = new DateTime(2021, 2, 5), EndingDate = new DateTime(2022, 2, 8), IsCurrentlyWorking = false, Description = "Google iÅŸ aÃ§Ä±klamasÄ±", IsActive = true},
+                new Experience { Id = ++id, AccountId = 1, CityId = 3, CompanyName =  "Microsoft", JobTitle = "Full-Stack Developer", Industry = "YazÄ±lÄ±m" , StartingDate = new DateTime(2022, 2, 10), EndingDate = null, IsCurrentlyWorking = true, Description = "Microsoft iÅŸ aÃ§Ä±klamasÄ±", IsActive = true},
 
             };
         return seeds;
