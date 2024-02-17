@@ -24,8 +24,12 @@ public class MappingProfiles : Profile
         CreateMap<District, DeletedDistrictResponse>().ReverseMap();
         CreateMap<District, GetByIdDistrictResponse>().ReverseMap();
         CreateMap<District, GetListDistrictListItemDto>().ReverseMap();
+        //CreateMap<District, GetListByCityIdDistrictListItemDto>().ReverseMap();
         CreateMap<IPaginate<District>, GetListResponse<GetListDistrictListItemDto>>().ReverseMap();
-        CreateMap<District, GetListByCityIdDistrictListItemDto>().ReverseMap();
+
+        CreateMap<District, GetListByCityIdDistrictListItemDto>().
+            ForMember(destinationMember: d => d.DistrictName,
+            memberOptions: opt => opt.MapFrom(d => d.Name)).ReverseMap();
         CreateMap<IPaginate<District>, GetListResponse<GetListByCityIdDistrictListItemDto>>().ReverseMap();
     }
 }

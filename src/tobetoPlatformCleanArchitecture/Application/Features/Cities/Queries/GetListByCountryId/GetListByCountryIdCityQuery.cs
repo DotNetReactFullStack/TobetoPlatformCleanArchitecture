@@ -3,6 +3,7 @@ using Application.Features.OperationClaims.Constants;
 using Application.Services.Repositories;
 using AutoMapper;
 using Core.Application.Pipelines.Authorization;
+using Core.Application.Pipelines.Caching;
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Core.Persistence.Paging;
@@ -17,12 +18,17 @@ using System.Threading.Tasks;
 using static Application.Features.Cities.Constants.CitiesOperationClaims;
 
 namespace Application.Features.Cities.Queries.GetListByCountryId;
-public class GetListByCountryIdCityQuery : IRequest<GetListResponse<GetListByCountryIdCityListItemDto>>, ISecuredRequest
+public class GetListByCountryIdCityQuery : IRequest<GetListResponse<GetListByCountryIdCityListItemDto>>, ISecuredRequest, ICachableRequest
 {
     public PageRequest PageRequest { get; set; }
     public int CountryId { get; set; }
 
     public string[] Roles => new[] { Admin, Read, GeneralOperationClaims.Instructor, GeneralOperationClaims.Student };
+
+    public bool BypassCache { get; }
+    public string CacheKey => $"GetListByCountryId({CountryId})Cities({PageRequest.PageIndex},{PageRequest.PageSize})";
+    public string CacheGroupKey => "GetCities";
+    public TimeSpan? SlidingExpiration { get; }
 
     public class GetListByCountryIdCityQueryHandler : IRequestHandler<GetListByCountryIdCityQuery, GetListResponse<GetListByCountryIdCityListItemDto>>
     {
