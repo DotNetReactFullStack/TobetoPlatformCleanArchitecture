@@ -38,22 +38,22 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         List<User> users = new();
 
         HashingHelper.CreatePasswordHash(
-            password: "Passw0rd",
+            password: "password",
             passwordHash: out byte[] passwordHash,
             passwordSalt: out byte[] passwordSalt
         );
-        User adminUser =
+        User testUser =
             new()
             {
                 Id = 1,
-                FirstName = "Admin",
-                LastName = "NArchitecture",
-                Email = "admin@admin.com",
+                FirstName = "Test",
+                LastName = "User",
+                Email = "test@user.net",
                 Status = true,
                 PasswordHash = passwordHash,
                 PasswordSalt = passwordSalt
             };
-        //users.Add(adminUser);
+        users.Add(testUser);
 
         return users.ToArray();
     }

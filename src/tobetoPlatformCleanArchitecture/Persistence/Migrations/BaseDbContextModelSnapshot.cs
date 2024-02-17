@@ -1895,6 +1895,20 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AuthenticatorType = 0,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "test@user.net",
+                            FirstName = "Test",
+                            LastName = "User",
+                            PasswordHash = new byte[] { 216, 19, 23, 87, 96, 247, 114, 211, 136, 61, 62, 124, 40, 87, 124, 153, 108, 8, 248, 247, 73, 111, 221, 136, 69, 180, 188, 183, 43, 175, 18, 114, 117, 0, 30, 209, 75, 96, 67, 44, 240, 63, 71, 176, 107, 237, 159, 230, 140, 207, 33, 31, 157, 239, 16, 172, 27, 25, 72, 249, 184, 246, 85, 225 },
+                            PasswordSalt = new byte[] { 214, 78, 39, 207, 27, 91, 170, 138, 141, 35, 206, 17, 19, 136, 221, 105, 179, 44, 217, 31, 3, 175, 58, 110, 125, 7, 180, 159, 72, 59, 93, 140, 136, 51, 85, 156, 25, 130, 30, 34, 222, 107, 29, 2, 22, 95, 198, 237, 253, 32, 146, 119, 196, 156, 33, 229, 211, 181, 30, 150, 126, 73, 177, 93, 104, 164, 119, 26, 231, 160, 113, 44, 94, 252, 205, 208, 19, 23, 222, 150, 59, 41, 228, 187, 252, 53, 130, 100, 160, 112, 210, 44, 154, 226, 143, 3, 15, 196, 84, 193, 103, 66, 213, 0, 36, 48, 184, 239, 228, 80, 245, 19, 206, 234, 121, 194, 254, 232, 188, 193, 99, 194, 139, 83, 9, 66, 189, 74 },
+                            Status = true
+                        });
                 });
 
             modelBuilder.Entity("Core.Security.Entities.UserOperationClaim", b =>
@@ -1938,6 +1952,15 @@ namespace Persistence.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("UserOperationClaims", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            OperationClaimId = 3,
+                            UserId = 1
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.Account", b =>
@@ -2006,6 +2029,21 @@ namespace Persistence.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Accounts", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AboutMe = "About me",
+                            BirthDate = new DateTime(1990, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsActive = true,
+                            NationalIdentificationNumber = "11111111110",
+                            PhoneNumber = "555 555 55 55",
+                            ProfileLinkUrl = "/",
+                            ShareProfile = false,
+                            UserId = 1
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.AccountAnnouncement", b =>
@@ -2090,6 +2128,32 @@ namespace Persistence.Migrations
                     b.HasIndex("CapabilityId");
 
                     b.ToTable("AccountCapabilities", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AccountId = 1,
+                            CapabilityId = 9,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Priority = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AccountId = 1,
+                            CapabilityId = 10,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Priority = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AccountId = 1,
+                            CapabilityId = 3,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Priority = 3
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.AccountCertificate", b =>
@@ -2240,6 +2304,46 @@ namespace Persistence.Migrations
                     b.HasIndex("GraduationStatusId");
 
                     b.ToTable("AccountCollegeMetadatas", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AccountId = 1,
+                            CollegeId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EducationProgramId = 1,
+                            GraduationStatusId = 1,
+                            GraduationYear = new DateTime(2019, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ProgramOnGoing = false,
+                            StartingYear = new DateTime(2014, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AccountId = 1,
+                            CollegeId = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EducationProgramId = 2,
+                            GraduationStatusId = 3,
+                            GraduationYear = new DateTime(2021, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ProgramOnGoing = false,
+                            StartingYear = new DateTime(2019, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AccountId = 1,
+                            CollegeId = 3,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EducationProgramId = 3,
+                            GraduationStatusId = 4,
+                            ProgramOnGoing = true,
+                            StartingYear = new DateTime(2021, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Visibility = true
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.AccountContract", b =>
@@ -2430,6 +2534,35 @@ namespace Persistence.Migrations
                     b.HasIndex("ForeignLanguageLevelId");
 
                     b.ToTable("AccountForeignLanguageMetadatas", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AccountId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ForeignLanguageId = 1,
+                            ForeignLanguageLevelId = 1,
+                            Priority = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AccountId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ForeignLanguageId = 2,
+                            ForeignLanguageLevelId = 2,
+                            Priority = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AccountId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ForeignLanguageId = 3,
+                            ForeignLanguageLevelId = 1,
+                            Priority = 3
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.AccountLearningPath", b =>
@@ -2677,6 +2810,26 @@ namespace Persistence.Migrations
                     b.HasIndex("SocialMediaPlatformId");
 
                     b.ToTable("AccountSocialMediaPlatforms", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AccountId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Link = "https://github.com/DotNetReactFullStack",
+                            Priority = 1,
+                            SocialMediaPlatformId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AccountId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Link = "https://www.linkedin.com/company/github/",
+                            Priority = 2,
+                            SocialMediaPlatformId = 2
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.Address", b =>
@@ -2912,6 +3065,176 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Capabilities", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "SOLID",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "AOP",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "OOP",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "TypeScript",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "JavaScript",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Vue.js",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "React",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Angular",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = ".NET",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "C#",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Spring Boot",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Java",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 13,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "J2EE",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 14,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "C++",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 15,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "C",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 16,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "STM32",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 17,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "CSS",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 18,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Tailwind CSS",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 19,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Bootstrap",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 20,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "EF Core",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 21,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "SQL",
+                            Priority = 1,
+                            Visibility = true
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.Certificate", b =>
@@ -2997,6 +3320,89 @@ namespace Persistence.Migrations
                     b.HasIndex("CountryId");
 
                     b.ToTable("Cities", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CountryId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "İstanbul",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CountryId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Bursa",
+                            Priority = 2,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CountryId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Ankara",
+                            Priority = 3,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CountryId = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Londra",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CountryId = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Liverpool",
+                            Priority = 2,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CountryId = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Manchester",
+                            Priority = 3,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CountryId = 3,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Roma",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CountryId = 3,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Floransa",
+                            Priority = 2,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CountryId = 3,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Torino",
+                            Priority = 3,
+                            Visibility = true
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.Classroom", b =>
@@ -3113,6 +3519,78 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Colleges", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Anadolu Üniversitesi",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Beykoz Üniversitesi",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Düzce Üniversitesi",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "İstanbul Teknik Üniversitesi",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Orta Doğu Teknik Üniversitesi",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Bursa Uludağ Üniversitesi",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Boğaziçi Üniversitesi",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Hacettepe Üniversitesi",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "İstanbul Üniversitesi",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Gazi Üniversitesi",
+                            Visibility = true
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.Contract", b =>
@@ -3233,6 +3711,32 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Countries", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Türkiye",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "İngiltere",
+                            Priority = 2,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "İtalya",
+                            Priority = 3,
+                            Visibility = true
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.Course", b =>
@@ -3408,6 +3912,251 @@ namespace Persistence.Migrations
                     b.HasIndex("CityId");
 
                     b.ToTable("Districts", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CityId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Kadiköy",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CityId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Bakırköy",
+                            Priority = 2,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CityId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Tuzla",
+                            Priority = 3,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CityId = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Osmangazi",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CityId = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Nilüfer",
+                            Priority = 2,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CityId = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "İnegöl",
+                            Priority = 3,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CityId = 3,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Çankaya",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CityId = 3,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Etimesgut",
+                            Priority = 2,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CityId = 3,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Yenimahalle",
+                            Priority = 3,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CityId = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Chelsea",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CityId = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Kensington",
+                            Priority = 2,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CityId = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Fulham",
+                            Priority = 3,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 13,
+                            CityId = 5,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Ropewalks",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 14,
+                            CityId = 5,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Chinatown",
+                            Priority = 2,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 15,
+                            CityId = 5,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Lark Lane",
+                            Priority = 3,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 16,
+                            CityId = 6,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Trafford",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 17,
+                            CityId = 6,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Tameside",
+                            Priority = 2,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 18,
+                            CityId = 6,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Bolton",
+                            Priority = 3,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 19,
+                            CityId = 7,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Pomezia",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 20,
+                            CityId = 7,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Anzio",
+                            Priority = 2,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 21,
+                            CityId = 7,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Fiumicino",
+                            Priority = 3,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 22,
+                            CityId = 8,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Scandicci",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 23,
+                            CityId = 8,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Empoli",
+                            Priority = 2,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 24,
+                            CityId = 8,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Signa",
+                            Priority = 3,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 25,
+                            CityId = 9,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Moncalieri",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 26,
+                            CityId = 9,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Rivoli",
+                            Priority = 2,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 27,
+                            CityId = 9,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Chieri",
+                            Priority = 3,
+                            Visibility = true
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.EducationProgram", b =>
@@ -3449,6 +4198,176 @@ namespace Persistence.Migrations
                     b.HasIndex("CollegeId");
 
                     b.ToTable("EducationPrograms", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CollegeId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Matematik",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CollegeId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Bilgisayar Mühendisliği",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CollegeId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Elektrik-Elektronik Mühendisliği",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CollegeId = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Endüstri Mühendisliği",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CollegeId = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Kimya",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CollegeId = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Makine Mühendisliği",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CollegeId = 3,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "İnşaat Mühendisliği",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CollegeId = 3,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Gıda Mühendisliği",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CollegeId = 3,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Yazılım Mühendisliği",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CollegeId = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "İngilizce Öğretmenliği",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CollegeId = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "İşletme",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CollegeId = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Elektrik-Elektronik Mühendisliği",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 13,
+                            CollegeId = 5,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Matematik",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 14,
+                            CollegeId = 5,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Ekonometri",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 15,
+                            CollegeId = 5,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Mimarlık",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 16,
+                            CollegeId = 6,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Biyoloji",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 17,
+                            CollegeId = 6,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Tarih",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 18,
+                            CollegeId = 6,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Tıp",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 19,
+                            CollegeId = 7,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Türkçe Öğretmenliği",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 20,
+                            CollegeId = 7,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Uluslararası İlişkiler",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 21,
+                            CollegeId = 7,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Veterinerlik",
+                            Visibility = true
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.Exam", b =>
@@ -3590,6 +4509,48 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ForeignLanguages", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Türkçe",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "İngilizce",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Almanca",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Japonca",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Fransızca",
+                            Priority = 1,
+                            Visibility = true
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.ForeignLanguageLevel", b =>
@@ -3629,6 +4590,40 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ForeignLanguageLevels", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Temel Seviye (A1, A2)",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Orta Seviye (B1, B2)",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "İleri Seviye (C1, C2)",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Anadil",
+                            Priority = 1,
+                            Visibility = true
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.GraduationStatus", b =>
@@ -3668,6 +4663,40 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("GraduationStatuses", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Lisans",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Ön Lisans",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Yüksek Lisans",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Doktora",
+                            Priority = 1,
+                            Visibility = true
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.Image", b =>
@@ -4288,6 +5317,44 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("SocialMediaPlatforms", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IconPath = "bi bi-github",
+                            Name = "Github",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IconPath = "bi bi-linkedin",
+                            Name = "Linkedin",
+                            Priority = 2,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IconPath = "bi bi-instagram",
+                            Name = "Instagram",
+                            Priority = 3,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IconPath = "bi bi-twitter",
+                            Name = "Twitter",
+                            Priority = 4,
+                            Visibility = true
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.Survey", b =>
@@ -4469,6 +5536,52 @@ namespace Persistence.Migrations
                     b.HasIndex("CityId");
 
                     b.ToTable("Experiences", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AccountId = 1,
+                            CityId = 1,
+                            CompanyName = "Amazon",
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Amazon iş açıklaması",
+                            EndingDate = new DateTime(2021, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Industry = "Yazılım",
+                            IsActive = true,
+                            IsCurrentlyWorking = false,
+                            JobTitle = "Back-End Developer",
+                            StartingDate = new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AccountId = 1,
+                            CityId = 2,
+                            CompanyName = "Google",
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Google iş açıklaması",
+                            EndingDate = new DateTime(2022, 2, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Industry = "Yazılım",
+                            IsActive = true,
+                            IsCurrentlyWorking = false,
+                            JobTitle = "Front-End Developer",
+                            StartingDate = new DateTime(2021, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AccountId = 1,
+                            CityId = 3,
+                            CompanyName = "Microsoft",
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Microsoft iş açıklaması",
+                            Industry = "Yazılım",
+                            IsActive = true,
+                            IsCurrentlyWorking = true,
+                            JobTitle = "Full-Stack Developer",
+                            StartingDate = new DateTime(2022, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        });
                 });
 
             modelBuilder.Entity("Core.Security.Entities.EmailAuthenticator", b =>
