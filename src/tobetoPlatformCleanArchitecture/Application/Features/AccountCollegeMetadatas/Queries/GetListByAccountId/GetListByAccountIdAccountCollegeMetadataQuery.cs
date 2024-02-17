@@ -8,6 +8,7 @@ using Core.Application.Responses;
 using Core.Persistence.Paging;
 using Domain.Entities;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using static Application.Features.AccountCapabilities.Constants.AccountCapabilitiesOperationClaims;
 
 namespace Application.Features.AccountCollegeMetadatas.Queries.GetListByAccountId;
@@ -41,7 +42,10 @@ public class GetListByAccountIdAccountCollegeMetadataQuery : IRequest<GetListRes
                 predicate: acm => acm.AccountId == request.AccountId,
                 index: request.PageRequest.PageIndex,
                 size: request.PageRequest.PageSize,
-                cancellationToken: cancellationToken
+                cancellationToken: cancellationToken,
+                include: acm => acm.Include(acm => acm.GraduationStatus)
+                .Include(acm => acm.College)
+                .Include(acm => acm.EducationProgram)
             );
 
             GetListResponse<GetListByAccountIdAccountCollegeMetadataListItemDto> response = _mapper.Map<GetListResponse<GetListByAccountIdAccountCollegeMetadataListItemDto>>(accountCollegeMetadatas);

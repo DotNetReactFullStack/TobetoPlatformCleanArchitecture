@@ -9,9 +9,9 @@ namespace Application.Features.AccountCollegeMetadatas.Queries.GetListByAccountI
 public class GetListByAccountIdAccountCollegeMetadataListItemDto : IDto
 {
     public int Id { get; set; }
-    public int GraduationStatusId { get; set; }
-    public int CollegeId { get; set; }
-    public int EducationProgramId { get; set; }
+    public string GraduationStatusName{ get; set; }
+    public string CollegeName { get; set; }
+    public string EducationProgramName { get; set; }
     public bool Visibility { get; set; }
     public DateTime StartingYear { get; set; }
     public DateTime? GraduationYear { get; set; }

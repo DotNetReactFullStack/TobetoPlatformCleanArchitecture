@@ -23,7 +23,14 @@ public class MappingProfiles : Profile
         CreateMap<AccountCollegeMetadata, DeletedAccountCollegeMetadataResponse>().ReverseMap();
         CreateMap<AccountCollegeMetadata, GetByIdAccountCollegeMetadataResponse>().ReverseMap();
         CreateMap<AccountCollegeMetadata, GetListAccountCollegeMetadataListItemDto>().ReverseMap();
-        CreateMap<AccountCollegeMetadata, GetListByAccountIdAccountCollegeMetadataListItemDto>().ReverseMap();
+        CreateMap<AccountCollegeMetadata, GetListByAccountIdAccountCollegeMetadataListItemDto>()
+            .ForMember(destinationMember: d => d.GraduationStatusName,
+            memberOptions: opt => opt.MapFrom(acm => acm.GraduationStatus.Name))
+            .ForMember(destinationMember: d => d.CollegeName,
+            memberOptions: opt => opt.MapFrom(acm => acm.College.Name))
+            .ForMember(destinationMember: d => d.EducationProgramName,
+            memberOptions: opt => opt.MapFrom(acm => acm.EducationProgram.Name))
+            .ReverseMap();
         CreateMap<IPaginate<AccountCollegeMetadata>, GetListResponse<GetListAccountCollegeMetadataListItemDto>>().ReverseMap();
         CreateMap<IPaginate<AccountCollegeMetadata>, GetListResponse<GetListByAccountIdAccountCollegeMetadataListItemDto>>().ReverseMap();
     }
