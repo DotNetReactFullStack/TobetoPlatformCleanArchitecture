@@ -1591,6 +1591,95 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "Capabilities",
+                columns: new[] { "Id", "CreatedDate", "DeletedDate", "Name", "Priority", "UpdatedDate", "Visibility" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "SOLID", 1, null, true },
+                    { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "AOP", 1, null, true },
+                    { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "OOP", 1, null, true },
+                    { 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "TypeScript", 1, null, true },
+                    { 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "JavaScript", 1, null, true },
+                    { 6, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Vue.js", 1, null, true },
+                    { 7, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "React", 1, null, true },
+                    { 8, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Angular", 1, null, true },
+                    { 9, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, ".NET", 1, null, true },
+                    { 10, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "C#", 1, null, true },
+                    { 11, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Spring Boot", 1, null, true },
+                    { 12, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Java", 1, null, true },
+                    { 13, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "J2EE", 1, null, true },
+                    { 14, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "C++", 1, null, true },
+                    { 15, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "C", 1, null, true },
+                    { 16, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "STM32", 1, null, true },
+                    { 17, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "CSS", 1, null, true },
+                    { 18, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Tailwind CSS", 1, null, true },
+                    { 19, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Bootstrap", 1, null, true },
+                    { 20, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "EF Core", 1, null, true },
+                    { 21, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "SQL", 1, null, true }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Colleges",
+                columns: new[] { "Id", "CreatedDate", "DeletedDate", "Name", "UpdatedDate", "Visibility" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Anadolu Üniversitesi", null, true },
+                    { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Beykoz Üniversitesi", null, true },
+                    { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Düzce Üniversitesi", null, true },
+                    { 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "İstanbul Teknik Üniversitesi", null, true },
+                    { 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Orta Doğu Teknik Üniversitesi", null, true },
+                    { 6, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Bursa Uludağ Üniversitesi", null, true },
+                    { 7, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Boğaziçi Üniversitesi", null, true },
+                    { 8, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Hacettepe Üniversitesi", null, true },
+                    { 9, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "İstanbul Üniversitesi", null, true },
+                    { 10, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Gazi Üniversitesi", null, true }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Countries",
+                columns: new[] { "Id", "CreatedDate", "DeletedDate", "Name", "Priority", "UpdatedDate", "Visibility" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Türkiye", 1, null, true },
+                    { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "İngiltere", 2, null, true },
+                    { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "İtalya", 3, null, true }
+                });
+
+            migrationBuilder.InsertData(
+                table: "ForeignLanguageLevels",
+                columns: new[] { "Id", "CreatedDate", "DeletedDate", "Name", "Priority", "UpdatedDate", "Visibility" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Temel Seviye (A1, A2)", 1, null, true },
+                    { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Orta Seviye (B1, B2)", 1, null, true },
+                    { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "İleri Seviye (C1, C2)", 1, null, true },
+                    { 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Anadil", 1, null, true }
+                });
+
+            migrationBuilder.InsertData(
+                table: "ForeignLanguages",
+                columns: new[] { "Id", "CreatedDate", "DeletedDate", "Name", "Priority", "UpdatedDate", "Visibility" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Türkçe", 1, null, true },
+                    { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "İngilizce", 1, null, true },
+                    { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Almanca", 1, null, true },
+                    { 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Japonca", 1, null, true },
+                    { 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Fransızca", 1, null, true }
+                });
+
+            migrationBuilder.InsertData(
+                table: "GraduationStatuses",
+                columns: new[] { "Id", "CreatedDate", "DeletedDate", "Name", "Priority", "UpdatedDate", "Visibility" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Lisans", 1, null, true },
+                    { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Ön Lisans", 1, null, true },
+                    { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Yüksek Lisans", 1, null, true },
+                    { 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Doktora", 1, null, true }
+                });
+
+            migrationBuilder.InsertData(
                 table: "OperationClaims",
                 columns: new[] { "Id", "CreatedDate", "DeletedDate", "Name", "UpdatedDate" },
                 values: new object[,]
@@ -1868,6 +1957,159 @@ namespace Persistence.Migrations
                     { 271, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "AccountAnnouncements.Add", null },
                     { 272, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "AccountAnnouncements.Update", null },
                     { 273, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "AccountAnnouncements.Delete", null }
+                });
+
+            migrationBuilder.InsertData(
+                table: "SocialMediaPlatforms",
+                columns: new[] { "Id", "CreatedDate", "DeletedDate", "IconPath", "Name", "Priority", "UpdatedDate", "Visibility" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "bi bi-github", "Github", 1, null, true },
+                    { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "bi bi-linkedin", "Linkedin", 2, null, true },
+                    { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "bi bi-instagram", "Instagram", 3, null, true },
+                    { 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "bi bi-twitter", "Twitter", 4, null, true }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "AuthenticatorType", "CreatedDate", "DeletedDate", "Email", "FirstName", "LastName", "PasswordHash", "PasswordSalt", "Status", "UpdatedDate" },
+                values: new object[] { 1, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "test@user.net", "Test", "User", new byte[] { 216, 19, 23, 87, 96, 247, 114, 211, 136, 61, 62, 124, 40, 87, 124, 153, 108, 8, 248, 247, 73, 111, 221, 136, 69, 180, 188, 183, 43, 175, 18, 114, 117, 0, 30, 209, 75, 96, 67, 44, 240, 63, 71, 176, 107, 237, 159, 230, 140, 207, 33, 31, 157, 239, 16, 172, 27, 25, 72, 249, 184, 246, 85, 225 }, new byte[] { 214, 78, 39, 207, 27, 91, 170, 138, 141, 35, 206, 17, 19, 136, 221, 105, 179, 44, 217, 31, 3, 175, 58, 110, 125, 7, 180, 159, 72, 59, 93, 140, 136, 51, 85, 156, 25, 130, 30, 34, 222, 107, 29, 2, 22, 95, 198, 237, 253, 32, 146, 119, 196, 156, 33, 229, 211, 181, 30, 150, 126, 73, 177, 93, 104, 164, 119, 26, 231, 160, 113, 44, 94, 252, 205, 208, 19, 23, 222, 150, 59, 41, 228, 187, 252, 53, 130, 100, 160, 112, 210, 44, 154, 226, 143, 3, 15, 196, 84, 193, 103, 66, 213, 0, 36, 48, 184, 239, 228, 80, 245, 19, 206, 234, 121, 194, 254, 232, 188, 193, 99, 194, 139, 83, 9, 66, 189, 74 }, true, null });
+
+            migrationBuilder.InsertData(
+                table: "Accounts",
+                columns: new[] { "Id", "AboutMe", "BirthDate", "CreatedDate", "DeletedDate", "IsActive", "NationalIdentificationNumber", "PhoneNumber", "ProfileLinkUrl", "ProfilePhotoPath", "ShareProfile", "UpdatedDate", "UserId" },
+                values: new object[] { 1, "About me", new DateTime(1990, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "11111111110", "555 555 55 55", "/", null, false, null, 1 });
+
+            migrationBuilder.InsertData(
+                table: "Cities",
+                columns: new[] { "Id", "CountryId", "CreatedDate", "DeletedDate", "Name", "Priority", "UpdatedDate", "Visibility" },
+                values: new object[,]
+                {
+                    { 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "İstanbul", 1, null, true },
+                    { 2, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Bursa", 2, null, true },
+                    { 3, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Ankara", 3, null, true },
+                    { 4, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Londra", 1, null, true },
+                    { 5, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Liverpool", 2, null, true },
+                    { 6, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Manchester", 3, null, true },
+                    { 7, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Roma", 1, null, true },
+                    { 8, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Floransa", 2, null, true },
+                    { 9, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Torino", 3, null, true }
+                });
+
+            migrationBuilder.InsertData(
+                table: "EducationPrograms",
+                columns: new[] { "Id", "CollegeId", "CreatedDate", "DeletedDate", "Name", "UpdatedDate", "Visibility" },
+                values: new object[,]
+                {
+                    { 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Matematik", null, true },
+                    { 2, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Bilgisayar Mühendisliği", null, true },
+                    { 3, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Elektrik-Elektronik Mühendisliği", null, true },
+                    { 4, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Endüstri Mühendisliği", null, true },
+                    { 5, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Kimya", null, true },
+                    { 6, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Makine Mühendisliği", null, true },
+                    { 7, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "İnşaat Mühendisliği", null, true },
+                    { 8, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Gıda Mühendisliği", null, true },
+                    { 9, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Yazılım Mühendisliği", null, true },
+                    { 10, 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "İngilizce Öğretmenliği", null, true },
+                    { 11, 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "İşletme", null, true },
+                    { 12, 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Elektrik-Elektronik Mühendisliği", null, true },
+                    { 13, 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Matematik", null, true },
+                    { 14, 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Ekonometri", null, true },
+                    { 15, 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Mimarlık", null, true },
+                    { 16, 6, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Biyoloji", null, true },
+                    { 17, 6, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Tarih", null, true },
+                    { 18, 6, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Tıp", null, true },
+                    { 19, 7, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Türkçe Öğretmenliği", null, true },
+                    { 20, 7, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Uluslararası İlişkiler", null, true },
+                    { 21, 7, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Veterinerlik", null, true }
+                });
+
+            migrationBuilder.InsertData(
+                table: "UserOperationClaims",
+                columns: new[] { "Id", "AccountId", "CreatedDate", "DeletedDate", "OperationClaimId", "UpdatedDate", "UserId" },
+                values: new object[] { 1, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 3, null, 1 });
+
+            migrationBuilder.InsertData(
+                table: "AccountCapabilities",
+                columns: new[] { "Id", "AccountId", "CapabilityId", "CreatedDate", "DeletedDate", "Priority", "UpdatedDate" },
+                values: new object[,]
+                {
+                    { 1, 1, 9, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, null },
+                    { 2, 1, 10, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 2, null },
+                    { 3, 1, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 3, null }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AccountCollegeMetadatas",
+                columns: new[] { "Id", "AccountId", "CollegeId", "CreatedDate", "DeletedDate", "EducationProgramId", "GraduationStatusId", "GraduationYear", "ProgramOnGoing", "StartingYear", "UpdatedDate", "Visibility" },
+                values: new object[,]
+                {
+                    { 1, 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, 1, new DateTime(2019, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), false, new DateTime(2014, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true },
+                    { 2, 1, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 2, 3, new DateTime(2021, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), false, new DateTime(2019, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true },
+                    { 3, 1, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 3, 4, null, true, new DateTime(2021, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AccountForeignLanguageMetadatas",
+                columns: new[] { "Id", "AccountId", "CreatedDate", "DeletedDate", "ForeignLanguageId", "ForeignLanguageLevelId", "Priority", "UpdatedDate" },
+                values: new object[,]
+                {
+                    { 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, 1, 1, null },
+                    { 2, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 2, 2, 2, null },
+                    { 3, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 3, 1, 3, null }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AccountSocialMediaPlatforms",
+                columns: new[] { "Id", "AccountId", "CreatedDate", "DeletedDate", "Link", "Priority", "SocialMediaPlatformId", "UpdatedDate" },
+                values: new object[,]
+                {
+                    { 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "https://github.com/DotNetReactFullStack", 1, 1, null },
+                    { 2, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "https://www.linkedin.com/company/github/", 2, 2, null }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Districts",
+                columns: new[] { "Id", "CityId", "CreatedDate", "DeletedDate", "Name", "Priority", "UpdatedDate", "Visibility" },
+                values: new object[,]
+                {
+                    { 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Kadiköy", 1, null, true },
+                    { 2, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Bakırköy", 2, null, true },
+                    { 3, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Tuzla", 3, null, true },
+                    { 4, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Osmangazi", 1, null, true },
+                    { 5, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Nilüfer", 2, null, true },
+                    { 6, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "İnegöl", 3, null, true },
+                    { 7, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Çankaya", 1, null, true },
+                    { 8, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Etimesgut", 2, null, true },
+                    { 9, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Yenimahalle", 3, null, true },
+                    { 10, 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Chelsea", 1, null, true },
+                    { 11, 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Kensington", 2, null, true },
+                    { 12, 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Fulham", 3, null, true },
+                    { 13, 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Ropewalks", 1, null, true },
+                    { 14, 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Chinatown", 2, null, true },
+                    { 15, 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Lark Lane", 3, null, true },
+                    { 16, 6, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Trafford", 1, null, true },
+                    { 17, 6, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Tameside", 2, null, true },
+                    { 18, 6, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Bolton", 3, null, true },
+                    { 19, 7, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Pomezia", 1, null, true },
+                    { 20, 7, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Anzio", 2, null, true },
+                    { 21, 7, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Fiumicino", 3, null, true },
+                    { 22, 8, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Scandicci", 1, null, true },
+                    { 23, 8, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Empoli", 2, null, true },
+                    { 24, 8, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Signa", 3, null, true },
+                    { 25, 9, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Moncalieri", 1, null, true },
+                    { 26, 9, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Rivoli", 2, null, true },
+                    { 27, 9, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Chieri", 3, null, true }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Experiences",
+                columns: new[] { "Id", "AccountId", "CityId", "CompanyName", "CreatedDate", "DeletedDate", "Description", "EndingDate", "Industry", "IsActive", "IsCurrentlyWorking", "JobTitle", "StartingDate", "UpdatedDate" },
+                values: new object[,]
+                {
+                    { 1, 1, 1, "Amazon", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Amazon iş açıklaması", new DateTime(2021, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), "Yazılım", true, false, "Back-End Developer", new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null },
+                    { 2, 1, 2, "Google", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Google iş açıklaması", new DateTime(2022, 2, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), "Yazılım", true, false, "Front-End Developer", new DateTime(2021, 2, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), null },
+                    { 3, 1, 3, "Microsoft", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Microsoft iş açıklaması", null, "Yazılım", true, true, "Full-Stack Developer", new DateTime(2022, 2, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), null }
                 });
 
             migrationBuilder.CreateIndex(

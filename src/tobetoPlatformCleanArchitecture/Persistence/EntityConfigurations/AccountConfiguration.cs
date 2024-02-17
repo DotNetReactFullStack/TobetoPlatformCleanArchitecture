@@ -25,5 +25,19 @@ public class AccountConfiguration : IEntityTypeConfiguration<Account>
         builder.Property(a => a.DeletedDate).HasColumnName("DeletedDate");
 
         builder.HasQueryFilter(a => !a.DeletedDate.HasValue);
+
+        builder.HasData(getSeeds());
+    }
+
+    private HashSet<Account> getSeeds()
+    {
+        int id = 0;
+        HashSet<Account> seeds =
+            new()
+            {
+                new Account { Id = ++id, UserId=1, NationalIdentificationNumber="11111111110", AboutMe="About me", BirthDate=new DateTime(1990, 1, 2), PhoneNumber="555 555 55 55", ShareProfile=false, ProfileLinkUrl="/", IsActive=true  },
+            };
+
+        return seeds;
     }
 }
