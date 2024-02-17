@@ -30,5 +30,21 @@ public class AccountCollegeMetadataConfiguration : IEntityTypeConfiguration<Acco
            .OnDelete(DeleteBehavior.ClientNoAction);
 
         builder.HasQueryFilter(acm => !acm.DeletedDate.HasValue);
+
+        builder.HasData(getSeeds());
+    }
+
+    private HashSet<AccountCollegeMetadata> getSeeds()
+    {
+        int id = 0;
+        HashSet<AccountCollegeMetadata> seeds =
+            new()
+            {
+                new AccountCollegeMetadata { Id = ++id, AccountId = 1, GraduationStatusId = 1, CollegeId = 1, EducationProgramId = 1, Visibility = true, StartingYear = new DateTime(2014, 1, 1), GraduationYear = new DateTime(2019, 1, 2), ProgramOnGoing = false},
+                new AccountCollegeMetadata { Id = ++id, AccountId = 1, GraduationStatusId = 3, CollegeId = 2, EducationProgramId = 2, Visibility = true, StartingYear = new DateTime(2019, 1, 1), GraduationYear = new DateTime(2021, 1, 2), ProgramOnGoing = false},
+                new AccountCollegeMetadata { Id = ++id, AccountId = 1, GraduationStatusId = 4, CollegeId = 3, EducationProgramId = 3, Visibility = true, StartingYear = new DateTime(2021, 1, 1), GraduationYear = null, ProgramOnGoing = true},
+
+            };
+        return seeds;
     }
 }

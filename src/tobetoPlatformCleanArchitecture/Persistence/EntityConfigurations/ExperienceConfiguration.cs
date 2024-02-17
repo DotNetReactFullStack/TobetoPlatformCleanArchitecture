@@ -26,5 +26,21 @@ public class ExperienceConfiguration : IEntityTypeConfiguration<Experience>
         builder.Property(e => e.DeletedDate).HasColumnName("DeletedDate");
 
         builder.HasQueryFilter(e => !e.DeletedDate.HasValue);
+
+        builder.HasData(getSeeds());
+    }
+
+    private HashSet<Experience> getSeeds()
+    {
+        int id = 0;
+        HashSet<Experience> seeds =
+            new()
+            {
+                new Experience { Id = ++id, AccountId = 1, CityId = 1, CompanyName =  "Amazon", JobTitle = "Back-End Developer", Industry = "Yazýlým" , StartingDate = new DateTime(2020, 1, 2), EndingDate = new DateTime(2021, 1, 3), IsCurrentlyWorking = false, Description = "Amazon iþ açýklamasý", IsActive = true},
+                new Experience { Id = ++id, AccountId = 1, CityId = 2, CompanyName =  "Google", JobTitle = "Front-End Developer", Industry = "Yazýlým" , StartingDate = new DateTime(2021, 2, 5), EndingDate = new DateTime(2022, 2, 8), IsCurrentlyWorking = false, Description = "Google iþ açýklamasý", IsActive = true},
+                new Experience { Id = ++id, AccountId = 1, CityId = 3, CompanyName =  "Microsoft", JobTitle = "Full-Stack Developer", Industry = "Yazýlým" , StartingDate = new DateTime(2022, 2, 10), EndingDate = null, IsCurrentlyWorking = true, Description = "Microsoft iþ açýklamasý", IsActive = true},
+
+            };
+        return seeds;
     }
 }
