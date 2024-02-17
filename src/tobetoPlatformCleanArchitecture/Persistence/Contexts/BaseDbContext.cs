@@ -32,7 +32,7 @@ public class BaseDbContext : DbContext
     public DbSet<GraduationStatus> GraduationStatuses { get; set; }
     public DbSet<College> Colleges { get; set; }
     public DbSet<EducationProgram> EducationPrograms { get; set; }
-    public DbSet<AccountCollageMetadata> AccountCollageMetadatas { get; set; }
+    public DbSet<AccountCollegeMetadata> AccountCollegeMetadatas { get; set; }
     public DbSet<SurveyType> SurveyTypes { get; set; }
     public DbSet<Survey> Surveys { get; set; }
     public DbSet<OrganizationType> OrganizationTypes { get; set; }

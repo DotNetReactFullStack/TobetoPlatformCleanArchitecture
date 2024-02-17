@@ -173,13 +173,13 @@ public class OperationClaimConfiguration : IEntityTypeConfiguration<OperationCla
         seeds.Add(new OperationClaim { Id = ++id, Name = "EducationPrograms.Update" });
         seeds.Add(new OperationClaim { Id = ++id, Name = "EducationPrograms.Delete" });
         #endregion
-        #region AccountCollageMetadatas
-        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountCollageMetadatas.Admin" });
-        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountCollageMetadatas.Read" });
-        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountCollageMetadatas.Write" });
-        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountCollageMetadatas.Add" });
-        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountCollageMetadatas.Update" });
-        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountCollageMetadatas.Delete" });
+        #region AccountCollegeMetadatas
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountCollegeMetadatas.Admin" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountCollegeMetadatas.Read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountCollegeMetadatas.Write" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountCollegeMetadatas.Add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountCollegeMetadatas.Update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "AccountCollegeMetadatas.Delete" });
         #endregion
         #region SurveyTypes
         seeds.Add(new OperationClaim { Id = ++id, Name = "SurveyTypes.Admin" });

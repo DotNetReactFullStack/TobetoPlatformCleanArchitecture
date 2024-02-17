@@ -12,7 +12,7 @@ public class College : Entity<int>
     public bool Visibility { get; set; }
 
     public virtual ICollection<EducationProgram> EducationPrograms { get; set; }
-    public virtual ICollection<AccountCollageMetadata> AccountCollageMetadatas { get; set; }
+    public virtual ICollection<AccountCollegeMetadata> AccountCollegeMetadatas { get; set; }
 
     public College()
     {
