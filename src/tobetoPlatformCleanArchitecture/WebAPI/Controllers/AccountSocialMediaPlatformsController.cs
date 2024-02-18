@@ -3,6 +3,8 @@ using Application.Features.AccountSocialMediaPlatforms.Commands.Delete;
 using Application.Features.AccountSocialMediaPlatforms.Commands.Update;
 using Application.Features.AccountSocialMediaPlatforms.Queries.GetById;
 using Application.Features.AccountSocialMediaPlatforms.Queries.GetList;
+using Application.Features.AccountSocialMediaPlatforms.Queries.GetListByAccountId;
+using Application.Features.Cities.Queries.GetListByCountryId;
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Microsoft.AspNetCore.Mvc;
@@ -41,6 +43,14 @@ public class AccountSocialMediaPlatformsController : BaseController
     public async Task<IActionResult> GetById([FromRoute] int id)
     {
         GetByIdAccountSocialMediaPlatformResponse response = await Mediator.Send(new GetByIdAccountSocialMediaPlatformQuery { Id = id });
+        return Ok(response);
+    }
+
+    [HttpGet("getByAccountId/{accountId}")]
+    public async Task<IActionResult> GetListByAccountId([FromRoute] int accountId, [FromQuery] PageRequest pageRequest)
+    {
+        GetListByAccountIdAccountSocialMediaPlatformsQuery getListByAccountIdAccountSocialMediaPlatformsQuery = new() { PageRequest = pageRequest, AccountId = accountId };
+        GetListResponse<GetListByAccountIdAccountSocialMediaPlatformsItemDto> response = await Mediator.Send(getListByAccountIdAccountSocialMediaPlatformsQuery);
         return Ok(response);
     }
 
