@@ -34,7 +34,7 @@ public class LearningPathConfiguration : IEntityTypeConfiguration<LearningPath>
         HashSet<LearningPath> seeds =
             new()
             {
-                    new LearningPath { Id = ++id, LearningPathCategoryId=1,Name="Full-Stack Developer - 1B", Visibility=true, StartingTime= new DateTime(2024, 2, 20).AddHours(16).AddMinutes(45), EndingTime= new DateTime(2024, 4, 15).AddHours(18).AddMinutes(00)},
+                    new LearningPath { Id = ++id, LearningPathCategoryId=1,Name="Full-Stack Developer - 1B", Visibility=true, StartingTime= new DateTime(2024, 2, 20).AddHours(16).AddMinutes(45), EndingTime= new DateTime(2024, 4, 15).AddHours(18).AddMinutes(00), NumberOfLikes=11, TotalDuration=30, ImageUrl="/assets/images/dotnet-react-full-stack.png"},
             };
         return seeds;
     }
