@@ -3,6 +3,8 @@ using Application.Features.AccountLearningPaths.Commands.Delete;
 using Application.Features.AccountLearningPaths.Commands.Update;
 using Application.Features.AccountLearningPaths.Queries.GetById;
 using Application.Features.AccountLearningPaths.Queries.GetList;
+using Application.Features.AccountLearningPaths.Queries.GetListByAccountId;
+using Application.Features.Experiences.Queries.GetListByAccountId;
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Microsoft.AspNetCore.Mvc;
@@ -41,6 +43,13 @@ public class AccountLearningPathsController : BaseController
     public async Task<IActionResult> GetById([FromRoute] int id)
     {
         GetByIdAccountLearningPathResponse response = await Mediator.Send(new GetByIdAccountLearningPathQuery { Id = id });
+        return Ok(response);
+    }
+    [HttpGet("getByAccountId/{accountId}")]
+    public async Task<IActionResult> GetList([FromRoute] int accountId, [FromQuery] PageRequest pageRequest)
+    {
+        GetListByAccountIdAccountLearningPathQuery getListByAccountIdAccountLearningPathQuery = new() { AccountId = accountId, PageRequest = pageRequest };
+        GetListResponse<GetListByAccountIdAccountLearningPathListItemDto> response = await Mediator.Send(getListByAccountIdAccountLearningPathQuery);
         return Ok(response);
     }
 
