@@ -18,7 +18,7 @@ using System.Threading.Tasks;
 using static Application.Features.AccountForeignLanguageMetadatas.Constants.AccountForeignLanguageMetadatasOperationClaims;
 
 namespace Application.Features.AccountForeignLanguageMetadatas.Queries.GetListByAccountId;
-public class GetListByAccountIdAccountForeingLanguageMetaDataQuery : IRequest<GetListResponse<GetListByAccountIdAccountForeingLanguageMetaDataItemDto>>, ISecuredRequest, ICachableRequest
+public class GetListByAccountIdAccountForeignLanguageMetaDataQuery : IRequest<GetListResponse<GetListByAccountIdAccountForeignLanguageMetaDataListItemDto>>//, ISecuredRequest, ICachableRequest
 {
     public int? Id { get; set; }
     public int AccountId { get; set; }
@@ -31,7 +31,7 @@ public class GetListByAccountIdAccountForeingLanguageMetaDataQuery : IRequest<Ge
     public string CacheGroupKey => "GetAccountForeignLanguageMetadatas";
     public TimeSpan? SlidingExpiration { get; }
 
-    public class GetListByAccountIdAccountForeingLanguageMetaDataQueryHandler : IRequestHandler<GetListByAccountIdAccountForeingLanguageMetaDataQuery, GetListResponse<GetListByAccountIdAccountForeingLanguageMetaDataItemDto>>
+    public class GetListByAccountIdAccountForeingLanguageMetaDataQueryHandler : IRequestHandler<GetListByAccountIdAccountForeignLanguageMetaDataQuery, GetListResponse<GetListByAccountIdAccountForeignLanguageMetaDataListItemDto>>
     {
         private readonly IAccountForeignLanguageMetadataRepository _accountForeignLanguageMetadataRepository;
         private readonly IMapper _mapper;
@@ -42,7 +42,7 @@ public class GetListByAccountIdAccountForeingLanguageMetaDataQuery : IRequest<Ge
             _mapper = mapper;
         }
 
-        public async Task<GetListResponse<GetListByAccountIdAccountForeingLanguageMetaDataItemDto>> Handle(GetListByAccountIdAccountForeingLanguageMetaDataQuery request, CancellationToken cancellationToken)
+        public async Task<GetListResponse<GetListByAccountIdAccountForeignLanguageMetaDataListItemDto>> Handle(GetListByAccountIdAccountForeignLanguageMetaDataQuery request, CancellationToken cancellationToken)
         {
             IPaginate<AccountForeignLanguageMetadata> accountForeignLanguageMetadata = await _accountForeignLanguageMetadataRepository.GetListAsync(
                 predicate: (ac => ac.AccountId == request.AccountId),
@@ -52,7 +52,7 @@ public class GetListByAccountIdAccountForeingLanguageMetaDataQuery : IRequest<Ge
                 include: ac => ac.Include(p => p.ForeignLanguageLevel).Include(p => p.ForeignLanguage)         
             );
 
-            GetListResponse<GetListByAccountIdAccountForeingLanguageMetaDataItemDto> response = _mapper.Map<GetListResponse<GetListByAccountIdAccountForeingLanguageMetaDataItemDto>>(accountForeignLanguageMetadata);
+            GetListResponse<GetListByAccountIdAccountForeignLanguageMetaDataListItemDto> response = _mapper.Map<GetListResponse<GetListByAccountIdAccountForeignLanguageMetaDataListItemDto>>(accountForeignLanguageMetadata);
             return response;
         }
     }

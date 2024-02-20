@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Application.Features.AccountForeignLanguageMetadatas.Queries.GetListByAccountId;
-public class GetListByAccountIdAccountForeingLanguageMetaDataItemDto : IDto
+public class GetListByAccountIdAccountForeignLanguageMetaDataListItemDto : IDto
 {
     public int Id { get; set; }
-    public string ForeingLanguageName { get; set; }
+    public string ForeignLanguageName { get; set; }
     public string ForeignLanguageLevelName { get; set; }
 }

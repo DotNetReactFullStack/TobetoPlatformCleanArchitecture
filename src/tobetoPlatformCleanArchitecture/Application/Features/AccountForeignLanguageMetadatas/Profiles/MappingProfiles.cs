@@ -29,12 +29,12 @@ public class MappingProfiles : Profile
         CreateMap<AccountForeignLanguageMetadata, GetListAccountForeignLanguageMetadataListItemDto>().ReverseMap();
         CreateMap<IPaginate<AccountForeignLanguageMetadata>, GetListResponse<GetListAccountForeignLanguageMetadataListItemDto>>().ReverseMap();
 
-        CreateMap<AccountForeignLanguageMetadata, GetListByAccountIdAccountForeingLanguageMetaDataItemDto>()
+        CreateMap<AccountForeignLanguageMetadata, GetListByAccountIdAccountForeignLanguageMetaDataListItemDto>()
             .ForMember(destinationMember: d => d.ForeignLanguageLevelName,
             memberOptions: opt => opt.MapFrom(fl => fl.ForeignLanguageLevel.Name))
-            .ForMember(destinationMember: d => d.ForeingLanguageName,
+            .ForMember(destinationMember: d => d.ForeignLanguageName,
             memberOptions: opt => opt.MapFrom(fl => fl.ForeignLanguage.Name)).ReverseMap();
-        CreateMap<IPaginate<AccountForeignLanguageMetadata>, GetListResponse<GetListByAccountIdAccountForeingLanguageMetaDataItemDto>>().ReverseMap();
+        CreateMap<IPaginate<AccountForeignLanguageMetadata>, GetListResponse<GetListByAccountIdAccountForeignLanguageMetaDataListItemDto>>().ReverseMap();
 
     }
 }
