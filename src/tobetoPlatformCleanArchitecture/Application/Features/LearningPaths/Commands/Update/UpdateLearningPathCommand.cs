@@ -23,6 +23,7 @@ public class UpdateLearningPathCommand : IRequest<UpdatedLearningPathResponse>, 
     public DateTime EndingTime { get; set; }
     public int NumberOfLikes { get; set; }
     public int TotalDuration { get; set; }
+    public string ImageUrl { get; set; }
 
     public string[] Roles => new[] { Admin, Write, LearningPathsOperationClaims.Update, GeneralOperationClaims.Instructor };
 

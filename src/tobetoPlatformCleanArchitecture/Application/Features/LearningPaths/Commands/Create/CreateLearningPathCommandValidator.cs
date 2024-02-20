@@ -13,5 +13,6 @@ public class CreateLearningPathCommandValidator : AbstractValidator<CreateLearni
         RuleFor(c => c.EndingTime).NotEmpty();
         RuleFor(c => c.NumberOfLikes).NotEmpty().GreaterThanOrEqualTo(0);
         RuleFor(c => c.TotalDuration).NotEmpty().GreaterThanOrEqualTo(0);
+        RuleFor(c => c.ImageUrl).NotEmpty();
     }
 }
