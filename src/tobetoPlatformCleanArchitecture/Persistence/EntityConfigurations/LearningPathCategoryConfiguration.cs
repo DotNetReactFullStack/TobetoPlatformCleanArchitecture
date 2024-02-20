@@ -18,5 +18,18 @@ public class LearningPathCategoryConfiguration : IEntityTypeConfiguration<Learni
         builder.Property(lpc => lpc.DeletedDate).HasColumnName("DeletedDate");
 
         builder.HasQueryFilter(lpc => !lpc.DeletedDate.HasValue);
+
+        builder.HasData(getSeeds());
+    }
+
+    private HashSet<LearningPathCategory> getSeeds()
+    {
+        int id = 0;
+        HashSet<LearningPathCategory> seeds =
+            new()
+            {
+                    new LearningPathCategory { Id = ++id, Name= "Genel", IsActive= true,},
+            };
+        return seeds;
     }
 }

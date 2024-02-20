@@ -24,5 +24,18 @@ public class LearningPathConfiguration : IEntityTypeConfiguration<LearningPath>
         builder.Property(lp => lp.DeletedDate).HasColumnName("DeletedDate");
 
         builder.HasQueryFilter(lp => !lp.DeletedDate.HasValue);
+
+        builder.HasData(getSeeds());
+    }
+
+    private HashSet<LearningPath> getSeeds()
+    {
+        int id = 0;
+        HashSet<LearningPath> seeds =
+            new()
+            {
+                    new LearningPath { Id = ++id, LearningPathCategoryId=1,Name="Full-Stack Developer - 1B", Visibility=true, StartingTime= new DateTime(2024, 2, 20).AddHours(16).AddMinutes(45), EndingTime= new DateTime(2024, 4, 15).AddHours(18).AddMinutes(00)},
+            };
+        return seeds;
     }
 }
