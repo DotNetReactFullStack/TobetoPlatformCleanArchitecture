@@ -49,8 +49,8 @@ public class AccountForeignLanguageMetadatasController : BaseController
     [HttpGet("getByAccountId/{accountId}")]
     public async Task<IActionResult> GetByAccountId([FromRoute] int accountId, [FromQuery] PageRequest pageRequest)
     {
-        GetListByAccountIdAccountForeingLanguageMetaDataQuery getListByAccountIdAccountForeingLanguageMetaDataQuery = new() { AccountId = accountId, PageRequest = pageRequest };
-        GetListResponse<GetListByAccountIdAccountForeingLanguageMetaDataItemDto> response = await Mediator.Send(getListByAccountIdAccountForeingLanguageMetaDataQuery);
+        GetListByAccountIdAccountForeignLanguageMetaDataQuery getListByAccountIdAccountForeingLanguageMetaDataQuery = new() { AccountId = accountId, PageRequest = pageRequest };
+        GetListResponse<GetListByAccountIdAccountForeignLanguageMetaDataListItemDto> response = await Mediator.Send(getListByAccountIdAccountForeingLanguageMetaDataQuery);
         return Ok(response);
     }
 
