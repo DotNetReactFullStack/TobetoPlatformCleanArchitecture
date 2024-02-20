@@ -18,6 +18,7 @@ public class LessonConfiguration : IEntityTypeConfiguration<Lesson>
         builder.Property(l => l.Content).HasColumnName("Content");
         builder.Property(l => l.Duration).HasColumnName("Duration");
         builder.Property(l => l.IsActive).HasColumnName("IsActive");
+        builder.Property(l => l.VideoUrl).HasColumnName("VideoUrl");
         builder.Property(l => l.CreatedDate).HasColumnName("CreatedDate").IsRequired();
         builder.Property(l => l.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(l => l.DeletedDate).HasColumnName("DeletedDate");

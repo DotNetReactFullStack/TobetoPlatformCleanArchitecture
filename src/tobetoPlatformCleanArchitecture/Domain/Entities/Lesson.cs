@@ -15,6 +15,7 @@ public class Lesson : Entity<int>
     public string Content { get; set; }
     public int Duration { get; set; }
     public bool IsActive { get; set; }
+    public string VideoUrl { get; set; }
 
     public virtual Course? Course { get; set; }
     public virtual ICollection<AccountLesson> AccountLessons { get; set; }

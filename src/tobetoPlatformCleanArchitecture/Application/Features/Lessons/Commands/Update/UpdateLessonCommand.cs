@@ -22,6 +22,7 @@ public class UpdateLessonCommand : IRequest<UpdatedLessonResponse>, ISecuredRequ
     public string Content { get; set; }
     public int Duration { get; set; }
     public bool IsActive { get; set; }
+    public string VideoUrl { get; set; }
 
     public string[] Roles => new[] { Admin, Write, LessonsOperationClaims.Update };
 

@@ -14,5 +14,6 @@ public class UpdateLessonCommandValidator : AbstractValidator<UpdateLessonComman
         RuleFor(c => c.Content).NotEmpty().MaximumLength(300);
         RuleFor(c => c.Duration).NotEmpty().GreaterThanOrEqualTo(0);
         RuleFor(c => c.IsActive).NotNull();
+        RuleFor(c => c.VideoUrl).NotEmpty();
     }
 }
