@@ -49,8 +49,8 @@ public class AccountSocialMediaPlatformsController : BaseController
     [HttpGet("getByAccountId/{accountId}")]
     public async Task<IActionResult> GetListByAccountId([FromRoute] int accountId, [FromQuery] PageRequest pageRequest)
     {
-        GetListByAccountIdAccountSocialMediaPlatformsQuery getListByAccountIdAccountSocialMediaPlatformsQuery = new() { PageRequest = pageRequest, AccountId = accountId };
-        GetListResponse<GetListByAccountIdAccountSocialMediaPlatformsItemDto> response = await Mediator.Send(getListByAccountIdAccountSocialMediaPlatformsQuery);
+        GetListByAccountIdAccountSocialMediaPlatformQuery getListByAccountIdAccountSocialMediaPlatformsQuery = new() { PageRequest = pageRequest, AccountId = accountId };
+        GetListResponse<GetListByAccountIdAccountSocialMediaPlatformListItemDto> response = await Mediator.Send(getListByAccountIdAccountSocialMediaPlatformsQuery);
         return Ok(response);
     }
 

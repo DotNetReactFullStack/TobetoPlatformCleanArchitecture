@@ -18,7 +18,7 @@ using System.Threading.Tasks;
 using static Application.Features.AccountSocialMediaPlatforms.Constants.AccountSocialMediaPlatformsOperationClaims;
 
 namespace Application.Features.AccountSocialMediaPlatforms.Queries.GetListByAccountId;
-public class GetListByAccountIdAccountSocialMediaPlatformsQuery : IRequest<GetListResponse<GetListByAccountIdAccountSocialMediaPlatformsItemDto>>, ISecuredRequest, ICachableRequest
+public class GetListByAccountIdAccountSocialMediaPlatformQuery : IRequest<GetListResponse<GetListByAccountIdAccountSocialMediaPlatformListItemDto>>//, ISecuredRequest, ICachableRequest
 {
     public int? Id { get; set; }
     public int AccountId { get; set; }
@@ -31,7 +31,7 @@ public class GetListByAccountIdAccountSocialMediaPlatformsQuery : IRequest<GetLi
     public string CacheGroupKey => "GetAccountSocialMediaPlatforms";
     public TimeSpan? SlidingExpiration { get; }
 
-    public class GetListByAccountIdAccountSocialMediaPlatformsQueryHandler : IRequestHandler<GetListByAccountIdAccountSocialMediaPlatformsQuery, GetListResponse<GetListByAccountIdAccountSocialMediaPlatformsItemDto>>
+    public class GetListByAccountIdAccountSocialMediaPlatformsQueryHandler : IRequestHandler<GetListByAccountIdAccountSocialMediaPlatformQuery, GetListResponse<GetListByAccountIdAccountSocialMediaPlatformListItemDto>>
     {
         private readonly IAccountSocialMediaPlatformRepository _accountSocialMediaPlatformRepository;
         private readonly IMapper _mapper;
@@ -42,7 +42,7 @@ public class GetListByAccountIdAccountSocialMediaPlatformsQuery : IRequest<GetLi
             _mapper = mapper;
         }
 
-        public async Task<GetListResponse<GetListByAccountIdAccountSocialMediaPlatformsItemDto>> Handle(GetListByAccountIdAccountSocialMediaPlatformsQuery request, CancellationToken cancellationToken)
+        public async Task<GetListResponse<GetListByAccountIdAccountSocialMediaPlatformListItemDto>> Handle(GetListByAccountIdAccountSocialMediaPlatformQuery request, CancellationToken cancellationToken)
         {
             IPaginate<AccountSocialMediaPlatform> accountSocialMediaPlatforms = await _accountSocialMediaPlatformRepository.GetListAsync(
                 predicate: (ac => ac.AccountId == request.AccountId),
@@ -52,7 +52,7 @@ public class GetListByAccountIdAccountSocialMediaPlatformsQuery : IRequest<GetLi
                 include: sm => sm.Include(p => p.SocialMediaPlatform)
             );
 
-            GetListResponse<GetListByAccountIdAccountSocialMediaPlatformsItemDto> response = _mapper.Map<GetListResponse<GetListByAccountIdAccountSocialMediaPlatformsItemDto>>(accountSocialMediaPlatforms);
+            GetListResponse<GetListByAccountIdAccountSocialMediaPlatformListItemDto> response = _mapper.Map<GetListResponse<GetListByAccountIdAccountSocialMediaPlatformListItemDto>>(accountSocialMediaPlatforms);
             return response;
         }
     }

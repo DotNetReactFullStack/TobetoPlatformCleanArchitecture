@@ -23,8 +23,8 @@ public class MappingProfiles : Profile
         CreateMap<AccountSocialMediaPlatform, DeletedAccountSocialMediaPlatformResponse>().ReverseMap();
         CreateMap<AccountSocialMediaPlatform, GetByIdAccountSocialMediaPlatformResponse>().ReverseMap();
         CreateMap<AccountSocialMediaPlatform, GetListAccountSocialMediaPlatformListItemDto>().ReverseMap();
-        CreateMap<AccountSocialMediaPlatform, GetListByAccountIdAccountSocialMediaPlatformsItemDto>()
-            .ForMember(destinationMember: d => d.Name,
+        CreateMap<AccountSocialMediaPlatform, GetListByAccountIdAccountSocialMediaPlatformListItemDto>()
+            .ForMember(destinationMember: d => d.SocialMediaPlatformName,
             memberOptions: opt => opt.MapFrom(sm => sm.SocialMediaPlatform.Name))
             .ForMember(destinationMember: d => d.IconPath, 
             memberOptions: opt => opt.MapFrom(sm=>sm.SocialMediaPlatform.IconPath))
@@ -34,6 +34,6 @@ public class MappingProfiles : Profile
 
 
         CreateMap<IPaginate<AccountSocialMediaPlatform>, GetListResponse<GetListAccountSocialMediaPlatformListItemDto>>().ReverseMap();
-        CreateMap<IPaginate<AccountSocialMediaPlatform>, GetListResponse<GetListByAccountIdAccountSocialMediaPlatformsItemDto>>().ReverseMap();
+        CreateMap<IPaginate<AccountSocialMediaPlatform>, GetListResponse<GetListByAccountIdAccountSocialMediaPlatformListItemDto>>().ReverseMap();
     }
 }
