@@ -23,7 +23,14 @@ public class MappingProfiles : Profile
         CreateMap<AccountLearningPath, DeletedAccountLearningPathResponse>().ReverseMap();
         CreateMap<AccountLearningPath, GetByIdAccountLearningPathResponse>().ReverseMap();
         CreateMap<AccountLearningPath, GetListAccountLearningPathListItemDto>().ReverseMap();
-        CreateMap<AccountLearningPath, GetListByAccountIdAccountLearningPathListItemDto>().ReverseMap();
+        CreateMap<AccountLearningPath, GetListByAccountIdAccountLearningPathListItemDto>()
+            .ForMember(destinationMember: d => d.LearningPathName,
+            memberOptions: opt => opt.MapFrom(alp => alp.LearningPath.Name))
+            .ForMember(destinationMember: d => d.StartingTime,
+            memberOptions: opt => opt.MapFrom(alp => alp.LearningPath.StartingTime))
+            .ForMember(destinationMember: d => d.ImageUrl,
+            memberOptions: opt => opt.MapFrom(alp => alp.LearningPath.ImageUrl))
+            .ReverseMap();
         CreateMap<IPaginate<AccountLearningPath>, GetListResponse<GetListAccountLearningPathListItemDto>>().ReverseMap();
         CreateMap<IPaginate<AccountLearningPath>, GetListResponse<GetListByAccountIdAccountLearningPathListItemDto>>().ReverseMap();
     }

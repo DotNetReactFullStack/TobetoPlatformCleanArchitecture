@@ -10,6 +10,9 @@ public class GetListByAccountIdAccountLearningPathListItemDto :IDto
 {
     public int Id { get; set; }
     public int LearningPathId { get; set; }
+    public string LearningPathName { get; set; }
+    public DateTime StartingTime { get; set; }
+    public string ImageUrl { get; set; }
     public int TotalNumberOfPoints { get; set; }
     public byte PercentComplete { get; set; }
     public bool IsContinue { get; set; }

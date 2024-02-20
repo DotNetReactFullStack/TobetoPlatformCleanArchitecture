@@ -8,6 +8,7 @@ using Core.Application.Responses;
 using Core.Persistence.Paging;
 using Domain.Entities;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using static Application.Features.AccountLearningPaths.Constants.AccountLearningPathsOperationClaims;
 
 namespace Application.Features.AccountLearningPaths.Queries.GetListByAccountId;
@@ -40,7 +41,8 @@ public class GetListByAccountIdAccountLearningPathQuery : IRequest<GetListRespon
                 predicate: alp => alp.AccountId == request.AccountId,
                 index: request.PageRequest.PageIndex,
                 size: request.PageRequest.PageSize,
-                cancellationToken: cancellationToken
+                cancellationToken: cancellationToken,
+                include: alp => alp.Include(alp => alp.LearningPath)
             );
 
             GetListResponse<GetListByAccountIdAccountLearningPathListItemDto> response = _mapper.Map<GetListResponse<GetListByAccountIdAccountLearningPathListItemDto>>(accountLearningPaths);
