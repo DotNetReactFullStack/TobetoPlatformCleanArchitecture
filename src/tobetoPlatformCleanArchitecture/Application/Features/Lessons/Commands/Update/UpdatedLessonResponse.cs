@@ -12,4 +12,5 @@ public class UpdatedLessonResponse : IResponse
     public string Content { get; set; }
     public int Duration { get; set; }
     public bool IsActive { get; set; }
+    public string VideoUrl { get; set; }
 }

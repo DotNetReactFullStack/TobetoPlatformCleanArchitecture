@@ -12,7 +12,7 @@ using Persistence.Contexts;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    [Migration("20240217161802_InitialCreate")]
+    [Migration("20240220164432_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -1908,8 +1908,8 @@ namespace Persistence.Migrations
                             Email = "test@user.net",
                             FirstName = "Test",
                             LastName = "User",
-                            PasswordHash = new byte[] { 216, 19, 23, 87, 96, 247, 114, 211, 136, 61, 62, 124, 40, 87, 124, 153, 108, 8, 248, 247, 73, 111, 221, 136, 69, 180, 188, 183, 43, 175, 18, 114, 117, 0, 30, 209, 75, 96, 67, 44, 240, 63, 71, 176, 107, 237, 159, 230, 140, 207, 33, 31, 157, 239, 16, 172, 27, 25, 72, 249, 184, 246, 85, 225 },
-                            PasswordSalt = new byte[] { 214, 78, 39, 207, 27, 91, 170, 138, 141, 35, 206, 17, 19, 136, 221, 105, 179, 44, 217, 31, 3, 175, 58, 110, 125, 7, 180, 159, 72, 59, 93, 140, 136, 51, 85, 156, 25, 130, 30, 34, 222, 107, 29, 2, 22, 95, 198, 237, 253, 32, 146, 119, 196, 156, 33, 229, 211, 181, 30, 150, 126, 73, 177, 93, 104, 164, 119, 26, 231, 160, 113, 44, 94, 252, 205, 208, 19, 23, 222, 150, 59, 41, 228, 187, 252, 53, 130, 100, 160, 112, 210, 44, 154, 226, 143, 3, 15, 196, 84, 193, 103, 66, 213, 0, 36, 48, 184, 239, 228, 80, 245, 19, 206, 234, 121, 194, 254, 232, 188, 193, 99, 194, 139, 83, 9, 66, 189, 74 },
+                            PasswordHash = new byte[] { 247, 229, 209, 78, 97, 173, 132, 211, 135, 80, 20, 52, 92, 0, 245, 239, 166, 201, 34, 109, 66, 117, 196, 185, 73, 64, 8, 23, 226, 106, 68, 200, 18, 228, 119, 108, 85, 168, 25, 204, 243, 67, 177, 55, 112, 240, 192, 69, 28, 184, 109, 127, 186, 210, 105, 181, 122, 164, 1, 19, 152, 235, 14, 178 },
+                            PasswordSalt = new byte[] { 133, 185, 47, 77, 205, 82, 115, 59, 172, 180, 114, 137, 146, 205, 232, 34, 44, 75, 79, 4, 132, 32, 73, 123, 67, 145, 114, 11, 157, 250, 201, 236, 200, 187, 53, 180, 93, 76, 153, 153, 33, 124, 77, 206, 211, 47, 115, 30, 242, 15, 153, 154, 127, 10, 174, 46, 28, 251, 225, 164, 229, 14, 46, 153, 153, 217, 212, 39, 239, 1, 188, 36, 57, 244, 219, 191, 106, 129, 20, 47, 170, 170, 224, 220, 170, 158, 186, 103, 91, 158, 4, 102, 200, 130, 37, 83, 150, 220, 58, 100, 117, 229, 216, 95, 132, 119, 241, 189, 235, 18, 59, 33, 124, 234, 61, 133, 96, 191, 187, 4, 253, 130, 189, 199, 123, 93, 193, 37 },
                             Status = true
                         });
                 });
@@ -2241,6 +2241,16 @@ namespace Persistence.Migrations
                     b.HasIndex("ClassroomId");
 
                     b.ToTable("AccountClassrooms", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AccountId = 1,
+                            ClassroomId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsActive = true
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.AccountCollegeMetadata", b =>
@@ -2431,6 +2441,16 @@ namespace Persistence.Migrations
                     b.HasIndex("CourseId");
 
                     b.ToTable("AccountCourses", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AccountId = 1,
+                            CourseId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsActive = true
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.AccountExamResult", b =>
@@ -2632,6 +2652,22 @@ namespace Persistence.Migrations
                     b.HasIndex("LearningPathId");
 
                     b.ToTable("AccountLearningPaths", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AccountId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsActive = true,
+                            IsComplete = false,
+                            IsContinue = true,
+                            IsLiked = true,
+                            IsSaved = true,
+                            LearningPathId = 1,
+                            PercentComplete = (byte)35,
+                            TotalNumberOfPoints = 30
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.AccountLesson", b =>
@@ -2678,6 +2714,53 @@ namespace Persistence.Migrations
                     b.HasIndex("LessonId");
 
                     b.ToTable("AccountLessons", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AccountId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsComplete = true,
+                            LessonId = 1,
+                            Points = 100
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AccountId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsComplete = false,
+                            LessonId = 2,
+                            Points = 20
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AccountId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsComplete = false,
+                            LessonId = 3,
+                            Points = 50
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AccountId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsComplete = false,
+                            LessonId = 4,
+                            Points = 80
+                        },
+                        new
+                        {
+                            Id = 5,
+                            AccountId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsComplete = false,
+                            LessonId = 5,
+                            Points = 0
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.AccountRecourse", b =>
@@ -3445,6 +3528,16 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Classrooms", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsActive = false,
+                            MaximumCapacity = (byte)0,
+                            Name = ".NET & React Full Stack - 1B"
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.ClassroomExam", b =>
@@ -3789,6 +3882,38 @@ namespace Persistence.Migrations
                     b.HasIndex("CourseCategoryId");
 
                     b.ToTable("Courses", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CourseCategoryId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsActive = true,
+                            Name = "Yazılım Geliştirici Yetiştirme Kampı",
+                            Priority = 1,
+                            TotalDuration = 50
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CourseCategoryId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsActive = true,
+                            Name = "React",
+                            Priority = 1,
+                            TotalDuration = 20
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CourseCategoryId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsActive = true,
+                            Name = "TypeScript",
+                            Priority = 1,
+                            TotalDuration = 30
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.CourseCategory", b =>
@@ -3828,6 +3953,32 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CourseCategories", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Yazılım Geliştirme",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Kişisel Gelişim",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "İşletme",
+                            Priority = 1,
+                            Visibility = true
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.CourseLearningPath", b =>
@@ -3870,6 +4021,16 @@ namespace Persistence.Migrations
                     b.HasIndex("LearningPathId");
 
                     b.ToTable("CourseLearningPaths", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CourseId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LearningPathId = 1,
+                            Visibility = true
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.District", b =>
@@ -4804,6 +4965,11 @@ namespace Persistence.Migrations
                         .HasColumnType("datetime2")
                         .HasColumnName("EndingTime");
 
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("ImageUrl");
+
                     b.Property<int>("LearningPathCategoryId")
                         .HasColumnType("int")
                         .HasColumnName("LearningPathCategoryId");
@@ -4838,6 +5004,21 @@ namespace Persistence.Migrations
                     b.HasIndex("LearningPathCategoryId");
 
                     b.ToTable("LearningPaths", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndingTime = new DateTime(2024, 4, 15, 18, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "/assets/images/dotnet-react-full-stack.png",
+                            LearningPathCategoryId = 1,
+                            Name = "Full-Stack Developer - 1B",
+                            NumberOfLikes = 11,
+                            StartingTime = new DateTime(2024, 2, 20, 16, 45, 0, 0, DateTimeKind.Unspecified),
+                            TotalDuration = 30,
+                            Visibility = true
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.LearningPathCategory", b =>
@@ -4873,6 +5054,15 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("LearningPathCategories", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsActive = true,
+                            Name = "Genel"
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.Lesson", b =>
@@ -4923,6 +5113,11 @@ namespace Persistence.Migrations
                         .HasColumnType("datetime2")
                         .HasColumnName("UpdatedDate");
 
+                    b.Property<string>("VideoUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("VideoUrl");
+
                     b.Property<bool>("Visibility")
                         .HasColumnType("bit")
                         .HasColumnName("Visibility");
@@ -4932,6 +5127,281 @@ namespace Persistence.Migrations
                     b.HasIndex("CourseId");
 
                     b.ToTable("Lessons", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Content = "Python ile Programlama Temelleri açıklaması",
+                            CourseId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 113,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Python ile Programlama Temelleri",
+                            VideoUrl = "S_A_VVSQdpU",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Content = "C# Temelleri 1 açıklaması",
+                            CourseId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 161,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "C# Temelleri 1",
+                            VideoUrl = "FB7VUYLyl1I",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Content = "C# Temelleri 2 açıklaması",
+                            CourseId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 168,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "C# Temelleri 2",
+                            VideoUrl = "1j68gb1-qOw",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Content = "C# 1 açıklaması",
+                            CourseId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 173,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "C# 1",
+                            VideoUrl = "G0sOB_-WkyI",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Content = "C# 2 açıklaması",
+                            CourseId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 172,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "C# 2",
+                            VideoUrl = "MU_YQtgdkKA",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Content = "SQL açıklaması",
+                            CourseId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 201,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "SQL",
+                            VideoUrl = "r_pbdopB4LU",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Content = "C# 3 açıklaması",
+                            CourseId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 177,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "C# 3",
+                            VideoUrl = "qBQOqh844Mo",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Content = "Entity Framework açıklaması",
+                            CourseId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 168,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Entity Framework",
+                            VideoUrl = "ow-EHetuNAU",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Content = "Kurumsal Yazılım Mimarileri 1 açıklaması",
+                            CourseId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 177,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Kurumsal Yazılım Mimarileri 1",
+                            VideoUrl = "Hgqqoycoh9c",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Content = "Kurumsal Yazılım Mimarileri 2 açıklaması",
+                            CourseId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 186,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Kurumsal Yazılım Mimarileri 2",
+                            VideoUrl = "NlAj9dT3MiA",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Content = "Kurumsal Yazılım Mimarileri 3 açıklaması",
+                            CourseId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 181,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Kurumsal Yazılım Mimarileri 3",
+                            VideoUrl = "LZqMmvgCNx0",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Content = "Kurumsal Yazılım Mimarileri 4 açıklaması",
+                            CourseId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 192,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Kurumsal Yazılım Mimarileri 4",
+                            VideoUrl = "cSmUHlnHOXI",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Content = "Kurumsal Yazılım Mimarileri 5 ve AOP açıklaması",
+                            CourseId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 189,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Kurumsal Yazılım Mimarileri 5 ve AOP",
+                            VideoUrl = "zdpPm7Q6YE0",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Content = "Kurumsal Yazılım Mimarileri 6 ve JWT açıklaması",
+                            CourseId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 274,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Kurumsal Yazılım Mimarileri 6 ve JWT",
+                            VideoUrl = "2DchBG--kAs",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Content = "Kurumsal Yazılım Mimarileri 7 ve AOP açıklaması",
+                            CourseId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 255,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Kurumsal Yazılım Mimarileri 7 ve AOP",
+                            VideoUrl = "mbl4BjQMX78",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Content = "Angular Giriş 1 açıklaması",
+                            CourseId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 241,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Angular Giriş 1",
+                            VideoUrl = "f_r8SkLWgBI",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Content = "Angular Giriş 2 açıklaması",
+                            CourseId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 194,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Angular Giriş 2",
+                            VideoUrl = "2fzL2LDamvM",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Content = "Angular Giriş 3 açıklaması",
+                            CourseId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 174,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Angular Giriş 3",
+                            VideoUrl = "3xaRghmo-kU",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Content = "Angular Giriş 4 açıklaması",
+                            CourseId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 181,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Angular Giriş 4",
+                            VideoUrl = "-VVVDswfEJw",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Content = "Angular Giriş 5 açıklaması",
+                            CourseId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 176,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Angular Giriş 5",
+                            VideoUrl = "Sb1ZpVlS8LA",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Content = "Angular Giriş 6 açıklaması",
+                            CourseId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 154,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Angular Giriş 6",
+                            VideoUrl = "obK-YEOuVgY",
+                            Visibility = true
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.Organization", b =>

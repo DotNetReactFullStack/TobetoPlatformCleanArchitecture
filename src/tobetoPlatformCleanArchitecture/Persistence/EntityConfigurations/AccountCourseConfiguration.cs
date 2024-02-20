@@ -19,5 +19,18 @@ public class AccountCourseConfiguration : IEntityTypeConfiguration<AccountCourse
         builder.Property(ac => ac.DeletedDate).HasColumnName("DeletedDate");
 
         builder.HasQueryFilter(ac => !ac.DeletedDate.HasValue);
+
+        builder.HasData(getSeeds());
+    }
+
+    private HashSet<AccountCourse> getSeeds()
+    {
+        int id = 0;
+        HashSet<AccountCourse> seeds =
+            new()
+            {
+                    new AccountCourse { Id = ++id, AccountId=1, CourseId=1, IsActive=true},
+            };
+        return seeds;
     }
 }

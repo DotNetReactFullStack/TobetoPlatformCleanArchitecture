@@ -12,4 +12,5 @@ public class CreatedLearningPathResponse : IResponse
     public DateTime EndingTime { get; set; }
     public int NumberOfLikes { get; set; }
     public int TotalDuration { get; set; }
+    public string ImageUrl { get; set; }
 }

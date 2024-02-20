@@ -19,5 +19,21 @@ public class CourseCategoryConfiguration : IEntityTypeConfiguration<CourseCatego
         builder.Property(cc => cc.DeletedDate).HasColumnName("DeletedDate");
 
         builder.HasQueryFilter(cc => !cc.DeletedDate.HasValue);
+
+        builder.HasData(getSeeds());
+    }
+
+    private HashSet<CourseCategory> getSeeds()
+    {
+        int id = 0;
+        HashSet<CourseCategory> seeds =
+            new()
+            {
+                new CourseCategory { Id = ++id, Name = "Yazýlým Geliþtirme", Priority=1 , Visibility = true},
+                new CourseCategory { Id = ++id, Name = "Kiþisel Geliþim", Priority=1 , Visibility = true},
+                new CourseCategory { Id = ++id, Name = "Ýþletme", Priority=1 , Visibility = true},
+            };
+        return seeds;
     }
 }
+

@@ -10,7 +10,6 @@ using Core.Application.Pipelines.Transaction;
 using MediatR;
 using static Application.Features.LearningPaths.Constants.LearningPathsOperationClaims;
 using Application.Features.OperationClaims.Constants;
-
 namespace Application.Features.LearningPaths.Commands.Create;
 
 public class CreateLearningPathCommand : IRequest<CreatedLearningPathResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
@@ -22,6 +21,8 @@ public class CreateLearningPathCommand : IRequest<CreatedLearningPathResponse>, 
     public DateTime EndingTime { get; set; }
     public int NumberOfLikes { get; set; }
     public int TotalDuration { get; set; }
+    public string ImageUrl { get; set; }
+
 
     public string[] Roles => new[] { Admin, Write, LearningPathsOperationClaims.Create, GeneralOperationClaims.Instructor };
 
@@ -48,6 +49,7 @@ public class CreateLearningPathCommand : IRequest<CreatedLearningPathResponse>, 
             LearningPath learningPath = _mapper.Map<LearningPath>(request);
 
             await _learningPathBusinessRules.LearningPathEndingTimeMustBeOlderThanStartingTime(learningPath);
+
             await _learningPathRepository.AddAsync(learningPath);
 
             CreatedLearningPathResponse response = _mapper.Map<CreatedLearningPathResponse>(learningPath);

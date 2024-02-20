@@ -19,5 +19,18 @@ public class CourseLearningPathConfiguration : IEntityTypeConfiguration<CourseLe
         builder.Property(clp => clp.DeletedDate).HasColumnName("DeletedDate");
 
         builder.HasQueryFilter(clp => !clp.DeletedDate.HasValue);
+
+        builder.HasData(getSeeds());
+    }
+
+    private HashSet<CourseLearningPath> getSeeds()
+    {
+        int id = 0;
+        HashSet<CourseLearningPath> seeds =
+            new()
+            {
+                    new CourseLearningPath { Id = ++id, CourseId=1, LearningPathId=1, Visibility=true},
+            };
+        return seeds;
     }
 }

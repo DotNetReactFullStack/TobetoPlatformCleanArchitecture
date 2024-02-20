@@ -25,5 +25,18 @@ public class AccountLearningPathConfiguration : IEntityTypeConfiguration<Account
         builder.Property(alp => alp.DeletedDate).HasColumnName("DeletedDate");
 
         builder.HasQueryFilter(alp => !alp.DeletedDate.HasValue);
+
+        builder.HasData(getSeeds());
+    }
+
+    private HashSet<AccountLearningPath> getSeeds()
+    {
+        int id = 0;
+        HashSet<AccountLearningPath> seeds =
+            new()
+            {
+                    new AccountLearningPath { Id = ++id, AccountId=1, LearningPathId=1, TotalNumberOfPoints=30, PercentComplete=35, IsContinue=true, IsComplete= false, IsLiked=true, IsSaved=true, IsActive=true},
+            };
+        return seeds;
     }
 }

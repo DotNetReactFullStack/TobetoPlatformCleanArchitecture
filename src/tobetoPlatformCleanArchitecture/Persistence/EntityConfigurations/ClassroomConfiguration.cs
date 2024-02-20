@@ -19,5 +19,18 @@ public class ClassroomConfiguration : IEntityTypeConfiguration<Classroom>
         builder.Property(c => c.DeletedDate).HasColumnName("DeletedDate");
 
         builder.HasQueryFilter(c => !c.DeletedDate.HasValue);
+
+        builder.HasData(getSeeds());
+    }
+
+    private HashSet<Classroom> getSeeds()
+    {
+        int id = 0;
+        HashSet<Classroom> seeds =
+            new()
+            {
+                new Classroom { Id = ++id, Name=".NET & React Full Stack - 1B"},
+            };
+        return seeds;
     }
 }
