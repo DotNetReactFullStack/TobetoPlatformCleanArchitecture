@@ -9,6 +9,6 @@ namespace Application.Features.Districts.Queries.GetListByCityId;
 public class GetListByCityIdDistrictListItemDto : IDto
 {
     public int Id { get; set; }
-    public string DistrictName { get; set; }
+    public string Name { get; set; }
     public int Visibility { get; set; }
 }
