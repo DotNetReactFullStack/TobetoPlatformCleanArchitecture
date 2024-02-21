@@ -7,6 +7,7 @@ using AutoMapper;
 using Core.Application.Responses;
 using Domain.Entities;
 using Core.Persistence.Paging;
+using Application.Features.CourseLearningPaths.Queries.GetListByLearningPathId;
 
 namespace Application.Features.CourseLearningPaths.Profiles;
 
@@ -22,6 +23,8 @@ public class MappingProfiles : Profile
         CreateMap<CourseLearningPath, DeletedCourseLearningPathResponse>().ReverseMap();
         CreateMap<CourseLearningPath, GetByIdCourseLearningPathResponse>().ReverseMap();
         CreateMap<CourseLearningPath, GetListCourseLearningPathListItemDto>().ReverseMap();
+        CreateMap<CourseLearningPath, GetListByLearningPathIdCourseLearningPathListItemDto>().ReverseMap();
         CreateMap<IPaginate<CourseLearningPath>, GetListResponse<GetListCourseLearningPathListItemDto>>().ReverseMap();
+        CreateMap<IPaginate<CourseLearningPath>, GetListResponse<GetListByLearningPathIdCourseLearningPathListItemDto>>().ReverseMap();
     }
 }
