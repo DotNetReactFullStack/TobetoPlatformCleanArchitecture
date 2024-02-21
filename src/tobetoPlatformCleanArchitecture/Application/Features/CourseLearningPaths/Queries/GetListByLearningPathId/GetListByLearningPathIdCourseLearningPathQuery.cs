@@ -10,10 +10,11 @@ using Core.Application.Responses;
 using Core.Persistence.Paging;
 using Domain.Entities;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using static Application.Features.CourseLearningPaths.Constants.CourseLearningPathsOperationClaims;
 
 namespace Application.Features.CourseLearningPaths.Queries.GetListByLearningPathId;
-public class GetListByLearningPathIdCourseLearningPathQuery : IRequest<GetListResponse<GetListByLearningPathIdCourseLearningPathListItemDto>>//, ISecuredRequest, ICachableRequest
+public class GetListByLearningPathIdCourseLearningPathQuery : IRequest<GetListResponse<GetListByLearningPathIdCourseLearningPathListItemDto>>, ISecuredRequest, ICachableRequest
 {
     public int LearningPathId { get; set; }
     public PageRequest PageRequest { get; set; }
@@ -21,7 +22,7 @@ public class GetListByLearningPathIdCourseLearningPathQuery : IRequest<GetListRe
     public string[] Roles => new[] { Admin, Read, GeneralOperationClaims.Instructor, GeneralOperationClaims.Student };
 
     public bool BypassCache { get; }
-    public string CacheKey => $"GetListCourse({LearningPathId})LearningPaths({PageRequest.PageIndex},{PageRequest.PageSize})";
+    public string CacheKey => $"GetListByLearningPathId({LearningPathId})CourseLearningPaths({PageRequest.PageIndex},{PageRequest.PageSize})";
     public string CacheGroupKey => "GetCourseLearningPaths";
     public TimeSpan? SlidingExpiration { get; }
 
@@ -42,7 +43,8 @@ public class GetListByLearningPathIdCourseLearningPathQuery : IRequest<GetListRe
                 predicate: clp => clp.LearningPathId == request.LearningPathId,
                 index: request.PageRequest.PageIndex,
                 size: request.PageRequest.PageSize,
-                cancellationToken: cancellationToken
+                cancellationToken: cancellationToken,
+                include: clp => clp.Include(clp => clp.Course)
             );
 
             GetListResponse<GetListByLearningPathIdCourseLearningPathListItemDto> response = _mapper.Map<GetListResponse<GetListByLearningPathIdCourseLearningPathListItemDto>>(courseLearningPaths);
