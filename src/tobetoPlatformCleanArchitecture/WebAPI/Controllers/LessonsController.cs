@@ -1,8 +1,10 @@
+using Application.Features.CourseLearningPaths.Queries.GetListByLearningPathId;
 using Application.Features.Lessons.Commands.Create;
 using Application.Features.Lessons.Commands.Delete;
 using Application.Features.Lessons.Commands.Update;
 using Application.Features.Lessons.Queries.GetById;
 using Application.Features.Lessons.Queries.GetList;
+using Application.Features.Lessons.Queries.GetListByCourseId;
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Microsoft.AspNetCore.Mvc;
@@ -41,6 +43,14 @@ public class LessonsController : BaseController
     public async Task<IActionResult> GetById([FromRoute] int id)
     {
         GetByIdLessonResponse response = await Mediator.Send(new GetByIdLessonQuery { Id = id });
+        return Ok(response);
+    }
+
+    [HttpGet("getByCourseId/{courseId}")]
+    public async Task<IActionResult> GetList([FromRoute] int courseId, [FromQuery] PageRequest pageRequest)
+    {
+        GetListByCourseIdLessonQuery getListByCourseIdLessonQuery = new() { CourseId = courseId, PageRequest = pageRequest };
+        GetListResponse<GetListByCourseIdLessonListItemDto> response = await Mediator.Send(getListByCourseIdLessonQuery);
         return Ok(response);
     }
 
