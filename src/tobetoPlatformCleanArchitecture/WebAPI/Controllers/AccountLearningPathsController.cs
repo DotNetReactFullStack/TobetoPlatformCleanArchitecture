@@ -4,6 +4,7 @@ using Application.Features.AccountLearningPaths.Commands.Update;
 using Application.Features.AccountLearningPaths.Queries.GetById;
 using Application.Features.AccountLearningPaths.Queries.GetList;
 using Application.Features.AccountLearningPaths.Queries.GetListByAccountId;
+using Application.Features.AccountLearningPaths.Queries.GetListByLearningPathId;
 using Application.Features.Experiences.Queries.GetListByAccountId;
 using Core.Application.Requests;
 using Core.Application.Responses;
@@ -46,10 +47,18 @@ public class AccountLearningPathsController : BaseController
         return Ok(response);
     }
     [HttpGet("getByAccountId/{accountId}")]
-    public async Task<IActionResult> GetList([FromRoute] int accountId, [FromQuery] PageRequest pageRequest)
+    public async Task<IActionResult> GetListByAccountId([FromRoute] int accountId, [FromQuery] PageRequest pageRequest)
     {
         GetListByAccountIdAccountLearningPathQuery getListByAccountIdAccountLearningPathQuery = new() { AccountId = accountId, PageRequest = pageRequest };
         GetListResponse<GetListByAccountIdAccountLearningPathListItemDto> response = await Mediator.Send(getListByAccountIdAccountLearningPathQuery);
+        return Ok(response);
+    }
+
+    [HttpGet("getByLearningPathId/{learningPathId}")]
+    public async Task<IActionResult> GetListByLearningId([FromRoute] int learningPathId, [FromQuery] PageRequest pageRequest)
+    {
+        GetListByLearningPathIdAccountLearningPathQuery getListByLearningPathIdAccountLearningPathQuery = new() { LearningPathId = learningPathId, PageRequest = pageRequest };
+        GetListResponse<GetListByLearningPathIdAccountLearningPathListItemDto> response = await Mediator.Send(getListByLearningPathIdAccountLearningPathQuery);
         return Ok(response);
     }
 
