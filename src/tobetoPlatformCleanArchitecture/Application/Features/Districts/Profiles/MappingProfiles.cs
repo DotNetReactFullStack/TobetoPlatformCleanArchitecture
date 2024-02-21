@@ -28,7 +28,7 @@ public class MappingProfiles : Profile
         CreateMap<IPaginate<District>, GetListResponse<GetListDistrictListItemDto>>().ReverseMap();
 
         CreateMap<District, GetListByCityIdDistrictListItemDto>().
-            ForMember(destinationMember: d => d.DistrictName,
+            ForMember(destinationMember: d => d.Name,
             memberOptions: opt => opt.MapFrom(d => d.Name)).ReverseMap();
         CreateMap<IPaginate<District>, GetListResponse<GetListByCityIdDistrictListItemDto>>().ReverseMap();
     }
