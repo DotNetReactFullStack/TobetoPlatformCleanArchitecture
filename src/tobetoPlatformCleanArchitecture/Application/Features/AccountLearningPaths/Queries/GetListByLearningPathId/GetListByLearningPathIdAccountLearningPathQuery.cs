@@ -14,7 +14,7 @@ using static Application.Features.AccountLearningPaths.Constants.AccountLearning
 
 
 namespace Application.Features.AccountLearningPaths.Queries.GetListByLearningPathId;
-public class GetListByLearningPathIdAccountLearningPathQuery : IRequest<GetListResponse<GetListByLearningPathIdAccountLearningPathListItemDto>>//, ISecuredRequest, ICachableRequest
+public class GetListByLearningPathIdAccountLearningPathQuery : IRequest<GetListResponse<GetListByLearningPathIdAccountLearningPathListItemDto>>, ISecuredRequest, ICachableRequest
 {
     public int LearningPathId { get; set; }
     public PageRequest PageRequest { get; set; }
@@ -22,7 +22,7 @@ public class GetListByLearningPathIdAccountLearningPathQuery : IRequest<GetListR
     public string[] Roles => new[] { Admin, Read, GeneralOperationClaims.Instructor, GeneralOperationClaims.Student };
 
     public bool BypassCache { get; }
-    public string CacheKey => $"GetListAccountLearningPaths({PageRequest.PageIndex},{PageRequest.PageSize})";
+    public string CacheKey => $"GetListByLearningPathId({LearningPathId})AccountLearningPaths({PageRequest.PageIndex},{PageRequest.PageSize})";
     public string CacheGroupKey => "GetAccountLearningPaths";
     public TimeSpan? SlidingExpiration { get; }
 
