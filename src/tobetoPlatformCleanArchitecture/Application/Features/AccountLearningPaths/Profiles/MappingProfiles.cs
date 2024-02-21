@@ -8,6 +8,7 @@ using Core.Application.Responses;
 using Domain.Entities;
 using Core.Persistence.Paging;
 using Application.Features.AccountLearningPaths.Queries.GetListByAccountId;
+using Application.Features.AccountLearningPaths.Queries.GetListByLearningPathId;
 
 namespace Application.Features.AccountLearningPaths.Profiles;
 
@@ -31,7 +32,27 @@ public class MappingProfiles : Profile
             .ForMember(destinationMember: d => d.ImageUrl,
             memberOptions: opt => opt.MapFrom(alp => alp.LearningPath.ImageUrl))
             .ReverseMap();
+        CreateMap<AccountLearningPath, GetListByLearningPathIdAccountLearningPathListItemDto>()
+            .ForMember(destinationMember: d => d.LearningPathCategoryId,
+            memberOptions: opt => opt.MapFrom(alp => alp.LearningPath.LearningPathCategoryId))
+            .ForMember(destinationMember: d => d.LearningPathName,
+            memberOptions: opt => opt.MapFrom(alp => alp.LearningPath.Name))
+            .ForMember(destinationMember: d => d.Visibility,
+            memberOptions: opt => opt.MapFrom(alp => alp.LearningPath.Visibility))
+            .ForMember(destinationMember: d => d.StartingTime,
+            memberOptions: opt => opt.MapFrom(alp => alp.LearningPath.StartingTime))
+            .ForMember(destinationMember: d => d.EndingTime,
+            memberOptions: opt => opt.MapFrom(alp => alp.LearningPath.EndingTime))
+            .ForMember(destinationMember: d => d.NumberOfLikes,
+            memberOptions: opt => opt.MapFrom(alp => alp.LearningPath.NumberOfLikes))
+            .ForMember(destinationMember: d => d.TotalDuration,
+            memberOptions: opt => opt.MapFrom(alp => alp.LearningPath.TotalDuration))
+            .ForMember(destinationMember: d => d.ImageUrl,
+            memberOptions: opt => opt.MapFrom(alp => alp.LearningPath.ImageUrl))
+            .ReverseMap();
         CreateMap<IPaginate<AccountLearningPath>, GetListResponse<GetListAccountLearningPathListItemDto>>().ReverseMap();
         CreateMap<IPaginate<AccountLearningPath>, GetListResponse<GetListByAccountIdAccountLearningPathListItemDto>>().ReverseMap();
+        CreateMap<IPaginate<AccountLearningPath>, GetListResponse<GetListByLearningPathIdAccountLearningPathListItemDto>>().ReverseMap();
+
     }
 }
