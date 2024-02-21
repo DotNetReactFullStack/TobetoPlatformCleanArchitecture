@@ -3,6 +3,8 @@ using Application.Features.AccountLessons.Commands.Delete;
 using Application.Features.AccountLessons.Commands.Update;
 using Application.Features.AccountLessons.Queries.GetById;
 using Application.Features.AccountLessons.Queries.GetList;
+using Application.Features.AccountLessons.Queries.GetListByAccountIdAndLessonId;
+using Application.Features.CourseLearningPaths.Queries.GetListByLearningPathId;
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Microsoft.AspNetCore.Mvc;
@@ -41,6 +43,13 @@ public class AccountLessonsController : BaseController
     public async Task<IActionResult> GetById([FromRoute] int id)
     {
         GetByIdAccountLessonResponse response = await Mediator.Send(new GetByIdAccountLessonQuery { Id = id });
+        return Ok(response);
+    }
+
+    [HttpGet("GetAccountIdAndLessonId{accountId}/{lessonId}")]
+    public async Task<IActionResult> GetById([FromRoute] int accountId, [FromRoute] int lessonId)
+    {
+        GetByAccountIdAndLessonIdAccountLessonResponse response = await Mediator.Send(new GetByAccountIdAndLessonIdAccountLessonQuery {AccountId = accountId, LessonId = lessonId });
         return Ok(response);
     }
 
