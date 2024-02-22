@@ -9,6 +9,7 @@ using Application.Features.Experiences.Queries.GetListByAccountId;
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Microsoft.AspNetCore.Mvc;
+using Nest;
 
 namespace WebAPI.Controllers;
 
@@ -46,21 +47,22 @@ public class AccountLearningPathsController : BaseController
         GetByIdAccountLearningPathResponse response = await Mediator.Send(new GetByIdAccountLearningPathQuery { Id = id });
         return Ok(response);
     }
+
+    [HttpGet("getByAccountId/{accountId}/LearningPathId/{learningPathId}")]
+    public async Task<IActionResult> GetListByAccountIdAndLearningPathId([FromRoute] int accountId, [FromRoute] int learningPathId)
+    {
+        GetByAccountIdAndLearningPathIdAccountLearningPathResponse response = await Mediator.Send(new GetByAccountIdAndLearningPathIdAccountLearningPathQuery { AccountId = accountId, LearningPathId = learningPathId });
+        return Ok(response);
+    }
+
     [HttpGet("getByAccountId/{accountId}")]
     public async Task<IActionResult> GetListByAccountId([FromRoute] int accountId, [FromQuery] PageRequest pageRequest)
     {
         GetListByAccountIdAccountLearningPathQuery getListByAccountIdAccountLearningPathQuery = new() { AccountId = accountId, PageRequest = pageRequest };
         GetListResponse<GetListByAccountIdAccountLearningPathListItemDto> response = await Mediator.Send(getListByAccountIdAccountLearningPathQuery);
         return Ok(response);
-    }
-
-    [HttpGet("getByLearningPathId/{learningPathId}")]
-    public async Task<IActionResult> GetListByLearningId([FromRoute] int learningPathId, [FromQuery] PageRequest pageRequest)
-    {
-        GetListByLearningPathIdAccountLearningPathQuery getListByLearningPathIdAccountLearningPathQuery = new() { LearningPathId = learningPathId, PageRequest = pageRequest };
-        GetListResponse<GetListByLearningPathIdAccountLearningPathListItemDto> response = await Mediator.Send(getListByLearningPathIdAccountLearningPathQuery);
-        return Ok(response);
-    }
+    }   
+   
 
     [HttpGet]
     public async Task<IActionResult> GetList([FromQuery] PageRequest pageRequest)

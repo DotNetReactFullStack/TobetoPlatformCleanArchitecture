@@ -1,12 +1,7 @@
-﻿using Core.Application.Dtos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Core.Application.Responses;
 
 namespace Application.Features.AccountLearningPaths.Queries.GetListByLearningPathId;
-public class GetListByLearningPathIdAccountLearningPathListItemDto : IDto
+public class GetByAccountIdAndLearningPathIdAccountLearningPathResponse : IResponse
 {
     public int Id { get; set; }
     public int AccountId { get; set; }
