@@ -1,6 +1,8 @@
 using Application.Features.AccountLearningPaths.Commands.Create;
 using Application.Features.AccountLearningPaths.Commands.Delete;
 using Application.Features.AccountLearningPaths.Commands.Update;
+using Application.Features.AccountLearningPaths.Commands.Update.UpdateAccountLearningPathIsLiked;
+using Application.Features.AccountLearningPaths.Commands.Update.UpdateAccountLearningPathIsSaved;
 using Application.Features.AccountLearningPaths.Queries.GetById;
 using Application.Features.AccountLearningPaths.Queries.GetList;
 using Application.Features.AccountLearningPaths.Queries.GetListByAccountId;
@@ -29,6 +31,20 @@ public class AccountLearningPathsController : BaseController
     public async Task<IActionResult> Update([FromBody] UpdateAccountLearningPathCommand updateAccountLearningPathCommand)
     {
         UpdatedAccountLearningPathResponse response = await Mediator.Send(updateAccountLearningPathCommand);
+
+        return Ok(response);
+    }
+    [HttpPut("IsLiked")]
+    public async Task<IActionResult> UpdateIsLiked([FromBody] UpdateAccountLearningPathIsLikedCommand updateAccountLearningPathIsLikedCommand)
+    {
+        UpdatedAccountLearningPathResponse response = await Mediator.Send(updateAccountLearningPathIsLikedCommand);
+
+        return Ok(response);
+    }
+    [HttpPut("IsSaved")]
+    public async Task<IActionResult> UpdateIsSaved([FromBody] UpdateAccountLearningPathIsSavedCommand updateAccountLearningPathIsSavedCommand)
+    {
+        UpdatedAccountLearningPathResponse response = await Mediator.Send(updateAccountLearningPathIsSavedCommand);
 
         return Ok(response);
     }
