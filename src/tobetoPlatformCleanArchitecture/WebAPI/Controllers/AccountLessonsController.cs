@@ -46,7 +46,7 @@ public class AccountLessonsController : BaseController
         return Ok(response);
     }
 
-    [HttpGet("GetAccountIdAndLessonId{accountId}/{lessonId}")]
+    [HttpGet("getAccountId/{accountId}/LessonId/{lessonId}")]
     public async Task<IActionResult> GetById([FromRoute] int accountId, [FromRoute] int lessonId)
     {
         GetByAccountIdAndLessonIdAccountLessonResponse response = await Mediator.Send(new GetByAccountIdAndLessonIdAccountLessonQuery {AccountId = accountId, LessonId = lessonId });

@@ -6,6 +6,7 @@ using Domain.Entities;
 using Core.Application.Pipelines.Authorization;
 using MediatR;
 using static Application.Features.Lessons.Constants.LessonsOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.Lessons.Queries.GetById;
 
@@ -13,7 +14,7 @@ public class GetByIdLessonQuery : IRequest<GetByIdLessonResponse>, ISecuredReque
 {
     public int Id { get; set; }
 
-    public string[] Roles => new[] { Admin, Read };
+    public string[] Roles => new[] { Admin, Read, GeneralOperationClaims.Instructor, GeneralOperationClaims.Student };
 
     public class GetByIdLessonQueryHandler : IRequestHandler<GetByIdLessonQuery, GetByIdLessonResponse>
     {

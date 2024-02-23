@@ -1,16 +1,19 @@
-﻿using Core.Application.Dtos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Core.Application.Responses;
 
 namespace Application.Features.AccountLearningPaths.Queries.GetListByLearningPathId;
-public class GetListByLearningPathIdAccountLearningPathListItemDto :IDto
+public class GetByAccountIdAndLearningPathIdAccountLearningPathResponse : IResponse
 {
     public int Id { get; set; }
     public int AccountId { get; set; }
     public int LearningPathId { get; set; }
+    public int LearningPathCategoryId { get; set; }
+    public string LearningPathName { get; set; }
+    public bool Visibility { get; set; }
+    public DateTime StartingTime { get; set; }
+    public DateTime EndingTime { get; set; }
+    public int NumberOfLikes { get; set; }
+    public int TotalDuration { get; set; }
+    public string ImageUrl { get; set; }
     public int TotalNumberOfPoints { get; set; }
     public byte PercentComplete { get; set; }
     public bool IsContinue { get; set; }

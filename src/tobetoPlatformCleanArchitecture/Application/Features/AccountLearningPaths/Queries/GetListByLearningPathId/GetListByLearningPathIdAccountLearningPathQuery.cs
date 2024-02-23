@@ -9,14 +9,14 @@ using Core.Application.Responses;
 using Core.Persistence.Paging;
 using Domain.Entities;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
+
+namespace Application.Features.AccountLearningPaths.Queries.GetListByLearningPathId;
 using static Application.Features.AccountLearningPaths.Constants.AccountLearningPathsOperationClaims;
 
 
-namespace Application.Features.AccountLearningPaths.Queries.GetListByLearningPathId;
 public class GetListByLearningPathIdAccountLearningPathQuery : IRequest<GetListResponse<GetListByLearningPathIdAccountLearningPathListItemDto>>, ISecuredRequest, ICachableRequest
 {
-    public int LearningPathId { get; set; }
+    public  int LearningPathId { get; set; }
     public PageRequest PageRequest { get; set; }
 
     public string[] Roles => new[] { Admin, Read, GeneralOperationClaims.Instructor, GeneralOperationClaims.Student };
@@ -43,8 +43,7 @@ public class GetListByLearningPathIdAccountLearningPathQuery : IRequest<GetListR
                 predicate: alp => alp.LearningPathId == request.LearningPathId,
                 index: request.PageRequest.PageIndex,
                 size: request.PageRequest.PageSize,
-                cancellationToken: cancellationToken,
-                include: alp => alp.Include(alp => alp.LearningPath)
+                cancellationToken: cancellationToken
             );
 
             GetListResponse<GetListByLearningPathIdAccountLearningPathListItemDto> response = _mapper.Map<GetListResponse<GetListByLearningPathIdAccountLearningPathListItemDto>>(accountLearningPaths);
