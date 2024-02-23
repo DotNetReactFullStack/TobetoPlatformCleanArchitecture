@@ -37,6 +37,7 @@ public class GetListByCourseIdLessonQuery : IRequest<GetListResponse<GetListByCo
         public async Task<GetListResponse<GetListByCourseIdLessonListItemDto>> Handle(GetListByCourseIdLessonQuery request, CancellationToken cancellationToken)
         {
             IPaginate<Lesson> lessons = await _lessonRepository.GetListAsync(
+                predicate: l => l.CourseId == request.CourseId,
                 index: request.PageRequest.PageIndex,
                 size: request.PageRequest.PageSize,
                 cancellationToken: cancellationToken
