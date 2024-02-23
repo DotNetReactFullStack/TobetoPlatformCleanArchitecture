@@ -17,7 +17,6 @@
 
   <ItemGroup>
     <Folder Include="Dtos\" />
-    <Folder Include="Features\AccountLearningPaths\Queries\NewFolder\" />
     <Folder Include="Features\Accounts\Queries\GetByUserId\" />
     <Folder Include="Features\AccountCapabilities\Queries\GetListByAccountId\" />
   </ItemGroup>

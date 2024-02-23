@@ -50,9 +50,11 @@ public class MappingProfiles : Profile
             .ForMember(destinationMember: d => d.ImageUrl,
             memberOptions: opt => opt.MapFrom(alp => alp.LearningPath.ImageUrl))
             .ReverseMap();
-       
+
+        CreateMap<AccountLearningPath, GetListByLearningPathIdAccountLearningPathListItemDto>().ReverseMap();
         CreateMap<IPaginate<AccountLearningPath>, GetListResponse<GetListAccountLearningPathListItemDto>>().ReverseMap();
-        CreateMap<IPaginate<AccountLearningPath>, GetListResponse<GetListByAccountIdAccountLearningPathListItemDto>>().ReverseMap();        
+        CreateMap<IPaginate<AccountLearningPath>, GetListResponse<GetListByAccountIdAccountLearningPathListItemDto>>().ReverseMap();  
+        CreateMap<IPaginate<AccountLearningPath>, GetListResponse<GetListByLearningPathIdAccountLearningPathListItemDto>>().ReverseMap();
 
     }
 }

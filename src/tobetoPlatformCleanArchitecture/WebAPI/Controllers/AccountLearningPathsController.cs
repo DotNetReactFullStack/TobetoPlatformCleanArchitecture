@@ -61,8 +61,15 @@ public class AccountLearningPathsController : BaseController
         GetListByAccountIdAccountLearningPathQuery getListByAccountIdAccountLearningPathQuery = new() { AccountId = accountId, PageRequest = pageRequest };
         GetListResponse<GetListByAccountIdAccountLearningPathListItemDto> response = await Mediator.Send(getListByAccountIdAccountLearningPathQuery);
         return Ok(response);
-    }   
-   
+    }
+
+    [HttpGet("getByLearningPathId/{learningPathId}")]
+    public async Task<IActionResult> GetListByLearningPathId([FromRoute] int learningPathId, [FromQuery] PageRequest pageRequest)
+    {
+        GetListByLearningPathIdAccountLearningPathQuery getListByLearningPathIdAccountLearningPathQuery = new() { LearningPathId = learningPathId, PageRequest = pageRequest };
+        GetListResponse<GetListByLearningPathIdAccountLearningPathListItemDto> response = await Mediator.Send(getListByLearningPathIdAccountLearningPathQuery);
+        return Ok(response);
+    }
 
     [HttpGet]
     public async Task<IActionResult> GetList([FromQuery] PageRequest pageRequest)
