@@ -9,17 +9,19 @@ using Domain.Entities;
 using Core.Persistence.Paging;
 using Application.Features.AccountLearningPaths.Queries.GetListByAccountId;
 using Application.Features.AccountLearningPaths.Queries.GetListByLearningPathId;
+using Application.Features.AccountLearningPaths.Commands.Update.UpdateAccountLearningPathIsLiked;
 
 namespace Application.Features.AccountLearningPaths.Profiles;
 
 public class MappingProfiles : Profile
 {
     public MappingProfiles()
-    {
+    {        
         CreateMap<AccountLearningPath, CreateAccountLearningPathCommand>().ReverseMap();
         CreateMap<AccountLearningPath, CreatedAccountLearningPathResponse>().ReverseMap();
         CreateMap<AccountLearningPath, UpdateAccountLearningPathCommand>().ReverseMap();
         CreateMap<AccountLearningPath, UpdatedAccountLearningPathResponse>().ReverseMap();
+        CreateMap<AccountLearningPath, UpdateAccountLearningPathIsLikedCommand>().ReverseMap();
         CreateMap<AccountLearningPath, DeleteAccountLearningPathCommand>().ReverseMap();
         CreateMap<AccountLearningPath, DeletedAccountLearningPathResponse>().ReverseMap();
         CreateMap<AccountLearningPath, GetByIdAccountLearningPathResponse>().ReverseMap();
