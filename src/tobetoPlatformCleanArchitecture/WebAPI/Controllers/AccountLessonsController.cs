@@ -1,6 +1,7 @@
 using Application.Features.AccountLessons.Commands.Create;
 using Application.Features.AccountLessons.Commands.Delete;
 using Application.Features.AccountLessons.Commands.Update;
+using Application.Features.AccountLessons.Commands.Update.UpdateAccountLessonIsComplete;
 using Application.Features.AccountLessons.Queries.GetById;
 using Application.Features.AccountLessons.Queries.GetList;
 using Application.Features.AccountLessons.Queries.GetListByAccountIdAndLessonId;
@@ -30,6 +31,16 @@ public class AccountLessonsController : BaseController
 
         return Ok(response);
     }
+
+
+    [HttpPut("IsComplete")]
+    public async Task<IActionResult> UpdateIsComplete([FromBody] UpdateAccountLessonIsCompleteCommand updateAccountLessonCommand)
+    {
+        UpdatedAccountLessonResponse response = await Mediator.Send(updateAccountLessonCommand);
+
+        return Ok(response);
+    }   
+
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete([FromRoute] int id)
