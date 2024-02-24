@@ -9,6 +9,7 @@ using Domain.Entities;
 using Core.Persistence.Paging;
 using Application.Features.AccountLessons.Queries.GetListByAccountIdAndLessonId;
 using Application.Features.AccountLessons.Commands.Update.UpdateAccountLessonIsComplete;
+using Application.Features.AccountLessons.Queries.GetListByAccountId;
 
 namespace Application.Features.AccountLessons.Profiles;
 
@@ -26,6 +27,9 @@ public class MappingProfiles : Profile
         CreateMap<AccountLesson, GetByIdAccountLessonResponse>().ReverseMap();
         CreateMap<AccountLesson, GetListAccountLessonListItemDto>().ReverseMap();
         CreateMap<AccountLesson, GetByAccountIdAndLessonIdAccountLessonResponse>().ReverseMap();
+        CreateMap<AccountLesson, GetListByAccountIdAccountLessonListItemDto>().ReverseMap();
         CreateMap<IPaginate<AccountLesson>, GetListResponse<GetListAccountLessonListItemDto>>().ReverseMap();
+        CreateMap<IPaginate<AccountLesson>, GetListResponse<GetListByAccountIdAccountLessonListItemDto>>().ReverseMap();
+
     }
 }
