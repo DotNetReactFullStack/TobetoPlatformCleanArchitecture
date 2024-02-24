@@ -15,9 +15,8 @@ using static Application.Features.AccountAnnouncements.Constants.AccountAnnounce
 
 namespace Application.Features.AccountAnnouncements.Queries.GetListByAccountId
 {
-    public class GetListByAccountIdAccountAnnouncementQuery : IRequest<GetListResponse<GetListByAccountIdAccountAnnouncementListItemDto>>, ICachableRequest
+    public class GetListByAccountIdAccountAnnouncementQuery : IRequest<GetListResponse<GetListByAccountIdAccountAnnouncementListItemDto>>, ISecuredRequest, ICachableRequest
     {
-        public int? Id { get; set; }
         public int AccountId { get; set; }
 
         public PageRequest PageRequest { get; set; }
@@ -43,12 +42,12 @@ namespace Application.Features.AccountAnnouncements.Queries.GetListByAccountId
             public async Task<GetListResponse<GetListByAccountIdAccountAnnouncementListItemDto>> Handle(GetListByAccountIdAccountAnnouncementQuery request, CancellationToken cancellationToken)
             {
                 IPaginate<AccountAnnouncement> accountAnnouncements = await _accountAnnouncementRepository.GetListAsync(
+                    predicate: (aa => aa.AccountId == request.AccountId),
                     index: request.PageRequest.PageIndex,
                     size: request.PageRequest.PageSize,
                     cancellationToken: cancellationToken,
-                    predicate: (aa => aa.AccountId == request.AccountId),
-                    include:aa=>aa.Include(p=>p.Announcement.AnnouncementType)
-                                  .Include(p=>p.Announcement.Organization)
+                    include:aa=>aa.Include(aa=>aa.Announcement.AnnouncementType)
+                                  .Include(aa=>aa.Announcement.Organization)
                 );
 
                 GetListResponse<GetListByAccountIdAccountAnnouncementListItemDto> response = _mapper.Map<GetListResponse<GetListByAccountIdAccountAnnouncementListItemDto>>(accountAnnouncements);
