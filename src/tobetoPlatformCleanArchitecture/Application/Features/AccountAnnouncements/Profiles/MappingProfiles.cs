@@ -26,6 +26,12 @@ public class MappingProfiles : Profile
         CreateMap<AccountAnnouncement, GetListByAccountIdAccountAnnouncementListItemDto>()
             .ForMember(destinationMember: dest => dest.AnnouncementTypeName, memberOptions: opt => opt.MapFrom(src => src.Announcement.AnnouncementType.Name))
             .ForMember(destinationMember: dest => dest.OrganizationName, memberOptions: opt => opt.MapFrom(src => src.Announcement.Organization.Name))
+            .ForMember(destinationMember: dest => dest.Name, memberOptions: opt => opt.MapFrom(src => src.Announcement.Name))
+            .ForMember(destinationMember: dest => dest.Content, memberOptions: opt => opt.MapFrom(src => src.Announcement.Content))
+            .ForMember(destinationMember: dest => dest.PublishedDate, memberOptions: opt => opt.MapFrom(src => src.Announcement.PublishedDate))
+            .ForMember(destinationMember: dest => dest.Read, memberOptions: opt=>opt.MapFrom(src => src.Announcement.AccountAnnouncements.FirstOrDefault().Read))
+            .ForMember(destinationMember: dest=>dest.Priority, memberOptions: opt=>opt.MapFrom(src=>src.Announcement.Priority))
+            .ForMember(destinationMember: dest=>dest.Visibility, memberOptions: opt=>opt.MapFrom(src=>src.Announcement.Visibility))
             .ReverseMap();
         CreateMap<IPaginate<AccountAnnouncement>, GetListResponse<GetListAccountAnnouncementListItemDto>>().ReverseMap();
         CreateMap<IPaginate<AccountAnnouncement>, GetListResponse<GetListByAccountIdAccountAnnouncementListItemDto>>().ReverseMap();
