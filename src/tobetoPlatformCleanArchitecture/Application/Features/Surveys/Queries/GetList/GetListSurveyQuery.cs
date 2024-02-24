@@ -10,6 +10,7 @@ using Core.Persistence.Paging;
 using MediatR;
 using static Application.Features.Surveys.Constants.SurveysOperationClaims;
 using Application.Features.OperationClaims.Constants;
+using Microsoft.EntityFrameworkCore;
 
 namespace Application.Features.Surveys.Queries.GetList;
 
@@ -40,7 +41,9 @@ public class GetListSurveyQuery : IRequest<GetListResponse<GetListSurveyListItem
             IPaginate<Survey> surveys = await _surveyRepository.GetListAsync(
                 index: request.PageRequest.PageIndex,
                 size: request.PageRequest.PageSize, 
-                cancellationToken: cancellationToken
+                cancellationToken: cancellationToken,
+                include:s=>s.Include(p=>p.Organization).
+                             Include(p=>p.SurveyType)
             );
 
             GetListResponse<GetListSurveyListItemDto> response = _mapper.Map<GetListResponse<GetListSurveyListItemDto>>(surveys);

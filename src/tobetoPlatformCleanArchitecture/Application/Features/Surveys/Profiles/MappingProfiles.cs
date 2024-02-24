@@ -21,7 +21,12 @@ public class MappingProfiles : Profile
         CreateMap<Survey, DeleteSurveyCommand>().ReverseMap();
         CreateMap<Survey, DeletedSurveyResponse>().ReverseMap();
         CreateMap<Survey, GetByIdSurveyResponse>().ReverseMap();
-        CreateMap<Survey, GetListSurveyListItemDto>().ReverseMap();
+        CreateMap<Survey, GetListSurveyListItemDto>().ReverseMap()
+            .ForPath(destinationMember: dest => dest.Organization.Name,
+            memberOptions: opt => opt.MapFrom(dto => dto.OrganizationName))
+            .ForPath(destinationMember:dest=> dest.SurveyType.Name,
+            memberOptions:opt=>opt.MapFrom(dto=>dto.SurveyTypeName));
+
         CreateMap<IPaginate<Survey>, GetListResponse<GetListSurveyListItemDto>>().ReverseMap();
     }
 }
