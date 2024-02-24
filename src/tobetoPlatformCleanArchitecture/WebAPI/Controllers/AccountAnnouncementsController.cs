@@ -3,6 +3,7 @@ using Application.Features.AccountAnnouncements.Commands.Delete;
 using Application.Features.AccountAnnouncements.Commands.Update;
 using Application.Features.AccountAnnouncements.Queries.GetById;
 using Application.Features.AccountAnnouncements.Queries.GetList;
+using Application.Features.AccountAnnouncements.Queries.GetListByAccountId;
 using Core.Application.Requests;
 using Core.Application.Responses;
 using Microsoft.AspNetCore.Mvc;
@@ -49,6 +50,14 @@ public class AccountAnnouncementsController : BaseController
     {
         GetListAccountAnnouncementQuery getListAccountAnnouncementQuery = new() { PageRequest = pageRequest };
         GetListResponse<GetListAccountAnnouncementListItemDto> response = await Mediator.Send(getListAccountAnnouncementQuery);
+        return Ok(response);
+    }
+
+    [HttpGet("getByAccountId/{accountId}")]
+    public async Task<IActionResult> GetListByAccountId([FromRoute] int accountId, [FromQuery] PageRequest pageRequest)
+    {
+        GetListByAccountIdAccountAnnouncementQuery getListByAccountIdAccountAnnouncementQuery = new() { AccountId=accountId, PageRequest = pageRequest };
+        GetListResponse<GetListByAccountIdAccountAnnouncementListItemDto> response = await Mediator.Send(getListByAccountIdAccountAnnouncementQuery);
         return Ok(response);
     }
 }
