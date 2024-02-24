@@ -32,5 +32,19 @@ public class AddressConfiguration : IEntityTypeConfiguration<Address>
             .OnDelete(DeleteBehavior.ClientNoAction);
 
         builder.HasQueryFilter(a => !a.DeletedDate.HasValue);
+
+        builder.HasData(getSeeds());
+    }
+
+    private HashSet<Address> getSeeds()
+    {
+        int id = 0;
+        HashSet<Address> seeds =
+            new()
+            {
+                new Address { Id = ++id, AccountId=1, CountryId=1, CityId=1, DistrictId=1, AddressDetail = "Organizasyon adresi..." },
+            };
+
+        return seeds;
     }
 }
