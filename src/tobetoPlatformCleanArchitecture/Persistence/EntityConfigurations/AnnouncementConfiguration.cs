@@ -23,5 +23,22 @@ public class AnnouncementConfiguration : IEntityTypeConfiguration<Announcement>
         builder.Property(a => a.DeletedDate).HasColumnName("DeletedDate");
 
         builder.HasQueryFilter(a => !a.DeletedDate.HasValue);
+
+        builder.HasData(getSeeds());
+    }
+
+    private HashSet<Announcement> getSeeds()
+    {
+        int id = 0;
+        HashSet<Announcement> seeds =
+            new()
+            {
+                new Announcement { Id = ++id, AnnouncementTypeId=1, OrganizationId=1, Name = "20 Şubat Kampüs Buluşması Hk.", Content="Heyecanla beklenen Son Kampüs Buluşması için geri sayıma başladık. Seninle tanışmak için sabırsızlanıyoruz...", PublishedDate=DateTime.Now, Priority= 1, Visibility=true },
+                new Announcement { Id = ++id, AnnouncementTypeId=1, OrganizationId=1, Name = "21 Şubat Kampüs Buluşması Hk.", Content="Heyecanla beklenen Son Kampüs Buluşması için geri sayıma başladık. Seninle tanışmak için sabırsızlanıyoruz...", PublishedDate=DateTime.Now, Priority= 1, Visibility=true },
+                new Announcement { Id = ++id, AnnouncementTypeId=1, OrganizationId=1, Name = "22 Şubat Kampüs Buluşması Hk.", Content="Heyecanla beklenen Son Kampüs Buluşması için geri sayıma başladık. Seninle tanışmak için sabırsızlanıyoruz...", PublishedDate=DateTime.Now, Priority= 1, Visibility=true },
+                new Announcement { Id = ++id, AnnouncementTypeId=1, OrganizationId=1, Name = "23 Şubat Kampüs Buluşması Hk.", Content="Heyecanla beklenen Son Kampüs Buluşması için geri sayıma başladık. Seninle tanışmak için sabırsızlanıyoruz...", PublishedDate=DateTime.Now, Priority= 1, Visibility=true },
+            };
+
+        return seeds;
     }
 }
