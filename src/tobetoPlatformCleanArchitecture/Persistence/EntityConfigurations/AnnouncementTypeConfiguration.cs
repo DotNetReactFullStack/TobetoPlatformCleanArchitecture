@@ -19,5 +19,20 @@ public class AnnouncementTypeConfiguration : IEntityTypeConfiguration<Announceme
         builder.Property(at => at.DeletedDate).HasColumnName("DeletedDate");
 
         builder.HasQueryFilter(at => !at.DeletedDate.HasValue);
+
+        builder.HasData(getSeeds());
+    }
+
+    private HashSet<AnnouncementType> getSeeds()
+    {
+        int id = 0;
+        HashSet<AnnouncementType> seeds =
+            new()
+            {
+                new AnnouncementType { Id = ++id, Name = "Duyuru", Priority= 1, Visibility=true },
+                new AnnouncementType { Id = ++id, Name = "Haber", Priority= 1, Visibility=true },
+            };
+
+        return seeds;
     }
 }
