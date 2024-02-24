@@ -23,11 +23,10 @@ public class MappingProfiles : Profile
         CreateMap<AccountAnnouncement, DeletedAccountAnnouncementResponse>().ReverseMap();
         CreateMap<AccountAnnouncement, GetByIdAccountAnnouncementResponse>().ReverseMap();
         CreateMap<AccountAnnouncement, GetListAccountAnnouncementListItemDto>().ReverseMap();
-        CreateMap<AccountAnnouncement, GetListByAccountIdAccountAnnouncementListItemDto>().ReverseMap()
-            .ForPath(destinationMember: dest => dest.Announcement.AnnouncementType,
-            memberOptions: opt => opt.MapFrom(dto => dto.AnnouncementTypeName))
-            .ForPath(destinationMember:dest=>dest.Announcement.Organization.Name,
-            memberOptions:opt=>opt.MapFrom(dto=>dto.OrganizationName));
+        CreateMap<AccountAnnouncement, GetListByAccountIdAccountAnnouncementListItemDto>()
+            .ForMember(destinationMember: dest => dest.AnnouncementTypeName, memberOptions: opt => opt.MapFrom(src => src.Announcement.AnnouncementType.Name))
+            .ForMember(destinationMember: dest => dest.OrganizationName, memberOptions: opt => opt.MapFrom(src => src.Announcement.Organization.Name))
+            .ReverseMap();
         CreateMap<IPaginate<AccountAnnouncement>, GetListResponse<GetListAccountAnnouncementListItemDto>>().ReverseMap();
         CreateMap<IPaginate<AccountAnnouncement>, GetListResponse<GetListByAccountIdAccountAnnouncementListItemDto>>().ReverseMap();
     }
