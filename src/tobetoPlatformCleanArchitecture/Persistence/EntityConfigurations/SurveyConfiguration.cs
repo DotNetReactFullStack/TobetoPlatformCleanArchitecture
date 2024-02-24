@@ -25,5 +25,19 @@ public class SurveyConfiguration : IEntityTypeConfiguration<Survey>
         builder.Property(s => s.DeletedDate).HasColumnName("DeletedDate");
 
         builder.HasQueryFilter(s => !s.DeletedDate.HasValue);
+
+        builder.HasData(getSeeds());
+    }
+
+    private HashSet<Survey> getSeeds()
+    {
+        int id = 0;
+        HashSet<Survey> seeds =
+            new()
+            {
+                new Survey { Id = ++id, SurveyTypeId=2, OrganizationId=1, Title = "Mindset Anketi", Content="Mindset anketi içeriği...", ConnectionLink="https://form.jotform.com/240143980661960", IsActive=true, PublishedDate=DateTime.Now, Priority= 1, Visibility=true },
+            };
+
+        return seeds;
     }
 }

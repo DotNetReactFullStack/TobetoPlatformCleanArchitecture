@@ -19,5 +19,20 @@ public class SurveyTypeConfiguration : IEntityTypeConfiguration<SurveyType>
         builder.Property(st => st.DeletedDate).HasColumnName("DeletedDate");
 
         builder.HasQueryFilter(st => !st.DeletedDate.HasValue);
+
+        builder.HasData(getSeeds());
+    }
+
+    private HashSet<SurveyType> getSeeds()
+    {
+        int id = 0;
+        HashSet<SurveyType> seeds =
+            new()
+            {
+                new SurveyType { Id = ++id, Name = "Değerlendirme Anketi", Priority= 1, Visibility=true },
+                new SurveyType { Id = ++id, Name = "Araştırma Anketi", Priority= 2, Visibility=true },
+            };
+
+        return seeds;
     }
 }

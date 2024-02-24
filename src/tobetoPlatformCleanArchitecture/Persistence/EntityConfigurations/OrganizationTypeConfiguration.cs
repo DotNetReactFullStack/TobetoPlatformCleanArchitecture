@@ -19,5 +19,19 @@ public class OrganizationTypeConfiguration : IEntityTypeConfiguration<Organizati
         builder.Property(ot => ot.DeletedDate).HasColumnName("DeletedDate");
 
         builder.HasQueryFilter(ot => !ot.DeletedDate.HasValue);
+
+        builder.HasData(getSeeds());
+    }
+
+    private HashSet<OrganizationType> getSeeds()
+    {
+        int id = 0;
+        HashSet<OrganizationType> seeds =
+            new()
+            {
+                new OrganizationType { Id = ++id, Name = "Organizasyon Tip-1", Priority= 1, Visibility=true },
+            };
+
+        return seeds;
     }
 }
