@@ -77,7 +77,7 @@ public class CourseLearningPathsManager : ICourseLearningPathsService
 
     public async Task<List<int>> GetListByLearningPathIdCourseIds(int learningPathId)
     {
-        var courseLearningPaths = await GetListAsync(predicate: clp => clp.LearningPathId == learningPathId);
+        IPaginate<CourseLearningPath> courseLearningPaths = await GetListAsync(predicate: clp => clp.LearningPathId == learningPathId, size: 20000);
 
         List<int> courseIds = new List<int>();
         
