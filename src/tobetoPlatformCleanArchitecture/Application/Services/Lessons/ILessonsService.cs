@@ -27,4 +27,6 @@ public interface ILessonsService
     Task<Lesson> AddAsync(Lesson lesson);
     Task<Lesson> UpdateAsync(Lesson lesson);
     Task<Lesson> DeleteAsync(Lesson lesson, bool permanent = false);
+
+    Task<List<int>> GetListByCourseIdLessonIds(int courseId);
 }

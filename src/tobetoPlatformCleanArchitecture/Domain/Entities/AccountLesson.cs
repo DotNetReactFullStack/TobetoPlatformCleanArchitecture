@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Domain.Entities;
-public class AccountLesson : Entity<int>
+public class AccountLesson : Entity<int>, IDisposable
 {
     public int LessonId { get; set; }
     public int AccountId { get; set; }
@@ -21,6 +21,14 @@ public class AccountLesson : Entity<int>
         
     }
 
+    public AccountLesson(int lessonId, int accountId, int points, bool isComplete) : this()
+    {
+        LessonId = lessonId;
+        AccountId = accountId;
+        Points = points;
+        IsComplete = isComplete;
+    }
+
     public AccountLesson(int id, int lessonId, int accountId, int points, bool isComplete) : this()
     {
         Id = id;
@@ -28,5 +36,10 @@ public class AccountLesson : Entity<int>
         AccountId = accountId;
         Points = points;
         IsComplete = isComplete;
+    }
+
+    public void Dispose()
+    {
+
     }
 }

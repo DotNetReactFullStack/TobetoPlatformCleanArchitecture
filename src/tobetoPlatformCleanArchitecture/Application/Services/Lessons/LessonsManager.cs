@@ -74,4 +74,18 @@ public class LessonsManager : ILessonsService
 
         return deletedLesson;
     }
+
+    public async Task<List<int>> GetListByCourseIdLessonIds(int courseId)
+    {
+        IPaginate<Lesson> lessons = await GetListAsync(predicate: l => l.CourseId == courseId, size:200000);
+
+        List<int> lessonIds = new List<int>();
+
+        foreach (var item in lessons.Items)
+        {
+            lessonIds.Add(item.Id);
+        }
+
+        return lessonIds;
+    }
 }
