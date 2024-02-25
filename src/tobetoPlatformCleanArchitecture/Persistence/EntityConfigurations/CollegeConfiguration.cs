@@ -38,7 +38,7 @@ public class CollegeConfiguration : IEntityTypeConfiguration<College>
                 new College { Id = ++id, Name = "Hacettepe Üniversitesi", Visibility=true },
                 new College { Id = ++id, Name = "İstanbul Üniversitesi", Visibility=true },
                 new College { Id = ++id, Name = "Gazi Üniversitesi", Visibility=true },
-                //new College { Id = ++id, Name = "Gazi Üniversitesi", Visibility=true },
+                //new College { Id = ++id, Name = "Gazi Üniversitesi  ıİ çş ÇÇ ŞŞ Şö üĞ ğ ", Visibility=true },
             };
         return seeds;
     }
