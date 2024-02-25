@@ -1,8 +1,10 @@
 using Application.Features.AccountLessons.Commands.Create;
 using Application.Features.AccountLessons.Commands.Delete;
 using Application.Features.AccountLessons.Commands.Update;
+using Application.Features.AccountLessons.Commands.Update.UpdateAccountLessonIsComplete;
 using Application.Features.AccountLessons.Queries.GetById;
 using Application.Features.AccountLessons.Queries.GetList;
+using Application.Features.AccountLessons.Queries.GetListByAccountId;
 using Application.Features.AccountLessons.Queries.GetListByAccountIdAndLessonId;
 using Application.Features.CourseLearningPaths.Queries.GetListByLearningPathId;
 using Core.Application.Requests;
@@ -31,6 +33,16 @@ public class AccountLessonsController : BaseController
         return Ok(response);
     }
 
+
+    [HttpPut("IsComplete")]
+    public async Task<IActionResult> UpdateIsComplete([FromBody] UpdateAccountLessonIsCompleteCommand updateAccountLessonCommand)
+    {
+        UpdatedAccountLessonResponse response = await Mediator.Send(updateAccountLessonCommand);
+
+        return Ok(response);
+    }   
+
+
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete([FromRoute] int id)
     {
@@ -52,6 +64,15 @@ public class AccountLessonsController : BaseController
         GetByAccountIdAndLessonIdAccountLessonResponse response = await Mediator.Send(new GetByAccountIdAndLessonIdAccountLessonQuery {AccountId = accountId, LessonId = lessonId });
         return Ok(response);
     }
+
+    [HttpGet("getListByAccountId/{accountId}")]
+    public async Task<IActionResult> GetListByAccountId([FromRoute] int accountId, [FromQuery] PageRequest pageRequest)
+    {
+        GetListByAccountIdAccountLessonQuery getListByAccountIdAccountLessonQuery = new() {AccountId=accountId, PageRequest = pageRequest };
+        GetListResponse<GetListByAccountIdAccountLessonListItemDto> response = await Mediator.Send(getListByAccountIdAccountLessonQuery);
+        return Ok(response);
+    }
+
 
     [HttpGet]
     public async Task<IActionResult> GetList([FromQuery] PageRequest pageRequest)

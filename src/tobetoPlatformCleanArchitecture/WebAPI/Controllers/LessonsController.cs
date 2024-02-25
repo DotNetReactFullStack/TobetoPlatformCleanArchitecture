@@ -2,6 +2,7 @@ using Application.Features.CourseLearningPaths.Queries.GetListByLearningPathId;
 using Application.Features.Lessons.Commands.Create;
 using Application.Features.Lessons.Commands.Delete;
 using Application.Features.Lessons.Commands.Update;
+using Application.Features.Lessons.Commands.Update.UpdateLessonDuration;
 using Application.Features.Lessons.Queries.GetById;
 using Application.Features.Lessons.Queries.GetList;
 using Application.Features.Lessons.Queries.GetListByCourseId;
@@ -27,6 +28,14 @@ public class LessonsController : BaseController
     public async Task<IActionResult> Update([FromBody] UpdateLessonCommand updateLessonCommand)
     {
         UpdatedLessonResponse response = await Mediator.Send(updateLessonCommand);
+
+        return Ok(response);
+    }
+
+    [HttpPut("updateLessonDuration")]
+    public async Task<IActionResult> UpdateLessonDuration([FromBody] UpdateLessonDurationCommand updateLessonDurationCommand)
+    {
+        UpdatedLessonResponse response = await Mediator.Send(updateLessonDurationCommand);
 
         return Ok(response);
     }
