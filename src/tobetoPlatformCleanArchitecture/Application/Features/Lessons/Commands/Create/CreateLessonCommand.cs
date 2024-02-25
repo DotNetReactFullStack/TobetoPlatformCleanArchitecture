@@ -9,6 +9,7 @@ using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using MediatR;
 using static Application.Features.Lessons.Constants.LessonsOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.Lessons.Commands.Create;
 
@@ -23,7 +24,7 @@ public class CreateLessonCommand : IRequest<CreatedLessonResponse>, ISecuredRequ
     public bool IsActive { get; set; }
     public string VideoUrl { get; set; }
 
-    public string[] Roles => new[] { Admin, Write, LessonsOperationClaims.Create };
+    public string[] Roles => new[] { Admin, Write, LessonsOperationClaims.Create, GeneralOperationClaims.Instructor };
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }

@@ -31,6 +31,7 @@ public class DistrictConfiguration : IEntityTypeConfiguration<District>
         HashSet<District> seeds =
             new()
             {
+                new District { Id = ++id, CityId=++cityId, Name = "İlçe", Priority= 1, Visibility=true},
                 //__District________________________ istanbul, bursa, ankara
                 new District { Id = ++id, CityId=++cityId, Name = "Kadiköy", Priority= 1, Visibility=true },
                 new District { Id = ++id, CityId=cityId, Name = "Bakırköy", Priority= 2, Visibility=true },

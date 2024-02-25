@@ -25,6 +25,15 @@ public class Address : Entity<int>
         
     }
 
+    public Address(int accountId, int cityId, int districtId, int countryId, string addressDetail) : this()
+    {        
+        AccountId = accountId;
+        CityId = cityId;
+        DistrictId = districtId;
+        CountryId = countryId;
+        AddressDetail = addressDetail;
+    }
+
     public Address(int id, int accountId, int cityId, int districtId, int countryId, string addressDetail) : this()
     {
         Id = id;
