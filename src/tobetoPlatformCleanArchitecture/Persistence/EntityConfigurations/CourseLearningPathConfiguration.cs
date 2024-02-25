@@ -31,6 +31,14 @@ public class CourseLearningPathConfiguration : IEntityTypeConfiguration<CourseLe
             {
                     new CourseLearningPath { Id = ++id, CourseId=1, LearningPathId=1, Visibility=true},
                     new CourseLearningPath { Id = ++id, CourseId=4, LearningPathId=1, Visibility=true},
+                    new CourseLearningPath { Id = ++id, CourseId=5, LearningPathId=2, Visibility=true},
+                    new CourseLearningPath { Id = ++id, CourseId=6, LearningPathId=2, Visibility=true},
+                    new CourseLearningPath { Id = ++id, CourseId=7, LearningPathId=3, Visibility=true},
+                    new CourseLearningPath { Id = ++id, CourseId=8, LearningPathId=3, Visibility=true},
+                    new CourseLearningPath { Id = ++id, CourseId=9, LearningPathId=4, Visibility=true},
+                    new CourseLearningPath { Id = ++id, CourseId=10, LearningPathId=4, Visibility=true},
+                    new CourseLearningPath { Id = ++id, CourseId=11, LearningPathId=5, Visibility=true},
+                    new CourseLearningPath { Id = ++id, CourseId=12, LearningPathId=5, Visibility=true},
             };
         return seeds;
     }

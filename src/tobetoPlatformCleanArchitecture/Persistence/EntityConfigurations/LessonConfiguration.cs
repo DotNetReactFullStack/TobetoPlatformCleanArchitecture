@@ -93,6 +93,74 @@ public class LessonConfiguration : IEntityTypeConfiguration<Lesson>
                 new Lesson { Id = ++id, CourseId=4, Name="Html 5 Dersleri 8: Form Tagleri", Visibility= true, Language= "Türkçe",Content= "Html 5 Dersleri 8 açýklamasý", VideoUrl = "5K5mUa_Q1VY", Duration=18, IsActive = true},
 
                 new Lesson { Id = ++id, CourseId=4, Name="Html 5 Dersleri 9: Html 5 Ýle Gelen Form Tagleri", Visibility= true, Language= "Türkçe",Content= "Html 5 Dersleri 9 açýklamasý", VideoUrl = "5vKZPDT0gcM", Duration=7, IsActive = true},
+
+                new Lesson { Id = ++id, CourseId=5, Name="Ýstanbul Kodluyor Proje Aþamalarý", Visibility= true, Language= "Türkçe",Content= "Ýstanbul Kodluyor Proje Aþamalarý açýklamasý", VideoUrl = "lIRN7fXQIcQ", Duration=1, IsActive = true},
+
+                new Lesson { Id = ++id, CourseId=6, Name="Ýstanbul Kodluyor Kampüs Buluþmasý 2", Visibility= true, Language= "Türkçe",Content= "Ýstanbul Kodluyor Kampüs Buluþmasý 2 açýklamasý", VideoUrl = "1zMSWuTgqTI", Duration=1, IsActive = true},
+
+                new Lesson { Id = ++id, CourseId=7, Name="Java Derslerine Giriþ", Visibility= true, Language= "Türkçe",Content= "Java Derslerine Giriþ açýklamasý", VideoUrl = "-XfPd-cQRuo", Duration=1, IsActive = true},
+                new Lesson { Id = ++id, CourseId=7, Name="OOP Giriþ", Visibility= true, Language= "Türkçe",Content= "OOP Giriþ açýklamasý", VideoUrl = "2Vx_Z-5Dr4I", Duration=1, IsActive = true},
+
+                new Lesson { Id = ++id, CourseId=7, Name="OOP - Class & Interface ile Sürdürülebilirlik", Visibility= true, Language= "Türkçe",Content= "OOP - Class & Interface ile Sürdürülebilirlik açýklamasý", VideoUrl = "CcutMZm3WtI", Duration=1, IsActive = true},
+
+                new Lesson { Id = ++id, CourseId=7, Name="Spring Boot Giriþ", Visibility= true, Language= "Türkçe",Content= "Spring Boot Giriþ açýklamasý", VideoUrl = "AMOHXH2uzgY", Duration=1, IsActive = true},
+
+                new Lesson { Id = ++id, CourseId=7, Name="Spring Boot 2", Visibility= true, Language= "Türkçe",Content= "Spring Boot 2 açýklamasý", VideoUrl = "7Qqb4IyULmo", Duration=1, IsActive = true},
+
+                new Lesson { Id = ++id, CourseId=7, Name="Spring Boot 3", Visibility= true, Language= "Türkçe",Content= "Spring Boot 3 açýklamasý", VideoUrl = "hyYJwO3GEic", Duration=1, IsActive = true},
+
+                new Lesson { Id = ++id, CourseId=7, Name="Spring Boot 4", Visibility= true, Language= "Türkçe",Content= "Spring Boot 4 açýklamasý", VideoUrl = "IWv7jLsaxLM", Duration=1, IsActive = true},
+                new Lesson { Id = ++id, CourseId=8, Name="Tanýtým", Visibility= true, Language= "Türkçe",Content= "Tanýtým açýklamasý", VideoUrl = "rlKjFEKjXyg", Duration=1, IsActive = true},
+
+                new Lesson { Id = ++id, CourseId=8, Name="Ýþlenecek Konular ve Yapýlacak Uygulama Tanýtýmý", Visibility= true, Language= "Türkçe",Content= "Ýþlenecek Konular ve Yapýlacak Uygulama Tanýtýmý açýklamasý", VideoUrl = "x7_Rmsmkw5g", Duration=1, IsActive = true},
+
+                new Lesson { Id = ++id, CourseId=8, Name="NodeJS ve Angular Cli kurulumu", Visibility= true, Language= "Türkçe",Content= "NodeJS ve Angular Cli kurulumu açýklamasý", VideoUrl = "bA71kJ_ELek", Duration=1, IsActive = true},
+
+                new Lesson { Id = ++id, CourseId=8, Name="Proje oluþturma", Visibility= true, Language= "Türkçe",Content= "Proje oluþturma açýklamasý", VideoUrl = "v9FxSVjWTic", Duration=1, IsActive = true},
+
+                new Lesson { Id = ++id, CourseId=8, Name="Kýsaca Klasör Yapýsý ve Dosyalar", Visibility= true, Language= "Türkçe",Content= "Kýsaca Klasör Yapýsý ve Dosyalar açýklamasý", VideoUrl = "raSrjyUjFbc", Duration=1, IsActive = true},
+
+                new Lesson { Id = ++id, CourseId=8, Name="TypeScript", Visibility= true, Language= "Türkçe",Content= "TypeScript açýklamasý", VideoUrl = "IA9b7swmP4o", Duration=1, IsActive = true},
+
+                new Lesson { Id = ++id, CourseId=8, Name="Components", Visibility= true, Language= "Türkçe",Content= "Components açýklamasý", VideoUrl = "ofRjx87jGlw", Duration=1, IsActive = true},
+
+                new Lesson { Id = ++id, CourseId=8, Name="Deðiþkenler ve Veri Tipleri", Visibility= true, Language= "Türkçe",Content= "Deðiþkenler ve Veri Tipleri açýklamasý", VideoUrl = "0uHcZekbNcE", Duration=1, IsActive = true},
+
+                new Lesson { Id = ++id, CourseId=8, Name="Services", Visibility= true, Language= "Türkçe",Content= "Services açýklamasý", VideoUrl = "Pxl5LSvRu74", Duration=1, IsActive = true},
+
+                new Lesson { Id = ++id, CourseId=8, Name="ngIf ve ngFor", Visibility= true, Language= "Türkçe",Content= "ngIf ve ngFor açýklamasý", VideoUrl = "j3F6A7wK-S4", Duration=1, IsActive = true},
+
+                //Flutter Course;
+                new Lesson { Id = ++id, CourseId=9, Name="Flutter Mobil Programlama Kampý", Visibility= true, Language= "Türkçe",Content= "Flutter Mobil Programlama Kampý açýklamasý", VideoUrl = "oISIcfHAzm4", Duration=355, IsActive = true},
+
+                new Lesson { Id = ++id, CourseId=9, Name="Flutter SDK & Android Studio & Visual Studio Code Kurulumu", Visibility= true, Language= "Türkçe",Content= "Flutter SDK & Android Studio & Visual Studio Code Kurulumu açýklamasý", VideoUrl = "uyYBewriDT8", Duration=56, IsActive = true},
+
+                //Yemek Sipariþi uygulamasý
+                new Lesson { Id = ++id, CourseId=10, Name="Food Delivery App | Part 1", Visibility= true, Language= "Türkçe",Content= "Food Delivery App | Part 1 açýklamasý", VideoUrl = "7dAt-JMSCVQ", Duration=720, IsActive = true},
+                new Lesson { Id = ++id, CourseId=10, Name="Full Course With API | Part 2", Visibility= true, Language= "Türkçe",Content= "Full Course With API | Part 2 açýklamasý", VideoUrl = "GQJovou6zuE", Duration=710, IsActive = true},
+                new Lesson { Id = ++id, CourseId=10, Name="Flutter Ecommerce App | Part 3", Visibility= true, Language= "Türkçe",Content= "Flutter Ecommerce App | Part 3 açýklamasý", VideoUrl = "qapb-_gMZRs", Duration=193, IsActive = true},
+
+                //C# ve .NET Mülakatlarýndan En Önde Geçme Teknikleri - Part 1
+                new Lesson { Id = ++id, CourseId=11, Name="Giriþ", Visibility= true, Language= "Türkçe",Content= "Giriþ açýklamasý", VideoUrl = "iRBN3p4J_xk", Duration=2, IsActive = true},
+
+                new Lesson { Id = ++id, CourseId=11, Name="Ne Ýstiyorsun?", Visibility= true, Language= "Türkçe",Content= "Ne Ýstiyorsun? açýklamasý", VideoUrl = "7h0h93LS8hw", Duration=2, IsActive = true},
+
+                new Lesson { Id = ++id, CourseId=11, Name="Organizasyonel Kültürü Keþfedin", Visibility= true, Language= "Türkçe",Content= "Organizasyonel Kültürü Keþfedin açýklamasý", VideoUrl = "46zp-3139M4", Duration=2, IsActive = true},
+                new Lesson { Id = ++id, CourseId=11, Name="Deðer ve Referans Tipler", Visibility= true, Language= "Türkçe",Content= "Deðer ve Referans Tipler açýklamasý", VideoUrl = "_giFJC-07yw?", Duration=2, IsActive = true},
+
+                new Lesson { Id = ++id, CourseId=11, Name="Ýnterface nedir? Ne iþe yarar?", Visibility= true, Language= "Türkçe",Content= "Ýnterface nedir? Ne iþe yarar? açýklamasý", VideoUrl = "GyCTVZTIOKM", Duration=2, IsActive = true},
+
+                //C# ve .NET Mülakatlarýndan En Önde Geçme Teknikleri - Part 2
+
+                new Lesson { Id = ++id, CourseId=11, Name="Framework ve Library Kavramlarý Nedir?", Visibility= true, Language= "Türkçe",Content= "Framework ve Library Kavramlarý Nedir? açýklamasý", VideoUrl = "5dQeNa0Uzns", Duration=2, IsActive = true},
+
+                new Lesson { Id = ++id, CourseId=11, Name="SOLID Prensipleri Nedir?", Visibility= true, Language= "Türkçe",Content= "SOLID Prensipleri Nedir? açýklamasý", VideoUrl = "gdjcKwWxe08", Duration=2, IsActive = true},
+
+                new Lesson { Id = ++id, CourseId=11, Name="Single Responsibility Principle", Visibility= true, Language= "Türkçe",Content= "Single Responsibility Principle açýklamasý", VideoUrl = "AX6nDbsP2ME", Duration=2, IsActive = true},
+
+                new Lesson { Id = ++id, CourseId=11, Name="Open Closed Principle ", Visibility= true, Language= "Türkçe",Content= "Open Closed Principle  açýklamasý", VideoUrl = "tx2DjE-VwOY", Duration=2, IsActive = true},
+
+                new Lesson { Id = ++id, CourseId=11, Name="Liskov's Subsititution Principle", Visibility= true, Language= "Türkçe",Content= "Liskov's Subsititution Principle açýklamasý", VideoUrl = "M2bDfaZvTTs", Duration=2, IsActive = true},
             };
         return seeds;
     }

@@ -35,7 +35,15 @@ public class AccountLearningPathConfiguration : IEntityTypeConfiguration<Account
         HashSet<AccountLearningPath> seeds =
             new()
             {
-                    new AccountLearningPath { Id = ++id, AccountId=1, LearningPathId=1, TotalNumberOfPoints=30, PercentComplete=35, IsContinue=true, IsComplete= false, IsLiked=true, IsSaved=true, IsActive=true},
+                    new AccountLearningPath { Id = ++id, AccountId=1, LearningPathId=1, TotalNumberOfPoints=0, PercentComplete=0, IsContinue=false, IsComplete= false, IsLiked=false, IsSaved=false, IsActive=true},
+
+                    new AccountLearningPath { Id = ++id, AccountId=1, LearningPathId=2, TotalNumberOfPoints=0, PercentComplete=0, IsContinue=false, IsComplete= false, IsLiked=false, IsSaved=false, IsActive=true},
+
+                    new AccountLearningPath { Id = ++id, AccountId=1, LearningPathId=3, TotalNumberOfPoints=0, PercentComplete=0, IsContinue=false, IsComplete= false, IsLiked=false, IsSaved=false, IsActive=true},
+
+                    new AccountLearningPath { Id = ++id, AccountId=1, LearningPathId=4, TotalNumberOfPoints=0, PercentComplete=0, IsContinue=false, IsComplete= false, IsLiked=false, IsSaved=false, IsActive=true},
+
+                    new AccountLearningPath { Id = ++id, AccountId=1, LearningPathId=5, TotalNumberOfPoints=0, PercentComplete=0, IsContinue=false, IsComplete= false, IsLiked=false, IsSaved=false, IsActive=true},
             };
         return seeds;
     }
