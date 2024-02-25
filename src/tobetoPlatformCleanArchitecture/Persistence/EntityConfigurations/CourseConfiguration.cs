@@ -34,6 +34,7 @@ public class CourseConfiguration : IEntityTypeConfiguration<Course>
                     new Course { Id = ++id, CourseCategoryId= 1, Name= "Yazýlým Geliþtirici Yetiþtirme Kampý", TotalDuration = 50, Priority= 1, IsActive= true },
                     new Course { Id = ++id, CourseCategoryId= 1, Name= "React", TotalDuration = 20, Priority= 1, IsActive= true },
                     new Course { Id = ++id, CourseCategoryId= 1, Name= "TypeScript", TotalDuration = 30, Priority= 1, IsActive= true },
+                    new Course { Id = ++id, CourseCategoryId= 1, Name= "HTML 5", TotalDuration = 70, Priority= 1, IsActive= true },
             };
         return seeds;
     }
