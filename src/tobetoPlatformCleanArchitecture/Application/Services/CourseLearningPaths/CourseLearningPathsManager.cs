@@ -74,4 +74,18 @@ public class CourseLearningPathsManager : ICourseLearningPathsService
 
         return deletedCourseLearningPath;
     }
+
+    public async Task<List<int>> GetListByLearningPathIdCourseIds(int learningPathId)
+    {
+        var courseLearningPaths = await GetListAsync(predicate: clp => clp.LearningPathId == learningPathId);
+
+        List<int> courseIds = new List<int>();
+        
+        foreach (var item in courseLearningPaths.Items)
+        {
+            courseIds.Add(item.CourseId);
+        }
+
+        return courseIds;
+    }
 }
