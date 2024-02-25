@@ -1,6 +1,7 @@
 using Application.Features.Accounts.Commands.Create;
 using Application.Features.Accounts.Commands.Delete;
 using Application.Features.Accounts.Commands.Update;
+using Application.Features.Accounts.Commands.Update.UpdateAccountInformation;
 using Application.Features.Accounts.Queries.GetById;
 using Application.Features.Accounts.Queries.GetByUserId;
 using Application.Features.Accounts.Queries.GetList;
@@ -60,6 +61,14 @@ public class AccountsController : BaseController
     public async Task<IActionResult> GetByUserId([FromRoute] int userId)
     {
         GetByUserIdAccountResponse response = await Mediator.Send(new GetByUserIdAccountQuery { UserId = userId });
+        return Ok(response);
+    }
+
+    [HttpPut("updateAccountInformation")]
+    public async Task<IActionResult> UpdateFront([FromBody] UpdateAccountInformationCommand updateAccountFrontCommand)
+    {
+        UpdatedAccountResponse response = await Mediator.Send(updateAccountFrontCommand);
+
         return Ok(response);
     }
 
