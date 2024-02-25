@@ -29,10 +29,10 @@ public class CourseCategoryConfiguration : IEntityTypeConfiguration<CourseCatego
         HashSet<CourseCategory> seeds =
             new()
             {
-                new CourseCategory { Id = ++id, Name = "Yazýlým Geliþtirme", Priority=1 , Visibility = true},
-                new CourseCategory { Id = ++id, Name = "Kiþisel Geliþim", Priority=1 , Visibility = true},
-                new CourseCategory { Id = ++id, Name = "Ýstanbul Kodluyor", Priority=1 , Visibility = true},
-                new CourseCategory { Id = ++id, Name = "Yabancý Dil", Priority=1 , Visibility = true},
+                new CourseCategory { Id = ++id, Name = "YazÄ±lÄ±m GeliÅŸtirme", Priority=1 , Visibility = true},
+                new CourseCategory { Id = ++id, Name = "KiÅŸisel GeliÅŸim", Priority=1 , Visibility = true},
+                new CourseCategory { Id = ++id, Name = "Ä°stanbul Kodluyor", Priority=1 , Visibility = true},
+                new CourseCategory { Id = ++id, Name = "YabancÄ± Dil", Priority=1 , Visibility = true},
             };
         return seeds;
     }

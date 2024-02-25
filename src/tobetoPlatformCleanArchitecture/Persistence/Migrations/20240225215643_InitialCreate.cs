@@ -1593,6 +1593,15 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "AnnouncementTypes",
+                columns: new[] { "Id", "CreatedDate", "DeletedDate", "Name", "Priority", "UpdatedDate", "Visibility" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Duyuru", 1, null, true },
+                    { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Haber", 1, null, true }
+                });
+
+            migrationBuilder.InsertData(
                 table: "Capabilities",
                 columns: new[] { "Id", "CreatedDate", "DeletedDate", "Name", "Priority", "UpdatedDate", "Visibility" },
                 values: new object[,]
@@ -1647,9 +1656,10 @@ namespace Persistence.Migrations
                 columns: new[] { "Id", "CreatedDate", "DeletedDate", "Name", "Priority", "UpdatedDate", "Visibility" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Türkiye", 1, null, true },
-                    { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "İngiltere", 2, null, true },
-                    { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "İtalya", 3, null, true }
+                    { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Ülke", 1, null, true },
+                    { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Türkiye", 2, null, true },
+                    { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "İngiltere", 3, null, true },
+                    { 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "İtalya", 4, null, true }
                 });
 
             migrationBuilder.InsertData(
@@ -1659,7 +1669,8 @@ namespace Persistence.Migrations
                 {
                     { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Yazılım Geliştirme", 1, null, true },
                     { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Kişisel Gelişim", 1, null, true },
-                    { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "İşletme", 1, null, true }
+                    { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "İstanbul Kodluyor", 1, null, true },
+                    { 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Yabancı Dil", 1, null, true }
                 });
 
             migrationBuilder.InsertData(
@@ -1982,6 +1993,11 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "OrganizationTypes",
+                columns: new[] { "Id", "CreatedDate", "DeletedDate", "Name", "Priority", "UpdatedDate", "Visibility" },
+                values: new object[] { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Organizasyon Tip-1", 1, null, true });
+
+            migrationBuilder.InsertData(
                 table: "SocialMediaPlatforms",
                 columns: new[] { "Id", "CreatedDate", "DeletedDate", "IconPath", "Name", "Priority", "UpdatedDate", "Visibility" },
                 values: new object[,]
@@ -1993,9 +2009,18 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "SurveyTypes",
+                columns: new[] { "Id", "CreatedDate", "DeletedDate", "Name", "Priority", "UpdatedDate", "Visibility" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Değerlendirme Anketi", 1, null, true },
+                    { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Araştırma Anketi", 2, null, true }
+                });
+
+            migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "AuthenticatorType", "CreatedDate", "DeletedDate", "Email", "FirstName", "LastName", "PasswordHash", "PasswordSalt", "Status", "UpdatedDate" },
-                values: new object[] { 1, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "test@user.net", "Test", "User", new byte[] { 247, 229, 209, 78, 97, 173, 132, 211, 135, 80, 20, 52, 92, 0, 245, 239, 166, 201, 34, 109, 66, 117, 196, 185, 73, 64, 8, 23, 226, 106, 68, 200, 18, 228, 119, 108, 85, 168, 25, 204, 243, 67, 177, 55, 112, 240, 192, 69, 28, 184, 109, 127, 186, 210, 105, 181, 122, 164, 1, 19, 152, 235, 14, 178 }, new byte[] { 133, 185, 47, 77, 205, 82, 115, 59, 172, 180, 114, 137, 146, 205, 232, 34, 44, 75, 79, 4, 132, 32, 73, 123, 67, 145, 114, 11, 157, 250, 201, 236, 200, 187, 53, 180, 93, 76, 153, 153, 33, 124, 77, 206, 211, 47, 115, 30, 242, 15, 153, 154, 127, 10, 174, 46, 28, 251, 225, 164, 229, 14, 46, 153, 153, 217, 212, 39, 239, 1, 188, 36, 57, 244, 219, 191, 106, 129, 20, 47, 170, 170, 224, 220, 170, 158, 186, 103, 91, 158, 4, 102, 200, 130, 37, 83, 150, 220, 58, 100, 117, 229, 216, 95, 132, 119, 241, 189, 235, 18, 59, 33, 124, 234, 61, 133, 96, 191, 187, 4, 253, 130, 189, 199, 123, 93, 193, 37 }, true, null });
+                values: new object[] { 1, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "test@user.net", "Test", "User", new byte[] { 155, 38, 159, 35, 123, 190, 14, 223, 211, 26, 211, 141, 166, 4, 6, 158, 174, 7, 102, 218, 145, 114, 11, 218, 170, 97, 206, 131, 74, 127, 146, 162, 29, 95, 89, 18, 116, 17, 41, 131, 239, 41, 152, 176, 76, 119, 147, 187, 50, 166, 21, 142, 253, 14, 106, 85, 118, 151, 25, 171, 125, 2, 152, 192 }, new byte[] { 98, 46, 87, 100, 103, 230, 92, 233, 50, 7, 101, 66, 181, 95, 128, 227, 63, 82, 79, 44, 81, 143, 68, 163, 163, 52, 252, 121, 14, 115, 203, 121, 199, 138, 230, 119, 196, 94, 236, 166, 227, 31, 103, 93, 227, 4, 110, 166, 138, 72, 26, 1, 198, 220, 55, 31, 240, 198, 233, 10, 17, 106, 242, 56, 0, 58, 160, 142, 22, 210, 8, 157, 128, 72, 16, 228, 90, 5, 193, 255, 44, 127, 204, 24, 157, 9, 230, 36, 227, 159, 241, 195, 154, 10, 34, 84, 97, 74, 149, 194, 153, 114, 159, 59, 110, 119, 9, 148, 245, 221, 255, 136, 160, 129, 123, 23, 65, 44, 12, 141, 171, 141, 179, 43, 214, 160, 144, 170 }, true, null });
 
             migrationBuilder.InsertData(
                 table: "Accounts",
@@ -2007,15 +2032,16 @@ namespace Persistence.Migrations
                 columns: new[] { "Id", "CountryId", "CreatedDate", "DeletedDate", "Name", "Priority", "UpdatedDate", "Visibility" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "İstanbul", 1, null, true },
-                    { 2, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Bursa", 2, null, true },
-                    { 3, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Ankara", 3, null, true },
-                    { 4, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Londra", 1, null, true },
-                    { 5, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Liverpool", 2, null, true },
-                    { 6, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Manchester", 3, null, true },
-                    { 7, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Roma", 1, null, true },
-                    { 8, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Floransa", 2, null, true },
-                    { 9, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Torino", 3, null, true }
+                    { 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "İl", 1, null, true },
+                    { 2, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "İstanbul", 1, null, true },
+                    { 3, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Bursa", 2, null, true },
+                    { 4, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Ankara", 3, null, true },
+                    { 5, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Londra", 1, null, true },
+                    { 6, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Liverpool", 2, null, true },
+                    { 7, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Manchester", 3, null, true },
+                    { 8, 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Roma", 1, null, true },
+                    { 9, 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Floransa", 2, null, true },
+                    { 10, 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Torino", 3, null, true }
                 });
 
             migrationBuilder.InsertData(
@@ -2025,7 +2051,16 @@ namespace Persistence.Migrations
                 {
                     { 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Yazılım Geliştirici Yetiştirme Kampı", 1, 50, null },
                     { 2, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "React", 1, 20, null },
-                    { 3, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "TypeScript", 1, 30, null }
+                    { 3, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "TypeScript", 1, 30, null },
+                    { 4, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "HTML 5", 1, 70, null },
+                    { 5, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Proje Aşamaları", 1, 1, null },
+                    { 6, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Kampüs Buluşmaları", 1, 1, null },
+                    { 7, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Java", 1, 1080, null },
+                    { 8, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Angular", 1, 150, null },
+                    { 9, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Flutter", 1, 400, null },
+                    { 10, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Yemek Siparişi Uygulaması", 1, 720, null },
+                    { 11, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "C# & .NET Mülakat Part-1", 1, 8, null },
+                    { 12, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "C# & .NET Mülakat Part-2", 1, 29, null }
                 });
 
             migrationBuilder.InsertData(
@@ -2059,7 +2094,14 @@ namespace Persistence.Migrations
             migrationBuilder.InsertData(
                 table: "LearningPaths",
                 columns: new[] { "Id", "CreatedDate", "DeletedDate", "EndingTime", "ImageUrl", "LearningPathCategoryId", "Name", "NumberOfLikes", "StartingTime", "TotalDuration", "UpdatedDate", "Visibility" },
-                values: new object[] { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2024, 4, 15, 18, 0, 0, 0, DateTimeKind.Unspecified), "/assets/images/dotnet-react-full-stack.png", 1, "Full-Stack Developer - 1B", 11, new DateTime(2024, 2, 20, 16, 45, 0, 0, DateTimeKind.Unspecified), 30, null, true });
+                values: new object[,]
+                {
+                    { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2024, 4, 15, 18, 0, 0, 0, DateTimeKind.Unspecified), "/assets/images/dotnet-react-full-stack.png", 1, ".NET & React Full-Stack | Öğrenme Yolculuğu", 11, new DateTime(2024, 2, 20, 16, 45, 0, 0, DateTimeKind.Unspecified), 30, null, true },
+                    { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2024, 1, 20, 17, 0, 0, 0, DateTimeKind.Unspecified), "https://lms.tobeto.com/tobeto/eep/common_show_picture_cached.aspx?pQS=eaAjNZ0uaOHiut7Ip2g6BA%3d%3d", 1, "İstanbul Kodluyor Proje Aşamaları", 42, new DateTime(2024, 1, 20, 12, 30, 0, 0, DateTimeKind.Unspecified), 1, null, true },
+                    { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2024, 2, 24, 23, 59, 0, 0, DateTimeKind.Unspecified), "https://i.ytimg.com/vi/ddqiBbmA6r8/maxresdefault.jpg", 1, "Java & Angular Full-Stack | Öğrenme Yolculuğu", 33, new DateTime(2023, 11, 10, 11, 0, 0, 0, DateTimeKind.Unspecified), 1027, null, true },
+                    { 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2024, 1, 22, 17, 0, 0, 0, DateTimeKind.Unspecified), "https://uploads-ssl.webflow.com/5f841209f4e71b2d70034471/60bb4a2e143f632da3e56aea_Flutter%20app%20development%20(2).png", 1, "Flutter Mobil Programlama | Öğrenme Yolculuğu", 22, new DateTime(2023, 12, 30, 16, 45, 0, 0, DateTimeKind.Unspecified), 1120, null, true },
+                    { 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2024, 1, 28, 23, 59, 0, 0, DateTimeKind.Unspecified), "https://lh3.googleusercontent.com/proxy/H4zl7fiYhYBhymjzsYWqfrfmEnOuHf5zbDi_ccmg7hfQsssASfLZAGit_S2tz8XqtFeNHVOw2uRznzHMaag98EH2EbjQiuBusYJ7n7YSEpEBqr4uCAfO5y05P_6m7gSrMsxvvvnj-I2oMkNByBStqW01fzB1ag", 1, "Mülakatlarda Öne Geçme Teknikleri | Softskill", 15, new DateTime(2024, 1, 11, 11, 0, 0, 0, DateTimeKind.Unspecified), 60, null, true }
+                });
 
             migrationBuilder.InsertData(
                 table: "UserOperationClaims",
@@ -2092,11 +2134,6 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "AccountCourses",
-                columns: new[] { "Id", "AccountId", "CourseId", "CreatedDate", "DeletedDate", "IsActive", "UpdatedDate" },
-                values: new object[] { 1, 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, null });
-
-            migrationBuilder.InsertData(
                 table: "AccountForeignLanguageMetadatas",
                 columns: new[] { "Id", "AccountId", "CreatedDate", "DeletedDate", "ForeignLanguageId", "ForeignLanguageLevelId", "Priority", "UpdatedDate" },
                 values: new object[,]
@@ -2105,11 +2142,6 @@ namespace Persistence.Migrations
                     { 2, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 2, 2, 2, null },
                     { 3, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 3, 1, 3, null }
                 });
-
-            migrationBuilder.InsertData(
-                table: "AccountLearningPaths",
-                columns: new[] { "Id", "AccountId", "CreatedDate", "DeletedDate", "IsActive", "IsComplete", "IsContinue", "IsLiked", "IsSaved", "LearningPathId", "PercentComplete", "TotalNumberOfPoints", "UpdatedDate" },
-                values: new object[] { 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, false, true, true, true, 1, (byte)35, 30, null });
 
             migrationBuilder.InsertData(
                 table: "AccountSocialMediaPlatforms",
@@ -2123,40 +2155,53 @@ namespace Persistence.Migrations
             migrationBuilder.InsertData(
                 table: "CourseLearningPaths",
                 columns: new[] { "Id", "CourseId", "CreatedDate", "DeletedDate", "LearningPathId", "UpdatedDate", "Visibility" },
-                values: new object[] { 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, null, true });
+                values: new object[,]
+                {
+                    { 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, null, true },
+                    { 2, 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, null, true },
+                    { 3, 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 2, null, true },
+                    { 4, 6, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 2, null, true },
+                    { 5, 7, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 3, null, true },
+                    { 6, 8, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 3, null, true },
+                    { 7, 9, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 4, null, true },
+                    { 8, 10, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 4, null, true },
+                    { 9, 11, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 5, null, true },
+                    { 10, 12, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 5, null, true }
+                });
 
             migrationBuilder.InsertData(
                 table: "Districts",
                 columns: new[] { "Id", "CityId", "CreatedDate", "DeletedDate", "Name", "Priority", "UpdatedDate", "Visibility" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Kadiköy", 1, null, true },
-                    { 2, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Bakırköy", 2, null, true },
-                    { 3, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Tuzla", 3, null, true },
-                    { 4, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Osmangazi", 1, null, true },
-                    { 5, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Nilüfer", 2, null, true },
-                    { 6, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "İnegöl", 3, null, true },
-                    { 7, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Çankaya", 1, null, true },
-                    { 8, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Etimesgut", 2, null, true },
-                    { 9, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Yenimahalle", 3, null, true },
-                    { 10, 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Chelsea", 1, null, true },
-                    { 11, 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Kensington", 2, null, true },
-                    { 12, 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Fulham", 3, null, true },
-                    { 13, 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Ropewalks", 1, null, true },
-                    { 14, 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Chinatown", 2, null, true },
-                    { 15, 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Lark Lane", 3, null, true },
-                    { 16, 6, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Trafford", 1, null, true },
-                    { 17, 6, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Tameside", 2, null, true },
-                    { 18, 6, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Bolton", 3, null, true },
-                    { 19, 7, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Pomezia", 1, null, true },
-                    { 20, 7, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Anzio", 2, null, true },
-                    { 21, 7, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Fiumicino", 3, null, true },
-                    { 22, 8, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Scandicci", 1, null, true },
-                    { 23, 8, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Empoli", 2, null, true },
-                    { 24, 8, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Signa", 3, null, true },
-                    { 25, 9, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Moncalieri", 1, null, true },
-                    { 26, 9, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Rivoli", 2, null, true },
-                    { 27, 9, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Chieri", 3, null, true }
+                    { 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "İlçe", 1, null, true },
+                    { 2, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Kadiköy", 1, null, true },
+                    { 3, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Bakırköy", 2, null, true },
+                    { 4, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Tuzla", 3, null, true },
+                    { 5, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Osmangazi", 1, null, true },
+                    { 6, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Nilüfer", 2, null, true },
+                    { 7, 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "İnegöl", 3, null, true },
+                    { 8, 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Çankaya", 1, null, true },
+                    { 9, 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Etimesgut", 2, null, true },
+                    { 10, 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Yenimahalle", 3, null, true },
+                    { 11, 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Chelsea", 1, null, true },
+                    { 12, 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Kensington", 2, null, true },
+                    { 13, 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Fulham", 3, null, true },
+                    { 14, 6, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Ropewalks", 1, null, true },
+                    { 15, 6, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Chinatown", 2, null, true },
+                    { 16, 6, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Lark Lane", 3, null, true },
+                    { 17, 7, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Trafford", 1, null, true },
+                    { 18, 7, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Tameside", 2, null, true },
+                    { 19, 7, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Bolton", 3, null, true },
+                    { 20, 8, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Pomezia", 1, null, true },
+                    { 21, 8, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Anzio", 2, null, true },
+                    { 22, 8, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Fiumicino", 3, null, true },
+                    { 23, 9, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Scandicci", 1, null, true },
+                    { 24, 9, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Empoli", 2, null, true },
+                    { 25, 9, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Signa", 3, null, true },
+                    { 26, 10, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Moncalieri", 1, null, true },
+                    { 27, 10, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Rivoli", 2, null, true },
+                    { 28, 10, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Chieri", 3, null, true }
                 });
 
             migrationBuilder.InsertData(
@@ -2194,20 +2239,77 @@ namespace Persistence.Migrations
                     { 18, "Angular Giriş 3 açıklaması", 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 174, true, "Türkçe", "Angular Giriş 3", null, "3xaRghmo-kU", true },
                     { 19, "Angular Giriş 4 açıklaması", 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 181, true, "Türkçe", "Angular Giriş 4", null, "-VVVDswfEJw", true },
                     { 20, "Angular Giriş 5 açıklaması", 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 176, true, "Türkçe", "Angular Giriş 5", null, "Sb1ZpVlS8LA", true },
-                    { 21, "Angular Giriş 6 açıklaması", 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 154, true, "Türkçe", "Angular Giriş 6", null, "obK-YEOuVgY", true }
+                    { 21, "Angular Giriş 6 açıklaması", 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 154, true, "Türkçe", "Angular Giriş 6", null, "obK-YEOuVgY", true },
+                    { 22, "Html 5 Dersleri 1 açıklaması", 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 4, true, "Türkçe", "Html 5 Dersleri 1: Plunker Online Editörümüzü Tanıyalım", null, "pkYSPtpvDqc", true },
+                    { 23, "Html 5 Dersleri 2 açıklaması", 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 4, true, "Türkçe", "Html 5 Dersleri 2: Html nedir?", null, "C8n7li03yJM", true },
+                    { 24, "Html 5 Dersleri 3 açıklaması", 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 4, true, "Türkçe", "Html 5 Dersleri 3: Temel Html Elementleri", null, "_CyfWwttWfk", true },
+                    { 25, "Html 5 Dersleri 4 açıklaması", 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 13, true, "Türkçe", "Html 5 Dersleri 4: Linklerle Çalışmak", null, "k1uoQWyxixQ", true },
+                    { 26, "Html 5 Dersleri 5 açıklaması", 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 6, true, "Türkçe", "Html 5 Dersleri 5: Tablolarla Çalışmak", null, "aph25fXelME", true },
+                    { 27, "Html 5 Dersleri 6 açıklaması", 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 7, true, "Türkçe", "Html 5 Dersleri 6: Formatlama", null, "7pT6prRLNX0", true },
+                    { 28, "Html 5 Dersleri 7 açıklaması", 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 8, true, "Türkçe", "Html 5 Dersleri 7: Layouts", null, "0OqzuBAQ7_A", true },
+                    { 29, "Html 5 Dersleri 8 açıklaması", 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 18, true, "Türkçe", "Html 5 Dersleri 8: Form Tagleri", null, "5K5mUa_Q1VY", true },
+                    { 30, "Html 5 Dersleri 9 açıklaması", 4, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 7, true, "Türkçe", "Html 5 Dersleri 9: Html 5 İle Gelen Form Tagleri", null, "5vKZPDT0gcM", true },
+                    { 31, "İstanbul Kodluyor Proje Aşamaları açıklaması", 5, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, true, "Türkçe", "İstanbul Kodluyor Proje Aşamaları", null, "lIRN7fXQIcQ", true },
+                    { 32, "İstanbul Kodluyor Kampüs Buluşması 2 açıklaması", 6, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, true, "Türkçe", "İstanbul Kodluyor Kampüs Buluşması 2", null, "1zMSWuTgqTI", true },
+                    { 33, "Java Derslerine Giriş açıklaması", 7, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, true, "Türkçe", "Java Derslerine Giriş", null, "-XfPd-cQRuo", true },
+                    { 34, "OOP Giriş açıklaması", 7, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, true, "Türkçe", "OOP Giriş", null, "2Vx_Z-5Dr4I", true },
+                    { 35, "OOP - Class & Interface ile Sürdürülebilirlik açıklaması", 7, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, true, "Türkçe", "OOP - Class & Interface ile Sürdürülebilirlik", null, "CcutMZm3WtI", true },
+                    { 36, "Spring Boot Giriş açıklaması", 7, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, true, "Türkçe", "Spring Boot Giriş", null, "AMOHXH2uzgY", true },
+                    { 37, "Spring Boot 2 açıklaması", 7, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, true, "Türkçe", "Spring Boot 2", null, "7Qqb4IyULmo", true },
+                    { 38, "Spring Boot 3 açıklaması", 7, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, true, "Türkçe", "Spring Boot 3", null, "hyYJwO3GEic", true },
+                    { 39, "Spring Boot 4 açıklaması", 7, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, true, "Türkçe", "Spring Boot 4", null, "IWv7jLsaxLM", true },
+                    { 40, "Tanıtım açıklaması", 8, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, true, "Türkçe", "Tanıtım", null, "rlKjFEKjXyg", true },
+                    { 41, "İşlenecek Konular ve Yapılacak Uygulama Tanıtımı açıklaması", 8, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, true, "Türkçe", "İşlenecek Konular ve Yapılacak Uygulama Tanıtımı", null, "x7_Rmsmkw5g", true },
+                    { 42, "NodeJS ve Angular Cli kurulumu açıklaması", 8, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, true, "Türkçe", "NodeJS ve Angular Cli kurulumu", null, "bA71kJ_ELek", true },
+                    { 43, "Proje oluşturma açıklaması", 8, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, true, "Türkçe", "Proje oluşturma", null, "v9FxSVjWTic", true },
+                    { 44, "Kısaca Klasör Yapısı ve Dosyalar açıklaması", 8, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, true, "Türkçe", "Kısaca Klasör Yapısı ve Dosyalar", null, "raSrjyUjFbc", true },
+                    { 45, "TypeScript açıklaması", 8, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, true, "Türkçe", "TypeScript", null, "IA9b7swmP4o", true },
+                    { 46, "Components açıklaması", 8, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, true, "Türkçe", "Components", null, "ofRjx87jGlw", true },
+                    { 47, "Değişkenler ve Veri Tipleri açıklaması", 8, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, true, "Türkçe", "Değişkenler ve Veri Tipleri", null, "0uHcZekbNcE", true },
+                    { 48, "Services açıklaması", 8, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, true, "Türkçe", "Services", null, "Pxl5LSvRu74", true },
+                    { 49, "ngIf ve ngFor açıklaması", 8, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, true, "Türkçe", "ngIf ve ngFor", null, "j3F6A7wK-S4", true },
+                    { 50, "Flutter Mobil Programlama Kampı açıklaması", 9, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 355, true, "Türkçe", "Flutter Mobil Programlama Kampı", null, "oISIcfHAzm4", true },
+                    { 51, "Flutter SDK & Android Studio & Visual Studio Code Kurulumu açıklaması", 9, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 56, true, "Türkçe", "Flutter SDK & Android Studio & Visual Studio Code Kurulumu", null, "uyYBewriDT8", true },
+                    { 52, "Food Delivery App | Part 1 açıklaması", 10, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 720, true, "Türkçe", "Food Delivery App | Part 1", null, "7dAt-JMSCVQ", true },
+                    { 53, "Full Course With API | Part 2 açıklaması", 10, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 710, true, "Türkçe", "Full Course With API | Part 2", null, "GQJovou6zuE", true },
+                    { 54, "Flutter Ecommerce App | Part 3 açıklaması", 10, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 193, true, "Türkçe", "Flutter Ecommerce App | Part 3", null, "qapb-_gMZRs", true },
+                    { 55, "Giriş açıklaması", 11, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 2, true, "Türkçe", "Giriş", null, "iRBN3p4J_xk", true },
+                    { 56, "Ne İstiyorsun? açıklaması", 11, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 2, true, "Türkçe", "Ne İstiyorsun?", null, "7h0h93LS8hw", true },
+                    { 57, "Organizasyonel Kültürü Keşfedin açıklaması", 11, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 2, true, "Türkçe", "Organizasyonel Kültürü Keşfedin", null, "46zp-3139M4", true },
+                    { 58, "Değer ve Referans Tipler açıklaması", 11, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 2, true, "Türkçe", "Değer ve Referans Tipler", null, "_giFJC-07yw?", true },
+                    { 59, "Interface nedir? Ne işe yarar? açıklaması", 11, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 2, true, "Türkçe", "Interface nedir? Ne işe yarar?", null, "GyCTVZTIOKM", true },
+                    { 60, "Framework ve Library Kavramlar Nedir? açıklaması", 11, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 2, true, "Türkçe", "Framework ve Library Kavramlar Nedir?", null, "5dQeNa0Uzns", true },
+                    { 61, "SOLID Prensipleri Nedir? açıklaması", 11, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 2, true, "Türkçe", "SOLID Prensipleri Nedir?", null, "gdjcKwWxe08", true },
+                    { 62, "Single Responsibility Principle açıklaması", 11, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 2, true, "Türkçe", "Single Responsibility Principle", null, "AX6nDbsP2ME", true },
+                    { 63, "Open Closed Principle  açıklaması", 11, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 2, true, "Türkçe", "Open Closed Principle ", null, "tx2DjE-VwOY", true },
+                    { 64, "Liskov's Subsititution Principle açıklaması", 11, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 2, true, "Türkçe", "Liskov's Subsititution Principle", null, "M2bDfaZvTTs", true }
                 });
 
             migrationBuilder.InsertData(
-                table: "AccountLessons",
-                columns: new[] { "Id", "AccountId", "CreatedDate", "DeletedDate", "IsComplete", "LessonId", "Points", "UpdatedDate" },
+                table: "Addresses",
+                columns: new[] { "Id", "AccountId", "AddressDetail", "CityId", "CountryId", "CreatedDate", "DeletedDate", "DistrictId", "UpdatedDate" },
+                values: new object[] { 1, 1, "Organizasyon adresi...", 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 1, null });
+
+            migrationBuilder.InsertData(
+                table: "Organizations",
+                columns: new[] { "Id", "AddressId", "ContactNumber", "CreatedDate", "DeletedDate", "Name", "OrganizationTypeId", "UpdatedDate", "Visibility" },
+                values: new object[] { 1, 1, "555-555-5555", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "İstanbul Kodluyor", 1, null, true });
+
+            migrationBuilder.InsertData(
+                table: "Announcements",
+                columns: new[] { "Id", "AnnouncementTypeId", "Content", "CreatedDate", "DeletedDate", "Name", "OrganizationId", "Priority", "PublishedDate", "UpdatedDate", "Visibility" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, 1, 100, null },
-                    { 2, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, 2, 20, null },
-                    { 3, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, 3, 50, null },
-                    { 4, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, 4, 80, null },
-                    { 5, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, 5, 0, null }
+                    { 1, 1, "Heyecanla beklenen Son Kampüs Buluşması için geri sayıma başladık. Seninle tanışmak için sabırsızlanıyoruz...", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "20 Şubat Kampüs Buluşması Hk.", 1, 1, new DateTime(2024, 2, 26, 0, 55, 56, 254, DateTimeKind.Local).AddTicks(8530), null, true },
+                    { 2, 1, "Heyecanla beklenen Son Kampüs Buluşması için geri sayıma başladık. Seninle tanışmak için sabırsızlanıyoruz...", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "21 Şubat Kampüs Buluşması Hk.", 1, 1, new DateTime(2024, 2, 26, 0, 55, 56, 254, DateTimeKind.Local).AddTicks(8570), null, true },
+                    { 3, 1, "Heyecanla beklenen Son Kampüs Buluşması için geri sayıma başladık. Seninle tanışmak için sabırsızlanıyoruz...", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "22 Şubat Kampüs Buluşması Hk.", 1, 1, new DateTime(2024, 2, 26, 0, 55, 56, 254, DateTimeKind.Local).AddTicks(8580), null, true },
+                    { 4, 1, "Heyecanla beklenen Son Kampüs Buluşması için geri sayıma başladık. Seninle tanışmak için sabırsızlanıyoruz...", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "23 Şubat Kampüs Buluşması Hk.", 1, 1, new DateTime(2024, 2, 26, 0, 55, 56, 254, DateTimeKind.Local).AddTicks(8580), null, true }
                 });
+
+            migrationBuilder.InsertData(
+                table: "Surveys",
+                columns: new[] { "Id", "ConnectionLink", "Content", "CreatedDate", "DeletedDate", "IsActive", "OrganizationId", "Priority", "PublishedDate", "SurveyTypeId", "Title", "UpdatedDate", "Visibility" },
+                values: new object[] { 1, "https://form.jotform.com/240143980661960", "Mindset anketi içeriği...", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, 1, 1, new DateTime(2024, 2, 26, 0, 55, 56, 258, DateTimeKind.Local).AddTicks(9230), 2, "Mindset Anketi", null, true });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AccountAnnouncements_AccountId",

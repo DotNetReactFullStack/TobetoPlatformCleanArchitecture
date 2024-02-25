@@ -31,18 +31,18 @@ public class CourseConfiguration : IEntityTypeConfiguration<Course>
         HashSet<Course> seeds =
             new()
             {
-                    new Course { Id = ++id, CourseCategoryId= 1, Name= "Yazýlým Geliþtirici Yetiþtirme Kampý", TotalDuration = 50, Priority= 1, IsActive= true },
+                    new Course { Id = ++id, CourseCategoryId= 1, Name= "YazÄ±lÄ±m GeliÅŸtirici YetiÅŸtirme KampÄ±", TotalDuration = 50, Priority= 1, IsActive= true },
                     new Course { Id = ++id, CourseCategoryId= 1, Name= "React", TotalDuration = 20, Priority= 1, IsActive= true },
                     new Course { Id = ++id, CourseCategoryId= 1, Name= "TypeScript", TotalDuration = 30, Priority= 1, IsActive= true },
                     new Course { Id = ++id, CourseCategoryId= 1, Name= "HTML 5", TotalDuration = 70, Priority= 1, IsActive= true },
-                    new Course { Id = ++id, CourseCategoryId= 3, Name= "Proje Aþamalarý", TotalDuration = 1, Priority= 1, IsActive= true },
-                    new Course { Id = ++id, CourseCategoryId= 3, Name= "Kampüs Buluþmalarý", TotalDuration = 1, Priority= 1, IsActive= true },
+                    new Course { Id = ++id, CourseCategoryId= 3, Name= "Proje AÅŸamalarÄ±", TotalDuration = 1, Priority= 1, IsActive= true },
+                    new Course { Id = ++id, CourseCategoryId= 3, Name= "KampÃ¼s BuluÅŸmalarÄ±", TotalDuration = 1, Priority= 1, IsActive= true },
                     new Course { Id = ++id, CourseCategoryId= 1, Name= "Java", TotalDuration = 1080, Priority= 1, IsActive= true },
                     new Course { Id = ++id, CourseCategoryId= 1, Name= "Angular", TotalDuration = 150, Priority= 1, IsActive= true },
                     new Course { Id = ++id, CourseCategoryId= 1, Name= "Flutter", TotalDuration = 400, Priority= 1, IsActive= true },
-                    new Course { Id = ++id, CourseCategoryId= 1, Name= "Yemek Sipariþi Uygulamasý", TotalDuration = 720, Priority= 1, IsActive= true },
-                    new Course { Id = ++id, CourseCategoryId= 2, Name= "C# & .NET Mülakat Part-1", TotalDuration = 8, Priority= 1, IsActive= true },
-                    new Course { Id = ++id, CourseCategoryId= 2, Name= "C# & .NET Mülakat Part-2", TotalDuration = 29, Priority= 1, IsActive= true },
+                    new Course { Id = ++id, CourseCategoryId= 1, Name= "Yemek SipariÅŸi UygulamasÄ±", TotalDuration = 720, Priority= 1, IsActive= true },
+                    new Course { Id = ++id, CourseCategoryId= 2, Name= "C# & .NET MÃ¼lakat Part-1", TotalDuration = 8, Priority= 1, IsActive= true },
+                    new Course { Id = ++id, CourseCategoryId= 2, Name= "C# & .NET MÃ¼lakat Part-2", TotalDuration = 29, Priority= 1, IsActive= true },
             };
         return seeds;
     }

@@ -12,7 +12,7 @@ using Persistence.Contexts;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    [Migration("20240220164432_InitialCreate")]
+    [Migration("20240225215643_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -1908,8 +1908,8 @@ namespace Persistence.Migrations
                             Email = "test@user.net",
                             FirstName = "Test",
                             LastName = "User",
-                            PasswordHash = new byte[] { 247, 229, 209, 78, 97, 173, 132, 211, 135, 80, 20, 52, 92, 0, 245, 239, 166, 201, 34, 109, 66, 117, 196, 185, 73, 64, 8, 23, 226, 106, 68, 200, 18, 228, 119, 108, 85, 168, 25, 204, 243, 67, 177, 55, 112, 240, 192, 69, 28, 184, 109, 127, 186, 210, 105, 181, 122, 164, 1, 19, 152, 235, 14, 178 },
-                            PasswordSalt = new byte[] { 133, 185, 47, 77, 205, 82, 115, 59, 172, 180, 114, 137, 146, 205, 232, 34, 44, 75, 79, 4, 132, 32, 73, 123, 67, 145, 114, 11, 157, 250, 201, 236, 200, 187, 53, 180, 93, 76, 153, 153, 33, 124, 77, 206, 211, 47, 115, 30, 242, 15, 153, 154, 127, 10, 174, 46, 28, 251, 225, 164, 229, 14, 46, 153, 153, 217, 212, 39, 239, 1, 188, 36, 57, 244, 219, 191, 106, 129, 20, 47, 170, 170, 224, 220, 170, 158, 186, 103, 91, 158, 4, 102, 200, 130, 37, 83, 150, 220, 58, 100, 117, 229, 216, 95, 132, 119, 241, 189, 235, 18, 59, 33, 124, 234, 61, 133, 96, 191, 187, 4, 253, 130, 189, 199, 123, 93, 193, 37 },
+                            PasswordHash = new byte[] { 155, 38, 159, 35, 123, 190, 14, 223, 211, 26, 211, 141, 166, 4, 6, 158, 174, 7, 102, 218, 145, 114, 11, 218, 170, 97, 206, 131, 74, 127, 146, 162, 29, 95, 89, 18, 116, 17, 41, 131, 239, 41, 152, 176, 76, 119, 147, 187, 50, 166, 21, 142, 253, 14, 106, 85, 118, 151, 25, 171, 125, 2, 152, 192 },
+                            PasswordSalt = new byte[] { 98, 46, 87, 100, 103, 230, 92, 233, 50, 7, 101, 66, 181, 95, 128, 227, 63, 82, 79, 44, 81, 143, 68, 163, 163, 52, 252, 121, 14, 115, 203, 121, 199, 138, 230, 119, 196, 94, 236, 166, 227, 31, 103, 93, 227, 4, 110, 166, 138, 72, 26, 1, 198, 220, 55, 31, 240, 198, 233, 10, 17, 106, 242, 56, 0, 58, 160, 142, 22, 210, 8, 157, 128, 72, 16, 228, 90, 5, 193, 255, 44, 127, 204, 24, 157, 9, 230, 36, 227, 159, 241, 195, 154, 10, 34, 84, 97, 74, 149, 194, 153, 114, 159, 59, 110, 119, 9, 148, 245, 221, 255, 136, 160, 129, 123, 23, 65, 44, 12, 141, 171, 141, 179, 43, 214, 160, 144, 170 },
                             Status = true
                         });
                 });
@@ -2441,16 +2441,6 @@ namespace Persistence.Migrations
                     b.HasIndex("CourseId");
 
                     b.ToTable("AccountCourses", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AccountId = 1,
-                            CourseId = 1,
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsActive = true
-                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.AccountExamResult", b =>
@@ -2652,22 +2642,6 @@ namespace Persistence.Migrations
                     b.HasIndex("LearningPathId");
 
                     b.ToTable("AccountLearningPaths", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AccountId = 1,
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsActive = true,
-                            IsComplete = false,
-                            IsContinue = true,
-                            IsLiked = true,
-                            IsSaved = true,
-                            LearningPathId = 1,
-                            PercentComplete = (byte)35,
-                            TotalNumberOfPoints = 30
-                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.AccountLesson", b =>
@@ -2714,53 +2688,6 @@ namespace Persistence.Migrations
                     b.HasIndex("LessonId");
 
                     b.ToTable("AccountLessons", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AccountId = 1,
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsComplete = true,
-                            LessonId = 1,
-                            Points = 100
-                        },
-                        new
-                        {
-                            Id = 2,
-                            AccountId = 1,
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsComplete = false,
-                            LessonId = 2,
-                            Points = 20
-                        },
-                        new
-                        {
-                            Id = 3,
-                            AccountId = 1,
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsComplete = false,
-                            LessonId = 3,
-                            Points = 50
-                        },
-                        new
-                        {
-                            Id = 4,
-                            AccountId = 1,
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsComplete = false,
-                            LessonId = 4,
-                            Points = 80
-                        },
-                        new
-                        {
-                            Id = 5,
-                            AccountId = 1,
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsComplete = false,
-                            LessonId = 5,
-                            Points = 0
-                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.AccountRecourse", b =>
@@ -2972,6 +2899,18 @@ namespace Persistence.Migrations
                     b.HasIndex("DistrictId");
 
                     b.ToTable("Addresses", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AccountId = 1,
+                            AddressDetail = "Organizasyon adresi...",
+                            CityId = 1,
+                            CountryId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DistrictId = 1
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.Announcement", b =>
@@ -3032,6 +2971,56 @@ namespace Persistence.Migrations
                     b.HasIndex("OrganizationId");
 
                     b.ToTable("Announcements", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AnnouncementTypeId = 1,
+                            Content = "Heyecanla beklenen Son Kampüs Buluşması için geri sayıma başladık. Seninle tanışmak için sabırsızlanıyoruz...",
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "20 Şubat Kampüs Buluşması Hk.",
+                            OrganizationId = 1,
+                            Priority = 1,
+                            PublishedDate = new DateTime(2024, 2, 26, 0, 55, 56, 254, DateTimeKind.Local).AddTicks(8530),
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AnnouncementTypeId = 1,
+                            Content = "Heyecanla beklenen Son Kampüs Buluşması için geri sayıma başladık. Seninle tanışmak için sabırsızlanıyoruz...",
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "21 Şubat Kampüs Buluşması Hk.",
+                            OrganizationId = 1,
+                            Priority = 1,
+                            PublishedDate = new DateTime(2024, 2, 26, 0, 55, 56, 254, DateTimeKind.Local).AddTicks(8570),
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AnnouncementTypeId = 1,
+                            Content = "Heyecanla beklenen Son Kampüs Buluşması için geri sayıma başladık. Seninle tanışmak için sabırsızlanıyoruz...",
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "22 Şubat Kampüs Buluşması Hk.",
+                            OrganizationId = 1,
+                            Priority = 1,
+                            PublishedDate = new DateTime(2024, 2, 26, 0, 55, 56, 254, DateTimeKind.Local).AddTicks(8580),
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AnnouncementTypeId = 1,
+                            Content = "Heyecanla beklenen Son Kampüs Buluşması için geri sayıma başladık. Seninle tanışmak için sabırsızlanıyoruz...",
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "23 Şubat Kampüs Buluşması Hk.",
+                            OrganizationId = 1,
+                            Priority = 1,
+                            PublishedDate = new DateTime(2024, 2, 26, 0, 55, 56, 254, DateTimeKind.Local).AddTicks(8580),
+                            Visibility = true
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.AnnouncementType", b =>
@@ -3071,6 +3060,24 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AnnouncementTypes", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Duyuru",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Haber",
+                            Priority = 1,
+                            Visibility = true
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.Answer", b =>
@@ -3413,14 +3420,23 @@ namespace Persistence.Migrations
                             Id = 1,
                             CountryId = 1,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "İstanbul",
+                            Name = "İl",
                             Priority = 1,
                             Visibility = true
                         },
                         new
                         {
                             Id = 2,
-                            CountryId = 1,
+                            CountryId = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "İstanbul",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CountryId = 2,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Bursa",
                             Priority = 2,
@@ -3428,8 +3444,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 3,
-                            CountryId = 1,
+                            Id = 4,
+                            CountryId = 2,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Ankara",
                             Priority = 3,
@@ -3437,8 +3453,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 4,
-                            CountryId = 2,
+                            Id = 5,
+                            CountryId = 3,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Londra",
                             Priority = 1,
@@ -3446,8 +3462,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 5,
-                            CountryId = 2,
+                            Id = 6,
+                            CountryId = 3,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Liverpool",
                             Priority = 2,
@@ -3455,8 +3471,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 6,
-                            CountryId = 2,
+                            Id = 7,
+                            CountryId = 3,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Manchester",
                             Priority = 3,
@@ -3464,8 +3480,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 7,
-                            CountryId = 3,
+                            Id = 8,
+                            CountryId = 4,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Roma",
                             Priority = 1,
@@ -3473,8 +3489,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 8,
-                            CountryId = 3,
+                            Id = 9,
+                            CountryId = 4,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Floransa",
                             Priority = 2,
@@ -3482,8 +3498,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 9,
-                            CountryId = 3,
+                            Id = 10,
+                            CountryId = 4,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Torino",
                             Priority = 3,
@@ -3813,7 +3829,7 @@ namespace Persistence.Migrations
                         {
                             Id = 1,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Türkiye",
+                            Name = "Ülke",
                             Priority = 1,
                             Visibility = true
                         },
@@ -3821,7 +3837,7 @@ namespace Persistence.Migrations
                         {
                             Id = 2,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "İngiltere",
+                            Name = "Türkiye",
                             Priority = 2,
                             Visibility = true
                         },
@@ -3829,8 +3845,16 @@ namespace Persistence.Migrations
                         {
                             Id = 3,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "İtalya",
+                            Name = "İngiltere",
                             Priority = 3,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "İtalya",
+                            Priority = 4,
                             Visibility = true
                         });
                 });
@@ -3913,6 +3937,96 @@ namespace Persistence.Migrations
                             Name = "TypeScript",
                             Priority = 1,
                             TotalDuration = 30
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CourseCategoryId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsActive = true,
+                            Name = "HTML 5",
+                            Priority = 1,
+                            TotalDuration = 70
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CourseCategoryId = 3,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsActive = true,
+                            Name = "Proje Aşamaları",
+                            Priority = 1,
+                            TotalDuration = 1
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CourseCategoryId = 3,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsActive = true,
+                            Name = "Kampüs Buluşmaları",
+                            Priority = 1,
+                            TotalDuration = 1
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CourseCategoryId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsActive = true,
+                            Name = "Java",
+                            Priority = 1,
+                            TotalDuration = 1080
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CourseCategoryId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsActive = true,
+                            Name = "Angular",
+                            Priority = 1,
+                            TotalDuration = 150
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CourseCategoryId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsActive = true,
+                            Name = "Flutter",
+                            Priority = 1,
+                            TotalDuration = 400
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CourseCategoryId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsActive = true,
+                            Name = "Yemek Siparişi Uygulaması",
+                            Priority = 1,
+                            TotalDuration = 720
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CourseCategoryId = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsActive = true,
+                            Name = "C# & .NET Mülakat Part-1",
+                            Priority = 1,
+                            TotalDuration = 8
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CourseCategoryId = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsActive = true,
+                            Name = "C# & .NET Mülakat Part-2",
+                            Priority = 1,
+                            TotalDuration = 29
                         });
                 });
 
@@ -3975,7 +4089,15 @@ namespace Persistence.Migrations
                         {
                             Id = 3,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "İşletme",
+                            Name = "İstanbul Kodluyor",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Yabancı Dil",
                             Priority = 1,
                             Visibility = true
                         });
@@ -4030,6 +4152,78 @@ namespace Persistence.Migrations
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LearningPathId = 1,
                             Visibility = true
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CourseId = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LearningPathId = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CourseId = 5,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LearningPathId = 2,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CourseId = 6,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LearningPathId = 2,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CourseId = 7,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LearningPathId = 3,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CourseId = 8,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LearningPathId = 3,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CourseId = 9,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LearningPathId = 4,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CourseId = 10,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LearningPathId = 4,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CourseId = 11,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LearningPathId = 5,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CourseId = 12,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LearningPathId = 5,
+                            Visibility = true
                         });
                 });
 
@@ -4083,14 +4277,23 @@ namespace Persistence.Migrations
                             Id = 1,
                             CityId = 1,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Kadiköy",
+                            Name = "İlçe",
                             Priority = 1,
                             Visibility = true
                         },
                         new
                         {
                             Id = 2,
-                            CityId = 1,
+                            CityId = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Kadiköy",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CityId = 2,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Bakırköy",
                             Priority = 2,
@@ -4098,8 +4301,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 3,
-                            CityId = 1,
+                            Id = 4,
+                            CityId = 2,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Tuzla",
                             Priority = 3,
@@ -4107,8 +4310,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 4,
-                            CityId = 2,
+                            Id = 5,
+                            CityId = 3,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Osmangazi",
                             Priority = 1,
@@ -4116,8 +4319,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 5,
-                            CityId = 2,
+                            Id = 6,
+                            CityId = 3,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Nilüfer",
                             Priority = 2,
@@ -4125,8 +4328,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 6,
-                            CityId = 2,
+                            Id = 7,
+                            CityId = 3,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "İnegöl",
                             Priority = 3,
@@ -4134,8 +4337,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 7,
-                            CityId = 3,
+                            Id = 8,
+                            CityId = 4,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Çankaya",
                             Priority = 1,
@@ -4143,8 +4346,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 8,
-                            CityId = 3,
+                            Id = 9,
+                            CityId = 4,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Etimesgut",
                             Priority = 2,
@@ -4152,8 +4355,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 9,
-                            CityId = 3,
+                            Id = 10,
+                            CityId = 4,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Yenimahalle",
                             Priority = 3,
@@ -4161,8 +4364,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 10,
-                            CityId = 4,
+                            Id = 11,
+                            CityId = 5,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Chelsea",
                             Priority = 1,
@@ -4170,8 +4373,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 11,
-                            CityId = 4,
+                            Id = 12,
+                            CityId = 5,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Kensington",
                             Priority = 2,
@@ -4179,8 +4382,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 12,
-                            CityId = 4,
+                            Id = 13,
+                            CityId = 5,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Fulham",
                             Priority = 3,
@@ -4188,8 +4391,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 13,
-                            CityId = 5,
+                            Id = 14,
+                            CityId = 6,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Ropewalks",
                             Priority = 1,
@@ -4197,8 +4400,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 14,
-                            CityId = 5,
+                            Id = 15,
+                            CityId = 6,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Chinatown",
                             Priority = 2,
@@ -4206,8 +4409,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 15,
-                            CityId = 5,
+                            Id = 16,
+                            CityId = 6,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Lark Lane",
                             Priority = 3,
@@ -4215,8 +4418,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 16,
-                            CityId = 6,
+                            Id = 17,
+                            CityId = 7,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Trafford",
                             Priority = 1,
@@ -4224,8 +4427,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 17,
-                            CityId = 6,
+                            Id = 18,
+                            CityId = 7,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Tameside",
                             Priority = 2,
@@ -4233,8 +4436,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 18,
-                            CityId = 6,
+                            Id = 19,
+                            CityId = 7,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Bolton",
                             Priority = 3,
@@ -4242,8 +4445,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 19,
-                            CityId = 7,
+                            Id = 20,
+                            CityId = 8,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Pomezia",
                             Priority = 1,
@@ -4251,8 +4454,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 20,
-                            CityId = 7,
+                            Id = 21,
+                            CityId = 8,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Anzio",
                             Priority = 2,
@@ -4260,8 +4463,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 21,
-                            CityId = 7,
+                            Id = 22,
+                            CityId = 8,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Fiumicino",
                             Priority = 3,
@@ -4269,8 +4472,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 22,
-                            CityId = 8,
+                            Id = 23,
+                            CityId = 9,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Scandicci",
                             Priority = 1,
@@ -4278,8 +4481,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 23,
-                            CityId = 8,
+                            Id = 24,
+                            CityId = 9,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Empoli",
                             Priority = 2,
@@ -4287,8 +4490,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 24,
-                            CityId = 8,
+                            Id = 25,
+                            CityId = 9,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Signa",
                             Priority = 3,
@@ -4296,8 +4499,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 25,
-                            CityId = 9,
+                            Id = 26,
+                            CityId = 10,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Moncalieri",
                             Priority = 1,
@@ -4305,8 +4508,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 26,
-                            CityId = 9,
+                            Id = 27,
+                            CityId = 10,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Rivoli",
                             Priority = 2,
@@ -4314,8 +4517,8 @@ namespace Persistence.Migrations
                         },
                         new
                         {
-                            Id = 27,
-                            CityId = 9,
+                            Id = 28,
+                            CityId = 10,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Chieri",
                             Priority = 3,
@@ -5013,10 +5216,62 @@ namespace Persistence.Migrations
                             EndingTime = new DateTime(2024, 4, 15, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "/assets/images/dotnet-react-full-stack.png",
                             LearningPathCategoryId = 1,
-                            Name = "Full-Stack Developer - 1B",
+                            Name = ".NET & React Full-Stack | Öğrenme Yolculuğu",
                             NumberOfLikes = 11,
                             StartingTime = new DateTime(2024, 2, 20, 16, 45, 0, 0, DateTimeKind.Unspecified),
                             TotalDuration = 30,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndingTime = new DateTime(2024, 1, 20, 17, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://lms.tobeto.com/tobeto/eep/common_show_picture_cached.aspx?pQS=eaAjNZ0uaOHiut7Ip2g6BA%3d%3d",
+                            LearningPathCategoryId = 1,
+                            Name = "İstanbul Kodluyor Proje Aşamaları",
+                            NumberOfLikes = 42,
+                            StartingTime = new DateTime(2024, 1, 20, 12, 30, 0, 0, DateTimeKind.Unspecified),
+                            TotalDuration = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndingTime = new DateTime(2024, 2, 24, 23, 59, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://i.ytimg.com/vi/ddqiBbmA6r8/maxresdefault.jpg",
+                            LearningPathCategoryId = 1,
+                            Name = "Java & Angular Full-Stack | Öğrenme Yolculuğu",
+                            NumberOfLikes = 33,
+                            StartingTime = new DateTime(2023, 11, 10, 11, 0, 0, 0, DateTimeKind.Unspecified),
+                            TotalDuration = 1027,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndingTime = new DateTime(2024, 1, 22, 17, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://uploads-ssl.webflow.com/5f841209f4e71b2d70034471/60bb4a2e143f632da3e56aea_Flutter%20app%20development%20(2).png",
+                            LearningPathCategoryId = 1,
+                            Name = "Flutter Mobil Programlama | Öğrenme Yolculuğu",
+                            NumberOfLikes = 22,
+                            StartingTime = new DateTime(2023, 12, 30, 16, 45, 0, 0, DateTimeKind.Unspecified),
+                            TotalDuration = 1120,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndingTime = new DateTime(2024, 1, 28, 23, 59, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://lh3.googleusercontent.com/proxy/H4zl7fiYhYBhymjzsYWqfrfmEnOuHf5zbDi_ccmg7hfQsssASfLZAGit_S2tz8XqtFeNHVOw2uRznzHMaag98EH2EbjQiuBusYJ7n7YSEpEBqr4uCAfO5y05P_6m7gSrMsxvvvnj-I2oMkNByBStqW01fzB1ag",
+                            LearningPathCategoryId = 1,
+                            Name = "Mülakatlarda Öne Geçme Teknikleri | Softskill",
+                            NumberOfLikes = 15,
+                            StartingTime = new DateTime(2024, 1, 11, 11, 0, 0, 0, DateTimeKind.Unspecified),
+                            TotalDuration = 60,
                             Visibility = true
                         });
                 });
@@ -5401,6 +5656,565 @@ namespace Persistence.Migrations
                             Name = "Angular Giriş 6",
                             VideoUrl = "obK-YEOuVgY",
                             Visibility = true
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Content = "Html 5 Dersleri 1 açıklaması",
+                            CourseId = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 4,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Html 5 Dersleri 1: Plunker Online Editörümüzü Tanıyalım",
+                            VideoUrl = "pkYSPtpvDqc",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Content = "Html 5 Dersleri 2 açıklaması",
+                            CourseId = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 4,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Html 5 Dersleri 2: Html nedir?",
+                            VideoUrl = "C8n7li03yJM",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Content = "Html 5 Dersleri 3 açıklaması",
+                            CourseId = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 4,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Html 5 Dersleri 3: Temel Html Elementleri",
+                            VideoUrl = "_CyfWwttWfk",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Content = "Html 5 Dersleri 4 açıklaması",
+                            CourseId = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 13,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Html 5 Dersleri 4: Linklerle Çalışmak",
+                            VideoUrl = "k1uoQWyxixQ",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Content = "Html 5 Dersleri 5 açıklaması",
+                            CourseId = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 6,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Html 5 Dersleri 5: Tablolarla Çalışmak",
+                            VideoUrl = "aph25fXelME",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 27,
+                            Content = "Html 5 Dersleri 6 açıklaması",
+                            CourseId = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 7,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Html 5 Dersleri 6: Formatlama",
+                            VideoUrl = "7pT6prRLNX0",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 28,
+                            Content = "Html 5 Dersleri 7 açıklaması",
+                            CourseId = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 8,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Html 5 Dersleri 7: Layouts",
+                            VideoUrl = "0OqzuBAQ7_A",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 29,
+                            Content = "Html 5 Dersleri 8 açıklaması",
+                            CourseId = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 18,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Html 5 Dersleri 8: Form Tagleri",
+                            VideoUrl = "5K5mUa_Q1VY",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 30,
+                            Content = "Html 5 Dersleri 9 açıklaması",
+                            CourseId = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 7,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Html 5 Dersleri 9: Html 5 İle Gelen Form Tagleri",
+                            VideoUrl = "5vKZPDT0gcM",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 31,
+                            Content = "İstanbul Kodluyor Proje Aşamaları açıklaması",
+                            CourseId = 5,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 1,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "İstanbul Kodluyor Proje Aşamaları",
+                            VideoUrl = "lIRN7fXQIcQ",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 32,
+                            Content = "İstanbul Kodluyor Kampüs Buluşması 2 açıklaması",
+                            CourseId = 6,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 1,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "İstanbul Kodluyor Kampüs Buluşması 2",
+                            VideoUrl = "1zMSWuTgqTI",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 33,
+                            Content = "Java Derslerine Giriş açıklaması",
+                            CourseId = 7,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 1,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Java Derslerine Giriş",
+                            VideoUrl = "-XfPd-cQRuo",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 34,
+                            Content = "OOP Giriş açıklaması",
+                            CourseId = 7,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 1,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "OOP Giriş",
+                            VideoUrl = "2Vx_Z-5Dr4I",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 35,
+                            Content = "OOP - Class & Interface ile Sürdürülebilirlik açıklaması",
+                            CourseId = 7,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 1,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "OOP - Class & Interface ile Sürdürülebilirlik",
+                            VideoUrl = "CcutMZm3WtI",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 36,
+                            Content = "Spring Boot Giriş açıklaması",
+                            CourseId = 7,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 1,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Spring Boot Giriş",
+                            VideoUrl = "AMOHXH2uzgY",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 37,
+                            Content = "Spring Boot 2 açıklaması",
+                            CourseId = 7,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 1,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Spring Boot 2",
+                            VideoUrl = "7Qqb4IyULmo",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 38,
+                            Content = "Spring Boot 3 açıklaması",
+                            CourseId = 7,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 1,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Spring Boot 3",
+                            VideoUrl = "hyYJwO3GEic",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 39,
+                            Content = "Spring Boot 4 açıklaması",
+                            CourseId = 7,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 1,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Spring Boot 4",
+                            VideoUrl = "IWv7jLsaxLM",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 40,
+                            Content = "Tanıtım açıklaması",
+                            CourseId = 8,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 1,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Tanıtım",
+                            VideoUrl = "rlKjFEKjXyg",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 41,
+                            Content = "İşlenecek Konular ve Yapılacak Uygulama Tanıtımı açıklaması",
+                            CourseId = 8,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 1,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "İşlenecek Konular ve Yapılacak Uygulama Tanıtımı",
+                            VideoUrl = "x7_Rmsmkw5g",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 42,
+                            Content = "NodeJS ve Angular Cli kurulumu açıklaması",
+                            CourseId = 8,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 1,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "NodeJS ve Angular Cli kurulumu",
+                            VideoUrl = "bA71kJ_ELek",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 43,
+                            Content = "Proje oluşturma açıklaması",
+                            CourseId = 8,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 1,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Proje oluşturma",
+                            VideoUrl = "v9FxSVjWTic",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 44,
+                            Content = "Kısaca Klasör Yapısı ve Dosyalar açıklaması",
+                            CourseId = 8,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 1,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Kısaca Klasör Yapısı ve Dosyalar",
+                            VideoUrl = "raSrjyUjFbc",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 45,
+                            Content = "TypeScript açıklaması",
+                            CourseId = 8,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 1,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "TypeScript",
+                            VideoUrl = "IA9b7swmP4o",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 46,
+                            Content = "Components açıklaması",
+                            CourseId = 8,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 1,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Components",
+                            VideoUrl = "ofRjx87jGlw",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 47,
+                            Content = "Değişkenler ve Veri Tipleri açıklaması",
+                            CourseId = 8,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 1,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Değişkenler ve Veri Tipleri",
+                            VideoUrl = "0uHcZekbNcE",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 48,
+                            Content = "Services açıklaması",
+                            CourseId = 8,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 1,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Services",
+                            VideoUrl = "Pxl5LSvRu74",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 49,
+                            Content = "ngIf ve ngFor açıklaması",
+                            CourseId = 8,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 1,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "ngIf ve ngFor",
+                            VideoUrl = "j3F6A7wK-S4",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 50,
+                            Content = "Flutter Mobil Programlama Kampı açıklaması",
+                            CourseId = 9,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 355,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Flutter Mobil Programlama Kampı",
+                            VideoUrl = "oISIcfHAzm4",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 51,
+                            Content = "Flutter SDK & Android Studio & Visual Studio Code Kurulumu açıklaması",
+                            CourseId = 9,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 56,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Flutter SDK & Android Studio & Visual Studio Code Kurulumu",
+                            VideoUrl = "uyYBewriDT8",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 52,
+                            Content = "Food Delivery App | Part 1 açıklaması",
+                            CourseId = 10,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 720,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Food Delivery App | Part 1",
+                            VideoUrl = "7dAt-JMSCVQ",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 53,
+                            Content = "Full Course With API | Part 2 açıklaması",
+                            CourseId = 10,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 710,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Full Course With API | Part 2",
+                            VideoUrl = "GQJovou6zuE",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 54,
+                            Content = "Flutter Ecommerce App | Part 3 açıklaması",
+                            CourseId = 10,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 193,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Flutter Ecommerce App | Part 3",
+                            VideoUrl = "qapb-_gMZRs",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 55,
+                            Content = "Giriş açıklaması",
+                            CourseId = 11,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 2,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Giriş",
+                            VideoUrl = "iRBN3p4J_xk",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 56,
+                            Content = "Ne İstiyorsun? açıklaması",
+                            CourseId = 11,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 2,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Ne İstiyorsun?",
+                            VideoUrl = "7h0h93LS8hw",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 57,
+                            Content = "Organizasyonel Kültürü Keşfedin açıklaması",
+                            CourseId = 11,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 2,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Organizasyonel Kültürü Keşfedin",
+                            VideoUrl = "46zp-3139M4",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 58,
+                            Content = "Değer ve Referans Tipler açıklaması",
+                            CourseId = 11,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 2,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Değer ve Referans Tipler",
+                            VideoUrl = "_giFJC-07yw?",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 59,
+                            Content = "Interface nedir? Ne işe yarar? açıklaması",
+                            CourseId = 11,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 2,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Interface nedir? Ne işe yarar?",
+                            VideoUrl = "GyCTVZTIOKM",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 60,
+                            Content = "Framework ve Library Kavramlar Nedir? açıklaması",
+                            CourseId = 11,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 2,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Framework ve Library Kavramlar Nedir?",
+                            VideoUrl = "5dQeNa0Uzns",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 61,
+                            Content = "SOLID Prensipleri Nedir? açıklaması",
+                            CourseId = 11,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 2,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "SOLID Prensipleri Nedir?",
+                            VideoUrl = "gdjcKwWxe08",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 62,
+                            Content = "Single Responsibility Principle açıklaması",
+                            CourseId = 11,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 2,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Single Responsibility Principle",
+                            VideoUrl = "AX6nDbsP2ME",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 63,
+                            Content = "Open Closed Principle  açıklaması",
+                            CourseId = 11,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 2,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Open Closed Principle ",
+                            VideoUrl = "tx2DjE-VwOY",
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 64,
+                            Content = "Liskov's Subsititution Principle açıklaması",
+                            CourseId = 11,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Duration = 2,
+                            IsActive = true,
+                            Language = "Türkçe",
+                            Name = "Liskov's Subsititution Principle",
+                            VideoUrl = "M2bDfaZvTTs",
+                            Visibility = true
                         });
                 });
 
@@ -5454,6 +6268,18 @@ namespace Persistence.Migrations
                     b.HasIndex("OrganizationTypeId");
 
                     b.ToTable("Organizations", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AddressId = 1,
+                            ContactNumber = "555-555-5555",
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "İstanbul Kodluyor",
+                            OrganizationTypeId = 1,
+                            Visibility = true
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.OrganizationType", b =>
@@ -5493,6 +6319,16 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("OrganizationTypes", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Organizasyon Tip-1",
+                            Priority = 1,
+                            Visibility = true
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.Question", b =>
@@ -5897,6 +6733,22 @@ namespace Persistence.Migrations
                     b.HasIndex("SurveyTypeId");
 
                     b.ToTable("Surveys", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ConnectionLink = "https://form.jotform.com/240143980661960",
+                            Content = "Mindset anketi içeriği...",
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsActive = true,
+                            OrganizationId = 1,
+                            Priority = 1,
+                            PublishedDate = new DateTime(2024, 2, 26, 0, 55, 56, 258, DateTimeKind.Local).AddTicks(9230),
+                            SurveyTypeId = 2,
+                            Title = "Mindset Anketi",
+                            Visibility = true
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.SurveyType", b =>
@@ -5936,6 +6788,24 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("SurveyTypes", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Değerlendirme Anketi",
+                            Priority = 1,
+                            Visibility = true
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Araştırma Anketi",
+                            Priority = 2,
+                            Visibility = true
+                        });
                 });
 
             modelBuilder.Entity("Experience", b =>
