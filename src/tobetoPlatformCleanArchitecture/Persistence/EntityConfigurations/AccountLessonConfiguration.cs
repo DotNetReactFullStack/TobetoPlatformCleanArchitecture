@@ -35,6 +35,15 @@ public class AccountLessonConfiguration : IEntityTypeConfiguration<AccountLesson
                     new AccountLesson { Id = ++id, AccountId=1, LessonId=3, Points=50, IsComplete=false,},
                     new AccountLesson { Id = ++id, AccountId=1, LessonId=4, Points=80, IsComplete=false,},
                     new AccountLesson { Id = ++id, AccountId=1, LessonId=5, Points=0, IsComplete=false,},
+                    new AccountLesson { Id = ++id, AccountId=1, LessonId=24, Points=0, IsComplete=false,},
+                    new AccountLesson { Id = ++id, AccountId=1, LessonId=25, Points=0, IsComplete=false,},
+                    new AccountLesson { Id = ++id, AccountId=1, LessonId=26, Points=0, IsComplete=false,},
+                    new AccountLesson { Id = ++id, AccountId=1, LessonId=27, Points=0, IsComplete=false,},
+                    new AccountLesson { Id = ++id, AccountId=1, LessonId=28, Points=0, IsComplete=false,},
+                    new AccountLesson { Id = ++id, AccountId=1, LessonId=29, Points=0, IsComplete=false,},
+                    new AccountLesson { Id = ++id, AccountId=1, LessonId=30, Points=0, IsComplete=false,},
+                    new AccountLesson { Id = ++id, AccountId=1, LessonId=31, Points=0, IsComplete=false,},
+                    new AccountLesson { Id = ++id, AccountId=1, LessonId=32, Points=0, IsComplete=false,},
 
 
             };

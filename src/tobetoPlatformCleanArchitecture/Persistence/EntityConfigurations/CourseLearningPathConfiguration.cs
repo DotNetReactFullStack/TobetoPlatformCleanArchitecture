@@ -30,6 +30,7 @@ public class CourseLearningPathConfiguration : IEntityTypeConfiguration<CourseLe
             new()
             {
                     new CourseLearningPath { Id = ++id, CourseId=1, LearningPathId=1, Visibility=true},
+                    new CourseLearningPath { Id = ++id, CourseId=4, LearningPathId=1, Visibility=true},
             };
         return seeds;
     }

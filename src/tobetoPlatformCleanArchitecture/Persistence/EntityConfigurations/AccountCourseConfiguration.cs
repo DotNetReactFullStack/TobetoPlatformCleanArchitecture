@@ -30,6 +30,7 @@ public class AccountCourseConfiguration : IEntityTypeConfiguration<AccountCourse
             new()
             {
                     new AccountCourse { Id = ++id, AccountId=1, CourseId=1, IsActive=true},
+                    new AccountCourse { Id = ++id, AccountId=1, CourseId=4, IsActive=true},
             };
         return seeds;
     }
