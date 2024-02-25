@@ -35,6 +35,14 @@ public class CourseConfiguration : IEntityTypeConfiguration<Course>
                     new Course { Id = ++id, CourseCategoryId= 1, Name= "React", TotalDuration = 20, Priority= 1, IsActive= true },
                     new Course { Id = ++id, CourseCategoryId= 1, Name= "TypeScript", TotalDuration = 30, Priority= 1, IsActive= true },
                     new Course { Id = ++id, CourseCategoryId= 1, Name= "HTML 5", TotalDuration = 70, Priority= 1, IsActive= true },
+                    new Course { Id = ++id, CourseCategoryId= 3, Name= "Proje Aþamalarý", TotalDuration = 1, Priority= 1, IsActive= true },
+                    new Course { Id = ++id, CourseCategoryId= 3, Name= "Kampüs Buluþmalarý", TotalDuration = 1, Priority= 1, IsActive= true },
+                    new Course { Id = ++id, CourseCategoryId= 1, Name= "Java", TotalDuration = 1080, Priority= 1, IsActive= true },
+                    new Course { Id = ++id, CourseCategoryId= 1, Name= "Angular", TotalDuration = 150, Priority= 1, IsActive= true },
+                    new Course { Id = ++id, CourseCategoryId= 1, Name= "Flutter", TotalDuration = 400, Priority= 1, IsActive= true },
+                    new Course { Id = ++id, CourseCategoryId= 1, Name= "Yemek Sipariþi Uygulamasý", TotalDuration = 720, Priority= 1, IsActive= true },
+                    new Course { Id = ++id, CourseCategoryId= 2, Name= "C# & .NET Mülakat Part-1", TotalDuration = 8, Priority= 1, IsActive= true },
+                    new Course { Id = ++id, CourseCategoryId= 2, Name= "C# & .NET Mülakat Part-2", TotalDuration = 29, Priority= 1, IsActive= true },
             };
         return seeds;
     }
