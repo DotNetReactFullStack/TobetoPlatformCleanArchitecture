@@ -3,6 +3,7 @@ using Application.Features.Accounts.Rules;
 using Application.Features.Auth.Constants;
 using Application.Features.Auth.Rules;
 using Application.Services.Accounts;
+using Application.Services.Addresses;
 using Application.Services.AuthService;
 using Application.Services.Repositories;
 using Application.Services.UserOperationClaims;
@@ -13,6 +14,7 @@ using Core.Security.Hashing;
 using Core.Security.JWT;
 using Domain.Entities;
 using MediatR;
+using Microsoft.Identity.Client;
 
 namespace Application.Features.Auth.Commands.Register;
 
@@ -42,18 +44,19 @@ public class RegisterCommand : IRequest<RegisteredResponse>
         private readonly IUserOperationClaimService _userOperationClaimService;
         private readonly IAccountsService _accountsService;
         private readonly AccountBusinessRules _accountBusinessRules;
+        private readonly IAddressesService _addressesService;
 
 
-        public RegisterCommandHandler(IUserRepository userRepository, IAuthService authService, AuthBusinessRules authBusinessRules, IUserOperationClaimService userOperationClaimService, IAccountsService accountsService, AccountBusinessRules accountBusinessRules)
+        public RegisterCommandHandler(IUserRepository userRepository, IAuthService authService, AuthBusinessRules authBusinessRules, IUserOperationClaimService userOperationClaimService, IAccountsService accountsService, AccountBusinessRules accountBusinessRules, IAddressesService addressesService)
         {
             _userRepository = userRepository;
             _authService = authService;
             _authBusinessRules = authBusinessRules;
 
-
             _userOperationClaimService = userOperationClaimService;
             _accountsService = accountsService;
             _accountBusinessRules = accountBusinessRules;
+            _addressesService = addressesService;
         }
 
         public async Task<RegisteredResponse> Handle(RegisterCommand request, CancellationToken cancellationToken)
@@ -107,7 +110,17 @@ public class RegisterCommand : IRequest<RegisteredResponse>
                 isActive: AccountsFieldConstants.IsActive
                 );
 
-            await _accountsService.AddAsync(account);
+            Account createdAccount = await _accountsService.AddAsync(account);
+
+            Address address = new(                
+                accountId: createdAccount.Id,
+                countryId: 1,
+                cityId: 1,
+                districtId: 1,
+                addressDetail: ""
+                );
+
+            await _addressesService.AddAsync(address);
 
             AccessToken createdAccessToken = await _authService.CreateAccessToken(createdUser);
 
@@ -119,3 +132,4 @@ public class RegisterCommand : IRequest<RegisteredResponse>
         }
     }
 }
+

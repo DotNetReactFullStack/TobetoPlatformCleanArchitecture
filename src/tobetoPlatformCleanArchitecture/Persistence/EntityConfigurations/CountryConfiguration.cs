@@ -26,12 +26,14 @@ public class CountryConfiguration : IEntityTypeConfiguration<Country>
     private HashSet<Country> getSeeds()
     {
         int id = 0;
+        int priority = 0;
         HashSet<Country> seeds =
             new()
             {
-                new Country { Id = ++id, Name = "Türkiye", Priority= 1, Visibility=true },
-                new Country { Id = ++id, Name = "İngiltere", Priority= 2, Visibility=true },
-                new Country { Id = ++id, Name = "İtalya", Priority= 3, Visibility=true },
+                new Country { Id = ++id, Name = "Ülke", Priority= ++priority, Visibility=true },
+                new Country { Id = ++id, Name = "Türkiye", Priority= ++priority, Visibility=true },
+                new Country { Id = ++id, Name = "İngiltere", Priority= ++priority, Visibility=true },
+                new Country { Id = ++id, Name = "İtalya", Priority= ++priority, Visibility=true },
             };
 
         return seeds;
