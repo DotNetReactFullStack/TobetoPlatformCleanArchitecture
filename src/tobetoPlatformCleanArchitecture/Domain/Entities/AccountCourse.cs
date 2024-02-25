@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Domain.Entities;
-public class AccountCourse : Entity<int>
+public class AccountCourse : Entity<int>, IDisposable
 {
     public int CourseId { get; set; }
     public int AccountId { get; set; }
@@ -20,11 +20,23 @@ public class AccountCourse : Entity<int>
         
     }
 
+    public AccountCourse(int courseId, int accountId, bool isActive) : this()
+    {
+        CourseId = courseId;
+        AccountId = accountId;
+        IsActive = isActive;
+    }
+
     public AccountCourse(int id, int courseId, int accountId, bool isActive) : this()
     {
         Id = id;
         CourseId = courseId;
         AccountId = accountId;
         IsActive = isActive;
+    }
+
+    public void Dispose()
+    {
+
     }
 }

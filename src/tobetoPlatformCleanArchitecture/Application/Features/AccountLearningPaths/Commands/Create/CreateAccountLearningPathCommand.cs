@@ -9,6 +9,8 @@ using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using MediatR;
 using static Application.Features.AccountLearningPaths.Constants.AccountLearningPathsOperationClaims;
+using Application.Services.CourseLearningPaths;
+using Application.Services.AccountCourses;
 
 namespace Application.Features.AccountLearningPaths.Commands.Create;
 
@@ -36,19 +38,35 @@ public class CreateAccountLearningPathCommand : IRequest<CreatedAccountLearningP
         private readonly IAccountLearningPathRepository _accountLearningPathRepository;
         private readonly AccountLearningPathBusinessRules _accountLearningPathBusinessRules;
 
+        private readonly ICourseLearningPathsService _courseLearningPathsService;
+        private readonly IAccountCoursesService _accountCoursesService;
+
         public CreateAccountLearningPathCommandHandler(IMapper mapper, IAccountLearningPathRepository accountLearningPathRepository,
-                                         AccountLearningPathBusinessRules accountLearningPathBusinessRules)
+                                         AccountLearningPathBusinessRules accountLearningPathBusinessRules, ICourseLearningPathsService courseLearningPathsService, IAccountCoursesService accountCoursesService)
         {
             _mapper = mapper;
             _accountLearningPathRepository = accountLearningPathRepository;
             _accountLearningPathBusinessRules = accountLearningPathBusinessRules;
+
+            _courseLearningPathsService = courseLearningPathsService;
+            _accountCoursesService = accountCoursesService;
         }
 
         public async Task<CreatedAccountLearningPathResponse> Handle(CreateAccountLearningPathCommand request, CancellationToken cancellationToken)
         {
             AccountLearningPath accountLearningPath = _mapper.Map<AccountLearningPath>(request);
 
-            await _accountLearningPathRepository.AddAsync(accountLearningPath);
+            AccountLearningPath createdAccountLearningPath = await _accountLearningPathRepository.AddAsync(accountLearningPath);
+
+            List<int> courseIds = await _courseLearningPathsService.GetListByLearningPathIdCourseIds(createdAccountLearningPath.LearningPathId);
+
+            foreach (var courseId in courseIds)
+            {
+                using (AccountCourse accountCourse = new AccountCourse(courseId: courseId, accountId: request.AccountId, isActive: true))
+                {
+                    await _accountCoursesService.AddAsync(accountCourse);
+                }
+            }
 
             CreatedAccountLearningPathResponse response = _mapper.Map<CreatedAccountLearningPathResponse>(accountLearningPath);
             return response;

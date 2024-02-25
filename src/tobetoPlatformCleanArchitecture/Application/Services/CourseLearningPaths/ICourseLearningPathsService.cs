@@ -27,4 +27,6 @@ public interface ICourseLearningPathsService
     Task<CourseLearningPath> AddAsync(CourseLearningPath courseLearningPath);
     Task<CourseLearningPath> UpdateAsync(CourseLearningPath courseLearningPath);
     Task<CourseLearningPath> DeleteAsync(CourseLearningPath courseLearningPath, bool permanent = false);
+
+    Task<List<int>> GetListByLearningPathIdCourseIds(int learningPathId);
 }
