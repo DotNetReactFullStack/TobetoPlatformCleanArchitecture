@@ -1,6 +1,7 @@
 using Application.Features.Addresses.Commands.Create;
 using Application.Features.Addresses.Commands.Delete;
 using Application.Features.Addresses.Commands.Update;
+using Application.Features.Addresses.Commands.Update.UpdateAddressInformation;
 using Application.Features.Addresses.Queries.GetById;
 using Application.Features.Addresses.Queries.GetList;
 using Core.Application.Requests;
@@ -49,6 +50,14 @@ public class AddressesController : BaseController
     {
         GetListAddressQuery getListAddressQuery = new() { PageRequest = pageRequest };
         GetListResponse<GetListAddressListItemDto> response = await Mediator.Send(getListAddressQuery);
+        return Ok(response);
+    }
+
+    [HttpPut("updateAddressInformation")]
+    public async Task<IActionResult> UpdateFront([FromBody] UpdateAddressInformationCommand updateAddressFrontCommand)
+    {
+        UpdatedAddressResponse response = await Mediator.Send(updateAddressFrontCommand);
+
         return Ok(response);
     }
 }

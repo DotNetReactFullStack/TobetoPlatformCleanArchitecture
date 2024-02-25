@@ -9,6 +9,7 @@ using Domain.Entities;
 using Core.Persistence.Paging;
 using Application.Features.Accounts.Queries.GetByUserId;
 using Core.Security.Entities;
+using Application.Features.Accounts.Commands.Update.UpdateAccountInformation;
 
 namespace Application.Features.Accounts.Profiles;
 
@@ -19,6 +20,7 @@ public class MappingProfiles : Profile
         CreateMap<Account, CreateAccountCommand>().ReverseMap();
         CreateMap<Account, CreatedAccountResponse>().ReverseMap();
         CreateMap<Account, UpdateAccountCommand>().ReverseMap();
+        CreateMap<Account, UpdateAccountInformationCommand>().ReverseMap();
         CreateMap<Account, UpdatedAccountResponse>().ReverseMap();
         CreateMap<Account, DeleteAccountCommand>().ReverseMap();
         CreateMap<Account, DeletedAccountResponse>().ReverseMap();

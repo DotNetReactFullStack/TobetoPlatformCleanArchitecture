@@ -7,6 +7,7 @@ using AutoMapper;
 using Core.Application.Responses;
 using Domain.Entities;
 using Core.Persistence.Paging;
+using Application.Features.Addresses.Commands.Update.UpdateAddressInformation;
 
 namespace Application.Features.Addresses.Profiles;
 
@@ -17,6 +18,7 @@ public class MappingProfiles : Profile
         CreateMap<Address, CreateAddressCommand>().ReverseMap();
         CreateMap<Address, CreatedAddressResponse>().ReverseMap();
         CreateMap<Address, UpdateAddressCommand>().ReverseMap();
+        CreateMap<Address, UpdateAddressInformationCommand>().ReverseMap();
         CreateMap<Address, UpdatedAddressResponse>().ReverseMap();
         CreateMap<Address, DeleteAddressCommand>().ReverseMap();
         CreateMap<Address, DeletedAddressResponse>().ReverseMap();
