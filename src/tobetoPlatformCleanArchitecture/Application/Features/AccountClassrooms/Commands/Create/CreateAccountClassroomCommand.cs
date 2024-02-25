@@ -9,6 +9,7 @@ using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using MediatR;
 using static Application.Features.AccountClassrooms.Constants.AccountClassroomsOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.AccountClassrooms.Commands.Create;
 
@@ -18,7 +19,7 @@ public class CreateAccountClassroomCommand : IRequest<CreatedAccountClassroomRes
     public int ClassroomId { get; set; }
     public bool IsActive { get; set; }
 
-    public string[] Roles => new[] { Admin, Write, AccountClassroomsOperationClaims.Create };
+    public string[] Roles => new[] { Admin, Write, AccountClassroomsOperationClaims.Create, GeneralOperationClaims.Instructor};
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }

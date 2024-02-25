@@ -9,6 +9,7 @@ using Core.Application.Pipelines.Logging;
 using Core.Application.Pipelines.Transaction;
 using MediatR;
 using static Application.Features.LearningPathCategories.Constants.LearningPathCategoriesOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.LearningPathCategories.Commands.Create;
 
@@ -17,7 +18,7 @@ public class CreateLearningPathCategoryCommand : IRequest<CreatedLearningPathCat
     public string Name { get; set; }
     public bool IsActive { get; set; }
 
-    public string[] Roles => new[] { Admin, Write, LearningPathCategoriesOperationClaims.Create };
+    public string[] Roles => new[] { Admin, Write, LearningPathCategoriesOperationClaims.Create, GeneralOperationClaims.Instructor };
 
     public bool BypassCache { get; }
     public string? CacheKey { get; }
