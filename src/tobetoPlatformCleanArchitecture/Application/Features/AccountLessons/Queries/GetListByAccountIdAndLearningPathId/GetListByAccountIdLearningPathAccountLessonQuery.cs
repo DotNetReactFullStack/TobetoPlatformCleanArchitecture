@@ -13,7 +13,7 @@ using static Application.Features.AccountLessons.Constants.AccountLessonsOperati
 
 
 namespace Application.Features.AccountLessons.Queries.GetListByAccountIdAndLearningPathId;
-public class GetListByAccountIdLearningPathAccountLessonQuery : IRequest<GetListResponse<GetListByAccountIdLearningPathAccountLessonListItemDto>>, ISecuredRequest, ICachableRequest
+public class GetListByAccountIdLearningPathAccountLessonQuery : IRequest<GetListResponse<GetListByAccountIdLearningPathAccountLessonListItemDto>>, ISecuredRequest//, ICachableRequest
 {
     public int AccountId { get; set; }
     public PageRequest PageRequest { get; set; }

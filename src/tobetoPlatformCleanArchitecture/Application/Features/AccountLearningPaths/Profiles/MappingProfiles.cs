@@ -11,6 +11,7 @@ using Application.Features.AccountLearningPaths.Queries.GetListByAccountId;
 using Application.Features.AccountLearningPaths.Queries.GetListByLearningPathId;
 using Application.Features.AccountLearningPaths.Commands.Update.UpdateAccountLearningPathIsLiked;
 using Application.Features.AccountLearningPaths.Commands.Update.UpdateAccountLearningPathIsSaved;
+using Application.Features.AccountLearningPaths.Commands.Update.UpdateAccountLearningPathPercentComplete;
 
 namespace Application.Features.AccountLearningPaths.Profiles;
 
@@ -24,6 +25,7 @@ public class MappingProfiles : Profile
         CreateMap<AccountLearningPath, UpdatedAccountLearningPathResponse>().ReverseMap();
         CreateMap<AccountLearningPath, UpdateAccountLearningPathIsLikedCommand>().ReverseMap();
         CreateMap<AccountLearningPath, UpdateAccountLearningPathIsSavedCommand>().ReverseMap();
+        CreateMap<AccountLearningPath, UpdateAccountLearningPathPercentCompleteCommand>().ReverseMap();
         CreateMap<AccountLearningPath, DeleteAccountLearningPathCommand>().ReverseMap();
         CreateMap<AccountLearningPath, DeletedAccountLearningPathResponse>().ReverseMap();
         CreateMap<AccountLearningPath, GetByIdAccountLearningPathResponse>().ReverseMap();
