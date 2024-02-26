@@ -33,10 +33,10 @@ public class AnnouncementConfiguration : IEntityTypeConfiguration<Announcement>
         HashSet<Announcement> seeds =
             new()
             {
-                new Announcement { Id = ++id, AnnouncementTypeId=1, OrganizationId=1, Name = "20 Şubat Kampüs Buluşması Hk.", Content="Heyecanla beklenen Son Kampüs Buluşması için geri sayıma başladık. Seninle tanışmak için sabırsızlanıyoruz...", PublishedDate=DateTime.Now, Priority= 1, Visibility=true },
-                new Announcement { Id = ++id, AnnouncementTypeId=1, OrganizationId=1, Name = "21 Şubat Kampüs Buluşması Hk.", Content="Heyecanla beklenen Son Kampüs Buluşması için geri sayıma başladık. Seninle tanışmak için sabırsızlanıyoruz...", PublishedDate=DateTime.Now, Priority= 1, Visibility=true },
-                new Announcement { Id = ++id, AnnouncementTypeId=1, OrganizationId=1, Name = "22 Şubat Kampüs Buluşması Hk.", Content="Heyecanla beklenen Son Kampüs Buluşması için geri sayıma başladık. Seninle tanışmak için sabırsızlanıyoruz...", PublishedDate=DateTime.Now, Priority= 1, Visibility=true },
-                new Announcement { Id = ++id, AnnouncementTypeId=1, OrganizationId=1, Name = "23 Şubat Kampüs Buluşması Hk.", Content="Heyecanla beklenen Son Kampüs Buluşması için geri sayıma başladık. Seninle tanışmak için sabırsızlanıyoruz...", PublishedDate=DateTime.Now, Priority= 1, Visibility=true },
+                new Announcement { Id = ++id, AnnouncementTypeId=1, OrganizationId=1, Name = "20 Şubat Kampüs Buluşması Hk.", Content="Heyecanla beklenen Son Kampüs Buluşması için geri sayıma başladık. Seninle tanışmak için sabırsızlanıyoruz...", PublishedDate=new DateTime(2024, 2, 1), Priority= 1, Visibility=true },
+                new Announcement { Id = ++id, AnnouncementTypeId=1, OrganizationId=1, Name = "Mindset Anketi", Content="Projemize akademik bakış açılarını da eklemek için aşağıdaki formu doldurmanı rica ederiz.", PublishedDate=new DateTime(2024, 1, 20), Priority= 1, Visibility=true },
+                new Announcement { Id = ++id, AnnouncementTypeId=1, OrganizationId=1, Name = "Ocak Ayı Tercih Formu Bilgilendirmesi", Content="Tercih formunu bekleyen adaylarımızın discorddaki duyuruyu takip etmesini rica ederiz.", PublishedDate=new DateTime(2024, 1, 10), Priority= 1, Visibility=true },
+                new Announcement { Id = ++id, AnnouncementTypeId=1, OrganizationId=1, Name = "11 Ocak Kampüs Buluşması", Content="Herkes için Kodlama eğitimini bitiren kişilerin katılabileceği kampüs buluşmamız 11 Ocak 2024 tarihindedir. Discorddan form paylaşılmıştır. Bu katılım formunu doldurmayan arkadaşların doldurması önemlidir..", PublishedDate=new DateTime(2023, 12, 20), Priority= 1, Visibility=true },
             };
 
         return seeds;

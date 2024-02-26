@@ -76,23 +76,23 @@ public class LessonConfiguration : IEntityTypeConfiguration<Lesson>
 
                 new Lesson { Id = ++id, CourseId=1, Name="Angular Giriş 6", Visibility= true, Language= "Türkçe",Content= "Angular Giriş 6 açıklaması", VideoUrl = "obK-YEOuVgY", Duration=154, IsActive = true},
 
-                new Lesson { Id = ++id, CourseId=4, Name="Html 5 Dersleri 1: Plunker Online Editörümüzü Tanıyalım", Visibility= true, Language= "Türkçe",Content= "Html 5 Dersleri 1 açıklaması", VideoUrl = "pkYSPtpvDqc", Duration=4, IsActive = true},
+                new Lesson { Id = ++id, CourseId=4, Name="Plunker Online Editörümüzü Tanıyalım", Visibility= true, Language= "Türkçe",Content= "Html 5 Dersleri 1 açıklaması", VideoUrl = "pkYSPtpvDqc", Duration=4, IsActive = true},
 
-                new Lesson { Id = ++id, CourseId=4, Name="Html 5 Dersleri 2: Html nedir?", Visibility= true, Language= "Türkçe",Content= "Html 5 Dersleri 2 açıklaması", VideoUrl = "C8n7li03yJM", Duration=4, IsActive = true},
+                new Lesson { Id = ++id, CourseId=4, Name="Html nedir?", Visibility= true, Language= "Türkçe",Content= "Html 5 Dersleri 2 açıklaması", VideoUrl = "C8n7li03yJM", Duration=4, IsActive = true},
 
-                new Lesson { Id = ++id, CourseId=4, Name="Html 5 Dersleri 3: Temel Html Elementleri", Visibility= true, Language= "Türkçe",Content= "Html 5 Dersleri 3 açıklaması", VideoUrl = "_CyfWwttWfk", Duration=4, IsActive = true},
+                new Lesson { Id = ++id, CourseId=4, Name="Temel Html Elementleri", Visibility= true, Language= "Türkçe",Content= "Html 5 Dersleri 3 açıklaması", VideoUrl = "_CyfWwttWfk", Duration=4, IsActive = true},
 
-                new Lesson { Id = ++id, CourseId=4, Name="Html 5 Dersleri 4: Linklerle Çalışmak", Visibility= true, Language= "Türkçe",Content= "Html 5 Dersleri 4 açıklaması", VideoUrl = "k1uoQWyxixQ", Duration=13, IsActive = true},
+                new Lesson { Id = ++id, CourseId=4, Name="Linklerle Çalışmak", Visibility= true, Language= "Türkçe",Content= "Html 5 Dersleri 4 açıklaması", VideoUrl = "k1uoQWyxixQ", Duration=13, IsActive = true},
 
-                new Lesson { Id = ++id, CourseId=4, Name="Html 5 Dersleri 5: Tablolarla Çalışmak", Visibility= true, Language= "Türkçe",Content= "Html 5 Dersleri 5 açıklaması", VideoUrl = "aph25fXelME", Duration=6, IsActive = true},
+                new Lesson { Id = ++id, CourseId=4, Name="Tablolarla Çalışmak", Visibility= true, Language= "Türkçe",Content= "Html 5 Dersleri 5 açıklaması", VideoUrl = "aph25fXelME", Duration=6, IsActive = true},
 
-                new Lesson { Id = ++id, CourseId=4, Name="Html 5 Dersleri 6: Formatlama", Visibility= true, Language= "Türkçe",Content= "Html 5 Dersleri 6 açıklaması", VideoUrl = "7pT6prRLNX0", Duration=7, IsActive = true},
+                new Lesson { Id = ++id, CourseId=4, Name="Formatlama", Visibility= true, Language= "Türkçe",Content= "Html 5 Dersleri 6 açıklaması", VideoUrl = "7pT6prRLNX0", Duration=7, IsActive = true},
 
-                new Lesson { Id = ++id, CourseId=4, Name="Html 5 Dersleri 7: Layouts", Visibility= true, Language= "Türkçe",Content= "Html 5 Dersleri 7 açıklaması", VideoUrl = "0OqzuBAQ7_A", Duration=8, IsActive = true},
+                new Lesson { Id = ++id, CourseId=4, Name="Layouts", Visibility= true, Language= "Türkçe",Content= "Html 5 Dersleri 7 açıklaması", VideoUrl = "0OqzuBAQ7_A", Duration=8, IsActive = true},
 
-                new Lesson { Id = ++id, CourseId=4, Name="Html 5 Dersleri 8: Form Tagleri", Visibility= true, Language= "Türkçe",Content= "Html 5 Dersleri 8 açıklaması", VideoUrl = "5K5mUa_Q1VY", Duration=18, IsActive = true},
+                new Lesson { Id = ++id, CourseId=4, Name="Form Tagleri", Visibility= true, Language= "Türkçe",Content= "Html 5 Dersleri 8 açıklaması", VideoUrl = "5K5mUa_Q1VY", Duration=18, IsActive = true},
 
-                new Lesson { Id = ++id, CourseId=4, Name="Html 5 Dersleri 9: Html 5 İle Gelen Form Tagleri", Visibility= true, Language= "Türkçe",Content= "Html 5 Dersleri 9 açıklaması", VideoUrl = "5vKZPDT0gcM", Duration=7, IsActive = true},
+                new Lesson { Id = ++id, CourseId=4, Name="Html 5 İle Gelen Form Tagleri", Visibility= true, Language= "Türkçe",Content= "Html 5 Dersleri 9 açıklaması", VideoUrl = "5vKZPDT0gcM", Duration=7, IsActive = true},
 
                 new Lesson { Id = ++id, CourseId=5, Name="İstanbul Kodluyor Proje Aşamaları", Visibility= true, Language= "Türkçe",Content= "İstanbul Kodluyor Proje Aşamaları açıklaması", VideoUrl = "lIRN7fXQIcQ", Duration=1, IsActive = true},
 
@@ -152,15 +152,15 @@ public class LessonConfiguration : IEntityTypeConfiguration<Lesson>
 
                 //C# ve .NET Mülakatlarından En Önde Geçme Teknikleri - Part 2
 
-                new Lesson { Id = ++id, CourseId=11, Name="Framework ve Library Kavramlar Nedir?", Visibility= true, Language= "Türkçe",Content= "Framework ve Library Kavramlar Nedir? açıklaması", VideoUrl = "5dQeNa0Uzns", Duration=2, IsActive = true},
+                new Lesson { Id = ++id, CourseId=12, Name="Framework ve Library Kavramlar Nedir?", Visibility= true, Language= "Türkçe",Content= "Framework ve Library Kavramlar Nedir? açıklaması", VideoUrl = "5dQeNa0Uzns", Duration=2, IsActive = true},
 
-                new Lesson { Id = ++id, CourseId=11, Name="SOLID Prensipleri Nedir?", Visibility= true, Language= "Türkçe",Content= "SOLID Prensipleri Nedir? açıklaması", VideoUrl = "gdjcKwWxe08", Duration=2, IsActive = true},
+                new Lesson { Id = ++id, CourseId=12, Name="SOLID Prensipleri Nedir?", Visibility= true, Language= "Türkçe",Content= "SOLID Prensipleri Nedir? açıklaması", VideoUrl = "gdjcKwWxe08", Duration=2, IsActive = true},
 
-                new Lesson { Id = ++id, CourseId=11, Name="Single Responsibility Principle", Visibility= true, Language= "Türkçe",Content= "Single Responsibility Principle açıklaması", VideoUrl = "AX6nDbsP2ME", Duration=2, IsActive = true},
+                new Lesson { Id = ++id, CourseId=12, Name="Single Responsibility Principle", Visibility= true, Language= "Türkçe",Content= "Single Responsibility Principle açıklaması", VideoUrl = "AX6nDbsP2ME", Duration=2, IsActive = true},
 
-                new Lesson { Id = ++id, CourseId=11, Name="Open Closed Principle ", Visibility= true, Language= "Türkçe",Content= "Open Closed Principle  açıklaması", VideoUrl = "tx2DjE-VwOY", Duration=2, IsActive = true},
+                new Lesson { Id = ++id, CourseId=12, Name="Open Closed Principle ", Visibility= true, Language= "Türkçe",Content= "Open Closed Principle  açıklaması", VideoUrl = "tx2DjE-VwOY", Duration=2, IsActive = true},
 
-                new Lesson { Id = ++id, CourseId=11, Name="Liskov's Subsititution Principle", Visibility= true, Language= "Türkçe",Content= "Liskov's Subsititution Principle açıklaması", VideoUrl = "M2bDfaZvTTs", Duration=2, IsActive = true},
+                new Lesson { Id = ++id, CourseId=12, Name="Liskov's Subsititution Principle", Visibility= true, Language= "Türkçe",Content= "Liskov's Subsititution Principle açıklaması", VideoUrl = "M2bDfaZvTTs", Duration=2, IsActive = true},
             };
         return seeds;
     }
