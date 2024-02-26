@@ -3,6 +3,7 @@ using Application.Features.AccountLearningPaths.Commands.Delete;
 using Application.Features.AccountLearningPaths.Commands.Update;
 using Application.Features.AccountLearningPaths.Commands.Update.UpdateAccountLearningPathIsLiked;
 using Application.Features.AccountLearningPaths.Commands.Update.UpdateAccountLearningPathIsSaved;
+using Application.Features.AccountLearningPaths.Commands.Update.UpdateAccountLearningPathPercentComplete;
 using Application.Features.AccountLearningPaths.Queries.GetById;
 using Application.Features.AccountLearningPaths.Queries.GetList;
 using Application.Features.AccountLearningPaths.Queries.GetListByAccountId;
@@ -45,6 +46,14 @@ public class AccountLearningPathsController : BaseController
     public async Task<IActionResult> UpdateIsSaved([FromBody] UpdateAccountLearningPathIsSavedCommand updateAccountLearningPathIsSavedCommand)
     {
         UpdatedAccountLearningPathResponse response = await Mediator.Send(updateAccountLearningPathIsSavedCommand);
+
+        return Ok(response);
+    }
+
+    [HttpPut("PercentComplete")]
+    public async Task<IActionResult> UpdatePercentComplete([FromBody] UpdateAccountLearningPathPercentCompleteCommand updateAccountLearningPathPercentCompleteCommand)
+    {
+        UpdatedAccountLearningPathResponse response = await Mediator.Send(updateAccountLearningPathPercentCompleteCommand);
 
         return Ok(response);
     }

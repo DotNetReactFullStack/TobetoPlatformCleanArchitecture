@@ -5,6 +5,7 @@ using Application.Features.AccountLessons.Commands.Update.UpdateAccountLessonIsC
 using Application.Features.AccountLessons.Queries.GetById;
 using Application.Features.AccountLessons.Queries.GetList;
 using Application.Features.AccountLessons.Queries.GetListByAccountId;
+using Application.Features.AccountLessons.Queries.GetListByAccountIdAndLearningPathId;
 using Application.Features.AccountLessons.Queries.GetListByAccountIdAndLessonId;
 using Application.Features.CourseLearningPaths.Queries.GetListByLearningPathId;
 using Core.Application.Requests;
@@ -72,6 +73,15 @@ public class AccountLessonsController : BaseController
         GetListResponse<GetListByAccountIdAccountLessonListItemDto> response = await Mediator.Send(getListByAccountIdAccountLessonQuery);
         return Ok(response);
     }
+
+    [HttpGet("getListByAccountIdLearningPathDto/{accountId}")]
+    public async Task<IActionResult> GetListByAccountIdLearningPathDto([FromRoute] int accountId, [FromQuery] PageRequest pageRequest)
+    {
+        GetListByAccountIdLearningPathAccountLessonQuery getListByAccountIdAndLearningPathIdAccountLessonQuery = new() { AccountId = accountId, PageRequest = pageRequest };
+        GetListResponse<GetListByAccountIdLearningPathAccountLessonListItemDto> response = await Mediator.Send(getListByAccountIdAndLearningPathIdAccountLessonQuery);
+        return Ok(response);
+    }
+
 
 
     [HttpGet]
