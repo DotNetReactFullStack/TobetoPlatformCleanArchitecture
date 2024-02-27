@@ -9,6 +9,7 @@ using Core.Application.Responses;
 using Core.Persistence.Paging;
 using MediatR;
 using static Application.Features.Lessons.Constants.LessonsOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.Lessons.Queries.GetList;
 
@@ -16,7 +17,8 @@ public class GetListLessonQuery : IRequest<GetListResponse<GetListLessonListItem
 {
     public PageRequest PageRequest { get; set; }
 
-    public string[] Roles => new[] { Admin, Read };
+    public string[] Roles => new[] { Admin, Read, GeneralOperationClaims.Instructor, GeneralOperationClaims.Student };
+
 
     public bool BypassCache { get; }
     public string CacheKey => $"GetListLessons({PageRequest.PageIndex},{PageRequest.PageSize})";
