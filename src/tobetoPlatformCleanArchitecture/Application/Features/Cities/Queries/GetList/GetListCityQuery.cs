@@ -9,6 +9,7 @@ using Core.Application.Responses;
 using Core.Persistence.Paging;
 using MediatR;
 using static Application.Features.Cities.Constants.CitiesOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.Cities.Queries.GetList;
 
@@ -16,7 +17,8 @@ public class GetListCityQuery : IRequest<GetListResponse<GetListCityListItemDto>
 {
     public PageRequest PageRequest { get; set; }
 
-    public string[] Roles => new[] { Admin, Read };
+    public string[] Roles => new[] { Admin, Read, GeneralOperationClaims.Instructor, GeneralOperationClaims.Student };
+
 
     public bool BypassCache { get; }
     public string CacheKey => $"GetListCities({PageRequest.PageIndex},{PageRequest.PageSize})";
