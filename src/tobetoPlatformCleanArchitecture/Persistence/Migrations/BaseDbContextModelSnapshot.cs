@@ -1905,8 +1905,8 @@ namespace Persistence.Migrations
                             Email = "test@user.net",
                             FirstName = "Test",
                             LastName = "User",
-                            PasswordHash = new byte[] { 155, 38, 159, 35, 123, 190, 14, 223, 211, 26, 211, 141, 166, 4, 6, 158, 174, 7, 102, 218, 145, 114, 11, 218, 170, 97, 206, 131, 74, 127, 146, 162, 29, 95, 89, 18, 116, 17, 41, 131, 239, 41, 152, 176, 76, 119, 147, 187, 50, 166, 21, 142, 253, 14, 106, 85, 118, 151, 25, 171, 125, 2, 152, 192 },
-                            PasswordSalt = new byte[] { 98, 46, 87, 100, 103, 230, 92, 233, 50, 7, 101, 66, 181, 95, 128, 227, 63, 82, 79, 44, 81, 143, 68, 163, 163, 52, 252, 121, 14, 115, 203, 121, 199, 138, 230, 119, 196, 94, 236, 166, 227, 31, 103, 93, 227, 4, 110, 166, 138, 72, 26, 1, 198, 220, 55, 31, 240, 198, 233, 10, 17, 106, 242, 56, 0, 58, 160, 142, 22, 210, 8, 157, 128, 72, 16, 228, 90, 5, 193, 255, 44, 127, 204, 24, 157, 9, 230, 36, 227, 159, 241, 195, 154, 10, 34, 84, 97, 74, 149, 194, 153, 114, 159, 59, 110, 119, 9, 148, 245, 221, 255, 136, 160, 129, 123, 23, 65, 44, 12, 141, 171, 141, 179, 43, 214, 160, 144, 170 },
+                            PasswordHash = new byte[] { 222, 151, 165, 135, 175, 2, 241, 134, 174, 99, 54, 96, 151, 191, 76, 234, 154, 234, 188, 222, 13, 201, 42, 61, 172, 27, 233, 4, 93, 63, 233, 242, 117, 138, 209, 154, 245, 41, 174, 89, 4, 123, 58, 248, 115, 116, 22, 86, 2, 170, 255, 126, 196, 216, 190, 105, 148, 80, 113, 72, 175, 181, 224, 72 },
+                            PasswordSalt = new byte[] { 222, 205, 199, 246, 193, 9, 60, 111, 205, 113, 98, 54, 57, 36, 239, 6, 83, 163, 67, 105, 12, 133, 49, 116, 109, 180, 63, 255, 61, 209, 164, 61, 123, 13, 72, 166, 14, 252, 100, 221, 85, 177, 97, 27, 99, 82, 105, 192, 45, 244, 101, 113, 244, 200, 130, 95, 15, 149, 138, 38, 220, 79, 62, 174, 43, 213, 117, 194, 210, 117, 45, 237, 207, 229, 223, 103, 143, 198, 32, 210, 48, 3, 142, 66, 4, 252, 246, 64, 161, 226, 68, 66, 231, 16, 183, 99, 42, 14, 212, 30, 65, 125, 203, 162, 52, 8, 41, 11, 55, 234, 16, 200, 27, 152, 59, 231, 85, 95, 171, 255, 69, 159, 243, 194, 189, 45, 31, 251 },
                             Status = true
                         });
                 });
@@ -2979,43 +2979,43 @@ namespace Persistence.Migrations
                             Name = "20 Şubat Kampüs Buluşması Hk.",
                             OrganizationId = 1,
                             Priority = 1,
-                            PublishedDate = new DateTime(2024, 2, 26, 0, 55, 56, 254, DateTimeKind.Local).AddTicks(8530),
+                            PublishedDate = new DateTime(2024, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Visibility = true
                         },
                         new
                         {
                             Id = 2,
                             AnnouncementTypeId = 1,
-                            Content = "Heyecanla beklenen Son Kampüs Buluşması için geri sayıma başladık. Seninle tanışmak için sabırsızlanıyoruz...",
+                            Content = "Projemize akademik bakış açılarını da eklemek için aşağıdaki formu doldurmanı rica ederiz.",
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "21 Şubat Kampüs Buluşması Hk.",
+                            Name = "Mindset Anketi",
                             OrganizationId = 1,
                             Priority = 1,
-                            PublishedDate = new DateTime(2024, 2, 26, 0, 55, 56, 254, DateTimeKind.Local).AddTicks(8570),
+                            PublishedDate = new DateTime(2024, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Visibility = true
                         },
                         new
                         {
                             Id = 3,
                             AnnouncementTypeId = 1,
-                            Content = "Heyecanla beklenen Son Kampüs Buluşması için geri sayıma başladık. Seninle tanışmak için sabırsızlanıyoruz...",
+                            Content = "Tercih formunu bekleyen adaylarımızın discorddaki duyuruyu takip etmesini rica ederiz.",
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "22 Şubat Kampüs Buluşması Hk.",
+                            Name = "Ocak Ayı Tercih Formu Bilgilendirmesi",
                             OrganizationId = 1,
                             Priority = 1,
-                            PublishedDate = new DateTime(2024, 2, 26, 0, 55, 56, 254, DateTimeKind.Local).AddTicks(8580),
+                            PublishedDate = new DateTime(2024, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Visibility = true
                         },
                         new
                         {
                             Id = 4,
                             AnnouncementTypeId = 1,
-                            Content = "Heyecanla beklenen Son Kampüs Buluşması için geri sayıma başladık. Seninle tanışmak için sabırsızlanıyoruz...",
+                            Content = "Herkes için Kodlama eğitimini bitiren kişilerin katılabileceği kampüs buluşmamız 11 Ocak 2024 tarihindedir. Discorddan form paylaşılmıştır. Bu katılım formunu doldurmayan arkadaşların doldurması önemlidir..",
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "23 Şubat Kampüs Buluşması Hk.",
+                            Name = "11 Ocak Kampüs Buluşması",
                             OrganizationId = 1,
                             Priority = 1,
-                            PublishedDate = new DateTime(2024, 2, 26, 0, 55, 56, 254, DateTimeKind.Local).AddTicks(8580),
+                            PublishedDate = new DateTime(2023, 12, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Visibility = true
                         });
                 });
@@ -5224,7 +5224,7 @@ namespace Persistence.Migrations
                             Id = 2,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndingTime = new DateTime(2024, 1, 20, 17, 0, 0, 0, DateTimeKind.Unspecified),
-                            ImageUrl = "https://lms.tobeto.com/tobeto/eep/common_show_picture_cached.aspx?pQS=eaAjNZ0uaOHiut7Ip2g6BA%3d%3d",
+                            ImageUrl = "/assets/images/istanbul-kodluyor-learning-path.png",
                             LearningPathCategoryId = 1,
                             Name = "İstanbul Kodluyor Proje Aşamaları",
                             NumberOfLikes = 42,
@@ -5237,7 +5237,7 @@ namespace Persistence.Migrations
                             Id = 3,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndingTime = new DateTime(2024, 2, 24, 23, 59, 0, 0, DateTimeKind.Unspecified),
-                            ImageUrl = "https://i.ytimg.com/vi/ddqiBbmA6r8/maxresdefault.jpg",
+                            ImageUrl = "/assets/images/java-angular-full-stack-learning-path.png",
                             LearningPathCategoryId = 1,
                             Name = "Java & Angular Full-Stack | Öğrenme Yolculuğu",
                             NumberOfLikes = 33,
@@ -5250,7 +5250,7 @@ namespace Persistence.Migrations
                             Id = 4,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndingTime = new DateTime(2024, 1, 22, 17, 0, 0, 0, DateTimeKind.Unspecified),
-                            ImageUrl = "https://uploads-ssl.webflow.com/5f841209f4e71b2d70034471/60bb4a2e143f632da3e56aea_Flutter%20app%20development%20(2).png",
+                            ImageUrl = "/assets/images/flutter-mobil-app-learning-path.png",
                             LearningPathCategoryId = 1,
                             Name = "Flutter Mobil Programlama | Öğrenme Yolculuğu",
                             NumberOfLikes = 22,
@@ -5263,7 +5263,7 @@ namespace Persistence.Migrations
                             Id = 5,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EndingTime = new DateTime(2024, 1, 28, 23, 59, 0, 0, DateTimeKind.Unspecified),
-                            ImageUrl = "https://lh3.googleusercontent.com/proxy/H4zl7fiYhYBhymjzsYWqfrfmEnOuHf5zbDi_ccmg7hfQsssASfLZAGit_S2tz8XqtFeNHVOw2uRznzHMaag98EH2EbjQiuBusYJ7n7YSEpEBqr4uCAfO5y05P_6m7gSrMsxvvvnj-I2oMkNByBStqW01fzB1ag",
+                            ImageUrl = "/assets/images/mulakatlarda-one-gecme-teknikleri-learning-path.png",
                             LearningPathCategoryId = 1,
                             Name = "Mülakatlarda Öne Geçme Teknikleri | Softskill",
                             NumberOfLikes = 15,
@@ -5663,7 +5663,7 @@ namespace Persistence.Migrations
                             Duration = 4,
                             IsActive = true,
                             Language = "Türkçe",
-                            Name = "Html 5 Dersleri 1: Plunker Online Editörümüzü Tanıyalım",
+                            Name = "Plunker Online Editörümüzü Tanıyalım",
                             VideoUrl = "pkYSPtpvDqc",
                             Visibility = true
                         },
@@ -5676,7 +5676,7 @@ namespace Persistence.Migrations
                             Duration = 4,
                             IsActive = true,
                             Language = "Türkçe",
-                            Name = "Html 5 Dersleri 2: Html nedir?",
+                            Name = "Html nedir?",
                             VideoUrl = "C8n7li03yJM",
                             Visibility = true
                         },
@@ -5689,7 +5689,7 @@ namespace Persistence.Migrations
                             Duration = 4,
                             IsActive = true,
                             Language = "Türkçe",
-                            Name = "Html 5 Dersleri 3: Temel Html Elementleri",
+                            Name = "Temel Html Elementleri",
                             VideoUrl = "_CyfWwttWfk",
                             Visibility = true
                         },
@@ -5702,7 +5702,7 @@ namespace Persistence.Migrations
                             Duration = 13,
                             IsActive = true,
                             Language = "Türkçe",
-                            Name = "Html 5 Dersleri 4: Linklerle Çalışmak",
+                            Name = "Linklerle Çalışmak",
                             VideoUrl = "k1uoQWyxixQ",
                             Visibility = true
                         },
@@ -5715,7 +5715,7 @@ namespace Persistence.Migrations
                             Duration = 6,
                             IsActive = true,
                             Language = "Türkçe",
-                            Name = "Html 5 Dersleri 5: Tablolarla Çalışmak",
+                            Name = "Tablolarla Çalışmak",
                             VideoUrl = "aph25fXelME",
                             Visibility = true
                         },
@@ -5728,7 +5728,7 @@ namespace Persistence.Migrations
                             Duration = 7,
                             IsActive = true,
                             Language = "Türkçe",
-                            Name = "Html 5 Dersleri 6: Formatlama",
+                            Name = "Formatlama",
                             VideoUrl = "7pT6prRLNX0",
                             Visibility = true
                         },
@@ -5741,7 +5741,7 @@ namespace Persistence.Migrations
                             Duration = 8,
                             IsActive = true,
                             Language = "Türkçe",
-                            Name = "Html 5 Dersleri 7: Layouts",
+                            Name = "Layouts",
                             VideoUrl = "0OqzuBAQ7_A",
                             Visibility = true
                         },
@@ -5754,7 +5754,7 @@ namespace Persistence.Migrations
                             Duration = 18,
                             IsActive = true,
                             Language = "Türkçe",
-                            Name = "Html 5 Dersleri 8: Form Tagleri",
+                            Name = "Form Tagleri",
                             VideoUrl = "5K5mUa_Q1VY",
                             Visibility = true
                         },
@@ -5767,7 +5767,7 @@ namespace Persistence.Migrations
                             Duration = 7,
                             IsActive = true,
                             Language = "Türkçe",
-                            Name = "Html 5 Dersleri 9: Html 5 İle Gelen Form Tagleri",
+                            Name = "Html 5 İle Gelen Form Tagleri",
                             VideoUrl = "5vKZPDT0gcM",
                             Visibility = true
                         },
@@ -6152,7 +6152,7 @@ namespace Persistence.Migrations
                         {
                             Id = 60,
                             Content = "Framework ve Library Kavramlar Nedir? açıklaması",
-                            CourseId = 11,
+                            CourseId = 12,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Duration = 2,
                             IsActive = true,
@@ -6165,7 +6165,7 @@ namespace Persistence.Migrations
                         {
                             Id = 61,
                             Content = "SOLID Prensipleri Nedir? açıklaması",
-                            CourseId = 11,
+                            CourseId = 12,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Duration = 2,
                             IsActive = true,
@@ -6178,7 +6178,7 @@ namespace Persistence.Migrations
                         {
                             Id = 62,
                             Content = "Single Responsibility Principle açıklaması",
-                            CourseId = 11,
+                            CourseId = 12,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Duration = 2,
                             IsActive = true,
@@ -6191,7 +6191,7 @@ namespace Persistence.Migrations
                         {
                             Id = 63,
                             Content = "Open Closed Principle  açıklaması",
-                            CourseId = 11,
+                            CourseId = 12,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Duration = 2,
                             IsActive = true,
@@ -6204,7 +6204,7 @@ namespace Persistence.Migrations
                         {
                             Id = 64,
                             Content = "Liskov's Subsititution Principle açıklaması",
-                            CourseId = 11,
+                            CourseId = 12,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Duration = 2,
                             IsActive = true,
@@ -6741,7 +6741,7 @@ namespace Persistence.Migrations
                             IsActive = true,
                             OrganizationId = 1,
                             Priority = 1,
-                            PublishedDate = new DateTime(2024, 2, 26, 0, 55, 56, 258, DateTimeKind.Local).AddTicks(9230),
+                            PublishedDate = new DateTime(2024, 2, 28, 9, 46, 32, 246, DateTimeKind.Local).AddTicks(7040),
                             SurveyTypeId = 2,
                             Title = "Mindset Anketi",
                             Visibility = true
