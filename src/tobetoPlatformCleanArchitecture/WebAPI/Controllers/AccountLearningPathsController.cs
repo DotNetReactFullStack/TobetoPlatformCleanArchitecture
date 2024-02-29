@@ -80,7 +80,7 @@ public class AccountLearningPathsController : BaseController
         return Ok(response);
     }
 
-    [HttpGet("getByAccountId/{accountId}")]
+    [HttpGet("getListByAccountId/{accountId}")]
     public async Task<IActionResult> GetListByAccountId([FromRoute] int accountId, [FromQuery] PageRequest pageRequest)
     {
         GetListByAccountIdAccountLearningPathQuery getListByAccountIdAccountLearningPathQuery = new() { AccountId = accountId, PageRequest = pageRequest };
