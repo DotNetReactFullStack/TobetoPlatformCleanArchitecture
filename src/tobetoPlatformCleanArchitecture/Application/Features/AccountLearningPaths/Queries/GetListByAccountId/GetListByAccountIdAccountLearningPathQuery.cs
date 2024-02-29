@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using static Application.Features.AccountLearningPaths.Constants.AccountLearningPathsOperationClaims;
 
 namespace Application.Features.AccountLearningPaths.Queries.GetListByAccountId;
-public class GetListByAccountIdAccountLearningPathQuery : IRequest<GetListResponse<GetListByAccountIdAccountLearningPathListItemDto>>, ISecuredRequest, ICachableRequest
+public class GetListByAccountIdAccountLearningPathQuery : IRequest<GetListResponse<GetListByAccountIdAccountLearningPathListItemDto>>//, ISecuredRequest, ICachableRequest
 {
     public int? Id { get; set; }
     public int AccountId { get; set; }
