@@ -9,6 +9,7 @@ using Core.Application.Responses;
 using Core.Persistence.Paging;
 using MediatR;
 using static Application.Features.AccountLearningPaths.Constants.AccountLearningPathsOperationClaims;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.AccountLearningPaths.Queries.GetList;
 
@@ -16,7 +17,8 @@ public class GetListAccountLearningPathQuery : IRequest<GetListResponse<GetListA
 {
     public PageRequest PageRequest { get; set; }
 
-    public string[] Roles => new[] { Admin, Read };
+    public string[] Roles => new[] { Admin, Read, GeneralOperationClaims.Instructor, GeneralOperationClaims.Student };
+
 
     public bool BypassCache { get; }
     public string CacheKey => $"GetListAccountLearningPaths({PageRequest.PageIndex},{PageRequest.PageSize})";

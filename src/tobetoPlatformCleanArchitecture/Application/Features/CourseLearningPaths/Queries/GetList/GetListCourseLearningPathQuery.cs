@@ -9,6 +9,8 @@ using Core.Application.Responses;
 using Core.Persistence.Paging;
 using MediatR;
 using static Application.Features.CourseLearningPaths.Constants.CourseLearningPathsOperationClaims;
+using Microsoft.EntityFrameworkCore;
+using Application.Features.OperationClaims.Constants;
 
 namespace Application.Features.CourseLearningPaths.Queries.GetList;
 
@@ -16,7 +18,8 @@ public class GetListCourseLearningPathQuery : IRequest<GetListResponse<GetListCo
 {
     public PageRequest PageRequest { get; set; }
 
-    public string[] Roles => new[] { Admin, Read };
+    public string[] Roles => new[] { Admin, Read, GeneralOperationClaims.Instructor, GeneralOperationClaims.Student };
+
 
     public bool BypassCache { get; }
     public string CacheKey => $"GetListCourseLearningPaths({PageRequest.PageIndex},{PageRequest.PageSize})";
@@ -39,7 +42,8 @@ public class GetListCourseLearningPathQuery : IRequest<GetListResponse<GetListCo
             IPaginate<CourseLearningPath> courseLearningPaths = await _courseLearningPathRepository.GetListAsync(
                 index: request.PageRequest.PageIndex,
                 size: request.PageRequest.PageSize, 
-                cancellationToken: cancellationToken
+                cancellationToken: cancellationToken,
+                include: clp => clp.Include(clp => clp.Course)
             );
 
             GetListResponse<GetListCourseLearningPathListItemDto> response = _mapper.Map<GetListResponse<GetListCourseLearningPathListItemDto>>(courseLearningPaths);
