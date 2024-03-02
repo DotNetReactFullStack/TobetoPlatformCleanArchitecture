@@ -16,7 +16,7 @@ using Application.Services.AccountLessons;
 
 namespace Application.Features.AccountLearningPaths.Commands.Create;
 
-public class CreateAccountLearningPathCommand : IRequest<CreatedAccountLearningPathResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateAccountLearningPathCommand : IRequest<CreatedAccountLearningPathResponse>,  ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public int AccountId { get; set; }
     public int LearningPathId { get; set; }

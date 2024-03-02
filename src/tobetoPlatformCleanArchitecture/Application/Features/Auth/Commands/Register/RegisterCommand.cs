@@ -92,12 +92,10 @@ public class RegisterCommand : IRequest<RegisteredResponse>
             User createdUser = await _userRepository.AddAsync(newUser);
 
             // Refactor
-            // Add default operation claim id for each registration
             UserOperationClaim defaultUserOperationClaim = new(userId: createdUser.Id, operationClaimId: AuthOperationClaims.DefaultOperationClaimIdForEachRegistration);
             UserOperationClaim createdDefaultUserOperationClaim = await _userOperationClaimService.AddAsync(defaultUserOperationClaim);
 
             // Refactor
-            // Create an account for each registration
             Account account = new(
                 userId: createdUser.Id,
                 nationalIdentificationNumber: request
@@ -114,10 +112,10 @@ public class RegisterCommand : IRequest<RegisteredResponse>
 
             Address address = new(                
                 accountId: createdAccount.Id,
-                countryId: 1,
-                cityId: 1,
-                districtId: 1,
-                addressDetail: ""
+                countryId: AddressConstants.DefaultCountryId,
+                cityId: AddressConstants.DefaultCityId,
+                districtId: AddressConstants.DefaultDistrictId,
+                addressDetail: AddressConstants.DefaultAddressDetail
                 );
 
             await _addressesService.AddAsync(address);
