@@ -1905,8 +1905,8 @@ namespace Persistence.Migrations
                             Email = "test@user.net",
                             FirstName = "Test",
                             LastName = "User",
-                            PasswordHash = new byte[] { 222, 151, 165, 135, 175, 2, 241, 134, 174, 99, 54, 96, 151, 191, 76, 234, 154, 234, 188, 222, 13, 201, 42, 61, 172, 27, 233, 4, 93, 63, 233, 242, 117, 138, 209, 154, 245, 41, 174, 89, 4, 123, 58, 248, 115, 116, 22, 86, 2, 170, 255, 126, 196, 216, 190, 105, 148, 80, 113, 72, 175, 181, 224, 72 },
-                            PasswordSalt = new byte[] { 222, 205, 199, 246, 193, 9, 60, 111, 205, 113, 98, 54, 57, 36, 239, 6, 83, 163, 67, 105, 12, 133, 49, 116, 109, 180, 63, 255, 61, 209, 164, 61, 123, 13, 72, 166, 14, 252, 100, 221, 85, 177, 97, 27, 99, 82, 105, 192, 45, 244, 101, 113, 244, 200, 130, 95, 15, 149, 138, 38, 220, 79, 62, 174, 43, 213, 117, 194, 210, 117, 45, 237, 207, 229, 223, 103, 143, 198, 32, 210, 48, 3, 142, 66, 4, 252, 246, 64, 161, 226, 68, 66, 231, 16, 183, 99, 42, 14, 212, 30, 65, 125, 203, 162, 52, 8, 41, 11, 55, 234, 16, 200, 27, 152, 59, 231, 85, 95, 171, 255, 69, 159, 243, 194, 189, 45, 31, 251 },
+                            PasswordHash = new byte[] { 5, 246, 125, 66, 230, 8, 17, 255, 18, 182, 238, 21, 221, 191, 151, 108, 85, 246, 195, 238, 234, 176, 71, 184, 61, 156, 2, 33, 106, 115, 56, 165, 32, 106, 206, 110, 75, 16, 82, 90, 193, 24, 57, 133, 173, 91, 24, 26, 153, 64, 139, 73, 59, 178, 96, 250, 186, 76, 17, 252, 248, 102, 206, 243 },
+                            PasswordSalt = new byte[] { 198, 64, 223, 111, 66, 155, 96, 3, 226, 104, 51, 25, 58, 238, 124, 40, 109, 115, 11, 22, 240, 174, 79, 102, 25, 32, 36, 193, 211, 216, 186, 37, 121, 69, 50, 90, 80, 57, 233, 167, 137, 159, 37, 65, 35, 185, 25, 213, 215, 206, 235, 51, 191, 184, 100, 81, 0, 122, 109, 94, 176, 195, 45, 70, 240, 149, 242, 194, 179, 154, 52, 27, 215, 190, 249, 150, 75, 88, 126, 121, 254, 232, 191, 130, 162, 184, 165, 190, 140, 159, 209, 45, 132, 158, 146, 96, 215, 68, 16, 196, 105, 149, 84, 79, 209, 221, 15, 62, 147, 164, 205, 167, 118, 163, 220, 15, 14, 114, 19, 106, 58, 178, 172, 159, 165, 251, 68, 29 },
                             Status = true
                         });
                 });
@@ -2086,6 +2086,40 @@ namespace Persistence.Migrations
                     b.HasIndex("AnnouncementId");
 
                     b.ToTable("AccountAnnouncements", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AccountId = 1,
+                            AnnouncementId = 1,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Read = false
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AccountId = 1,
+                            AnnouncementId = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Read = false
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AccountId = 1,
+                            AnnouncementId = 3,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Read = false
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AccountId = 1,
+                            AnnouncementId = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Read = false
+                        });
                 });
 
             modelBuilder.Entity("Domain.Entities.AccountCapability", b =>
@@ -6741,7 +6775,7 @@ namespace Persistence.Migrations
                             IsActive = true,
                             OrganizationId = 1,
                             Priority = 1,
-                            PublishedDate = new DateTime(2024, 2, 28, 9, 46, 32, 246, DateTimeKind.Local).AddTicks(7040),
+                            PublishedDate = new DateTime(2024, 3, 4, 19, 33, 22, 322, DateTimeKind.Local).AddTicks(570),
                             SurveyTypeId = 2,
                             Title = "Mindset Anketi",
                             Visibility = true
