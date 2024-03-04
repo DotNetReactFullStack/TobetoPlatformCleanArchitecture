@@ -25,5 +25,22 @@ public class AccountAnnouncementConfiguration : IEntityTypeConfiguration<Account
             .OnDelete(DeleteBehavior.ClientNoAction);
 
         builder.HasQueryFilter(aa => !aa.DeletedDate.HasValue);
+
+        builder.HasData(getSeeds());
+    }
+
+    private HashSet<AccountAnnouncement> getSeeds()
+    {
+        int id = 0;
+        HashSet<AccountAnnouncement> seeds =
+            new()
+            {
+                new AccountAnnouncement { Id = ++id, AccountId=1, AnnouncementId = 1, Read=false },
+                new AccountAnnouncement { Id = ++id, AccountId=1, AnnouncementId = 2, Read=false },
+                new AccountAnnouncement { Id = ++id, AccountId=1, AnnouncementId = 3, Read=false },
+                new AccountAnnouncement { Id = ++id, AccountId=1, AnnouncementId = 4, Read=false },
+            };
+
+        return seeds;
     }
 }
