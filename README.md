@@ -1,8 +1,8 @@
-![Screenshot 2024-01-05 at 23 30 21](https://github.com/DotNetReactFullStack/tobeto-platform-frontend/assets/79023498/f2380df8-e975-46e5-83f6-5ecea21e0289)
-
 # Tobeto Platform 
 
-Bu proje, Istanbul Kodluyor organizasyonu altında geliştirilmiş bir online video eğitim platformudur.
+#### Bu proje, Istanbul Kodluyor organizasyonu altında geliştirilmiş bir online video eğitim platformudur.  
+  
+![tobeto-platform](https://github.com/DotNetReactFullStack/TobetoPlatformCleanArchitecture/assets/129520646/1a49624f-c1bd-41a2-b409-a5d49c761c65)
 
 ## Ekip Üyeleri
 
@@ -16,7 +16,7 @@ Bu proje, Istanbul Kodluyor organizasyonu altında geliştirilmiş bir online vi
 
 ## Kullanılan Teknolojiler
 
-1. **.NET, C#, Entity Framework:** .NET framework kullanılarak C# programlama dili ile yazılmıştır. Entity Framework, veritabanı işlemlerini yönetmek için kullanılmıştır.
+1. **.NET, C#, Entity Framework:** .NET kullanılarak C# programlama dili ile yazılmıştır. Entity Framework, veritabanı işlemlerini yönetmek için kullanılmıştır.
 2. **CQRS, MediatR:** Komut sorgu sorumluluk ayrımı prensibine (CQRS) dayalı olarak MediatR kullanılarak uygulama içindeki etkileşimler yönetilmiştir.
 3. **SOLID Design Principles:** Yazılım tasarım prensipleri olan SOLID'e uygun bir şekilde geliştirilmiştir.
 4. **MsSql:** Microsoft SQL Server, veritabanı yönetimi için tercih edilmiştir.
