@@ -32,4 +32,5 @@
 14. **Dependency Injection:** Bağımlılık enjeksiyonu prensibi kullanılarak sınıflar arası bağımlılıklar azaltılmıştır.
 15. **LINQ:** Language Integrated Query, .NET programlama platformu için sorgu ifadeleri kullanılmıştır.
 16. **AutoMapper:** Nesneler arasında veri eşlemesi yapmak için kullanılmıştır.
+17. **Axios:** HTTP istekleri için kullanılmıştır.
 
