@@ -1,118 +1,35 @@
-<p align="center">
-  <a href="https://github.com/kodlamaio-projects/nArchitecture/graphs/contributors"><img src="https://img.shields.io/github/contributors/kodlamaio-projects/nArchitecture.svg?style=for-the-badge"></a>
-  <a href="https://github.com/kodlamaio-projects/nArchitecture/network/members"><img src="https://img.shields.io/github/forks/kodlamaio-projects/nArchitecture.svg?style=for-the-badge"></a>
-  <a href="https://github.com/kodlamaio-projects/nArchitecture/stargazers"><img src="https://img.shields.io/github/stars/kodlamaio-projects/nArchitecture.svg?style=for-the-badge"></a>
-  <a href="https://github.com/kodlamaio-projects/nArchitecture/issues"><img src="https://img.shields.io/github/issues/kodlamaio-projects/nArchitecture.svg?style=for-the-badge"></a>
-  <a href="https://github.com/kodlamaio-projects/nArchitecture/blob/master/LICENSE"><img src="https://img.shields.io/github/license/kodlamaio-projects/nArchitecture.svg?style=for-the-badge"></a>
-</p><br />
+![Screenshot 2024-01-05 at 23 30 21](https://github.com/DotNetReactFullStack/tobeto-platform-frontend/assets/79023498/f2380df8-e975-46e5-83f6-5ecea21e0289)
 
-<p align="center">
-  <a href="https://github.com/kodlamaio-projects/nArchitecture"><img src="https://user-images.githubusercontent.com/53148314/194872467-827dc967-acee-4bca-88a2-59ed5695bebf.png" height="125"></a>
-  <h3 align="center">nArchitecture Project
-</h3>
-  <p align="center">
-    <!-- PROJECT_DESCRIPTION -->
-    <!-- <br />
-    <a href="https://github.com/kodlamaio-projects/nArchitecture"><strong>Explore the docs »</strong></a>
-    <br /> -->
-    <!-- <br />
-    <a href="https://github.com/kodlamaio-projects/nArchitecture">View Demo</a>
-    · -->
-    <a href="https://github.com/kodlamaio-projects/nArchitecture/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/kodlamaio-projects/nArchitecture/issues">Request Feature</a>
-  </p>
-</p>
+# Tobeto Platform 
 
-## 💻 About The Project
+Bu proje, Istanbul Kodluyor organizasyonu altında geliştirilmiş bir online video eğitim platformudur.
 
-As Kodlama.io, we decided to share examples of completed projects. Inspired by Clean Architecture, nArchitecture is a monolith project. In this project, which is a rental car simulation, we have completed the project with advanced techniques. A project has been created that includes Clean Architecture, CQRS, Advanced Repository, Dynamic Querying, JWT, OTP, Google & Microsoft Auth, Role Based Management, Distributed Caching(Redis), Logging (Serilog), Elastic Search, and much more. By contributing, you can support the project and learn new things.
+## Ekip Üyeleri
 
-### Built With
+- [Burak Tan](https://github.com/buraktann)  
+- [Burhan Özşahinoğlu](https://github.com/burhan-xD)
+- [Ersin KAYA](https://github.com/ersin-kaya) 
+- [Gökçe Fırat](https://github.com/gokcefirat) 
+- [Özgür SÖNMEZ](https://github.com/OzgurSonmez)  
+- [Şara Hazal Baydar](https://github.com/sarahazalbaydar)
 
-[![](https://img.shields.io/badge/.NET%20Core-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://learn.microsoft.com/tr-tr/dotnet/welcome)
 
-## ⚙️ Getting Started
+## Kullanılan Teknolojiler
 
-To get a local copy up and running follow these simple steps.
+1. **.NET, C#, Entity Framework:** .NET framework kullanılarak C# programlama dili ile yazılmıştır. Entity Framework, veritabanı işlemlerini yönetmek için kullanılmıştır.
+2. **CQRS, MediatR:** Komut sorgu sorumluluk ayrımı prensibine (CQRS) dayalı olarak MediatR kullanılarak uygulama içindeki etkileşimler yönetilmiştir.
+3. **SOLID Design Principles:** Yazılım tasarım prensipleri olan SOLID'e uygun bir şekilde geliştirilmiştir.
+4. **MsSql:** Microsoft SQL Server, veritabanı yönetimi için tercih edilmiştir.
+5. **React, JavaScript, TypeScript:** Kullanıcı arayüzü React ile geliştirilmiş olup, TypeScript ile güçlendirilmiştir. JavaScript ise sayfa etkileşimleri için kullanılmıştır.
+6. **Bootstrap, CSS, HTML:** Bootstrap ile kullanıcı arayüzü tasarlanmış, CSS ve HTML ise sayfa stil ve yapılandırması için kullanılmıştır.
+7. **Redux Toolkit:** React uygulamasının durum yönetimi için Redux Toolkit kullanılmıştır.
+8. **Caching:** Verilerin geçici olarak saklandığı bellek yönetimi tekniği uygulanmıştır.
+9. **JWT:** JSON Web Token, kullanıcı kimlik doğrulaması için kullanılmıştır.
+10. **Logging:** Uygulama günlüklerinin oluşturulması ve yönetilmesi sağlanmıştır.
+11. **Validation:** Kullanıcı girdilerinin doğrulanması işlemi yapılmıştır.
+12. **Migration:** Veritabanı şemalarının güncellenmesi işlemi sağlanmıştır.
+13. **Authentication, Authorization:** Kimlik doğrulama ve yetkilendirme işlemleri yapılmıştır.
+14. **Dependency Injection:** Bağımlılık enjeksiyonu prensibi kullanılarak sınıflar arası bağımlılıklar azaltılmıştır.
+15. **LINQ:** Language Integrated Query, .NET programlama platformu için sorgu ifadeleri kullanılmıştır.
+16. **AutoMapper:** Nesneler arasında veri eşlemesi yapmak için kullanılmıştır.
 
-### Prerequisites
-
-- .NET 7
-
-### Installation
-
-1. Clone the repo
-   ```sh
-   git clone --recurse-submodules https://github.com/kodlamaio-projects/nArchitecture.git
-   ```
-2. Configure `appsettings.json` in WebAPI.
-3. Run `Update-Database` command with Package Manager Console in WebAPI to create tables in sql server.
-
-- Run the following command to update submodules
-  ```sh
-   git submodule update --remote
-   ```
-
-## 🚀 Usage
-
-1. Run example WebAPI project `dotnet run --project src\rentACar\WebAPI`
-
-### Analysis
-
-1. If not, Install dotnet tool `dotnet tool restore`.
-2. Run anaylsis command `dotnet roslynator analyze`
-
-### Format
-
-1. If not, Install dotnet tool `dotnet tool restore`.
-2. Run format command `dotnet csharpier .`
-
-## 🚧 Roadmap
-
-See the [open issues](https://github.com/kodlamaio-projects/nArchitecture/issues) for a list of proposed features (and known issues).
-
-## 🤝 Contributing
-
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the project and clone your local machine
-2. Create your Feature Branch (`git checkout -b <Feature>/<AmazingFeature>'`)
-3. Develop
-4. Commit your Changes (`git add . && git commit -m '<SemanticCommitType>(<Scope>): <AmazingFeature>'`)
-   💡 Check [Semantic Commit Messages](./docs/Semantic%20Commit%20Messages.md)
-5. Push to the Branch (`git push origin <Feature>/<AmazingFeature>`)
-6. Open a Pull Request
-
-Contributing on Core Packages With This Repo:
-
-1. Fork the [nArchitecture.Core](https://github.com/kodlamaio-projects/nArchitecture.Core) project
-2. Locate to `src/corePackages` path (`cd .\src\corePackages\`)
-3. Add your forked nArchitecture.Core repository remote address (`git remote add <YourUserName> https://github.com/<YourUserName>/nArchitecture.Core.git`)
-4. Create your Feature Branch (`git checkout -b <Feature>/<AmazingFeature>'`)
-5. Develop
-6. Commit your changes (`git add . && git commit -m '<SemanticCommitType>(<Scope>): <AmazingFeature>'`)
-   💡 Check [Semantic Commit Messages](./docs/Semantic%20Commit%20Messages.md)
-7. Push to the branch (`git push <YourUserName> --set-upstream HEAD:refs/heads/<Feature>/<AmazingFeature>`)
-8. Open a Pull Request
-
-If your pull request is accepted and merged:
-
-9. Locate to `src/corePackages` path (`cd .\src\corePackages\`)
-10. Switch to main branch `git checkout main`
-11. Locate root path `/` path (`cd ..\..\`)
-12. Pull repo and submodule `git submodule update --remote`
-13. Commit your changes (`git add . && git commit -m 'build(corePackages): update submodule'`)
-14. Push to the Branch (`git push origin <Feature>/<AmazingFeature>`)
-15. Open a Pull Request
-
-## ⚖️ License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-## 📧 Contact
-
-**Project Link:** [https://github.com/kodlamaio-projects/nArchitecture](https://github.com/kodlamaio-projects/nArchitecture)
-
-<!-- ## 🙏 Acknowledgements
-- []() -->
